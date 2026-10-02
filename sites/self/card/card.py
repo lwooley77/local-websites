@@ -55,6 +55,11 @@ contact_html = "".join("<div>%s</div>" % c for c in contact_lines)
 SEARCH = ('<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/>'
           '<path d="M15 15l6 6" stroke="#5f6368" stroke-width="2.6" stroke-linecap="round"/></svg>')
 
+# your mark: a gold tile with a "W". Swap this SVG for your real logo when you have one.
+LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#15120e"/>'
+        '<path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#e6b26a" stroke-width="2.6" '
+        'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
 CSS = FONT_CSS + """
 *{box-sizing:border-box;margin:0}
 body{font-family:'Work Sans',sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -71,12 +76,18 @@ body{font-family:'Work Sans',sans-serif;-webkit-print-color-adjust:exact;print-c
 .res .s b{color:#e7a100;letter-spacing:.01in;font-weight:400}
 .res .w{margin-top:.06in;display:flex;align-items:center;gap:.06in;font:600 .1in/1 'Work Sans',sans-serif;color:#3c4043}
 .res .w i{font-style:normal;background:#c5221f;color:#fff;border-radius:.05in;padding:.03in .07in;letter-spacing:.01in}
-.sound{font:600 .095in/1 'Work Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#93441a;text-align:right}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:.02in}
+.logo{display:flex;align-items:center;gap:.07in}
+.logo svg{width:.26in;height:.26in;flex:none}
+.logo span{font:600 .125in/1 Fraunces,serif;color:#15120e}
+.sound{font:600 .085in/1 'Work Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#93441a;text-align:right}
 /* BACK */
 .back{background:#15120e;color:#f4eee3}
 .back .in{justify-content:space-between}
-.back .big{font:600 .3in/1 Fraunces,serif;color:#e6b26a}
+.back .big{font:600 .28in/1 Fraunces,serif;color:#e6b26a}
 .back .sub{margin-top:.07in;font:400 .115in/1.4 'Work Sans',sans-serif;max-width:2.35in;color:#e8dfce}
+.back .pts{margin-top:.07in;display:flex;flex-wrap:nowrap;gap:.03in .09in;font:600 .072in/1.2 'Work Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#e6b26a;white-space:nowrap}
+.back .pts span::before{content:"";display:inline-block;width:.05in;height:.05in;border-radius:50%;background:#e0793c;margin-right:.05in;vertical-align:.005in}
 .back .me{display:flex;justify-content:space-between;align-items:flex-end;gap:.1in;border-top:.01in solid #4a4030;padding-top:.08in}
 .back .nm{font:600 .14in/1.2 Fraunces,serif}
 .back .ct{font:400 .105in/1.5 'Work Sans',sans-serif;color:#e8dfce}
@@ -95,10 +106,11 @@ def card(side, bleed=False):
                  '<div class="res"><div class="t">Your Business Name | Reno, NV</div>'
                  '<div class="s"><b>&#9733;&#9733;&#9733;&#9733;&#9733;</b> &middot; Open now &middot; Closes 6 PM</div>'
                  '<div class="w">Website: <i>404 Page not found</i></div></div>'
-                 '<div class="sound">Sound familiar?</div></div>') % SEARCH
+                 '<div class="foot"><div class="logo">%s<span>%s</span></div><div class="sound">Sound familiar?</div></div></div>') % (SEARCH, LOGO, NAME)
     else:
         inner = ('<div class="in"><div><div class="big">Let\'s fix that.</div>'
-                 '<div class="sub">A website that makes your business look as good as it is.</div></div>'
+                 '<div class="sub">A website that makes your business look as good as it is.</div>'
+                 '<div class="pts"><span>Found on Google</span><span>Get the call</span><span>Follow up</span></div></div>'
                  '<div class="me"><div><div class="nm">%s</div><div class="ct">%s</div><div class="area">%s &middot; %s</div></div>%s</div></div>'
                  '<div class="stripes"></div>') % (NAME, contact_html, TITLE, AREA, qr_html)
     return '<div class="%s">%s</div>' % (cls, inner)

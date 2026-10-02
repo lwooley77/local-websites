@@ -261,4 +261,14 @@ footer a{padding:10px 0;display:inline-block}
 .svc h3{font-size:clamp(24px,3vw,30px)}
 .svc p{color:var(--muted);max-width:58ch}
 html{scroll-padding-top:80px}
+
+.flow{list-style:none;padding:0;margin:44px 0 0;display:grid;gap:0}
+.flow li{padding:20px 0;border-top:2px solid var(--gold)}
+@media (min-width:900px){.flow{grid-template-columns:repeat(5,1fr);gap:22px}.flow li{padding-right:6px}}
+.flow b{display:block;font:600 13px 'Work Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.flow h3{font-size:22px;margin-bottom:6px}
+.flow p{color:var(--muted);font-size:16px}
+@media (min-width:800px) and (max-width:1059px){.menu-btn{display:grid}}
+@media (min-width:800px) and (max-width:1059px){.nav{display:none!important}}
+@media (min-width:1060px){.menu-btn{display:none}.nav{display:flex!important}}
 </style>
