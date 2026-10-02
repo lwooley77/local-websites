@@ -86,7 +86,7 @@ body{font-family:'Work Sans',sans-serif;-webkit-print-color-adjust:exact;print-c
 .back .in{justify-content:space-between}
 .back .big{font:600 .28in/1 Fraunces,serif;color:#e6b26a}
 .back .sub{margin-top:.07in;font:400 .115in/1.4 'Work Sans',sans-serif;max-width:2.35in;color:#e8dfce}
-.back .pts{margin-top:.07in;display:flex;flex-wrap:nowrap;gap:.03in .09in;font:600 .072in/1.2 'Work Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#e6b26a;white-space:nowrap}
+.back .pts{margin-top:.07in;display:flex;flex-wrap:nowrap;gap:.03in .07in;font:600 .068in/1.2 'Work Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#e6b26a;white-space:nowrap}
 .back .pts span::before{content:"";display:inline-block;width:.05in;height:.05in;border-radius:50%;background:#e0793c;margin-right:.05in;vertical-align:.005in}
 .back .me{display:flex;justify-content:space-between;align-items:flex-end;gap:.1in;border-top:.01in solid #4a4030;padding-top:.08in}
 .back .nm{font:600 .14in/1.2 Fraunces,serif}
@@ -110,7 +110,7 @@ def card(side, bleed=False):
     else:
         inner = ('<div class="in"><div><div class="big">Let\'s fix that.</div>'
                  '<div class="sub">A website that makes your business look as good as it is.</div>'
-                 '<div class="pts"><span>Found on Google</span><span>Get the call</span><span>Follow up</span></div></div>'
+                 '<div class="pts"><span>Found on Google</span><span>Get the call</span><span>Book online</span><span>Follow up</span></div></div>'
                  '<div class="me"><div><div class="nm">%s</div><div class="ct">%s</div><div class="area">%s &middot; %s</div></div>%s</div></div>'
                  '<div class="stripes"></div>') % (NAME, contact_html, TITLE, AREA, qr_html)
     return '<div class="%s">%s</div>' % (cls, inner)
@@ -142,7 +142,8 @@ def save(path, fn):
         fn(str(path))
         return path
     except Exception:
-        alt = path.with_name(path.stem + "-new" + path.suffix)
+        import time
+        alt = path.with_name(path.stem + "-" + time.strftime("%H%M%S") + path.suffix)
         fn(str(alt))
         return alt
 

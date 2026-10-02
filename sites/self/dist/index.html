@@ -277,6 +277,18 @@ html{scroll-padding-top:80px}
 @media (min-width:800px) and (max-width:1059px){.menu-btn{display:grid}}
 @media (min-width:800px) and (max-width:1059px){.nav{display:none!important}}
 @media (min-width:1060px){.menu-btn{display:none}.nav{display:flex!important}}
+
+.sync{margin-top:60px;padding:clamp(22px,4vw,40px);border-radius:22px;background:var(--bg2);box-shadow:inset 0 0 0 2px var(--line)}
+.sync h3{font-size:clamp(26px,4vw,38px);margin:12px 0 10px;max-width:22ch}
+.sync h4{font:600 13px 'Work Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.sync .who .get{display:block;margin-top:0}
+
+.scn{list-style:none;padding:0;margin:34px 0 0}
+.scn li{display:grid;gap:6px 36px;padding:24px 0;border-top:1px solid var(--line)}
+.scn li:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:820px){.scn li{grid-template-columns:200px 1fr}}
+.scn span{font:600 clamp(20px,2.6vw,26px)/1.2 Fraunces,Georgia,serif;color:var(--gold)}
+.scn p{max-width:64ch;color:var(--paper)}
 </style>
 
 </head>
@@ -289,7 +301,7 @@ html{scroll-padding-top:80px}
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#e6b26a"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#15120e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Lucas Wooley
     </a>
-    <nav class="nav" aria-label="Main"><a href="#why" data-spy="why">Why a site</a><a href="#build" data-spy="build">What I build</a><a href="#results" data-spy="results">Get customers</a><a href="#work" data-spy="work">Work</a><a href="#how" data-spy="how">Process</a><a href="#about" data-spy="about">About</a><a href="#faq" data-spy="faq">FAQ</a></nav>
+    <nav class="nav" aria-label="Main"><a href="#build" data-spy="build">What I build</a><a href="#why" data-spy="why">Why a site</a><a href="#results" data-spy="results">Get customers</a><a href="#work" data-spy="work">Work</a><a href="#how" data-spy="how">Process</a><a href="#about" data-spy="about">About</a><a href="#faq" data-spy="faq">FAQ</a></nav>
     <a class="btn" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Email me</a>
     <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
   </div>
@@ -297,7 +309,7 @@ html{scroll-padding-top:80px}
 </header>
 <div class="mmenu" id="mmenu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="mm-top"><span class="k">Menu</span><button type="button" class="mm-x" data-qa="menu-close" aria-label="Close menu">&times;</button></div>
-  <nav aria-label="Mobile"><a href="#why">Why a site</a><a href="#build">What I build</a><a href="#results">Get customers</a><a href="#work">Work</a><a href="#how">Process &amp; pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
+  <nav aria-label="Mobile"><a href="#build">What I build</a><a href="#why">Why a site</a><a href="#results">Get customers</a><a href="#work">Work</a><a href="#how">Process &amp; pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
 </div>
 
 <main>
@@ -370,16 +382,18 @@ html{scroll-padding-top:80px}
   </div>
 </section>
 
-<section id="found">
+<section id="scenes">
   <div class="wrap">
-    <div class="k">What I keep finding</div>
-    <h2>Real problems, sitting in plain view.</h2>
-    <p class="intro">While building samples for local businesses, I check where their public listings send customers. This is what comes up.</p>
-    <ol class="find">
-      <li><b>1</b><div><p>A salon's website address expired. Yelp and Nextdoor still send customers there, and it lands on a "domain for sale" page.</p></div></li>
-      <li><b>2</b><div><p>A barbershop's website is gone, but a local news story still tells people to book on it.</p></div></li>
-      <li><b>3</b><div><p>A spa's website address now redirects to an unrelated gambling site.</p></div></li>
-      <li><b>4</b><div><p>A yard contractor's Nextdoor page links to a website that no longer exists.</p><small>Business names stay private. I share details with the owner only.</small></div></li>
+    <div class="k">Picture this</div>
+    <h2>Moments that win a customer, or lose one.</h2>
+    <p class="intro">Customers don't always have time to call. No statistics here, just things that happen every day, and what a good website does about them.</p>
+    <ol class="scn">
+      <li><span>10:40 PM</span><p>Someone needs a haircut before an interview tomorrow. You're closed, and they don't want to wait on a call back. They book a time on your site in thirty seconds, and you wake up to a full chair.</p></li>
+      <li><span>Lunch break</span><p>A customer has ten minutes and can't make a phone call. They check your hours and prices on your site, tap Text, and settle it before lunch is over.</p></li>
+      <li><span>New in town</span><p>Someone just moved here and searches for what you do. They pick the place whose hours, prices and photos they can see, and skip the ones they can't.</p></li>
+      <li><span>A friend's tip</span><p>A friend says "go see them." The new customer looks you up first. Your site shows the right hours and a booking button, so they come in this week instead of "sometime."</p></li>
+      <li><span>No time to talk</span><p>A homeowner at work has a leak and can't take a call. They send a quick message from your site saying what's wrong, and you call back when you're free. The job is yours before another company even picks up.</p></li>
+      <li><span>After the visit</span><p>A customer loved the visit but forgot to rebook. A quick follow-up message with a booking link brings them back before they drift away.</p></li>
     </ol>
   </div>
 </section>
@@ -406,7 +420,7 @@ html{scroll-padding-top:80px}
         <ul class="get">
           <li>A tap-to-call button on every screen</li>
           <li>Text and directions one tap away</li>
-          <li>Online booking or ordering linked right in</li>
+          <li>Online booking right on your site, updating your calendar and client list</li>
           <li>Call-back requests, where you want them</li>
           <li>Follow-up messages to people who reached out</li>
         </ul>
@@ -420,6 +434,30 @@ html{scroll-padding-top:80px}
       <li><b>4 &middot; Answered</b><h3>You respond</h3><p>The call, text or booking request comes to you.</p></li>
       <li><b>5 &middot; Followed up</b><h3>They stay</h3><p>A quick message afterward, so no one slips away.</p></li>
     </ol>
+    <div class="sync">
+      <div class="k">Booking, handled</div>
+      <h3>Book right on the site. Everything updates itself.</h3>
+      <p class="intro">Customers pick a time on your own site, and nobody has to retype anything.</p>
+      <div class="who" style="margin-top:22px;max-width:none">
+        <div>
+          <h4>For your customer</h4>
+          <ul class="get">
+            <li>Picks an open time without leaving your site</li>
+            <li>Gets a confirmation right away</li>
+            <li>Can get a reminder before the visit, if the tool supports it</li>
+          </ul>
+        </div>
+        <div>
+          <h4>For you</h4>
+          <ul class="get">
+            <li>The booking lands on your calendar by itself</li>
+            <li>The customer's details are saved to your client list</li>
+            <li>Taken times disappear, so slots aren't double booked</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note" style="margin-top:18px">I connect the booking tool you already use, like Vagaro, Booksy or Square, or set up a simple one if you don't have one. It all happens on your own site.</p>
+    </div>
   </div>
 </section>
 
@@ -524,6 +562,8 @@ html{scroll-padding-top:80px}
       <div class="a" id="q6" role="region">Email me your business name. I'll build the sample from your public listings and send it to you. You look, tell me what you think, and only then do we talk about price.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q7">Can I talk to someone first?</button></h3>
       <div class="a" id="q7" role="region">Yes, to me directly. See the "Talk to me" section at the bottom for the ways to reach me.</div>
+      <h3><button type="button" aria-expanded="false" aria-controls="q10">Can customers book right on my site?</button></h3>
+      <div class="a" id="q10" role="region">Yes. They pick an open time on your own site and get a confirmation. The booking lands on your calendar and your client list automatically, so you don't retype anything. I connect the booking tool you already use, or set up a simple one.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q8">Will this help me show up on Google?</button></h3>
       <div class="a" id="q8" role="region">It helps. I set up the things that matter for local search: clear titles and descriptions, your name, address and phone written the same way everywhere, a fast phone-friendly site, and your business details in a form Google can read. I can't promise a ranking, but I make sure nothing on your site holds you back.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q9">Can you set up call-backs and follow-up messages?</button></h3>
@@ -645,7 +685,7 @@ var DIGITS = PHONE.replace(/[^\d+]/g, "");
     { k: ["kind", "type", "business", "restaurant", "salon", "barber", "contractor", "shop", "clinic", "who"], a: "Any local business: restaurants, shops, salons and barbers, contractors, clinics, studios and more. If customers look you up, you can use a good website." },
     { k: ["long", "time", "when", "fast", "quick", "timeline", "days", "weeks"], a: "I build the sample first and you can see it before we talk about anything else. I'll give you a clear timeline for going live when you've seen it." },
     { k: ["photo", "picture", "image"], a: "I only use photos you've posted publicly, and only after you say yes. You can ask me to remove any of them, and you can send me better ones." },
-    { k: ["book", "booking", "order", "appointment", "schedule", "online"], a: "If you already use a booking or ordering tool, I add that link so customers can use it right from your site. If you don't, customers can call or text you in one tap." },
+    { k: ["book", "booking", "order", "appointment", "schedule", "online"], a: "Yes. Customers pick an open time on your own site and get a confirmation. The booking lands on your calendar and client list automatically, so you never retype it. I connect the booking tool you already use, like Vagaro, Booksy or Square, or set up a simple one." },
     { k: ["change", "update", "edit", "hours", "fix", "modify"], a: "Small edits like prices, hours and services are included in the monthly fee. Send me a message and I update it." },
     { k: ["own", "domain", "host", "hosting", "name"], a: "I set up your domain and hosting as part of launch and keep it running. I'll put the details in writing before anything goes live." },
     { k: ["cancel", "contract", "terms", "commit", "lock"], a: "I put terms in writing before anything goes live, including how to cancel. If you don't like the sample, you owe nothing." },
