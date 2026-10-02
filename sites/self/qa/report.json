@@ -1,8 +1,8 @@
 {
   "fails": [],
   "shots": {
-    "desktop": 5,
-    "mobile": 6
+    "desktop": 7,
+    "mobile": 10
   },
-  "kb": 118
+  "kb": 413
 }

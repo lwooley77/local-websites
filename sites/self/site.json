@@ -1,5 +1,7 @@
-﻿{
+{
   "lang": "en",
+  "img_cap": 1000,
+  "img_q": 72,
   "fonts": [
     {"family": "Fraunces", "file": "fraunces-latin-600-normal.woff2", "weight": 600},
     {"family": "Work Sans", "file": "work-sans-latin-400-normal.woff2", "weight": 400},

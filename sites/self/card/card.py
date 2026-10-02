@@ -10,12 +10,12 @@ from pathlib import Path
 
 # ---------------- CONFIG ----------------
 NAME = "Lucas Wooley"
-TITLE = "Websites for local shops"
+TITLE = "Websites for local businesses"
 EMAIL = "lucas77wooley@gmail.com"
 PHONE = ""        # e.g. "(775) 555-0123". Left empty = not printed.
 SITE = ""         # e.g. "lucaswooley.com". Left empty = not printed. Add once you own a domain.
 AREA = "Northern Nevada"
-TAGLINE = "I build your shop a free preview first."
+TAGLINE = "I build your business a free preview first."
 # ----------------------------------------
 
 HERE = Path(__file__).resolve().parent

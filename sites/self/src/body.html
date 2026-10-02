@@ -1,83 +1,127 @@
+%%IMAGES%%
 <div id="top"></div>
 <header class="top" id="hdr">
   <div class="wrap">
     <a class="logo" data-qa="logo" href="#top" aria-label="%%NAME%%, back to top">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1e1b16"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#e6b26a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#e6b26a"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#15120e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       %%NAME%%
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#how">How it works</a><a href="#work">Example</a><a href="#pricing">Pricing</a><a href="#faq">Questions</a>
+      <a href="#try">Try it</a><a href="#found">What I find</a><a href="#work">Work</a><a href="#how">Process</a><a href="#pricing">Pricing</a><a href="#faq">Questions</a>
     </nav>
     <a class="btn" href="mailto:%%EMAIL%%?subject=Website%20preview">Email me</a>
   </div>
 </header>
 
 <main>
-<section class="hero" style="border:0;padding-top:56px">
+<section class="hero" style="border:0">
   <div class="wrap">
     <div>
-      <div class="k">%%AREA%% · Local business websites</div>
-      <h1>A real website for your shop.</h1>
-      <p class="lead">I build websites for barbers, salons and local trades. Before we talk about anything, I look up your public listings and build you a free preview, so you can see it first.</p>
+      <div class="k">%%AREA%% · Websites for local businesses</div>
+      <h1>Your business deserves a site that <em>works</em> on a phone.</h1>
+      <p class="lead">Most customers find you on their phone, and decide in seconds. I build fast, custom sites for local businesses of every kind, from restaurants and shops to salons, contractors and clinics. I build yours first, so you see it before you decide anything.</p>
       <div class="cta">
-        <a class="btn" href="mailto:%%EMAIL%%?subject=Website%20preview">Ask for a free preview</a>
-        <a class="btn alt" href="#work">See an example</a>
+        <a class="btn" href="mailto:%%EMAIL%%?subject=Website%20preview">Get your free preview</a>
+        <a class="btn alt" href="#work">See the work</a>
+      </div>
+      <div class="trust"><span>Free preview first</span><span>One tap to call</span><span>Built for phones</span></div>
+    </div>
+    <div class="fan" aria-hidden="false">
+      <div class="ph"><div class="scr"><img data-k="shot-beauty" alt="Phone preview of a salon website with a retro chair illustration"></div></div>
+      <div class="ph"><div class="scr"><img data-k="shot-barber" alt="Phone preview of a barber shop website styled like a highway sign"></div></div>
+      <div class="ph"><div class="scr"><img data-k="shot-salon" alt="Phone preview of a full-service salon website"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="try">
+  <div class="wrap">
+    <div class="k">Try it</div>
+    <h2>See your business on a phone, right now.</h2>
+    <p class="intro">Type your business name. This is a quick sample, and your real site would use your own services, hours and photos.</p>
+    <div class="try">
+      <div class="ctl">
+        <div style="margin-bottom:26px">
+          <label for="shopname">Your business name</label>
+          <input type="text" id="shopname" maxlength="30" placeholder="e.g. Reno Family Dental" autocomplete="off">
+        </div>
+        <fieldset class="chips"><legend>What you do</legend>
+          <input type="radio" name="kind" id="k1" value="beauty" checked><label for="k1">Hair &amp; beauty</label>
+          <input type="radio" name="kind" id="k2" value="food"><label for="k2">Food &amp; drink</label>
+          <input type="radio" name="kind" id="k3" value="retail"><label for="k3">Retail</label>
+          <input type="radio" name="kind" id="k4" value="home"><label for="k4">Home services</label>
+          <input type="radio" name="kind" id="k5" value="health"><label for="k5">Health &amp; fitness</label>
+          <input type="radio" name="kind" id="k6" value="other"><label for="k6">Something else</label>
+        </fieldset>
+        <fieldset class="sw"><legend>Color</legend>
+          <input type="radio" name="pal" id="p1" value="0" checked><label for="p1" style="background:linear-gradient(135deg,#1e1b16 50%,#e6b26a 50%)"><span class="sr" style="position:absolute;left:-9999px">Dark and gold</span></label>
+          <input type="radio" name="pal" id="p2" value="1"><label for="p2" style="background:linear-gradient(135deg,#f4eee3 50%,#1f6b4a 50%)"><span class="sr" style="position:absolute;left:-9999px">Cream and green</span></label>
+          <input type="radio" name="pal" id="p3" value="2"><label for="p3" style="background:linear-gradient(135deg,#fbe9ee 50%,#8a2c58 50%)"><span class="sr" style="position:absolute;left:-9999px">Blush and plum</span></label>
+          <input type="radio" name="pal" id="p4" value="3"><label for="p4" style="background:linear-gradient(135deg,#26303a 50%,#e8883a 50%)"><span class="sr" style="position:absolute;left:-9999px">Slate and orange</span></label>
+        </fieldset>
+        <p class="tiny">Runs in your browser. Nothing you type is sent or saved anywhere.</p>
+      </div>
+      <div class="stage">
+        <div class="ph big"><div class="scr" id="sim" role="img" aria-label="Live sample phone preview of your website"></div></div>
+        <p class="cap">Sample preview. Yours is built from your real listings.</p>
       </div>
     </div>
-    <svg class="awning" viewBox="0 0 320 240" role="img" aria-label="Illustration of a shop front with a striped awning">
-      <rect x="20" y="86" width="280" height="140" fill="#ebe3d3" stroke="#1e1b16" stroke-width="3"/>
-      <path d="M10 86 L40 26 H280 L310 86 Z" fill="#fff" stroke="#1e1b16" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M40 26 L30 86 M80 26 L70 86 M120 26 L110 86 M160 26 V86 M200 26 L210 86 M240 26 L250 86 M280 26 L290 86" stroke="#93441a" stroke-width="14" opacity=".92"/>
-      <path d="M10 86 Q25 104 40 86 Q55 104 70 86 Q85 104 100 86 Q115 104 130 86 Q145 104 160 86 Q175 104 190 86 Q205 104 220 86 Q235 104 250 86 Q265 104 280 86 Q295 104 310 86" fill="#fff" stroke="#1e1b16" stroke-width="3"/>
-      <rect x="44" y="118" width="86" height="108" fill="#f4eee3" stroke="#1e1b16" stroke-width="3"/>
-      <circle cx="116" cy="174" r="4" fill="#1e1b16"/>
-      <rect x="156" y="124" width="112" height="64" fill="#1e1b16"/>
-      <path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#e6b26a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M12 226 H308" stroke="#1e1b16" stroke-width="3"/>
-    </svg>
+  </div>
+</section>
+
+<section id="found">
+  <div class="wrap">
+    <div class="k">What I keep finding</div>
+    <h2>Real problems, sitting in plain view.</h2>
+    <p class="intro">While building previews for local businesses, I check where their public listings send customers. This is what comes up.</p>
+    <ol class="find">
+      <li><b>1</b><div><p>A salon's website address expired. Yelp and Nextdoor still send customers there, and it lands on a "domain for sale" page.</p></div></li>
+      <li><b>2</b><div><p>A barbershop's website is gone, but a local news story still tells people to book on it.</p></div></li>
+      <li><b>3</b><div><p>A spa's website address now redirects to an unrelated gambling site.</p></div></li>
+      <li><b>4</b><div><p>A yard contractor's Nextdoor page links to a website that no longer exists.</p><small>Business names stay private. I share details with the owner only.</small></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="k">The work</div>
+    <h2>Each one built around the business.</h2>
+    <p class="intro">No templates. Each site gets its own look, from that business's own name, neighborhood and customers.</p>
+  </div>
+  <div class="wrap">
+    <div class="row" tabindex="0" role="region" aria-label="Example websites, scroll sideways">
+      <figure><a href="https://gentle-empanada-542a16.netlify.app/" target="_blank" rel="noopener" aria-label="Open the live Quilas Cosmo Corner site"><div class="ph"><div class="scr"><img data-k="shot-quilas" alt="Phone view of the Quilas Cosmo Corner cosmetology website"></div></div></a>
+        <figcaption><b>Quilas Cosmo Corner</b><span>Cosmetology · Carson City · live site, opens in a new tab</span></figcaption></figure>
+      <figure><div class="ph"><div class="scr"><img data-k="shot-barber" alt="Phone view of a barber shop preview website"></div></div>
+        <figcaption><b>Barber shop</b><span>Gardnerville · preview</span></figcaption></figure>
+      <figure><div class="ph"><div class="scr"><img data-k="shot-beauty" alt="Phone view of a beauty salon preview website"></div></div>
+        <figcaption><b>Beauty salon</b><span>Carson City · preview</span></figcaption></figure>
+      <figure><div class="ph"><div class="scr"><img data-k="shot-salon" alt="Phone view of a full-service salon preview website"></div></div>
+        <figcaption><b>Full-service salon</b><span>Sparks · preview</span></figcaption></figure>
+    </div>
+    <p class="hint">Swipe or scroll sideways.</p>
+    <p class="note">Previews are concepts built from public listings, and they aren't live sites. The businesses haven't hired me yet. If you run one and would rather it wasn't shown here, email me and I'll take it down. I build for any kind of local business, and these are just some of the first.</p>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
     <div class="k">How it works</div>
-    <h2>You see it before you decide anything.</h2>
+    <h2>You see it before you decide.</h2>
     <ol class="steps">
-      <li><b>1</b><div><h3>I find what's already public</h3><p>Your services, hours, address and what customers say, from your own listings. Nothing is made up.</p></div></li>
-      <li><b>2</b><div><h3>I build you a free preview</h3><p>A real site you can open on your phone: tap to call, tap for directions, your services and prices on one page.</p></div></li>
-      <li><b>3</b><div><h3>You tell me what to change</h3><p>If you like it, we put it online. If you don't, you've lost nothing.</p></div></li>
+      <li><b>1</b><div><h3>I look up what's public</h3><p>Your services, hours, address and what customers say, from your own listings. I don't make anything up.</p></div></li>
+      <li><b>2</b><div><h3>I build your free preview</h3><p>A real site you can open on your phone: tap to call, tap for directions, your services and prices on one page.</p></div></li>
+      <li><b>3</b><div><h3>You tell me what to change</h3><p>If you like it, we put it online under your name. If not, you've lost nothing.</p></div></li>
     </ol>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="k">What your site does</div>
-    <h2>Built for people looking on their phone.</h2>
     <ul class="get">
       <li>One tap to call or text you</li>
-      <li>Your services and prices in one place</li>
-      <li>Today's hours and one-tap directions</li>
-      <li>Your booking link, if you use one</li>
+      <li>Services and prices in one place</li>
+      <li>Today's hours and directions</li>
+      <li>Your booking link, if you have one</li>
       <li>Your own photos, only with your OK</li>
-      <li>Easy to read, including for older customers</li>
+      <li>Easy to read for every age</li>
     </ul>
-  </div>
-</section>
-
-<section id="work">
-  <div class="wrap">
-    <div class="k">An example</div>
-    <h2>Here's one that's live.</h2>
-    <div class="work">
-      <a class="item" href="https://gentle-empanada-542a16.netlify.app/" target="_blank" rel="noopener">
-        <div class="k">Cosmetology · Carson City</div>
-        <h3>Quilas Cosmo Corner</h3>
-        <p>A full-service cosmetology site: services and prices, a photo gallery and online booking.</p>
-        <span class="go">Open the site</span>
-      </a>
-    </div>
-    <p class="note">I show previews I've built for other shops in person. They're theirs to see first.</p>
   </div>
 </section>
 
@@ -85,8 +129,8 @@
   <div class="wrap">
     <div class="k">Pricing</div>
     <h2>Simple, and quoted after you've seen it.</h2>
-    <p>One launch fee to set the site up and put it online, then a small monthly fee for hosting and for changing things like prices and hours.</p>
-    <p>The preview is free. I give you a number after you've seen the site, never before.</p>
+    <p>One launch fee to set up the site and put it online, then a small monthly fee for hosting and for changing things like prices and hours.</p>
+    <p>The preview is free. You get a number after you've seen the site, never before.</p>
   </div>
 </section>
 
@@ -100,7 +144,7 @@
       <h3><button type="button" aria-expanded="false" aria-controls="q2">What do you need from me?</button></h3>
       <div class="a" id="q2" role="region">Nothing to start. To go live I'd ask you to confirm your prices and hours, and to say yes or no to any photos.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q3">What if I already have a website?</button></h3>
-      <div class="a" id="q3" role="region">Then keep it. If it needs help, I'll tell you honestly, and I won't push a new one if yours is working.</div>
+      <div class="a" id="q3" role="region">Then keep it. If it needs help I'll tell you honestly, and I won't push a new one if yours is working.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q4">Do you use my photos?</button></h3>
       <div class="a" id="q4" role="region">Only photos you've posted publicly, and only after you say yes. You can ask me to remove any of them.</div>
     </div>
@@ -111,16 +155,17 @@
   <div class="wrap">
     <div class="k">Get in touch</div>
     <h2>Want to see yours?</h2>
-    <p class="intro">Send me your shop's name and I'll build the preview.</p>
+    <p class="intro">Send me your business name and I'll build the preview.</p>
     <a class="mail" href="mailto:%%EMAIL%%?subject=Website%20preview">%%EMAIL%%</a>
     <div class="cta"><a class="btn" href="mailto:%%EMAIL%%?subject=Website%20preview">Email me</a></div>
   </div>
 </section>
 </main>
 
+<div class="dockbar"><a class="btn" href="mailto:%%EMAIL%%?subject=Website%20preview">Get your free preview</a></div>
 <footer>
   <div class="wrap">
-    <div class="row"><span>© <span id="yr"></span> %%NAME%% · %%AREA%%</span><a href="#privacy">Privacy</a></div>
+    <div class="r"><span>© <span id="yr"></span> %%NAME%% · %%AREA%%</span><a href="#privacy">Privacy</a></div>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking, and it has no forms. If you email me, the message goes to my inbox and I use it only to reply.</p>
   </div>
 </footer>
-<div class="wrap"><p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking, and it has no forms. If you email me, the message goes to my inbox and I use it only to reply.</p></div>
