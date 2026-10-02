@@ -1,6 +1,6 @@
 # Electric Sun (Fernley, NV) : demo status
 
-Deliverable: `dist/index.html` (170 KB, single file, no photos needed). Built with `python sites\_kit\build.py sites\electric-sun-spa`.
+Deliverable: `dist/index.html` (about 1.1 MB, single file, 8 real photos embedded). Built with `python sites\_kit\build.py sites\electric-sun-spa`.
 
 ## Fact sheet
 ### Verified (source)
@@ -41,14 +41,23 @@ Deliverable: `dist/index.html` (170 KB, single file, no photos needed). Built wi
 - 7 service tabs (Hair, Nails, Lashes & Brows, Skin Care, Waxing, Massage, Tanning & Whitening). Every row opens Vagaro; tanning beds row calls.
 - Live open/closed badge plus a "day arc" where the sun sits at the current time between open and close (America/Los_Angeles).
 - Ambient touches: slow ray rotation (turns with scroll, off under reduced motion), service marquee that pauses on hover, footer dusk scene.
-- Photo slots ready: `assets/raw/hero.jpg`, `salon.jpg`, `storefront.jpg` render automatically after a rebuild.
+- Real photos (8) are in the hero arch (over the sun illustration), a "A look around" gallery with lightbox (swipe, arrow keys, captions, counter, Escape, focus return), About (pedicure lounge) and the Hair, Nails and Tanning service panels. The illustrated yellow building stays in the hero, About and footer because no storefront photo exists on their own pages.
 
-## Photos to request
-1. The yellow building from the street (storefront slot)
-2. The salon floor or tanning rooms with no clients (salon slot)
-3. Close-ups of their own work: nail sets, lash sets, a balayage (hero slot or a later gallery)
-4. The boutique wall (jewelry, handbags)
+## Photos used (8, all from Electric Sun's own pages; none show client faces or children)
+Files are in `assets/raw/`, details in `research/photos.json`. Source for seven: Electric Sun's own old site electricsunnv.com (Wix files, archived Jun 2024, still served by Wix); one from their Vagaro gallery.
+1. `hero-sun-wall.jpg`: metal sun sculpture on the salon wall (hero, gallery). Home page of electricsunnv.com. Only the sculpture's glass face shows; a blurred, unidentifiable shape sits in the background mirror.
+2. `about-pedicure-lounge.jpg`: pedicure lounge (About, gallery). electricsunnv.com home/about.
+3. `tanning-bed.jpg`: inside a tanning bed (Tanning panel, gallery). electricsunnv.com home.
+4. `work-highlights.jpg`: highlights on long hair from behind (Hair panel, gallery). Crop of the photo on https://www.vagaro.com/electricsun1/photos.
+5. `work-nail-shaping.jpg`: hands, nail shaping (Nails panel, gallery). electricsunnv.com home.
+6. `boutique-floor.jpg`: boutique clothing and handbags (gallery). electricsunnv.com home.
+7. `boutique-jewelry.jpg`: jewelry display (gallery). electricsunnv.com contact page.
+8. `hair-shampoo-bowl.jpg`: shampoo bowl (gallery). electricsunnv.com services page.
+Note: the hair photo shows a client's hair and pink top from behind (not identifiable); drop it if the owner prefers.
 
+**Owner must approve photos and quotes before the site goes public.**
+
+Still worth requesting: a street shot of the yellow building, lash and nail sets, and a skin or massage room, so those tabs get photos too.
 ## Pitch notes for mk
 1. **Their website now sends people to a gambling site.** electricsunnv.com (still listed on Vagaro, Nextdoor and in Google results) 301-redirects to sattamatkaresult.org, and old deep links show a "DEMO version" scraper page. Anyone who clicks "Website" from Google or Vagaro lands there. Checked 2026-10-01.
 2. **They already have the hard parts:** a live Vagaro menu with 140+ priced services and 141 reviews averaging 4.9. This demo puts that menu, the reviews and one-tap booking on a page that is theirs and works well on a phone.
@@ -57,7 +66,11 @@ Deliverable: `dist/index.html` (170 KB, single file, no photos needed). Built wi
 ## Booking
 Booking already works through Vagaro (`BOOKING_URL` in `src/app.js`). Nothing for mk to set up. If they move platforms, change that one line.
 
+## Launch checklist
+- Privacy note (`#privacy`, footer link): no cookies, no tracking, no forms; calls and texts go straight to the business; booking goes to Vagaro under its own privacy policy. No cookie banner and no refund or T&C page, because nothing is sold on the site.
+
 ## QA result
+- Photo pass: `python sites\_kit\qa.py sites\electric-sun-spa` exit 0 after adding photos, logo data-qa, #privacy and a shorter meta description. Checked mobile-00..03, gallery, lightbox (open, arrows, Escape, focus return) and the three photo panels on mobile and desktop.
 - `python sites\_kit\qa.py sites\electric-sun-spa`: exit 0 on pass 1 and pass 2 (desktop 1280 and mobile 390): no overflow, ellipsis, em dashes, banned phrases, or dead links. Menu, FAQ and tabs all work.
 - I reviewed every screenshot. Pass-1 fixes: hero art overlapping the label on mobile, desktop tabs clipped, star colour, empty desktop columns (made About/FAQ sticky, added a location card), contact cards too tall on mobile, day-arc sun covering the time label, footer scene cropped on mobile, preview bar shortened to "Preview for Electric Sun" on phones.
 - Self-scores: custom 9, polish 9, readability 9, mobile 9, contact/booking 9, faithful to facts 9, never-do list 9.

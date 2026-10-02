@@ -194,9 +194,22 @@ function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").
 function fmtH(h) { var hh = Math.floor(h), m = Math.round((h - hh) * 60); var ap = hh >= 12 ? "PM" : "AM"; var x = hh % 12 || 12; return x + (m ? ":" + (m < 10 ? "0" : "") + m : "") + " " + ap; }
 var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-// photos (optional, added later through assets/raw)
+// photos: Electric Sun's own pictures (assets/raw), embedded by build.py as window.IMG
+var IMG = window.IMG || {};
+var PHOTOS = [
+  {k: "hero-sun-wall", cap: "The metal sun on the salon wall", alt: "Metal sun sculpture with a glass face, lit on the wall inside Electric Sun", cls: "tall"},
+  {k: "about-pedicure-lounge", cap: "The pedicure lounge", alt: "Pedicure lounge with cushioned chairs, mosaic tile footbaths and a sun medallion on the wall", cls: "wide"},
+  {k: "tanning-bed", cap: "A lay-down tanning bed", alt: "Inside a lit lay-down tanning bed"},
+  {k: "work-highlights", cap: "Highlights on long hair", alt: "Long wavy hair with caramel highlights, seen from behind", cls: "tall"},
+  {k: "boutique-floor", cap: "Clothing, handbags and gifts in the boutique", alt: "Racks of clothing and handbags on the boutique floor, with a salon chair in the back", cls: "wide"},
+  {k: "work-nail-shaping", cap: "Shaping a natural nail", alt: "Close-up of a nail tech shaping a nail with an electric file"},
+  {k: "boutique-jewelry", cap: "Jewelry in the boutique", alt: "Necklaces displayed on black velvet busts in the boutique"},
+  {k: "hair-shampoo-bowl", cap: "A shampoo bowl at the stations", alt: "Black shampoo bowl with a hose at a styling station"}
+].filter(function (p) { return IMG[p.k]; });
+function photoAlt(k) { for (var i = 0; i < PHOTOS.length; i++) if (PHOTOS[i].k === k) return PHOTOS[i].alt; return ""; }
+// service tab -> matching photo
+var PANEL_PHOTO = {hair: ["work-highlights", "50% 30%"], nails: ["work-nail-shaping", "50% 50%"], tan: ["tanning-bed", "50% 50%"]};
 (function () {
-  var IMG = window.IMG || {};
   $$("img[data-k]").forEach(function (im) { var k = im.getAttribute("data-k"); if (IMG[k]) im.src = IMG[k]; else im.remove(); });
 })();
 
@@ -288,7 +301,9 @@ paintHours(); setInterval(paintHours, 60000);
       });
       g += "</div>";
     });
-    ph += '<div class="panel' + (i === 0 ? " on" : "") + '" role="tabpanel" id="p-' + c.id + '" aria-labelledby="t-' + c.id + '" tabindex="0"><div class="panel-intro"><svg aria-hidden="true"><use href="#' + c.icon + '"/></svg><div><h3>' + esc(c.title) + "</h3><p>" + esc(c.intro) + '</p></div></div><div class="groups">' + g + "</div></div>";
+    var pp = PANEL_PHOTO[c.id], ppk = pp && IMG[pp[0]] ? pp : null;
+    var phot = ppk ? '<figure class="panel-photo"><img src="' + IMG[ppk[0]] + '" alt="' + esc(photoAlt(ppk[0])) + '" style="object-position:' + ppk[1] + '" loading="lazy"></figure>' : "";
+    ph += '<div class="panel' + (i === 0 ? " on" : "") + '" role="tabpanel" id="p-' + c.id + '" aria-labelledby="t-' + c.id + '" tabindex="0"><div class="panel-head' + (ppk ? " has-photo" : "") + '"><div class="panel-intro"><svg aria-hidden="true"><use href="#' + c.icon + '"/></svg><div><h3>' + esc(c.title) + "</h3><p>" + esc(c.intro) + '</p></div></div>' + phot + '</div><div class="groups">' + g + "</div></div>";
   });
   tabs.innerHTML = th; panels.innerHTML = ph;
   var tbs = $$(".tab", tabs);
@@ -322,6 +337,55 @@ paintHours(); setInterval(paintHours, 60000);
   });
 })();
 
+// ---- gallery + lightbox -------------------------------------------------------------
+(function () {
+  var gal = $("#gal"), lb = $("#lb"), img = $("#lb-img"), cap = $("#lb-cap"), cnt = $("#lb-count");
+  if (!gal || !PHOTOS.length) { var s = $("#gallery"); if (s) s.remove(); $$("a[href='#gallery']").forEach(function (a) { a.remove(); }); return; }
+  var cur = 0, opener = null, h = "";
+  PHOTOS.forEach(function (p, i) {
+    h += '<button type="button" class="gal-item' + (p.cls ? " " + p.cls : "") + '" data-i="' + i + '" aria-haspopup="dialog"><img src="' + IMG[p.k] + '" alt="' + esc(p.alt) + '" loading="lazy"><span>' + esc(p.cap) + "</span></button>";
+  });
+  gal.innerHTML = h;
+  function show(i) {
+    cur = (i + PHOTOS.length) % PHOTOS.length;
+    var p = PHOTOS[cur];
+    img.src = IMG[p.k]; img.alt = p.alt; cap.textContent = p.cap;
+    cnt.textContent = (cur + 1) + " / " + PHOTOS.length;
+  }
+  function open(i, from) {
+    opener = from; show(i);
+    lb.classList.add("on"); lb.setAttribute("aria-hidden", "false");
+    document.documentElement.style.overflow = "hidden";
+    $("#lb-x").focus();
+  }
+  function close() {
+    lb.classList.remove("on"); lb.setAttribute("aria-hidden", "true");
+    document.documentElement.style.overflow = "";
+    if (opener) opener.focus();
+  }
+  $$(".gal-item", gal).forEach(function (b) { b.addEventListener("click", function () { open(+b.getAttribute("data-i"), b); }); });
+  $("#lb-x").addEventListener("click", close);
+  $("#lb-prev").addEventListener("click", function () { show(cur - 1); });
+  $("#lb-next").addEventListener("click", function () { show(cur + 1); });
+  lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (!lb.classList.contains("on")) return;
+    if (e.key === "Escape") { e.preventDefault(); close(); }
+    else if (e.key === "ArrowLeft") show(cur - 1);
+    else if (e.key === "ArrowRight") show(cur + 1);
+    else if (e.key === "Tab") {
+      var f = [$("#lb-x"), $("#lb-prev"), $("#lb-next")], i = f.indexOf(document.activeElement);
+      e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus();
+    }
+  });
+  var sx = null;
+  lb.addEventListener("touchstart", function (e) { sx = e.touches.length === 1 ? e.touches[0].clientX : null; }, {passive: true});
+  lb.addEventListener("touchend", function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 45) show(cur + (dx < 0 ? 1 : -1));
+  }, {passive: true});
+})();
 // ---- FAQ -----------------------------------------------------------------------
 (function () {
   var h = "";

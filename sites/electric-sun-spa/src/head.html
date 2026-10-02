@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Electric Sun | Salon, Day Spa & Tanning in Fernley, NV</title>
-<meta name="description" content="Electric Sun is a full-service salon, day spa, tanning studio and boutique at 480 E Main St in Fernley, NV. Hair, color, nails, pedicures, lashes, brows, waxing, facials, HydraFacial, massage, spray tans and teeth whitening since 2003. Call (775) 575-1070 or book online.">
+<meta name="description" content="Full-service salon, day spa, tanning studio and boutique at 480 E Main St, Fernley, NV. Hair, nails, lashes, skin care, massage and tanning. Call (775) 575-1070.">
 <meta name="theme-color" content="#2A1A10">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Electric Sun | Salon, Day Spa & Tanning in Fernley, NV">
@@ -116,7 +116,7 @@ h3{font-size:24px}
 .textlink:hover{border-color:var(--ember)}
 .hero-art{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;justify-self:end}
 .hero-art svg{width:100%;height:100%;overflow:visible}
-.hero-photo{position:absolute;right:6%;bottom:8%;width:46%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 18px 18px;border:6px solid var(--cream);box-shadow:0 18px 40px rgba(42,26,16,.25)}
+.hero-photo{position:absolute;right:1%;bottom:6%;width:42%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 18px 18px;border:6px solid var(--cream);box-shadow:0 18px 40px rgba(42,26,16,.25)}
 .hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font:500 15px/1.3 var(--body);color:var(--ink-2)}
 .hero-meta span{display:inline-flex;align-items:center;gap:8px}
 .hero-meta svg{width:18px;height:18px;color:var(--ember)}
@@ -289,6 +289,48 @@ footer{background:var(--dusk);color:#E7D5BF;position:relative}
 /* bottom bar */
 .bar{display:none}
 
+/* photos: panel photos, gallery, lightbox */
+.panel-head{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:22px}
+.panel-head.has-photo{grid-template-columns:1fr minmax(240px,330px);gap:32px;align-items:center}
+.panel-head .panel-intro{margin-bottom:0}
+.panel-photo{margin:0}
+.panel-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);border:4px solid var(--cream);box-shadow:0 12px 30px rgba(42,26,16,.18)}
+.gallery{background:var(--butter)}
+.gallery .sec-head p{color:var(--ink-2)}.gallery .label{color:var(--ink)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;grid-auto-flow:dense;gap:12px}
+.gal-item{position:relative;display:block;padding:0;border:0;border-radius:var(--r);overflow:hidden;background:var(--ink);cursor:zoom-in;box-shadow:0 0 0 3px var(--cream)}
+.gal-item.tall{grid-row:span 2}
+.gal-item.wide{grid-column:span 2}
+.gal-item img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.gal-item:hover img{transform:scale(1.04)}
+.gal-item span{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 11px;background:linear-gradient(to top,rgba(42,26,16,.82),rgba(42,26,16,0));color:var(--cream);font:500 14px/1.3 var(--body);text-align:left}
+.privacy{padding:44px 0;background:var(--cream);border-top:1px solid var(--line)}
+.privacy h2{font-size:22px;margin-bottom:10px}
+.privacy p{color:var(--ink-2);max-width:46em;font-size:15px;line-height:1.55}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(26,16,10,.95);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:64px 16px 16px;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),visibility 0s linear .2s}
+.lb.on{opacity:1;visibility:visible;transition:opacity .2s var(--ease)}
+.lb-fig{margin:0;width:100%;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb-fig img{max-width:100%;max-height:calc(100vh - 230px);max-height:calc(100dvh - 230px);object-fit:contain;border-radius:10px;touch-action:pan-y;user-select:none}
+.lb-fig figcaption{color:var(--cream);font:500 17px/1.4 var(--body);text-align:center;max-width:34em}
+.lb-nav{display:flex;align-items:center;gap:22px}
+.lb-count{color:var(--sun);font:600 14px/1 var(--label);letter-spacing:.16em;min-width:64px;text-align:center}
+.lb-b,.lb-x{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 2px var(--cream);color:var(--cream);background:transparent}
+.lb-b:hover,.lb-x:hover{background:rgba(255,246,230,.14)}
+.lb-b svg,.lb-x svg{width:22px;height:22px}
+.lb-x{position:absolute;top:12px;right:12px}
+.lb :focus-visible{outline-color:var(--sun)}
+@media (max-width:980px){
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .panel-head.has-photo{grid-template-columns:1fr;gap:18px}
+  .panel-photo img{aspect-ratio:16/10;max-height:240px}
+}
+@media (max-width:640px){
+  .gal{gap:8px;grid-auto-rows:150px}
+  .gal-item span{font-size:13px;padding:22px 10px 8px}
+  .lb{padding-top:68px}
+  .lb-fig img{max-height:calc(100vh - 250px);max-height:calc(100dvh - 250px)}
+}
+@media (prefers-reduced-motion:reduce){.gal-item img,.lb{transition:none}.gal-item:hover img{transform:none}}
 @media (max-width:980px){
   .nav-links,.nav .badge,.nav .btn{display:none}
   .menu-btn{display:grid}

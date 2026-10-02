@@ -39,13 +39,14 @@
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Electric Sun, back to top">
+    <a class="brand" data-qa="logo" href="#top" aria-label="Electric Sun, back to top">
       <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="9" fill="#FFC21A" stroke="#2A1A10" stroke-width="2"/><g stroke="#2A1A10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M20 2.5v5M20 32.5v5M2.5 20h5M32.5 20h5"/><path d="M7.5 7.5l1.6 2.6-2 .6 2.4 2.2M32.5 32.5l-1.6-2.6 2-.6-2.4-2.2M32.5 7.5l-2.6 1.6-.6-2-2.2 2.4M7.5 32.5l2.6-1.6.6 2 2.2-2.4"/></g></svg>
       <span>Electric Sun</span>
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#gallery">Photos</a>
       <a href="#reviews">Reviews</a>
       <a href="#visit">Hours</a>
     </nav>
@@ -63,6 +64,7 @@
   <nav aria-label="Menu">
     <a href="#services">Services &amp; Prices</a>
     <a href="#about">About</a>
+    <a href="#gallery">Photos</a>
     <a href="#reviews">Reviews</a>
     <a href="#faq">FAQ</a>
     <a href="#visit">Hours &amp; Location</a>
@@ -127,7 +129,7 @@
           <circle cx="280" cy="280" r="196" fill="none" stroke="#2A1A10" stroke-width="3"/>
           <g fill="#2A1A10"><path d="M96 120l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/><path d="M470 452l2.4 7 7 2.4-7 2.4-2.4 7-2.4-7-7-2.4 7-2.4z"/></g>
         </svg>
-        <img class="hero-photo" data-k="hero" alt="Inside Electric Sun in Fernley">
+        <img class="hero-photo" data-k="hero-sun-wall" alt="Metal sun sculpture with a glass face, lit on the wall inside Electric Sun">
       </div>
     </div>
   </section>
@@ -198,12 +200,25 @@
           <li><svg><use href="#i-access"/></svg>Accessible entrance</li>
         </ul>
         <p class="brands">The boutique carries <b>Pureology</b>, <b>Nicolas</b>, <b>Designer Skin</b> tanning products and <b>Lira Clinical</b> skin care, plus clothing, handbags, jewelry and gifts.</p>
-        <img class="about-photo" data-k="salon" alt="The salon floor at Electric Sun">
+        <img class="about-photo" data-k="about-pedicure-lounge" alt="The pedicure lounge at Electric Sun, with cushioned chairs, mosaic tile footbaths and a sun medallion on the wall">
         <div class="party">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40l9-26 17 17z"/><path d="M13 27l8 8M28 6c-2 4 2 6 0 10M38 14c4-1 5 3 9 1M33 20l6-6M40 26c2 2 5 1 6 3"/></svg>
           <p>Bridal party, birthday or girls' day? Electric Sun can set up a custom day for your group. <a href="tel:%%TEL%%">Call to plan it</a>.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="sec gallery" id="gallery" aria-labelledby="gal-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label">Inside the yellow building</span>
+          <h2 id="gal-h">A look around</h2>
+        </div>
+        <p>Photos from Electric Sun&rsquo;s own pages. Tap any photo to see it larger.</p>
+      </div>
+      <div class="gal" id="gal"></div>
     </div>
   </section>
 
@@ -323,7 +338,6 @@
         <h3>In the yellow building on Main Street</h3>
         <address>%%ADDR1%%<br>%%ADDR2%%</address>
         <p class="sub">Free parking. Accessible entrance.</p>
-        <img class="about-photo" data-k="storefront" alt="Electric Sun's yellow building on East Main Street in Fernley" style="margin:0 0 22px">
         <div class="cta">
           <a class="btn btn-ink press" href="%%MAPS%%" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Get Directions</a>
           <a class="btn btn-line press" href="tel:%%TEL%%"><svg><use href="#i-phone"/></svg>Call</a>
@@ -334,6 +348,12 @@
           <li><svg><use href="#i-card"/></svg><span><b>Payment:</b> Visa, MasterCard, Discover, debit, cash or check.</span></li>
         </ul>
       </div>
+    </div>
+  </section>
+  <section class="privacy" id="privacy" aria-labelledby="priv-h">
+    <div class="wrap">
+      <h2 id="priv-h">Privacy</h2>
+      <p>This site uses no cookies, no tracking and no forms. Calls and texts go straight to Electric Sun. Booking links open Vagaro, which handles your details under its own privacy policy. Nothing is sold on this site, so there are no refund or sales terms to post.</p>
     </div>
   </section>
 </main>
@@ -383,6 +403,7 @@
           <li><a href="#services">Services &amp; Prices</a></li>
           <li><a href="%%FB%%" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="%%MAPS%%" target="_blank" rel="noopener">Google reviews</a></li>
+          <li><a href="#privacy">Privacy</a></li>
         </ul>
       </div>
       <div class="fine">
@@ -399,3 +420,16 @@
   <a href="%%MAPS%%" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a>
   <a class="bk" href="%%BOOK%%" target="_blank" rel="noopener" data-book><svg><use href="#i-cal"/></svg>Book</a>
 </nav>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+  <button class="lb-x press" type="button" id="lb-x" aria-label="Close photo viewer"><svg><use href="#i-x"/></svg></button>
+  <figure class="lb-fig">
+    <img id="lb-img" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+  <div class="lb-nav">
+    <button class="lb-b press" type="button" id="lb-prev" aria-label="Previous photo"><svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button>
+    <span class="lb-count" id="lb-count" aria-live="polite"></span>
+    <button class="lb-b press" type="button" id="lb-next" aria-label="Next photo"><svg><use href="#i-arrow"/></svg></button>
+  </div>
+</div>
