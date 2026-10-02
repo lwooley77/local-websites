@@ -1,4 +1,4 @@
-// ---- config ----------------------------------------------------------------
+﻿// ---- config ----------------------------------------------------------------
 var BOOKING_URL = "https://www.vagaro.com/electricsun1"; // Electric Sun's live Vagaro booking page
 var TEL = "+17755751070";
 // Hours in America/Los_Angeles. [open, close] in 24h, null = closed. 0 = Sunday.
@@ -215,6 +215,32 @@ var PANEL_PHOTO = {hair: ["work-highlights", "50% 30%"], nails: ["work-nail-shap
 
 // booking links
 $$("[data-book]").forEach(function (a) { a.href = BOOKING_URL; });
+
+// in-page booking: Vagaro's own booking page, shown in a full-screen panel (visitor never leaves the site)
+(function () {
+  var st = document.createElement("style");
+  st.textContent = ".inbk{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;background:#fff8e8}.inbk.on{display:flex}" +
+    ".inbk-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;background:#2a1b12;color:#fff8e8;font:600 15px/1.2 system-ui,sans-serif}" +
+    ".inbk-x{min-width:44px;min-height:44px;border:0;border-radius:10px;background:#ffc61a;color:#2a1b12;font:700 15px system-ui,sans-serif;padding:0 14px;cursor:pointer}" +
+    ".inbk-x:focus-visible{outline:3px solid #fff8e8;outline-offset:2px}.inbk iframe{flex:1;width:100%;border:0;background:#fff}" +
+    "@media (prefers-reduced-motion:no-preference){.inbk.on{animation:bkin .22s cubic-bezier(.23,1,.32,1)}@keyframes bkin{from{opacity:0;transform:translateY(16px)}}}";
+  document.head.appendChild(st);
+  var box = document.createElement("div");
+  box.className = "inbk"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true"); box.setAttribute("aria-label", "Book an appointment");
+  box.innerHTML = '<div class="inbk-bar"><span>Book online</span><button type="button" class="inbk-x">Close</button></div>';
+  document.body.appendChild(box);
+  var frame = null, last = null;
+  function open(e) {
+    if (e) e.preventDefault();
+    last = document.activeElement;
+    if (!frame) { frame = document.createElement("iframe"); frame.title = "Online booking"; frame.src = BOOKING_URL; box.appendChild(frame); }
+    box.classList.add("on"); document.body.style.overflow = "hidden"; box.querySelector(".inbk-x").focus();
+  }
+  function close() { box.classList.remove("on"); document.body.style.overflow = ""; if (last) last.focus(); }
+  box.querySelector(".inbk-x").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && box.classList.contains("on")) close(); });
+  $$("[data-book]").forEach(function (a) { a.addEventListener("click", open); });
+})();
 
 // ---- preview bar --------------------------------------------------------------
 $("#pv-x").addEventListener("click", function () { $("#pv").remove(); });
