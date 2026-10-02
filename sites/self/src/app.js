@@ -12,7 +12,7 @@ document.querySelectorAll("img[data-k]").forEach(function (im) {
   if (!q && (navigator.webdriver || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
   var el = document.createElement("div");
   el.id = "intro";
-  el.setAttribute("role", "dialog"); el.setAttribute("aria-label", "Welcome");
+  el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Welcome");
   el.innerHTML = '<div class="scene"><svg class="aw" viewBox="0 0 320 120" aria-hidden="true"><path d="M10 6 L40 6 H280 L310 6 V20 Z" fill="none"/>' +
     '<path d="M16 4 H304 L316 96 H4 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="3" stroke-linejoin="round"/>' +
     '<path d="M44 4 L34 96 M92 4 L84 96 M140 4 L134 96 M188 4 L186 96 M236 4 L238 96 M284 4 L290 96" stroke="#e0793c" stroke-width="16"/>' +
@@ -20,10 +20,14 @@ document.querySelectorAll("img[data-k]").forEach(function (im) {
     '<span class="sign">OPEN</span><div class="nm">Lucas Wooley</div></div><button type="button" class="skip">Skip</button>';
   document.body.appendChild(el);
   document.body.style.overflow = "hidden";
+  var behind = [].slice.call(document.body.children).filter(function (n) { return n !== el; });
+  behind.forEach(function (n) { n.setAttribute("inert", ""); });
+  el.querySelector(".skip").focus();
   var done = false;
   function end() {
     if (done) return; done = true;
     el.classList.add("out"); document.body.style.overflow = "";
+    behind.forEach(function (n) { n.removeAttribute("inert"); });
     setTimeout(function () { el.remove(); }, 400);
   }
   el.addEventListener("click", end);
@@ -149,7 +153,7 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   var h = document.getElementById("hdr"), last = 0;
   addEventListener("scroll", function () {
     var y = scrollY;
-    h.classList.toggle("hide", y > last && y > 120);
+    h.classList.toggle("scrolled", y > 8);
     last = y;
   }, { passive: true });
 })();

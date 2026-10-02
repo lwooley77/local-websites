@@ -80,7 +80,7 @@ Check the finished page against this list on every QA pass.
 
 ## Site structure (single self-contained HTML)
 - Preview bar "Preview website prepared for <Name>" with a close button (one line on phones).
-- Sticky nav that hides on scroll down and shows on scroll up. Live "Open now until X / Opens at X" badge in the business's time zone. Full-screen menu on phones.
+- Sticky nav that stays visible while scrolling (never hide it on scroll). Live "Open now until X / Opens at X" badge in the business's time zone. Full-screen menu on phones.
 - Hero: big type, Book Now button + "View Services & Prices" link, a collage of their best photos in themed frames.
 - A scrolling services strip that pauses on hover only. Each item jumps to its price category and briefly highlights it.
 - Services & Prices:

@@ -90,6 +90,7 @@ body{font-family:'Work Sans',sans-serif;-webkit-print-color-adjust:exact;print-c
 .back .pts span::before{content:"";display:inline-block;width:.05in;height:.05in;border-radius:50%;background:#e0793c;margin-right:.05in;vertical-align:.005in}
 .back .me{display:flex;justify-content:space-between;align-items:flex-end;gap:.1in;border-top:.01in solid #4a4030;padding-top:.08in}
 .back .nm{font:600 .14in/1.2 Fraunces,serif}
+.back .ask{margin-top:.03in;font:600 .088in/1.2 'Work Sans',sans-serif;color:#e6b26a}
 .back .ct{font:400 .105in/1.5 'Work Sans',sans-serif;color:#e8dfce}
 .back .ct div:first-child{color:#fff;font-weight:600}
 .back .area{font:600 .07in/1 'Work Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e6b26a;margin-top:.04in}
@@ -103,16 +104,16 @@ def card(side, bleed=False):
     cls = "card %s%s" % (side, " bleed" if bleed else "")
     if side == "front":
         inner = ('<div class="in"><div class="bar">%s<span>your business name</span></div>'
-                 '<div class="res"><div class="t">Your Business Name | Reno, NV</div>'
+                 '<div class="res"><div class="t">Your Business | Your Town, NV</div>'
                  '<div class="s"><b>&#9733;&#9733;&#9733;&#9733;&#9733;</b> &middot; Open now &middot; Closes 6 PM</div>'
                  '<div class="w">Website: <i>404 Page not found</i></div></div>'
                  '<div class="foot"><div class="logo">%s<span>%s</span></div><div class="sound">Sound familiar?</div></div></div>') % (SEARCH, LOGO, NAME)
     else:
         inner = ('<div class="in"><div><div class="big">Let\'s fix that.</div>'
-                 '<div class="sub">A website that makes your business look as good as it is.</div>'
-                 '<div class="pts"><span>Found on Google</span><span>Get the call</span><span>Book online</span><span>Follow up</span></div></div>'
-                 '<div class="me"><div><div class="nm">%s</div><div class="ct">%s</div><div class="area">%s &middot; %s</div></div>%s</div></div>'
-                 '<div class="stripes"></div>') % (NAME, contact_html, TITLE, AREA, qr_html)
+                 '<div class="sub">I build websites for local businesses in Northern Nevada. Free sample first.</div>'
+                 '<div class="pts"><span>Found on Google</span><span>Calls &amp; texts</span><span>Booking</span><span>Follow-ups</span></div></div>'
+                 '<div class="me"><div><div class="nm">%s</div><div class="ask">Email me for your free sample:</div><div class="ct">%s</div></div>%s</div></div>'
+                 '<div class="stripes"></div>') % (NAME, contact_html, qr_html)
     return '<div class="%s">%s</div>' % (cls, inner)
 
 

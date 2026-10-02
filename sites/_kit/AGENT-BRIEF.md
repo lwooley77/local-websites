@@ -29,7 +29,7 @@ Files: `site.json`, `src\head.html` (meta, title, OG, JSON-LD, favicon as an SVG
 - Fonts: pick from `sites\_fonts\` (list the folder). Use a display face with character, a label face and a readable body face. Never Inter or system fonts. Pick a pairing that suits this business. Don't default to Fraunces/Cormorant for everyone.
 - Sections:
   - preview bar ("Preview website prepared for <Name>", close button, one line on phones; the business name must never be cut off or ellipsized at 390px: on phones, shorten the lead-in to "Preview for" and use sentence case if needed)
-  - sticky nav (hides on scroll down, shows on scroll up; live "Open now until X / Opens X" badge in America/Los_Angeles, only if hours are known; full-screen phone menu with `data-qa="menu-open"`, `data-qa="menu"`, `data-qa="menu-close"`)
+  - sticky nav (always stays visible, never hides on scroll; live "Open now until X / Opens X" badge in America/Los_Angeles, only if hours are known; full-screen phone menu with `data-qa="menu-open"`, `data-qa="menu"`, `data-qa="menu-close"`)
   - hero: name, one honest line, Call / Book buttons, distinctive art
   - services strip
   - Services & Prices (category tabs if 3+ categories, `data-qa="tab"`; every row tappable to call or book)
