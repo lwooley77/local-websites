@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-page="%%PAGE%%">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%%TITLE%%</title>
+<meta name="description" content="%%DESC%%">
+<meta property="og:title" content="%%TITLE%%">
+<meta property="og:description" content="%%DESC%%">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#15120e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315120e'/%3E%3Cpath d='M7 9l4.5 14L16 13l4.5 10L25 9' fill='none' stroke='%23e6b26a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"%%NAME%%","description":"Custom website design for local businesses in Northern Nevada.","email":"%%EMAIL%%","areaServed":"Northern Nevada"}</script>
+</head>
+<body>
+<div id="top"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="top" id="hdr">
+  <div class="wrap">
+    <a class="logo" data-qa="logo" href="#top" aria-label="%%NAME%%, back to top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#e6b26a"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#15120e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      %%NAME%%
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="work.html" data-nav="work">Work</a>
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="process.html" data-nav="process">Process</a>
+      <a href="why.html" data-nav="why">Why a website</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="faq.html" data-nav="faq">FAQ</a>
+    </nav>
+    <div class="hr">
+      <a class="btn hide-sm" href="contact.html" data-nav="contact">Get a free sample</a>
+      <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
+    </div>
+  </div>
+</header>
+<div class="mmenu" id="mmenu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="mm-top"><span class="k">Menu</span><button type="button" class="mm-x" data-qa="menu-close" aria-label="Close menu">&times;</button></div>
+  <nav aria-label="Mobile">
+    <a href="index.html">Home</a><a href="work.html">Work</a><a href="services.html">Services</a><a href="process.html">Process &amp; pricing</a>
+    <a href="why.html">Why a website</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html" class="mm-cta">Get a free sample</a>
+  </nav>
+</div>
+
+<main id="main">
+%%CONTENT%%
+</main>
+
+<div class="dockbar"><a class="btn" href="contact.html">Get a free sample</a></div>
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div><b class="flogo">%%NAME%%</b><p>Custom websites for local businesses in %%AREA%%.</p></div>
+      <div><span class="k">Explore</span><a href="work.html">Work</a><a href="services.html">Services</a><a href="process.html">Process &amp; pricing</a></div>
+      <div><span class="k">Learn</span><a href="why.html">Why a website</a><a href="about.html">About</a><a href="faq.html">FAQ</a></div>
+      <div><span class="k">Contact</span><a href="contact.html">Talk to me</a><a href="mailto:%%EMAIL%%">%%EMAIL%%</a></div>
+    </div>
+    <div class="r"><span>&copy; <span id="yr"></span> %%NAME%% &middot; %%AREA%%</span><a href="#privacy">Privacy</a></div>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking, and it has no forms. The "Questions?" helper runs in your browser, so what you type isn't sent or saved anywhere. If you email, text or call me, I use that only to reply.</p>
+  </div>
+</footer>
+<script>window.CFG={phone:"%%PHONE%%",booking:"%%BOOKING%%",email:"%%EMAIL%%",name:"%%NAME%%"};</script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
