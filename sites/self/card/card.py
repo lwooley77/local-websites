@@ -1,8 +1,8 @@
-﻿"""Business card generator.   python sites/self/card/card.py
+"""Business card generator.   python sites/self/card/card.py
 
 Edit the CONFIG block, run it, and it writes to sites/self/card/out/:
   card-print-shop.pdf   front + back, 3.75 x 2.25 in with 0.125 in bleed (send to a print shop)
-  card-home-sheet.pdf   10 cards per page (2 x 5, Avery 5371 layout), front page then back page
+  card-home-sheet.pdf   10 cards per page (2 x 5, Avery 5371 layout), fronts page then backs page
   card-preview.png      what it looks like
 """
 import base64
@@ -12,10 +12,10 @@ from pathlib import Path
 NAME = "Lucas Wooley"
 TITLE = "Websites for local businesses"
 EMAIL = "lucas77wooley@gmail.com"
-PHONE = ""        # e.g. "(775) 555-0123". Left empty = not printed.
-SITE = ""         # e.g. "lucaswooley.com". Left empty = not printed. Add once you own a domain.
+PHONE = ""        # e.g. "(775) 555-0123". Empty = not printed.
+SITE = ""         # e.g. "lucaswooley.com". Empty = not printed. Add once you own a domain.
 AREA = "Northern Nevada"
-TAGLINE = "I build your business a free preview first."
+POINTS = ["Free sample site first", "Custom design, no templates", "Works on every screen"]
 # ----------------------------------------
 
 HERE = Path(__file__).resolve().parent
@@ -35,40 +35,42 @@ FONT_CSS = "".join([
     face("Work Sans", "work-sans-latin-600-normal.woff2", 600),
 ])
 
-MARK = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#e6b26a"/>'
-        '<path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#1e1b16" stroke-width="2.4" '
+MARK = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#15120e"/>'
+        '<path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#e6b26a" stroke-width="2.4" '
         'stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 contact_lines = [EMAIL] + ([PHONE] if PHONE else []) + ([SITE] if SITE else [])
 contact_html = "".join("<div>%s</div>" % c for c in contact_lines)
+points_html = "".join("<li>%s</li>" % p for p in POINTS)
 
 CSS = FONT_CSS + """
 *{box-sizing:border-box;margin:0}
 body{font-family:'Work Sans',sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .card{width:3.5in;height:2in;position:relative;overflow:hidden}
 .card.bleed{width:3.75in;height:2.25in}
-.front{background:#1e1b16;color:#f4eee3}
-.front .in{position:absolute;inset:.125in;display:flex;flex-direction:column;justify-content:space-between;padding:.2in}
-.bleed.front .in{inset:.125in}
-.front svg{width:.42in;height:.42in}
-.front .name{font:600 .34in/1 Fraunces,serif;letter-spacing:-.005in}
-.front .title{margin-top:.07in;font:400 .13in/1.2 'Work Sans',sans-serif;color:#e6b26a;letter-spacing:.012in}
-.awn{position:absolute;left:0;right:0;bottom:0;height:.1in;background:repeating-linear-gradient(90deg,#93441a 0 .15in,#f4eee3 .15in .3in)}
-.back{background:#f4eee3;color:#1e1b16}
-.back .in{position:absolute;inset:.125in;padding:.2in;display:flex;flex-direction:column;justify-content:space-between}
-.back .tag{font:600 .17in/1.2 Fraunces,serif;max-width:2.4in}
-.back .ct{font:400 .125in/1.5 'Work Sans',sans-serif}
-.back .ct div:first-child{font-weight:600}
-.back .area{font:600 .085in/1 'Work Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#93441a;margin-top:.06in}
+.in{position:absolute;inset:.125in;padding:.2in;display:flex;flex-direction:column;justify-content:space-between}
+.front{background:#e6b26a;color:#15120e}
+.front svg{width:.4in;height:.4in}
+.front .name{font:600 .36in/.98 Fraunces,serif;letter-spacing:-.006in}
+.front .title{margin-top:.08in;font:600 .115in/1.2 'Work Sans',sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.front .stripes{position:absolute;right:0;top:0;bottom:0;width:.14in;background:repeating-linear-gradient(180deg,#15120e 0 .12in,transparent .12in .24in)}
+.back{background:#15120e;color:#f4eee3}
+.back .hd{font:600 .165in/1.15 Fraunces,serif;color:#e6b26a;max-width:2.5in}
+.back ul{list-style:none;padding:0;font:400 .115in/1.55 'Work Sans',sans-serif}
+.back li::before{content:"";display:inline-block;width:.06in;height:.06in;border-radius:50%;background:#e6b26a;margin-right:.08in;vertical-align:.01in}
+.back .ct{font:400 .115in/1.5 'Work Sans',sans-serif;border-top:.01in solid #4a4030;padding-top:.07in}
+.back .ct div:first-child{font-weight:600;color:#fff}
+.back .area{font:600 .075in/1 'Work Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e6b26a;margin-top:.05in}
 """
 
 
 def card(side, bleed=False):
     cls = "card %s%s" % (side, " bleed" if bleed else "")
     if side == "front":
-        inner = '<div class="in">%s<div><div class="name">%s</div><div class="title">%s</div></div></div><div class="awn"></div>' % (MARK, NAME, TITLE)
+        inner = '<div class="in">%s<div><div class="name">%s</div><div class="title">%s</div></div></div><div class="stripes"></div>' % (MARK, NAME, TITLE)
     else:
-        inner = '<div class="in"><div class="tag">%s</div><div><div class="ct">%s</div><div class="area">%s</div></div></div>' % (TAGLINE, contact_html, AREA)
+        inner = ('<div class="in"><div class="hd">A website that makes your business look as good as it is.</div>'
+                 '<ul>%s</ul><div><div class="ct">%s</div><div class="area">%s</div></div></div>') % (points_html, contact_html, AREA)
     return '<div class="%s">%s</div>' % (cls, inner)
 
 
@@ -82,37 +84,40 @@ def write(name, html):
     return p
 
 
-# print-shop: two pages (front, back), 3.75 x 2.25 with bleed
-shop = page(
-    '<div style="page-break-after:always">%s</div><div>%s</div>' % (card("front", True), card("back", True)),
-    "@page{size:3.75in 2.25in;margin:0}",
-)
-# home sheet: Letter, 2 cols x 5 rows, Avery 5371 margins (0.75in left, 0.5in top)
+shop = page('<div style="page-break-after:always">%s</div><div>%s</div>' % (card("front", True), card("back", True)), "@page{size:3.75in 2.25in;margin:0}")
 fronts = "".join(card("front") for _ in range(10))
 backs = "".join(card("back") for _ in range(10))
 grid = ".sheet{width:8.5in;height:11in;padding:.5in 0 0 .75in;display:grid;grid-template-columns:3.5in 3.5in;grid-auto-rows:2in;page-break-after:always}"
 sheet = page('<div class="sheet">%s</div><div class="sheet">%s</div>' % (fronts, backs), grid + "@page{size:8.5in 11in;margin:0}")
-prev = page(
-    '<div style="display:flex;gap:24px;padding:24px;background:#cfc6b4">%s%s</div>' % (card("front"), card("back")),
-    ".card{flex:none;zoom:1.9}",
-)
+prev = page('<div style="display:flex;gap:24px;padding:24px;background:#cfc6b4">%s%s</div>' % (card("front"), card("back")), ".card{flex:none;zoom:1.9}")
 
 from playwright.sync_api import sync_playwright
+
+
+def save(path, fn):
+    """Write to path; if a viewer has it locked, save next to it with a -new suffix."""
+    try:
+        fn(str(path))
+        return path
+    except Exception:
+        alt = path.with_name(path.stem + "-new" + path.suffix)
+        fn(str(alt))
+        return alt
+
 
 with sync_playwright() as p:
     b = p.chromium.launch()
     pg = b.new_page()
+    done = []
     for html, name, kw in (
         (shop, "card-print-shop.pdf", dict(width="3.75in", height="2.25in", print_background=True)),
         (sheet, "card-home-sheet.pdf", dict(width="8.5in", height="11in", print_background=True)),
     ):
-        f = write("_tmp.html", html)
-        pg.goto(f.as_uri())
-        pg.pdf(path=str(OUT / name), **kw)
+        pg.goto(write("_tmp.html", html).as_uri())
+        done.append(save(OUT / name, lambda s, kw=kw: pg.pdf(path=s, **kw)))
     pg2 = b.new_page(viewport={"width": 1500, "height": 520}, device_scale_factor=1)
-    f = write("_tmp.html", prev)
-    pg2.goto(f.as_uri())
-    pg2.locator("div").first.screenshot(path=str(OUT / "card-preview.png"))
+    pg2.goto(write("_tmp.html", prev).as_uri())
+    done.append(save(OUT / "card-preview.png", lambda s: pg2.locator("div").first.screenshot(path=s)))
     b.close()
 (HERE / "_tmp.html").unlink()
-print("wrote", *[x.name for x in sorted(OUT.iterdir())])
+print("wrote", *[d.name for d in done])
