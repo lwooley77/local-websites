@@ -1,6 +1,6 @@
-# Cutz Unlimited: demo status
+﻿# Cutz Unlimited: demo status
 
-Deliverable: `dist/index.html` (157 KB, single file, no external requests). Built 2026-10-02.
+Deliverable: `dist/index.html` (828 KB, single file, photos embedded, no external requests). Built 2026-10-02.
 Lead check: no website of its own. It shows up only on Yelp, Instagram, a Fresha listing page (which says it is not affiliated with the business), an unclaimed cgmimm listing and some directories. Yelp was updated Sept 2026, so the shop is active.
 
 ## Fact sheet
@@ -38,11 +38,21 @@ Lead check: no website of its own. It shows up only on Yelp, Instagram, a Fresha
 - About uses a "chairs" list (Christian, Kirti, Jen) so callers can ask for someone by name.
 - Footer scene: the storefront at night under a Sierra ridge. The OPEN sign and the warm window light come on only during real opening hours (America/Los_Angeles).
 - Book = a call/text sheet with drag to close. `BOOKING_URL` in app.js switches every Book button to an online booking link.
-- Photo slots: `assets/raw/hero.jpg` replaces the fade art and `assets/raw/christian.jpg` appears above the stylist list. Rebuild after adding them.
+- Photos: every file in `assets/raw/` is embedded by build.py and shown by `data-k` stem. The hero keeps the fade ruler beside a real fade photo, so the fade-chart idea stays. Gallery with lightbox (arrows, swipe, Escape, counter, captions) in Recent work; the hat photo is in About; a "See recent fades" link sits under the Haircuts tab.
 
-## Photos to request
-1. Close-up photos of finished fades and skin fades: back and side views, no faces (for the hero slot `hero.jpg`)
-2. A portrait of Christian at his chair (`christian.jpg`), with his approval
+## Real photos used (all from the shop's own Instagram, @cutz_unlimited)
+Details in `research/photos.json`. Client faces were cropped out; none shows a face.
+1. `hero-fade-design.jpg` (hero, gallery): back of head, skin fade with shaved part line. https://www.instagram.com/p/CjrqJP_uAga/ (Oct 2022)
+2. `work-skin-fade-side.jpg` (gallery, services link): skin fade under slicked top, cropped to ear and neckline. https://www.instagram.com/p/CsFzuXQOg7Q/ (May 2023)
+3. `work-undercut.jpg` (gallery): undercut, hair only. https://www.instagram.com/p/Ck-GgrhuYsN/ (Nov 2022)
+4. `work-mohawk-fade.jpg` (gallery): bleached mohawk over faded sides, cropped above the eyebrows. https://www.instagram.com/p/CsFzcV-u12z/ (May 2023)
+5. `shop-merch-hat.jpg` (gallery, about): trucker hat with the shop patch. https://www.instagram.com/p/Cwove_MOhRW/ (Aug 2023)
+**Owner must approve photos and quotes before the site goes public.** The Instagram CDN URLs are signed and expire, so the files in `assets/raw/` are the copies to keep.
+Privacy note: no cookies, no tracking, no forms, nothing sold, so no cookie banner and no refund or T&C page.
+
+## Photos still to request
+1. Close-up photos of finished fades and skin fades: back and side views, no faces 
+2. A portrait of Christian at his chair, with his approval
 3. The storefront and sign on S Virginia St
 4. The inside of the shop: chairs, mirrors, the station
 5. A beard trim or hot towel shave in progress, without client faces
@@ -63,3 +73,4 @@ The owner must approve all photos before anything goes public.
 - Extra checks with the clock set to Saturday 11 AM Los Angeles time: the badge reads "Open to 5 PM", today's row is highlighted, the footer sign lights up, the Book sheet opens and closes by drag, a strip item selects its tab, the FAQ answer expands. No page errors.
 - Fixed during QA: FAQ answers didn't open (bad sibling selector), the reviews grid layout was off on desktop, the phone number wrapped, the heading had an orphan word, the address wrapped to 3 lines in a card, the moon and stars were cropped on desktop.
 - Self-scores: custom 9, polish 9, readability 9, mobile 9, contact/booking ease 10, faithful to facts 9, never-do list clean 9.
+

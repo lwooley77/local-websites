@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cutz Unlimited | Barbershop on S Virginia St, Reno NV</title>
-<meta name="description" content="Cutz Unlimited, a barbershop at 4938 S Virginia St in Reno. Men's haircuts, fades, skin fades, tapers and scissor cuts, beard trims, head shaves and hot towel shaves. Kids and women's cuts too. Call (775) 842-6345.">
+<meta name="description" content="Cutz Unlimited, a barbershop at 4938 S Virginia St, Reno. Fades, skin fades, tapers, scissor cuts, beard trims and hot towel shaves. Call (775) 842-6345.">
 <meta name="theme-color" content="#f2ede3">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cutz Unlimited | Barbershop in Reno, NV">
@@ -117,22 +117,30 @@ button{font:inherit;color:inherit}
 .hero-meta{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:22px;color:var(--ink-2)}
 .hero-meta a{text-decoration:none;border-bottom:2px solid var(--paper-3);padding:8px 0}
 .hero-meta a:hover{border-color:var(--red)}
-.art{position:relative;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:stretch;max-width:330px}
-.fadecard{position:relative;background:var(--paper-2);border:1px solid var(--paper-3);border-radius:22px;padding:18px 18px 16px;overflow:hidden}
-.fadecard svg{width:100%;height:auto;display:block}
-.fadecard figcaption{display:flex;justify-content:space-between;gap:10px;color:var(--ink-3);margin-top:10px;font-size:12px}
-.pole{width:52px;border-radius:999px;background:var(--ink);padding:8px;display:flex;flex-direction:column;gap:8px}
+.top-anchor{position:absolute;top:0;left:0;width:1px;height:1px}
+.art{position:relative;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:stretch;max-width:440px}
+.fadecard{position:relative;margin:0;background:var(--paper-2);border:1px solid var(--paper-3);border-radius:22px;padding:10px 10px 12px;min-width:0}
+.fc-body{display:grid;grid-template-columns:56px 1fr;gap:8px;align-items:stretch}
+.fc-rail{width:100%;height:100%;display:block}
+.fc-photo{display:block;padding:0;border:0;border-radius:14px;overflow:hidden;aspect-ratio:3/4;cursor:zoom-in;background:var(--paper-3);position:relative}
+.fc-photo img{width:100%;height:100%;object-fit:cover;object-position:42% 50%;transition:transform .5s var(--ease)}
+.fc-photo:hover img{transform:scale(1.03)}
+.fc-photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(25,24,22,.12)}
+.fadecard.nophoto .fc-body{grid-template-columns:1fr}
+.fadecard figcaption{display:flex;justify-content:space-between;gap:10px;color:var(--ink-3);margin:10px 4px 0;font-size:12px}
+.pole{width:44px;border-radius:999px;background:var(--ink);padding:7px;display:flex;flex-direction:column;gap:8px}
 .pole .cap{height:22px;border-radius:999px 999px 6px 6px;background:#c9c2b4}
 .pole .cap.b{border-radius:6px 6px 999px 999px}
 .pole .glass{flex:1;border-radius:999px;overflow:hidden;position:relative;background:var(--paper);min-height:200px}
 .pole .glass svg{position:absolute;left:0;top:-200px;width:100%;height:calc(100% + 400px)}
-.photo{position:absolute;inset:0;border-radius:22px;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover}
 @media(min-width:900px){
-  .hero{padding:64px 0 72px}
-  .hero .wrap{grid-template-columns:1.25fr .9fr;align-items:center;gap:56px}
+  .hero{padding:56px 0 64px}
+  .hero .wrap{grid-template-columns:1.2fr .95fr;align-items:center;gap:56px}
   .lede{font-size:20px}
-  .art{justify-self:end;width:100%;max-width:520px;gap:18px}
+  .art{justify-self:end;width:100%;max-width:500px;gap:16px}
+  .pole{width:52px;padding:8px}
+  .fadecard{padding:14px 14px 14px}
+  .fc-body{grid-template-columns:84px 1fr;gap:12px}
 }
 
 /* strip */
@@ -178,6 +186,13 @@ h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:cl
 .row .pr em svg{width:16px;height:16px}
 .svc-note{display:flex;gap:14px;align-items:flex-start;margin-top:18px;color:var(--ink-2);font-size:16px}
 .svc-note svg{width:22px;height:22px;flex:none;margin-top:3px;color:var(--red)}
+.svc-work{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;margin-top:12px;padding:10px 18px 10px 10px;border:1px solid var(--paper-3);border-radius:18px;background:#fbf8f2;text-decoration:none;min-height:76px}
+.svc-work:hover{background:var(--paper)}
+.svc-thumb{width:56px;height:56px;border-radius:12px;overflow:hidden;flex:none}
+.svc-thumb img{width:100%;height:100%;object-fit:cover}
+.svc-work b{display:block;font-size:17px;line-height:1.3}
+.svc-work small{display:block;color:var(--ink-2);font-size:14px;line-height:1.4}
+.svc-work>svg{width:20px;height:20px;color:var(--red)}
 .steam{position:absolute;right:18px;top:-6px;width:60px;height:60px;pointer-events:none;color:var(--ink-3);opacity:0}
 .panel.on .steam path{animation:steam 2.4s var(--ease) 1 forwards}
 .panel.on .steam path:nth-child(2){animation-delay:.25s}
@@ -203,8 +218,41 @@ h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:cl
 .chairs span{display:block;color:var(--ink-2);font-size:16px;margin-top:6px}
 .chairs-note{color:var(--ink-3);font-size:14px;margin-top:12px}
 .razor{width:100%;max-width:440px;height:auto;color:var(--ink);margin:6px 0 22px}
-.about .photo-slot{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;margin-bottom:22px}
-.about .photo-slot img{width:100%;height:100%;object-fit:cover}
+.about p a{color:var(--ink);font-weight:700;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:3px}
+.about-photo{margin:0 0 26px}
+.about-photo button{display:block;width:100%;padding:0;border:0;border-radius:20px;overflow:hidden;aspect-ratio:4/3;cursor:zoom-in;background:var(--paper-3)}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;transition:transform .5s var(--ease)}
+.about-photo button:hover img{transform:scale(1.03)}
+.about-photo figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:12px}
+.about-photo figcaption .mono{color:var(--ink-3);font-size:12px}
+.about-photo figcaption b{font-family:var(--disp);font-weight:400;font-size:26px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+
+/* recent work */
+.work{background:var(--ink);color:var(--cream)}
+.work h2{color:var(--cream)}
+.work .sec-head .num{color:#e9b3ae}
+.work .sec-head p{color:var(--cream-2)}
+.gal{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gal li{min-width:0}
+.gal .g-big{grid-column:1/-1}
+.g-item{display:block;width:100%;padding:0;border:0;border-radius:16px;overflow:hidden;position:relative;aspect-ratio:1;cursor:zoom-in;background:#2a2723;color:var(--cream)}
+.g-big .g-item{aspect-ratio:4/5}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.g-item:hover img{transform:scale(1.04)}
+.g-cap{position:absolute;left:10px;bottom:10px;background:var(--ink);color:var(--cream);padding:6px 11px;border-radius:999px;font-size:11px;line-height:1.3}
+.ig-link{display:inline-flex;align-items:center;gap:12px;margin-top:22px;min-height:56px;padding:8px 22px;border:1px solid #4a4640;border-radius:999px;text-decoration:none;color:var(--cream-2);font-size:16px;line-height:1.3}
+.ig-link:hover{border-color:var(--cream-2);color:var(--cream)}
+.ig-link b{color:#fff}
+.ig-link svg{width:22px;height:22px;flex:none;color:#e9b3ae}
+@media(min-width:900px){
+  .work-head{grid-template-columns:1fr auto;align-items:end}
+  .work-head .num{grid-column:1/-1}
+  .work-head p{margin:0;text-align:right;max-width:30ch}
+  .gal{grid-template-columns:repeat(4,1fr);gap:14px}
+  .gal .g-big{grid-column:span 2;grid-row:span 2}
+  .g-big .g-item{aspect-ratio:auto;height:100%}
+  .g-cap{left:14px;bottom:14px;font-size:12px}
+}
 @media(min-width:900px){.about-grid{grid-template-columns:1.2fr 1fr;gap:72px;align-items:start}}
 
 /* reviews */
@@ -297,7 +345,28 @@ footer{background:var(--night);color:var(--cream-2);padding-bottom:96px}
 .sign-lit{opacity:0;transition:opacity .6s var(--ease)}
 .is-open .sign-lit{opacity:1}
 .is-open .sign-off{opacity:0}
+.privacy{border-top:1px solid #2c3238;margin-top:28px;padding-top:20px}
+.privacy h2{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--cream);margin:0 0 8px;line-height:1.4}
+.privacy p{margin:0;font-size:14px;line-height:1.6;max-width:86ch;color:var(--cream-2)}
 @media(min-width:900px){.foot{grid-template-columns:1.2fr 1fr 1fr;align-items:start}footer{padding-bottom:40px}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(14,13,12,.96);color:var(--cream);display:flex;flex-direction:column;opacity:0;transition:opacity .22s var(--ease)}
+.lb.on{opacity:1}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:8px 6px 4px var(--g)}
+.lb-count{color:var(--cream-2);font-size:13px}
+.lb-x{width:48px;height:48px;border:0;background:none;color:var(--cream);display:grid;place-items:center;cursor:pointer}
+.lb-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 var(--g);touch-action:pan-y}
+#lb-img{max-width:100%;max-height:calc(100dvh - 200px);object-fit:contain;border-radius:12px;user-select:none;-webkit-user-drag:none;transition:transform .2s var(--ease)}
+#lb-img.in{animation:lbin .24s var(--ease)}
+@keyframes lbin{from{opacity:0;transform:scale(.98)}}
+.lb-bottom{display:grid;grid-template-columns:48px 1fr 48px;gap:10px;align-items:center;padding:12px var(--g) calc(16px + env(safe-area-inset-bottom));max-width:860px;margin:0 auto;width:100%}
+.lb-nav{width:48px;height:48px;border-radius:50%;border:1px solid #4a4640;background:transparent;color:var(--cream);display:grid;place-items:center;cursor:pointer}
+.lb-nav:hover{border-color:var(--cream-2)}
+.lb-cap{margin:0;text-align:center;font-size:15px;line-height:1.45}
+.lb-cap b{display:block;color:#fff;font-weight:700}
+.lb-cap span{display:block;color:var(--cream-2);font-size:14px;margin-top:2px}
+.lb :focus-visible,.work :focus-visible,.contact :focus-visible,footer :focus-visible,.strip :focus-visible,.menu :focus-visible,.bbar :focus-visible{outline-color:#e9b3ae}
 
 /* bottom bar + sheet */
 .bbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:repeat(4,1fr);background:var(--ink);padding:6px 6px calc(6px + env(safe-area-inset-bottom));gap:4px;box-shadow:0 -8px 24px rgba(0,0,0,.18)}

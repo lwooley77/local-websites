@@ -12,6 +12,11 @@ var BOOKING_URL = '';
     var k = im.getAttribute('data-k'), box = im.parentElement;
     if (IMG[k]) { im.src = IMG[k]; box.hidden = false; } else { box.remove(); }
   });
+  if (!Object.keys(IMG).length) {
+    ['#work', '.about-photo', '.svc-work'].forEach(function (s) { var e = $(s); if (e) e.remove(); });
+    $$('a[href="#work"]').forEach(function (a) { var li = a.closest('li'); (li || a).remove(); });
+    var fc = $('.fadecard'); if (fc) fc.classList.add('nophoto');
+  }
 
   /* booking links */
   if (BOOKING_URL) {
@@ -93,13 +98,13 @@ var BOOKING_URL = '';
       var t = i / (N - 1), th = Math.max(0.6, 10.4 * Math.pow(1 - t, 1.5));
       var r = document.createElementNS(NS, 'rect');
       var y = top + i * pitch + (pitch - th) / 2;
-      r.setAttribute('x', 62); r.setAttribute('y', y.toFixed(1));
-      r.setAttribute('width', 192); r.setAttribute('height', th.toFixed(2)); r.setAttribute('rx', Math.min(th / 2, 2).toFixed(2));
+      r.setAttribute('x', 42); r.setAttribute('y', y.toFixed(1));
+      r.setAttribute('width', 30); r.setAttribute('height', th.toFixed(2)); r.setAttribute('rx', Math.min(th / 2, 2).toFixed(2));
       if (i > 25) r.setAttribute('opacity', (1 - (i - 25) / 6).toFixed(2));
       bars.appendChild(r);
       var tk = document.createElementNS(NS, 'rect');
-      tk.setAttribute('x', 44); tk.setAttribute('y', (top + i * pitch + pitch / 2 - .5).toFixed(1));
-      tk.setAttribute('width', i % 6 === 0 ? 12 : 6); tk.setAttribute('height', 1); tk.setAttribute('fill', '#625c51');
+      tk.setAttribute('x', i % 6 === 0 ? 31 : 35); tk.setAttribute('y', (top + i * pitch + pitch / 2 - .5).toFixed(1));
+      tk.setAttribute('width', i % 6 === 0 ? 8 : 4); tk.setAttribute('height', 1); tk.setAttribute('fill', '#625c51');
       ruler.appendChild(tk);
     }
     ['#4', '#3', '#2', '#1', '#0', 'SKIN'].forEach(function (lab, j) {
@@ -165,9 +170,78 @@ var BOOKING_URL = '';
   bg.addEventListener('click', function () { setSheet(false); });
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
+    if (lb && lb.classList.contains('on')) { setLb(false); return; }
     if (sheet.classList.contains('on')) setSheet(false);
     if (menu.classList.contains('on')) setMenu(false);
   });
+
+  /* photo lightbox: arrows, swipe, Escape, counter, captions */
+  var PH = [
+    { k: 'hero-fade-design', cap: 'Skin fade with a hard part line shaved in.', note: '"Always looking for ways to make my cutz creative!!"', when: 'Oct 2022' },
+    { k: 'work-skin-fade-side', cap: 'Skin fade under a slicked top.', note: '"Gotta love the skin fade, so clean so fresh!"', when: 'May 2023' },
+    { k: 'work-undercut', cap: 'Undercut with a long slicked-back top.', note: '"The undercut is always a great alternative to the pompadour."', when: 'Nov 2022' },
+    { k: 'work-mohawk-fade', cap: 'Spiked mohawk over faded sides.', note: '"Mohawk magic!"', when: 'May 2023' },
+    { k: 'shop-merch-hat', cap: 'The shop hat and its leather patch.', note: '"Come get your trim."', when: 'Aug 2023' }
+  ].filter(function (p) { return IMG[p.k]; });
+  var lb = $('#lb'), lbImg = $('#lb-img'), lbCap = $('#lb-cap'), lbCount = $('#lb-count'), lbStage = $('#lb-stage');
+  var lbI = 0, lbFrom = null;
+  function altFor(k) { var im = $('img[data-k="' + k + '"]'); return im ? im.alt : ''; }
+  function showLb(i) {
+    lbI = (i + PH.length) % PH.length;
+    var p = PH[lbI];
+    lbImg.classList.remove('in'); void lbImg.offsetWidth;
+    lbImg.src = IMG[p.k]; lbImg.alt = altFor(p.k);
+    lbImg.classList.add('in');
+    lbCap.innerHTML = '<b></b><span></span>';
+    lbCap.firstChild.textContent = p.cap;
+    lbCap.lastChild.textContent = p.note + ' Posted by @cutz_unlimited, ' + p.when + '.';
+    lbCount.textContent = (lbI + 1) + ' / ' + PH.length;
+  }
+  function setLb(on, i) {
+    if (on) {
+      lbFrom = document.activeElement; showLb(i || 0);
+      lb.hidden = false; requestAnimationFrame(function () { lb.classList.add('on'); });
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () { $('#lb-x').focus(); }, 30);
+    } else {
+      lb.classList.remove('on'); document.body.style.overflow = '';
+      setTimeout(function () { if (!lb.classList.contains('on')) lb.hidden = true; }, reduce ? 0 : 240);
+      if (lbFrom) lbFrom.focus();
+    }
+  }
+  if (lb && PH.length) {
+    $$('.js-lb').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var im = $('img', b), k = im ? PH.map(function (p) { return p.k; }).indexOf(im.getAttribute('data-k')) : 0;
+        setLb(true, k < 0 ? 0 : k);
+      });
+    });
+    $('#lb-x').addEventListener('click', function () { setLb(false); });
+    $('#lb-prev').addEventListener('click', function () { showLb(lbI - 1); });
+    $('#lb-next').addEventListener('click', function () { showLb(lbI + 1); });
+    lbStage.addEventListener('click', function (e) { if (e.target === lbStage && Math.abs(ddx) < 10) setLb(false); });
+    lb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); showLb(lbI + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); showLb(lbI - 1); }
+      else if (e.key === 'Tab') {
+        var f = $$('button', lb), first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    var sx = null, sy0 = 0, ddx = 0;
+    lbStage.addEventListener('pointerdown', function (e) { sx = e.clientX; sy0 = e.clientY; ddx = 0; });
+    lbStage.addEventListener('pointermove', function (e) {
+      if (sx === null) return; ddx = e.clientX - sx;
+      if (Math.abs(ddx) > Math.abs(e.clientY - sy0)) lbImg.style.transform = 'translateX(' + ddx * 0.6 + 'px)';
+    });
+    function endSwipe() {
+      if (sx === null) return; sx = null; lbImg.style.transform = '';
+      if (ddx < -50) showLb(lbI + 1); else if (ddx > 50) showLb(lbI - 1);
+    }
+    lbStage.addEventListener('pointerup', endSwipe);
+    lbStage.addEventListener('pointercancel', endSwipe);
+  }
   var sy = null, dy = 0;
   sheet.addEventListener('pointerdown', function (e) { if (e.target.closest('a,button')) return; sy = e.clientY; dy = 0; sheet.style.transition = 'none'; sheet.setPointerCapture(e.pointerId); });
   sheet.addEventListener('pointermove', function (e) { if (sy === null) return; dy = Math.max(0, e.clientY - sy); sheet.style.transform = 'translateY(' + dy + 'px)'; });
