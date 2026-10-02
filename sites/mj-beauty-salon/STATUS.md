@@ -61,3 +61,10 @@ Lead check: no own website found (only directory listings and an unclaimed Fresh
 - Owner must confirm: hours, service menu, "MJ and Carol" and "40+ years", and whether the number takes texts.
 - If they want online booking later, put the link in `BOOKING_URL` (src/app.js) and rebuild.
 - Sharing: Netlify Drop at app.netlify.com/drop (drag the `dist` folder). mk does this; nothing has been published.
+
+## Photo + claims upgrade (latest)
+- Photos: none used. Searched (2 searches + Fresha page): Fresha listing has only a generic placeholder image; the only Facebook "MJ's Beauty Salon" result is a Vermont business; no Instagram/Nextdoor found; directory photos are not clearly posted by the business. research\photos.json is empty []. Gallery/lightbox not built (nothing to show). `salon` slot is ready: drop salon.jpg into assets\raw and rebuild.
+- Claims removed (single-directory-snippet only): "mother-daughter team", "MJ and Carol", "40+ years" sticker, "fairly priced"/"fair prices", "under 20 minutes", "regulars for decades". Kept: family-owned (Birdeye + Google review), 4.6 stars/103 reviews, two verbatim quotes.
+- Launch checklist: logo data-qa link added, year set from JS, Privacy section (#privacy) + footer link, no cookies/forms; no refund/T&C page (nothing sold). Booking is call-only.
+- QA: qa.py exit 0, mobile-00 and 03 viewed.
+- Owner must approve photos and quotes before the site goes public. Ask owner for photos and to confirm owners' names/years.

@@ -94,3 +94,5 @@ const HOURS = {0:null,1:null,2:[9,16],3:[9,16],4:[9,16],5:[9,16],6:'call'};
     setTimeout(fly, 1800);
   }
 })();
+
+document.getElementById('yr').textContent = new Date().getFullYear();
