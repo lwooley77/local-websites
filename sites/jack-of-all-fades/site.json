@@ -1,5 +1,7 @@
 {
   "lang": "en",
+  "img_cap": 800,
+  "img_q": 62,
   "fonts": [
     {"family": "Anton", "file": "anton-latin-400-normal.woff2", "weight": 400},
     {"family": "DM Serif Display", "file": "dm-serif-display-latin-400-normal.woff2", "weight": 400},

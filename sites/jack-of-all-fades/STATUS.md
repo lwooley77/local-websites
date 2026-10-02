@@ -1,6 +1,6 @@
 # Jack Of All Fades: demo status
 
-Deliverable: `sites\jack-of-all-fades\dist\index.html` (single file, 200 KB, no external requests).
+Deliverable: `sites\jack-of-all-fades\dist\index.html` (single file, 499 KB with photos, no external requests; no cookies, so no cookie banner, and nothing is sold, so no refund/T&C page).
 Rebuild: `python sites\_kit\build.py sites\jack-of-all-fades`  QA: `python sites\_kit\qa.py sites\jack-of-all-fades`
 
 ## Lead check
@@ -39,14 +39,25 @@ Rebuild: `python sites\_kit\build.py sites\jack-of-all-fades`  QA: `python sites
 - Reviews shown as an Ace card with the real 4.7 / 114 rating linked to Google. No quotes written.
 - Footer scene: night hills, a Reno-style arch with bulbs that light up when you reach it, barber pole, fanned A-K-J hand.
 - No prices: every service row is a tap-to-call "Call for price". Book = bottom sheet with Call / Text (drag to close). `BOOKING_URL` in app.js adds a "Book online" button once they have one.
-- Photo slot ready: `assets\raw\shop.jpg` appears above the About fact card automatically.
+- Real photos added (see Photos used): hero card fan (photo card in front, Jack illustration and card back peeking behind), "Fresh off the chair" gallery of four Jack-indexed photo cards with a lightbox (swipe, arrow keys, captions, counter, Escape, focus return), About fan of the shop's Jack logo and D'Raun's portrait. Illustrations stay everywhere else. Photos load only when present in `assets\raw\`; the gallery section and its nav links remove themselves if none exist.
+- Images are shrunk at build time (`img_cap` 800 px, `img_q` 62 in site.json; small optional override added to `_kit\build.py`, defaults unchanged). Page is 499 KB.
+
+## Photos used (files in `assets\raw\`, log in `research\photos.json`)
+Source caveat: an earlier agent run was cut off after downloading these and did not log where from. Page URLs are unrecorded; they look like the shop's own posts (Instagram @jack_of_all__fades) and logo/portrait. mk should confirm the source before relying on them.
+1. `hero-taper-fade.jpg`: taper fade, side view, no face (hero + gallery). Source: unrecorded, shop's own content (to confirm)
+2. `work-locs-fade.jpg`: locs up, faded sides, side view (gallery). Source: unrecorded (to confirm)
+3. `work-taper-waves.jpg`: textured top, tapered sides, side view (gallery). Source: unrecorded (to confirm)
+4. `work-waves-fade.jpg`: waves into a fade, side view (gallery). Source: unrecorded (to confirm)
+5. `owner-draun.jpg`: B&W portrait of D'Raun Manning, the owner (About). Source: unrecorded (to confirm)
+6. `logo-jack-of-fades.jpg`: the shop's own Jack card logo artwork (About). Source: unrecorded (to confirm)
+No client faces and no children are visible in any of them. The page says "Real cuts from the shop", so confirm they are the shop's work.
+**Owner must approve photos and quotes before the site goes public** (photos above, the D'Raun Manning press quote, and the Jack card logo).
 
 ## Photos to request
-1. Close-up fades and custom kid designs (back/side of the head, no faces) for the services area
-2. The shop interior / chairs at Smithridge (for the `shop` slot in About)
-3. D'Raun at work (with his OK) for About
+1. More close-ups of fades and custom kid designs (back/side of head, no faces)
+2. The shop interior / chairs at Smithridge
+3. D'Raun at work (with his OK)
 4. Storefront at Suite C-7 so people can find the door
-(Owner must approve every photo before going public; no client faces or kids' faces.)
 
 ## Pitch notes
 1. "Your website is gone." jackofallfadesnv.com no longer exists, but KOLO's 2024 story still sends people there to book. Every one of those clicks hits an error page today.

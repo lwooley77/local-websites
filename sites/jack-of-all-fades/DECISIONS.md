@@ -12,5 +12,8 @@
 - Removed a red serif "of" accent in the H1 because it read like the banned "serif accent word" pattern; H1 is plain Anton.
 - Card pips switched from a razor glyph (read as a frying pan) to spades: a Jack of Spades reads instantly.
 - Kids tab label shortened to "Kids" on phones so all 4 tabs fit without sideways scrolling.
-- Instagram linked but no Instagram photos pulled (brief forbids downloading business photos).
+- Real photos were added in a later pass (task asked for them). The interrupted run left six files in assets\raw with no source log; recorded as UNRECORDED in photos.json rather than guessing a URL.
+- Photo cards use the same paper card + corner index look; hero is a three-card fan so the illustrated Jack still shows.
+- Added a Privacy note (#privacy) and shortened the meta description to pass qa; both had been lost from src.
+- site.json gets img_cap/img_q so the single-file page stays near 500 KB.
 - No aggregateRating in JSON-LD (third-party ratings in schema go against Google's guidelines).

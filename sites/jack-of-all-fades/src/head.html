@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jack Of All Fades | Barbershop in Reno, NV</title>
-<meta name="description" content="Jack Of All Fades, D'Raun Manning's barbershop on Smithridge Drive in Reno. Fades, haircuts, beard trims, kids' custom designs and salon services. Walk-ins welcome. Call (775) 560-2986.">
+<meta name="description" content="Jack Of All Fades, D'Raun Manning's barbershop on Smithridge Drive in Reno. Fades, haircuts, beard trims, kids' custom designs. Walk-ins welcome. (775) 560-2986.">
 <meta name="theme-color" content="#15130F">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jack Of All Fades | Barbershop in Reno, NV">
@@ -284,6 +284,9 @@ h2{font:400 clamp(42px,6vw,72px)/.92 var(--display);text-transform:uppercase;mar
 .foot li a{display:inline-flex;align-items:center;min-height:44px}
 .foot .fine{grid-column:1/-1;border-top:1px solid var(--felt-3);padding-top:20px;font-size:14px;color:#B5AB98;display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
 
+.foot .privacy{grid-column:1/-1;max-width:46em}
+.foot .privacy h4{font-size:24px}
+.fine a{display:inline-flex;align-items:center;min-height:44px;margin-left:6px;color:var(--cream)}
 /* bottom bar + sheet */
 .bbar{display:none}
 .sheet-bg{position:fixed;inset:0;background:rgba(10,9,7,.55);z-index:90;opacity:0;visibility:hidden;transition:opacity .22s var(--ease),visibility 0s .22s}
@@ -298,6 +301,50 @@ h2{font:400 clamp(42px,6vw,72px)/.92 var(--display);text-transform:uppercase;mar
 .sheet .opts{display:grid;gap:10px}
 .sheet .btn{width:100%;justify-content:space-between;padding:0 22px}
 
+/* photos: real cuts printed on playing cards */
+.pcard{display:block;position:relative;background:var(--paper);padding:9px;border-radius:18px;box-shadow:0 1px 0 rgba(0,0,0,.05),0 20px 40px -18px rgba(23,20,15,.45),0 5px 12px -6px rgba(23,20,15,.25)}
+.pcard>img{width:100%;height:100%;object-fit:cover;border-radius:10px;background:var(--paper-3)}
+.pcard::after{content:"";position:absolute;inset:9px;border-radius:10px;box-shadow:inset 0 0 0 1px rgba(23,20,15,.18);pointer-events:none}
+.pidx{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--paper);color:var(--ink);font:400 24px/1 var(--serif);padding:5px 7px 6px;min-width:30px}
+.pidx svg{width:14px;height:14px}
+.pidx.red{color:var(--red)}
+.pidx.tl{top:0;left:0;border-bottom-right-radius:12px;border-top-left-radius:18px}
+.pidx.br{bottom:0;right:0;border-top-left-radius:12px;border-bottom-right-radius:18px;transform:rotate(180deg)}
+.deck .hero-photo{display:none;padding:9px}
+.deck.has-photo .hero-photo{display:block;transform:rotate(4deg);z-index:3}
+.deck.has-photo .back{transform:translate(-38%,6%) rotate(-18deg)}
+.deck.has-photo .face{transform:translate(-20%,2%) rotate(calc(-7deg + var(--tilt,0deg)))}
+.deck.has-photo .chip{z-index:4;right:-8%;bottom:4%}
+.deck.has-photo{margin-left:6%}
+.gal{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.gcard{display:block;width:100%;text-align:left;color:var(--cream)}
+.gcard .pcard{aspect-ratio:5/7;transition:transform .28s var(--ease)}
+.gcard:hover .pcard{transform:translateY(-6px) rotate(-1deg)}
+.gcard:active .pcard{transform:scale(.98)}
+.gcap{display:block;margin-top:14px;font:500 12.5px/1.35 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cream-2)}
+.gal-more{margin:32px 0 0;color:var(--cream-2);font-size:16px}
+.gal-more a{color:var(--cream);text-underline-offset:4px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.gal-more a svg{width:14px;height:14px;color:var(--brass)}
+.work .pat{position:absolute;inset:0;opacity:.35;pointer-events:none}
+.work .wrap{position:relative}
+.fan{position:relative;margin:0 0 20px;aspect-ratio:1/.92}
+.fan .pcard{position:absolute;width:52%;aspect-ratio:5/7;padding:8px}
+.fan-logo{left:0;top:4%;transform:rotate(-6deg)}
+.fan-logo>img{object-fit:contain;background:#fff}
+.fan-owner{right:0;top:0;transform:rotate(5deg);z-index:2}
+.fan-owner>img{object-position:50% 12%;filter:contrast(1.02)}
+.fan figcaption{position:absolute;left:0;right:0;bottom:0;color:var(--ink-3)}
+.lb{position:fixed;inset:0;z-index:100;background:#0F0D0A;color:var(--cream);display:flex;flex-direction:column;padding:10px 14px calc(18px + env(safe-area-inset-bottom));touch-action:pan-y}
+.lb[hidden]{display:none}
+.lb-top{display:flex;align-items:center;justify-content:space-between;height:52px;flex:none}
+.lb-count{color:var(--brass)}
+.lb-x,.lb-nav{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;color:var(--cream);flex:none}
+.lb-x:hover,.lb-nav:hover{background:var(--felt-3)}
+.lb-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;gap:10px}
+.lb-card{height:100%;max-height:min(80vh,820px);aspect-ratio:5/7;max-width:calc(100% - 116px);min-height:0;display:block;transition:opacity .2s var(--ease)}
+.lb-card img{width:100%;height:100%;object-fit:cover}
+.lb-cap{margin:12px 0 0;text-align:center;font:500 13px/1.35 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cream-2);flex:none}
+.lb :focus-visible{outline-color:var(--brass)}
 @media (max-width:1120px){
   .nav ul{display:none}
   .menu-btn{display:grid}
@@ -306,6 +353,7 @@ h2{font:400 clamp(42px,6vw,72px)/.92 var(--display);text-transform:uppercase;mar
 @media (max-width:980px){
   .hero .wrap{grid-template-columns:1fr}
   .deck{width:min(300px,78%);justify-self:end;margin-right:6%}
+  .gal{grid-template-columns:repeat(2,1fr);gap:18px}
   .menu-grid{grid-template-columns:1fr}
   .about .wrap,.faq-wrap{grid-template-columns:1fr;gap:40px}
   .rating .wrap{grid-template-columns:1fr;gap:40px}
@@ -333,6 +381,17 @@ h2{font:400 clamp(42px,6vw,72px)/.92 var(--display);text-transform:uppercase;mar
   .hero-cta .btn{flex:1 1 100%}
   .hero-meta .badge{display:inline-flex}
   .deck{width:66%;margin-right:4%}
+  .deck.has-photo{width:62%;margin-left:0;margin-right:5%}
+  .gal{gap:14px}
+  .gcap{font-size:11.5px;letter-spacing:.06em}
+  .pcard{padding:7px;border-radius:14px}
+  .pcard::after{inset:7px}
+  .pidx{font-size:20px;min-width:26px;padding:4px 5px 5px}
+  .pidx.tl{border-top-left-radius:14px}
+  .pidx.br{border-bottom-right-radius:14px}
+  .lb-nav{position:absolute;top:50%;margin-top:-24px;z-index:3;background:rgba(15,13,10,.72)}
+  .lb-prev{left:10px}.lb-next{right:10px}
+  .lb-card{max-width:100%}
   .strip a{font-size:24px;height:64px;gap:16px;padding:0 16px}
   .sec{padding:72px 0}
   .sec-head{gap:4px 14px;margin-bottom:28px}
@@ -370,6 +429,7 @@ h2{font:400 clamp(42px,6vw,72px)/.92 var(--display);text-transform:uppercase;mar
   .strip-set[aria-hidden]{display:none}
   .strip{overflow-x:auto}
   .deck .face{transform:rotate(4deg)}
+  .deck.has-photo .face{transform:translate(-20%,2%) rotate(-7deg)}
   .scene .lit{opacity:1}
 }
 </style>

@@ -1,17 +1,8 @@
 {
-  "fails": [
-    "desktop meta description length 185 (want 50-170)",
-    "desktop logo must be an <a data-qa=\"logo\"> linking to the top",
-    "desktop 11 links/buttons with no accessible name",
-    "desktop missing #privacy note (must mention cookies/tracking)",
-    "mobile meta description length 185 (want 50-170)",
-    "mobile logo must be an <a data-qa=\"logo\"> linking to the top",
-    "mobile 11 links/buttons with no accessible name",
-    "mobile missing #privacy note (must mention cookies/tracking)"
-  ],
+  "fails": [],
   "shots": {
-    "desktop": 7,
-    "mobile": 11
+    "desktop": 9,
+    "mobile": 13
   },
-  "kb": 200
+  "kb": 499
 }
