@@ -1,5 +1,11 @@
 # Demo-site build brief (for build agents)
 
+## Cost rules (apply to every step)
+- At most 2 targeted web searches per subtask (verify, facts, photos). Extract only the facts you need, and never paste page dumps into context.
+- Don't re-read big files you already read. Don't Read the dist file or any base64. Read only the screenshots you need (mobile-00..03 and desktop-00..01 first, the rest only to check a fix).
+- Follow `.claude\skills\karpathy-guidelines\SKILL.md`: simplest change, surgical edits, verify with qa.py.
+- Final report: 300 words or fewer, no preamble.
+
 You build ONE premium, single-file pitch demo for a local Northern Nevada business that has no real website.
 The site owner (mk) will walk in and show it on his phone to win the job. It must look custom and expensive, made for THIS business, never templated or AI-made.
 Read `C:\Users\wooleluc\Desktop\Websites\CLAUDE.md`, sections "Never do", "Copy rules", "Motion, readability, mobile". Those rules apply. Where this brief differs from CLAUDE.md, this brief wins.
