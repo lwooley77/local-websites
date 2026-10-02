@@ -1,4 +1,4 @@
-"""Shared demo builder.
+﻿"""Shared demo builder.
 
 Usage:  python sites/_kit/build.py sites/<slug>
 
@@ -49,7 +49,7 @@ def images(site):
     m = {}
     for p in files:
         im = ImageOps.exif_transpose(Image.open(p)).convert("RGB")
-        cfg = json.loads((site / "site.json").read_text(encoding="utf-8"))
+        cfg = json.loads((site / "site.json").read_text(encoding="utf-8-sig"))
         cap = cfg.get("img_cap") or (1600 if p.stem.startswith("hero") else 1100)
         if max(im.size) > cap:
             im.thumbnail((cap, cap), Image.LANCZOS)
@@ -62,7 +62,7 @@ def images(site):
 
 def main(site):
     site = Path(site).resolve()
-    cfg = json.loads((site / "site.json").read_text(encoding="utf-8"))
+    cfg = json.loads((site / "site.json").read_text(encoding="utf-8-sig"))
     src = site / "src"
     head = (src / "head.html").read_text(encoding="utf-8")
     body = (src / "body.html").read_text(encoding="utf-8")
