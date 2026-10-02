@@ -67,6 +67,10 @@ def main(site):
     head = (src / "head.html").read_text(encoding="utf-8")
     body = (src / "body.html").read_text(encoding="utf-8")
     app = (src / "app.js").read_text(encoding="utf-8") if (src / "app.js").exists() else ""
+    # optional vendored libraries (src/vendor/*.js, in name order) go first, and src/motion.js goes last
+    vend = "\n".join(f.read_text(encoding="utf-8") for f in sorted((src / "vendor").glob("*.js"))) if (src / "vendor").exists() else ""
+    motion = (src / "motion.js").read_text(encoding="utf-8") if (src / "motion.js").exists() else ""
+    app = vend + ("\n" if vend else "") + app + ("\n" if motion else "") + motion
 
     html = (
         "<!doctype html>\n<html lang=\"%s\">\n<head>\n%s\n</head>\n<body>\n%s\n<script>\n%s\n</script>\n</body>\n</html>\n"
