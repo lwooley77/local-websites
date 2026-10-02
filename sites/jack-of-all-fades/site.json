@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Anton", "file": "anton-latin-400-normal.woff2", "weight": 400},
+    {"family": "DM Serif Display", "file": "dm-serif-display-latin-400-normal.woff2", "weight": 400},
+    {"family": "IBM Plex Mono", "file": "ibm-plex-mono-latin-500-normal.woff2", "weight": 500},
+    {"family": "Karla", "file": "karla-latin-400-normal.woff2", "weight": 400},
+    {"family": "Karla", "file": "karla-latin-500-normal.woff2", "weight": 500},
+    {"family": "Karla", "file": "karla-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "Jack Of All Fades",
+    "PHONE": "(775) 560-2986",
+    "TEL": "+17755602986",
+    "ADDR1": "5000 Smithridge Dr, Suite C-7",
+    "ADDR2": "Reno, NV 89502",
+    "MAPS": "https://maps.google.com/?cid=9191295867077080476",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=Jack+Of+All+Fades%2C+5000+Smithridge+Dr+Ste+C-7%2C+Reno%2C+NV+89502",
+    "IG": "https://www.instagram.com/jack_of_all__fades/",
+    "YT": "https://www.youtube.com/@Jack_of_all__fades",
+    "BOOKSY": "https://booksy.com/en-us/1533265_jack-of-all-fades_barber-shop_29330_reno",
+    "NSN": "https://nevadasportsnet.com/news/reporters/hanging-out-with-the-nevada-basketball-team-at-the-jack-of-all-fades-barbershop",
+    "KOLO": "https://www.kolotv.com/2024/02/22/open-business-jack-all-fades-specializes-haircuts-men-while-building-community/"
+  }
+}

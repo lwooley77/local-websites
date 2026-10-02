@@ -1,0 +1,20 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Bricolage Grotesque", "file": "bricolage-grotesque-latin-700-normal.woff2", "weight": 700},
+    {"family": "Bricolage Grotesque", "file": "bricolage-grotesque-latin-500-normal.woff2", "weight": 500},
+    {"family": "IBM Plex Mono", "file": "ibm-plex-mono-latin-500-normal.woff2", "weight": 500},
+    {"family": "Figtree", "file": "figtree-latin-400-normal.woff2", "weight": 400},
+    {"family": "Figtree", "file": "figtree-latin-600-normal.woff2", "weight": 600}
+  ],
+  "vars": {
+    "NAME": "Saint Patrick Yard Maintenance LLC",
+    "SHORT": "Saint Patrick Yard Maintenance",
+    "PHONE": "(775) 505-7553",
+    "TEL": "+17755057553",
+    "MAPS": "https://maps.google.com/?cid=13225628591101937770",
+    "RATING": "4.6",
+    "REVIEWS": "133",
+    "AREA_LINE": "Reno, Sparks, Washoe Valley, Carson City and Dayton"
+  }
+}

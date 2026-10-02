@@ -1,0 +1,380 @@
+%%IMAGES%%
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5C9.7 19 5 14.3 4.5 6.2A2.5 2.5 0 0 1 5 3.5z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10H10l-4.5 3.5v-3.5H4z"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01" stroke-width="2.4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5M6.5 9.5V19h11V9.5"/><path d="M10 19v-5h4v5"/></symbol>
+  <symbol id="i-shears" viewBox="0 0 32 32"><circle cx="8" cy="23" r="4"/><circle cx="17" cy="26" r="4"/><path d="M10.8 20.3L27 4M14.4 22.6L27 4" /><path d="M18.2 16.8l1.4 1.4"/></symbol>
+  <symbol id="i-roller" viewBox="0 0 32 32"><rect x="5" y="9" width="22" height="9" rx="4.5"/><path d="M10 9v9M15 9v9M20 9v9"/><path d="M8 23c3-2 6 2 9 0s6 2 9 0"/></symbol>
+  <symbol id="i-polish" viewBox="0 0 32 32"><path d="M13 4h6v8h-6z"/><path d="M11 12h10l2 4v10a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V16z"/><path d="M12.5 19.5h7"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 20 20"><path d="M10 0c.8 5.6 3.6 8.6 10 10-6.4 1.4-9.2 4.4-10 10C9.2 14.4 6.4 11.4 0 10 6.4 8.6 9.2 5.6 10 0z"/></symbol>
+</svg>
+
+<div class="pbar" id="pbar" role="region" aria-label="Preview notice">
+  <span>Preview website prepared for <b>%%NAME%%</b></span>
+  <button type="button" id="pbarX" aria-label="Close preview notice"><svg class="ico" style="width:18px;height:18px"><use href="#i-x"/></svg></button>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="%%NAME%%, back to top">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#A8233A"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#F6EFE3" stroke-width=".8" opacity=".6"/><text x="20" y="25.5" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="15" fill="#F6EFE3">MJ</text><path d="M31 6.5c.3 2 1.3 3.1 3.5 3.5-2.2.4-3.2 1.5-3.5 3.5-.3-2-1.3-3.1-3.5-3.5 2.2-.4 3.2-1.5 3.5-3.5z" fill="#8CC3B0"/></svg>
+      <span><b>%%NAME%%</b><small>Carson City, Nevada</small></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#hours">Hours</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-c press dcall" href="tel:%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>%%PHONE%%</a>
+    <a class="ncall press" href="tel:%%TEL%%" aria-label="Call %%PHONE%%"><svg class="ico"><use href="#i-phone"/></svg></a>
+    <button class="mbtn press" type="button" data-qa="menu-open" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top">
+    <span class="lab" style="color:#CDBBA6">%%NAME%%</span>
+    <button class="x press" type="button" data-qa="menu-close" aria-label="Close menu"><svg class="ico"><use href="#i-x"/></svg></button>
+  </div>
+  <nav aria-label="Phone">
+    <a href="#services">Services <span>01</span></a>
+    <a href="#about">About <span>02</span></a>
+    <a href="#reviews">Reviews <span>03</span></a>
+    <a href="#hours">Hours <span>04</span></a>
+    <a href="#contact">Contact <span>05</span></a>
+  </nav>
+  <div class="foot">
+    <a class="btn btn-c press" href="tel:%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+    <a class="btn btn-o press" href="%%DIR%%" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg>Directions</a>
+  </div>
+</div>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+ <div class="wrap">
+    <div>
+      <p class="hero-kick lab">Family-owned on Airport Road</p>
+      <h1 id="h1">MJ <em>Beauty Salon</em></h1>
+      <p class="lede">Haircuts for men and women, beard trims, color, styling and nails in Carson City. Friendly, quick and fairly priced, from a mother-daughter team.</p>
+      <div class="cta">
+        <a class="btn btn-c press" href="tel:%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+        <a class="btn btn-o press" data-book href="tel:%%TEL%%"><svg class="ico"><use href="#i-cal"/></svg>Book a Visit</a>
+      </div>
+      <a class="rate" href="%%MAPS%%" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><b>%%RATING%%</b> on Google from %%REVIEWS%% reviews</span></a>
+    </div>
+    <div class="hero-art">
+<svg class="plane" id="plane" viewBox="0 0 300 70" aria-hidden="true">
+    <path d="M4 18c20-6 40 6 60 0s40 6 60 0 26 4 34 2v30c-8 2-14-2-34-2s-40 6-60 0-40 6-60 0z" fill="#A8233A"/>
+    <text x="80" y="40" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-weight="600" font-size="15" letter-spacing="3" fill="#F6EFE3">MJ BEAUTY</text>
+    <path d="M158 22l52 10M158 46l52-10" stroke="#2A1E1A" stroke-width="1.2"/>
+    <path d="M210 34c0-6 10-10 34-10h22c10 0 18 4 18 10s-8 10-18 10h-22c-24 0-34-4-34-10z" fill="#F6EFE3" stroke="#2A1E1A" stroke-width="2"/>
+    <path d="M214 34l-6-14h10l10 12M236 30l10-22h12l-6 22M236 38l10 18h12l-6-18" fill="#8CC3B0" stroke="#2A1E1A" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="270" cy="31" r="3" fill="#2A1E1A"/>
+    <path d="M288 22v24" stroke="#2A1E1A" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+      <svg viewBox="40 16 430 444" role="img" aria-label="Illustration of a classic salon chair with a bonnet hair dryer, rollers, comb and shears">
+        <path d="M80 452V236a170 170 0 0 1 340 0v216" fill="#8CC3B0" fill-opacity=".42" stroke="#2A1E1A" stroke-width="2.2"/>
+        <path d="M102 452V240a148 148 0 0 1 296 0v212" fill="none" stroke="#2A1E1A" stroke-width="1" stroke-dasharray="2 7" stroke-linecap="round" opacity=".55"/>
+        <g fill="#F6EFE3" stroke="#2A1E1A" stroke-width="1.4">
+          <path class="spark" d="M150 150c.9 6.6 4.2 10.1 11.6 11.7-7.4 1.6-10.7 5.1-11.6 11.7-.9-6.6-4.2-10.1-11.6-11.7 7.4-1.6 10.7-5.1 11.6-11.7z"/>
+          <path class="spark s2" d="M360 128c.7 5 3.2 7.7 8.8 8.9-5.6 1.2-8.1 3.9-8.8 8.9-.7-5-3.2-7.7-8.8-8.9 5.6-1.2 8.1-3.9 8.8-8.9z"/>
+          <path class="spark s3" d="M372 250c.6 4.4 2.8 6.7 7.7 7.8-4.9 1.1-7.1 3.4-7.7 7.8-.6-4.4-2.8-6.7-7.7-7.8 4.9-1.1 7.1-3.4 7.7-7.8z"/>
+        </g>
+        <!-- dryer arm -->
+        <path d="M262 206v40" stroke="#2A1E1A" stroke-width="7" stroke-linecap="round"/>
+        <path d="M262 206v40" stroke="#C9B79D" stroke-width="3" stroke-linecap="round"/>
+        <!-- hood -->
+        <path d="M184 196c0-58 34-92 78-92s78 34 78 92z" fill="#F2B9C2" stroke="#2A1E1A" stroke-width="2.2"/>
+        <path d="M206 160c6-24 24-40 50-42" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+        <rect x="176" y="190" width="172" height="20" rx="10" fill="#2A1E1A"/>
+        <g stroke="#2A1E1A" stroke-width="1.6" stroke-linecap="round" opacity=".55"><path d="M240 134v22M256 128v26M272 128v26M288 134v22"/></g>
+        <!-- chair back -->
+        <rect x="196" y="236" width="132" height="122" rx="46" fill="#A8233A" stroke="#2A1E1A" stroke-width="2.2"/>
+        <path d="M230 252v92M262 248v100M294 252v92" stroke="#8E1C30" stroke-width="2.4" stroke-linecap="round"/>
+        <!-- arms -->
+        <rect x="166" y="306" width="40" height="78" rx="18" fill="#A8233A" stroke="#2A1E1A" stroke-width="2.2"/>
+        <rect x="318" y="306" width="40" height="78" rx="18" fill="#A8233A" stroke="#2A1E1A" stroke-width="2.2"/>
+        <!-- seat -->
+        <rect x="186" y="344" width="152" height="44" rx="20" fill="#C4374E" stroke="#2A1E1A" stroke-width="2.2"/>
+        <!-- pedestal -->
+        <rect x="252" y="388" width="20" height="44" fill="#C9B79D" stroke="#2A1E1A" stroke-width="2"/>
+        <path d="M232 410h60" stroke="#2A1E1A" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="262" cy="440" rx="74" ry="13" fill="#2A1E1A"/>
+        <path d="M60 452h380" stroke="#2A1E1A" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- rollers -->
+        <g stroke="#2A1E1A" stroke-width="1.8">
+          <rect x="96" y="420" width="52" height="26" rx="13" fill="#F2B9C2"/><path d="M110 420v26M122 420v26M134 420v26" stroke-width="1.2"/>
+          <rect x="108" y="392" width="44" height="24" rx="12" fill="#8CC3B0"/><path d="M120 392v24M131 392v24M142 392v24" stroke-width="1.2"/>
+          <rect x="150" y="424" width="40" height="22" rx="11" fill="#F6EFE3"/><path d="M161 424v22M170 424v22M179 424v22" stroke-width="1.2"/>
+        </g>
+        <!-- comb -->
+        <g transform="rotate(-18 400 400)" stroke="#2A1E1A" stroke-width="1.8">
+          <rect x="350" y="392" width="100" height="16" rx="5" fill="#2A1E1A"/>
+          <path d="M356 408v16M364 408v16M372 408v16M380 408v16M388 408v16M396 408v16M404 408v13M412 408v13M420 408v13M428 408v13M436 408v13M444 408v13" stroke-linecap="round"/>
+        </g>
+        <!-- shears -->
+        <g transform="translate(372 64) rotate(28)" fill="none" stroke="#2A1E1A" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="0" cy="62" r="11" fill="#F6EFE3"/><circle cx="26" cy="64" r="11" fill="#F6EFE3"/>
+          <path d="M6 52L22 -4l4 2-12 52M20 54L8 0l-4 2 10 50" fill="#F6EFE3" stroke-linejoin="round"/>
+          <circle cx="13" cy="35" r="2" fill="#2A1E1A"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="floor" aria-hidden="true"></div>
+</section>
+
+<div class="strip" aria-label="Services">
+  <div class="strip-track" id="strip">
+    <a href="#services" data-cat="cuts">Men's Haircuts <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+    <a href="#services" data-cat="cuts">Women's Haircuts <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+    <a href="#services" data-cat="cuts">Beard Trims <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+    <a href="#services" data-cat="color">Hair Color <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+    <a href="#services" data-cat="color">Shampoo &amp; Set <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+    <a href="#services" data-cat="color">Balayage <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+    <a href="#services" data-cat="nails">Manicures <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+    <a href="#services" data-cat="nails">Pedicures <svg aria-hidden="true"><use href="#i-spark"/></svg></a>
+  </div>
+</div>
+
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="lab">Hair and nails, men and women</span><h2 id="svc-h">Services &amp; Prices</h2></div>
+      <p>Tap any service to call the salon. We'll give you the current price and find you a time.</p>
+    </div>
+    <div class="svc-grid">
+      <div>
+        <div class="tabs" role="tablist" aria-label="Service categories">
+          <button class="tab press" role="tab" id="t-cuts" aria-controls="p-cuts" aria-selected="true" data-qa="tab" data-cat="cuts"><svg class="ico" viewBox="0 0 32 32"><use href="#i-shears"/></svg>Haircuts</button>
+          <button class="tab press" role="tab" id="t-color" aria-controls="p-color" aria-selected="false" tabindex="-1" data-qa="tab" data-cat="color"><svg class="ico" viewBox="0 0 32 32"><use href="#i-roller"/></svg>Color &amp; Styling</button>
+          <button class="tab press" role="tab" id="t-nails" aria-controls="p-nails" aria-selected="false" tabindex="-1" data-qa="tab" data-cat="nails"><svg class="ico" viewBox="0 0 32 32"><use href="#i-polish"/></svg>Nails</button>
+        </div>
+        <div class="panel" role="tabpanel" id="p-cuts" aria-labelledby="t-cuts">
+          <a class="row" href="tel:%%TEL%%"><h3>Men's Haircuts</h3><p>Our specialty. Clean, quick cuts, often done in under 20 minutes.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Women's Haircuts</h3><p>Cuts and trims, styled the way you like it.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Beard Trims</h3><p>Tidy up the beard while you're in the chair.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+        </div>
+        <div class="panel" role="tabpanel" id="p-color" aria-labelledby="t-color" hidden>
+          <a class="row" href="tel:%%TEL%%"><h3>Hair Color</h3><p>Call and tell us what you have in mind.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Shampoo &amp; Set</h3><p>The classic wash and set.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Balayage</h3><p>Hand-painted, soft highlights.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Permanent Straightening</h3><p>For smoother, straighter hair.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Hair Extensions</h3><p>Call to ask about options.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+        </div>
+        <div class="panel" role="tabpanel" id="p-nails" aria-labelledby="t-nails" hidden>
+          <a class="row" href="tel:%%TEL%%"><h3>Manicure</h3><p>Shape, care and polish.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Pedicure</h3><p>Feet cared for and polished.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Nail Fill-ins</h3><p>Keep your set looking fresh.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          <a class="row" href="tel:%%TEL%%"><h3>Polish Change</h3><p>A quick new color.</p><span class="pr">Call for price</span><span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+        </div>
+        <p class="fine">Don't see what you need? Call and ask. Prices change from time to time, so we quote them by phone.</p>
+      </div>
+      <aside class="note" aria-label="Pricing and booking">
+        <svg class="deco" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-shears" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        <span class="lab">Pricing &amp; booking</span>
+        <h3>One quick call</h3>
+        <p>Call the salon for today's prices and the next open time. Good cuts at fair prices keep our regulars coming back.</p>
+        <a class="btn btn-c press" href="tel:%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>%%PHONE%%</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about" aria-labelledby="ab-h">
+  <div class="wrap ab-grid">
+    <div class="ab-art">
+      <svg viewBox="0 0 300 360" role="img" aria-label="Illustration of a hand mirror, comb and shears">
+        <g transform="rotate(-12 150 170)">
+          <ellipse cx="150" cy="120" rx="82" ry="96" fill="#8CC3B0" stroke="#2A1E1A" stroke-width="2.2"/>
+          <ellipse cx="150" cy="120" rx="68" ry="82" fill="#E8F3EE" stroke="#2A1E1A" stroke-width="1.2"/>
+          <path d="M112 80c10-22 30-32 50-30" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          <path d="M138 214h24l6 110a16 16 0 0 1-36 0z" fill="#A8233A" stroke="#2A1E1A" stroke-width="2.2"/>
+          <path d="M140 240h20" stroke="#2A1E1A" stroke-width="1.4"/>
+        </g>
+        <g transform="rotate(14 230 270)" stroke="#2A1E1A" stroke-width="1.6">
+          <rect x="190" y="236" width="90" height="14" rx="4" fill="#2A1E1A"/>
+          <path d="M196 250v14M203 250v14M210 250v14M217 250v14M224 250v14M231 250v12M238 250v12M245 250v12M252 250v12M259 250v12M266 250v12M273 250v12" stroke-linecap="round"/>
+        </g>
+        <g fill="#F6EFE3" stroke="#2A1E1A" stroke-width="1.4">
+          <path class="spark" d="M64 46c.8 5.8 3.7 8.9 10.2 10.3-6.5 1.4-9.4 4.5-10.2 10.3-.8-5.8-3.7-8.9-10.2-10.3 6.5-1.4 9.4-4.5 10.2-10.3z"/>
+          <path class="spark s2" d="M250 60c.6 4.3 2.7 6.6 7.5 7.6-4.8 1-6.9 3.3-7.5 7.6-.6-4.3-2.7-6.6-7.5-7.6 4.8-1 6.9-3.3 7.5-7.6z"/>
+        </g>
+      </svg>
+      <div class="tagc"><b>40+</b><span>years of experience</span></div>
+    </div>
+    <div class="ab-txt">
+      <span class="lab">About the salon</span>
+      <h2 id="ab-h">A family shop on Airport Road</h2>
+      <p class="big">%%NAME%% is a family-owned salon in Carson City, run by MJ and Carol, a mother-daughter team with over 40 years of experience.</p>
+      <p>We're known for good haircuts done quickly and at a fair price, for men and women alike. Plenty of our clients have been coming back for years, and some for decades.</p>
+      <p>Beyond cuts and beard trims, we do color and styling, and nails too. Call and we'll find you a time.</p>
+      <figure class="photo" data-slot hidden><img data-k="salon" alt="Inside %%NAME%%"></figure>
+      <div class="facts">
+        <div><svg class="ico"><use href="#i-home"/></svg>Family-owned</div>
+        <div><svg class="ico"><use href="#i-clock"/></svg>Quick cuts</div>
+        <div><svg class="ico" viewBox="0 0 32 32"><use href="#i-shears"/></svg>Men &amp; women</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec rev" id="reviews" aria-labelledby="rev-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="lab">Reviews</span><h2 id="rev-h">What clients say</h2></div>
+      <p>A few words from Google reviews.</p>
+    </div>
+    <div class="rev-grid">
+      <a class="score" href="%%MAPS%%" target="_blank" rel="noopener">
+        <span class="num">%%RATING%%</span>
+        <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Average rating from %%REVIEWS%% Google reviews</p>
+        <span class="lk">Read reviews on Google <svg class="ico" style="width:18px;height:18px"><use href="#i-arrow"/></svg></span>
+      </a>
+      <div class="quotes">
+        <figure class="q"><blockquote>This place is the best!</blockquote><figcaption>Annette H. &middot; Google</figcaption></figure>
+        <figure class="q"><blockquote>Family owned awesome business!</blockquote><figcaption>Ryan P. &middot; Google</figcaption></figure>
+        <figure class="q"><blockquote>Nice haircut low price</blockquote><figcaption>Lior S. &middot; Google</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" aria-labelledby="ct-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="lab">Get in touch</span><h2 id="ct-h">Call, text or stop by</h2></div>
+      <p>The quickest way to book is a phone call. We're on Airport Road, Suite A.</p>
+    </div>
+    <div class="ct-grid">
+      <a class="card big press" href="tel:%%TEL%%">
+        <svg class="deco" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+        <span class="ar"><svg class="ico"><use href="#i-arrow"/></svg></span>
+        <span class="lab">Call the salon</span>
+        <b>%%PHONE%%</b>
+        <span class="s">To book a time or ask about prices</span>
+      </a>
+      <a class="card press" href="sms:%%TEL%%">
+        <span class="ar"><svg class="ico"><use href="#i-chat"/></svg></span>
+        <span class="lab">Text</span>
+        <b>Send a text</b>
+        <span class="s">%%PHONE%%</span>
+      </a>
+      <a class="card mint press" href="%%DIR%%" target="_blank" rel="noopener">
+        <span class="ar"><svg class="ico"><use href="#i-pin"/></svg></span>
+        <span class="lab">Directions</span>
+        <b>1778 Airport Rd</b>
+        <span class="s">Ste A, %%CITYLINE%%</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <div class="head" style="display:block"><span class="lab">FAQ</span><h2 id="faq-h">Good to know</h2></div>
+    <div class="acc">
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f1" id="fb1">Do I need an appointment?<span class="pm"><svg class="ico" style="width:18px;height:18px"><use href="#i-plus"/></svg></span></button><div class="acc-p" id="f1" role="region" aria-labelledby="fb1"><div><p>Give us a call at <a href="tel:%%TEL%%">%%PHONE%%</a> and we'll let you know when we can fit you in.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f2" id="fb2">Do you cut women's hair too?<span class="pm"><svg class="ico" style="width:18px;height:18px"><use href="#i-plus"/></svg></span></button><div class="acc-p" id="f2" role="region" aria-labelledby="fb2"><div><p>Yes. We do haircuts for men and women, plus beard trims, color, styling and nails.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f3" id="fb3">How much is a haircut?<span class="pm"><svg class="ico" style="width:18px;height:18px"><use href="#i-plus"/></svg></span></button><div class="acc-p" id="f3" role="region" aria-labelledby="fb3"><div><p>Prices change from time to time, so please call <a href="tel:%%TEL%%">%%PHONE%%</a> for current prices.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f4" id="fb4">How long does a haircut take?<span class="pm"><svg class="ico" style="width:18px;height:18px"><use href="#i-plus"/></svg></span></button><div class="acc-p" id="f4" role="region" aria-labelledby="fb4"><div><p>Most haircuts are quick, often under 20 minutes. Color and nail services take longer, so ask when you call.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f5" id="fb5">What are your hours?<span class="pm"><svg class="ico" style="width:18px;height:18px"><use href="#i-plus"/></svg></span></button><div class="acc-p" id="f5" role="region" aria-labelledby="fb5"><div><p>We're usually open Tuesday to Friday, 9 AM to 4 PM. Hours can change, so call ahead to be sure.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f6" id="fb6">Where are you?<span class="pm"><svg class="ico" style="width:18px;height:18px"><use href="#i-plus"/></svg></span></button><div class="acc-p" id="f6" role="region" aria-labelledby="fb6"><div><p>1778 Airport Rd, Ste A, Carson City, NV 89706. <a href="%%DIR%%" target="_blank" rel="noopener">Get directions</a>.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="hours" aria-labelledby="hr-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="lab">Visit</span><h2 id="hr-h">Hours &amp; Location</h2></div>
+      <p id="todayLine">Please call ahead to confirm today's hours.</p>
+    </div>
+    <div class="hl-grid">
+      <div class="hours">
+        <ul id="hoursList">
+          <li data-d="0"><span>Sunday</span><span>Closed</span></li>
+          <li data-d="1"><span>Monday</span><span>Closed</span></li>
+          <li data-d="2"><span>Tuesday</span><span>9 AM to 4 PM</span></li>
+          <li data-d="3"><span>Wednesday</span><span>9 AM to 4 PM</span></li>
+          <li data-d="4"><span>Thursday</span><span>9 AM to 4 PM</span></li>
+          <li data-d="5"><span>Friday</span><span>9 AM to 4 PM</span></li>
+          <li data-d="6"><span>Saturday</span><span>Call to check</span></li>
+        </ul>
+        <p class="fine">Hours can change. Call <a href="tel:%%TEL%%" style="color:var(--cherry);font-weight:700">%%PHONE%%</a> to confirm before you come in.</p>
+      </div>
+      <div class="loc">
+        <span class="lab">Find us</span>
+        <address>1778 Airport Rd, Ste A<br>%%CITYLINE%%</address>
+        <p>On Airport Road in Carson City.</p>
+        <a class="btn press" href="%%DIR%%" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg>Get Directions</a>
+        <svg class="hills" viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 70l50-30 40 20 60-46 50 34 40-18 60 38 50-26 50 30v38H0z" fill="#3E7D6E"/>
+          <path d="M0 88l70-22 60 16 70-28 60 20 70-14 70 20v30H0z" fill="#1F4E44"/>
+          <path d="M150 14l-14 10M150 14l14 10" stroke="#E8F3EE" stroke-width="2" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="foot-scene" aria-hidden="true">
+  <svg viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax slice">
+    <path d="M0 170l120-60 90 40 140-90 120 70 90-40 150 80 120-56 140 64 110-50 120 52 140-60 100 40V280H0z" fill="#E4D3B8"/>
+    <path d="M0 210l160-40 120 26 160-50 140 40 160-30 150 34 140-26 160 36 150-22 60 10V280H0z" fill="#C9B79D" opacity=".7"/>
+    <g transform="translate(860 30) scale(.55)">
+      <path d="M210 34c0-6 10-10 34-10h22c10 0 18 4 18 10s-8 10-18 10h-22c-24 0-34-4-34-10z" fill="#F6EFE3" stroke="#2A1E1A" stroke-width="3"/>
+      <path d="M214 34l-6-14h10l10 12M236 30l10-22h12l-6 22M236 38l10 18h12l-6-18" fill="#8CC3B0" stroke="#2A1E1A" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M288 22v24" stroke="#2A1E1A" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M200 34c-40 4-80-6-130 6" fill="none" stroke="#2A1E1A" stroke-width="2" stroke-dasharray="3 8" stroke-linecap="round" opacity=".5"/>
+    </g>
+    <!-- storefront (illustration, not their real storefront) -->
+    <g transform="translate(540 80)">
+      <rect x="0" y="22" width="360" height="166" fill="#F6EFE3" stroke="#2A1E1A" stroke-width="2.4"/>
+      <rect x="-8" y="8" width="376" height="20" fill="#2A1E1A"/>
+      <text x="180" y="23" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-weight="600" font-size="11" letter-spacing="4" fill="#F6EFE3">MJ BEAUTY SALON</text>
+      <g stroke="#2A1E1A" stroke-width="2">
+        <path d="M-6 28h372l-12 36H6z" fill="#A8233A"/>
+        <path d="M40 28l-6 36M86 28l-4 36M132 28l-2 36M180 28v36M228 28l2 36M274 28l4 36M320 28l6 36" stroke="#F6EFE3" stroke-width="8"/>
+        <path d="M6 64q11 12 22 0t22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0 22 0" fill="none" stroke="#2A1E1A"/>
+      </g>
+      <rect x="24" y="86" width="200" height="92" fill="#8CC3B0" stroke="#2A1E1A" stroke-width="2.2"/>
+      <path d="M40 98l40-6M44 112l28-4" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+      <text x="124" y="146" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="38" fill="#A8233A">MJ</text>
+      <rect x="250" y="86" width="86" height="102" fill="#2A1E1A"/>
+      <rect x="260" y="96" width="66" height="54" fill="#E8F3EE" opacity=".85"/>
+      <circle cx="318" cy="142" r="3.5" fill="#E4D3B8"/>
+      <text x="293" y="170" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-weight="600" font-size="9" letter-spacing="2" fill="#F6EFE3">STE A</text>
+    </g>
+    <rect x="0" y="268" width="1440" height="12" fill="#2A1E1A"/>
+  </svg>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <b>%%NAME%%</b>
+      <div>%%STREET%%, %%CITYLINE%%</div>
+      <a href="tel:%%TEL%%">%%PHONE%%</a>
+    </div>
+    <div>
+      <div class="lab" style="color:#CDBBA6;margin-bottom:6px">Haircuts &middot; Color &amp; Styling &middot; Nails</div>
+      <a href="%%MAPS%%" target="_blank" rel="noopener">Find us on Google Maps</a>
+    </div>
+    <p class="sm">&copy; %%YEAR%% %%NAME%%. Family-owned in Carson City, Nevada. Payments and prices confirmed at the salon. This site does not collect any personal information.</p>
+  </div>
+</footer>
+
+<nav class="bbar" aria-label="Quick contact">
+  <a href="tel:%%TEL%%" class="press"><svg class="ico"><use href="#i-phone"/></svg>Call</a>
+  <a href="sms:%%TEL%%" class="press"><svg class="ico"><use href="#i-chat"/></svg>Text</a>
+  <a href="%%DIR%%" target="_blank" rel="noopener" class="press"><svg class="ico"><use href="#i-pin"/></svg>Directions</a>
+  <a href="tel:%%TEL%%" data-book class="press"><svg class="ico"><use href="#i-cal"/></svg>Book</a>
+</nav>

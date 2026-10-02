@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Syne", "file": "syne-latin-700-normal.woff2", "weight": 700},
+    {"family": "Space Grotesk", "file": "space-grotesk-latin-500-normal.woff2", "weight": 500},
+    {"family": "Space Grotesk", "file": "space-grotesk-latin-600-normal.woff2", "weight": 600},
+    {"family": "Figtree", "file": "figtree-latin-400-normal.woff2", "weight": 400},
+    {"family": "Figtree", "file": "figtree-latin-500-normal.woff2", "weight": 500},
+    {"family": "Figtree", "file": "figtree-latin-600-normal.woff2", "weight": 600}
+  ],
+  "vars": {
+    "NAME": "Slice Salon",
+    "PHONE": "(775) 323-2100",
+    "TEL": "tel:+17753232100",
+    "SMS": "sms:+17753232100",
+    "STREET": "137 Vassar St, Ste 4",
+    "CITY": "Reno, NV 89502",
+    "MAPS": "https://maps.google.com/?cid=5293939307827189518",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=Slice+Salon,+137+Vassar+St,+Reno,+NV+89502",
+    "FB": "https://www.facebook.com/SliceReno/",
+    "BIRDEYE": "https://reviews.birdeye.com/slice-salon-149499171280132",
+    "RATING": "4.6",
+    "COUNT": "80"
+  }
+}

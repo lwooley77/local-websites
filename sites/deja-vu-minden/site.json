@@ -1,0 +1,27 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Instrument Serif", "file": "instrument-serif-latin-400-normal.woff2", "weight": 400},
+    {"family": "Syne", "file": "syne-latin-600-normal.woff2", "weight": 600},
+    {"family": "Syne", "file": "syne-latin-700-normal.woff2", "weight": 700},
+    {"family": "Manrope", "file": "manrope-latin-400-normal.woff2", "weight": 400},
+    {"family": "Manrope", "file": "manrope-latin-500-normal.woff2", "weight": 500},
+    {"family": "Manrope", "file": "manrope-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "Deja Vu Salon",
+    "PHONE": "(775) 782-8776",
+    "TEL": "tel:+17757828776",
+    "SMS": "sms:+17757828776",
+    "STREET": "1560 US Hwy 395 N, Ste D",
+    "CITYLINE": "Minden, NV 89423",
+    "LOCLINE": "On US Highway 395 in Minden, in the Carson Valley",
+    "MAPS": "https://maps.google.com/?cid=3152065263294470128",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=Deja+Vu+Salon,+1560+US+Hwy+395+N+Ste+D,+Minden,+NV+89423",
+    "RATING": "4.8",
+    "REVIEWS": "77",
+    "SINCE": "2006",
+    "BIRDEYE": "https://reviews.birdeye.com/deja-vu-salon-168119194795976",
+    "NEXTDOOR": "https://nextdoor.com/pages/deja-vu-salon-minden-nv-2/"
+  }
+}

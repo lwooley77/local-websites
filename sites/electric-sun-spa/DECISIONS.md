@@ -1,0 +1,17 @@
+# Decisions
+- Treated as a valid lead: own domain electricsunnv.com is dead (redirects to an unrelated gambling site), so they have no working website.
+- Used the live Vagaro menu (Oct 2026) for all prices; ignored the 2024 archived Wix prices as stale.
+- Book buttons go to Vagaro (vagaro.com/electricsun1) since online booking is live there; no Cal.com needed.
+- Trimmed long Vagaro service titles to plain names; kept every price and "starting at" flag exact (shown as "from").
+- Tanning bed prices aren't public, so that row says "Call" and opens the dialer.
+- Left out medical aesthetics (Botox etc.): only in old directory snippets, not on the current menu.
+- Left out the Nextdoor award and the 2024 Tanners Club memberships: weak or stale sources.
+- Quotes taken verbatim from Vagaro (First name + last initial); picked reviews of staff who are still on the current staff list; dropped one trailing emoji.
+- Showed both Google (4.6/126, from the lead sheet) and Vagaro (4.9/141) ratings, each linked to its source.
+- Kept the Text card and button even though nobody has confirmed the number takes texts (the brief requires it); flagged in STATUS.
+- Named owner Shannon Ceresola in About (Vagaro staff page lists her as "Salon Owner"); no other staff roles claimed.
+- Fonts: Young Serif + Josefin Sans + Figtree for a warm, retro Main Street feel instead of the default Fraunces/Cormorant.
+- Hero art is a sun-disc vignette of their yellow building rather than abstract shapes, so it reads as made for this business.
+- Grouped 10 Vagaro categories into 7 tabs (hair cuts+color, nails hands+feet, tanning+whitening).
+- Preview bar uses "Preview for Electric Sun" on phones so the name is never cut off (updated brief).
+- No git commit: the Websites folder isn't a git repo, and the brief limits work to this site folder.

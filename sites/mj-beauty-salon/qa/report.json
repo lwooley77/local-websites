@@ -1,0 +1,15 @@
+{
+  "fails": [
+    "desktop logo must be an <a data-qa=\"logo\"> linking to the top",
+    "desktop 7 links/buttons with no accessible name",
+    "desktop missing #privacy note (must mention cookies/tracking)",
+    "mobile logo must be an <a data-qa=\"logo\"> linking to the top",
+    "mobile 7 links/buttons with no accessible name",
+    "mobile missing #privacy note (must mention cookies/tracking)"
+  ],
+  "shots": {
+    "desktop": 7,
+    "mobile": 10
+  },
+  "kb": 141
+}

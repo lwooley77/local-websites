@@ -1,0 +1,21 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Young Serif", "file": "young-serif-latin-400-normal.woff2", "weight": 400},
+    {"family": "Josefin Sans", "file": "josefin-sans-latin-600-normal.woff2", "weight": 600},
+    {"family": "Karla", "file": "karla-latin-400-normal.woff2", "weight": 400},
+    {"family": "Karla", "file": "karla-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "MJ Beauty Salon",
+    "PHONE": "(775) 883-7671",
+    "TEL": "+17758837671",
+    "STREET": "1778 Airport Rd, Ste A",
+    "CITYLINE": "Carson City, NV 89706",
+    "MAPS": "https://maps.google.com/?cid=2585910318510759158",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=MJ+Beauty+Salon+1778+Airport+Rd+Carson+City+NV+89706",
+    "RATING": "4.6",
+    "REVIEWS": "103",
+    "YEAR": "2026"
+  }
+}

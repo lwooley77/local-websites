@@ -1,0 +1,23 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Bricolage Grotesque", "file": "bricolage-grotesque-latin-700-normal.woff2", "weight": 700},
+    {"family": "Bebas Neue", "file": "bebas-neue-latin-400-normal.woff2", "weight": 400},
+    {"family": "Work Sans", "file": "work-sans-latin-400-normal.woff2", "weight": 400},
+    {"family": "Work Sans", "file": "work-sans-latin-500-normal.woff2", "weight": 500},
+    {"family": "Work Sans", "file": "work-sans-latin-600-normal.woff2", "weight": 600}
+  ],
+  "vars": {
+    "NAME": "Main Street Barber Shop",
+    "PHONE": "(775) 782-8259",
+    "TEL": "tel:+17757828259",
+    "SMS": "sms:+17757828259",
+    "STREET": "1428 US Hwy 395 N",
+    "CITY": "Gardnerville, NV 89410",
+    "MAPS": "https://maps.google.com/?cid=7305285018290689536",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=Main+Street+Barber+Shop%2C+1428+US+Hwy+395+N%2C+Gardnerville%2C+NV+89410",
+    "FB": "https://www.facebook.com/mainstreetbarbersnv/",
+    "RATING": "4.8",
+    "COUNT": "67"
+  }
+}

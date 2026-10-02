@@ -1,0 +1,17 @@
+# Decisions
+- Treated as a valid lead: listed website saintpatricklandscapereno.com fails DNS; saintpatricklandscape.com is an unrelated Utah company.
+- Used "free estimate" wording because Patrick's own Nextdoor text says "call for a free estimate" (two pages).
+- Hours shown as 7 AM to 7 PM daily: the overlap of three conflicting listings (24h, 7-7, 7-7/7-8). Flagged in STATUS.
+- Live open badge kept, since all sources agree he is open at least 7-7 every day.
+- No street address shown: three conflicting addresses and it is a service-area business. Maps card links to the Google listing instead of "Directions" to an address.
+- Review count 133 from the lead sheet even though Birdeye shows 152, per brief.
+- Review quotes used only where full verbatim text was fetched; Frank N.'s quote uses his first two sentences only (dropped the line attacking competitors); Ryan S.'s review skipped (contains a typo and is long); V.A.'s skipped (spacing typo).
+- Nextdoor reviewers credited by initials plus town, since Nextdoor shows only initials.
+- "Light landscaping" kept because it is Patrick's own description of his scope.
+- Services grouped into 4 tabs (Cleanups & hauling, Trees & stumps, Rock/pavers/fences, Lawn & grass); every row opens an sms with a prefilled estimate request.
+- "Trimming" and "Rock gabion walls" added as rows because they come from real reviews.
+- Mobile service rows show an arrow button instead of "FREE ESTIMATE" text so names don't wrap.
+- Business ID NV20222633835 left off the page: it is not clearly a contractor license.
+- Fonts: Bricolage Grotesque + IBM Plex Mono + Figtree, to avoid the serif look used for salons and to suit a work-order feel.
+- Service-area map is schematic and labeled "Not to scale" so it doesn't claim exact geography.
+- Footer note says no cookies/no data, true for this static file.

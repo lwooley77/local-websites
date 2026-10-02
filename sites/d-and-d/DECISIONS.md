@@ -1,0 +1,21 @@
+# Decisions
+
+- Named it "D & D Barbers" (Facebook/Yelp spelling). Google's "D & D" is too bare, and the lead sheet's "salon" is wrong: every source says barbershop.
+- Not a SKIP: the only website linked to the shop (townbarbers.com, via 2news) belongs to a different shop at 500 Apple St.
+- Hours used as fact: five independent listings agree.
+- No prices: none found anywhere. Rows say "Call for price" and the price note says prices aren't posted online yet.
+- Left the year opened off the page: Yelp says 2003, D&B says 2008.
+- Left barber names off the page (Cody, Melanie, Josh, AJ show up in reviews over the years, current roster unknown). AJ appears only inside a real quote.
+- Quotes: only short Google review lines that two Birdeye fetches showed the same way. John L.'s is the end of a longer review, so it opens with an ellipsis. Skipped "Miss Doodler" (no real name to credit).
+- Parking and wheelchair access come from Yelp-style amenities on BestProsInTown. Medium confidence, so the page says "listed as wheelchair accessible".
+- Book = call/text sheet: the Fresha page is unclaimed and reviewers say the shop doesn't take appointments. `BOOKING_URL` is left empty.
+- Kept the Text buttons because the brief requires them, but the 825 prefix may be a landline. Flagged in STATUS.
+- No category tabs: only 2 categories (the brief asks for tabs at 3+). The panels sit side by side on desktop and stack on phones.
+- Concept "early shift" (clock + time card + sunrise), because the 7 AM opening is the most distinctive true fact about this shop.
+- Palette is bottle green, manila and sunrise orange, to look nothing like the Cutz Unlimited demo (light paper, red/blue) or the usual black-and-gold barber template.
+- Fonts are Archivo Black, Oswald and Libre Franklin. None of the sibling demos use them.
+- Clock hands update every 30 s with no second hand, so nothing loops on screen.
+- The footer sunrise is set straight from scroll position (no easing lag) and jumps to its final state under reduced motion.
+- Sun moved to x=880 in the footer art so it shows on 390px phones, where only the middle of the scene is visible.
+- Preview bar: "Preview website prepared for" on wide screens, "Preview for" on phones, so the name never gets cut off.
+- "Men's haircut" wording comes from the Fresha service name. Nothing on the page says men only.

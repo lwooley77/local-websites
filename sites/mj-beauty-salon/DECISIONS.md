@@ -1,0 +1,14 @@
+# Decisions
+- Verified as a lead: only directory listings and an unclaimed Fresha page, no own domain.
+- Hours conflict across 5 sources: show most-cited Tue-Fri 9-4 with "call to confirm", Saturday "Call to check", no live open badge (HOURS_CONFIRMED=false in app.js).
+- No prices anywhere: the only number found ("$8 haircut" on 2news) looks outdated, so every row says "Call for price".
+- Used "MJ and Carol", "mother-daughter" and "over 40 years" from BestPros/Chamber text; flagged in STATUS as needs owner OK.
+- Services list mixes reliable (men's cuts) and directory-sourced items; kept them to avoid narrowing scope, flagged for confirmation. Dropped Fresha's "braiding" and "weaves" as likely auto-generated.
+- Review quotes: 3 short Google quotes found verbatim on Birdeye and ManeReviews, credited First name + last initial. Skipped a longer one that mentions price increases.
+- Book = call, since booking is phone only. BOOKING_URL left empty.
+- Text button kept (brief requires it) but noted the number may be a landline.
+- Retro 70s salon look (hood dryer, cherry vinyl, mint, checkerboard) to match a 40-year family shop, not a modern studio.
+- Fonts: Young Serif + Josefin Sans + Karla, avoiding the Fraunces/Cormorant default.
+- Plane motif ties to the Airport Road address; confined to the hero art so it never crosses text.
+- Footer storefront is a generic illustration, not a drawing of their actual building.
+- No map embed (would add an external request); Directions link to Google Maps instead.

@@ -1,0 +1,17 @@
+# Decisions
+- Treated it as a valid lead: no own domain, only Yelp, Instagram, an unaffiliated Fresha listing and directories.
+- Name shown as "Cutz Unlimited" (two words): Yelp, Yahoo and Birdeye use it and it reads better. The one-word form is noted in STATUS.
+- Hours: used Mon to Fri 10 to 6, Sat 9 to 5 (4 sources agree) over Birdeye's version. Flagged as unverified.
+- Prices: shown as "Call" because the only figure ("around $20") is an undated Yelp Q&A answer.
+- Scope: men's cuts as the specialty, plus kids and women's cuts, because reviews show both. This avoids narrowing his scope.
+- Staff on page: Christian, Kirti and Jen, from recent Google reviews. Left off "Mark" (one older Yelp review).
+- Reviews: 4 verbatim Google excerpts from Birdeye (the text matches BestProsInTown snippets), credited First name + last initial + "Google review", with a link to Google Maps.
+- Booking: no online booking exists, so Book = call, and the phone bar's Book opens a call/text sheet. `BOOKING_URL` is left empty.
+- Text buttons use sms: on the main number. Unconfirmed that it takes texts, so listed under Missing.
+- Palette: light paper, red and steel instead of the typical dark barbershop look, to stand out and stay readable.
+- Fonts: Anton, IBM Plex Mono and Karla, from sites\_fonts.
+- Hero art: the fade diagram plus a scroll-driven pole instead of photos. No looping animation except the services strip, which pauses on hover and stops under reduced motion.
+- The tabs become a vertical sticky list on desktop and a scroll row on mobile.
+- Map: an abstract SVG (no cross streets invented) instead of an embedded Google map, so there are no external requests.
+- Left out eyebrow threading, payment methods and "wash and hot towel included" (low-confidence sources).
+- The footer OPEN sign is tied to live hours as an ambient touch that is true to the shop.

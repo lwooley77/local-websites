@@ -1,0 +1,24 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Archivo Black", "file": "archivo-black-latin-400-normal.woff2", "weight": 400},
+    {"family": "Oswald", "file": "oswald-latin-500-normal.woff2", "weight": 500},
+    {"family": "Oswald", "file": "oswald-latin-600-normal.woff2", "weight": 600},
+    {"family": "Libre Franklin", "file": "libre-franklin-latin-400-normal.woff2", "weight": 400},
+    {"family": "Libre Franklin", "file": "libre-franklin-latin-500-normal.woff2", "weight": 500},
+    {"family": "Libre Franklin", "file": "libre-franklin-latin-600-normal.woff2", "weight": 600}
+  ],
+  "vars": {
+    "NAME": "D &amp; D Barbers",
+    "PHONE": "<span class=\"nw\">(775) 825-1582</span>",
+    "PHONE_PLAIN": "(775) 825-1582",
+    "TEL": "tel:+17758251582",
+    "SMS": "sms:+17758251582",
+    "ADDR1": "3024 Kietzke Ln",
+    "ADDR2": "Reno, NV 89502",
+    "MAPS": "https://maps.google.com/?cid=1744723605350550926",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=D+%26+D+Barbers+3024+Kietzke+Ln+Reno+NV+89502",
+    "RATING": "4.6",
+    "COUNT": "98"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Unbounded", "file": "unbounded-latin-500-normal.woff2", "weight": 500},
+    {"family": "Unbounded", "file": "unbounded-latin-700-normal.woff2", "weight": 700},
+    {"family": "Outfit", "file": "outfit-latin-600-normal.woff2", "weight": 600},
+    {"family": "Manrope", "file": "manrope-latin-400-normal.woff2", "weight": 400},
+    {"family": "Manrope", "file": "manrope-latin-500-normal.woff2", "weight": 500},
+    {"family": "Manrope", "file": "manrope-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "Salon 2000",
+    "PHONE": "(775) 351-2222",
+    "TEL": "+17753512222",
+    "ADDR1": "1450 E Prater Way",
+    "ADDR2": "Sparks, NV 89434",
+    "PLAZA": "Hacienda Plaza, at Sparks Blvd and E Prater Way",
+    "MAPS": "https://maps.google.com/?cid=3907936836569230246",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=Salon+2000%2C+1450+E+Prater+Way%2C+Sparks%2C+NV+89434",
+    "FB": "https://www.facebook.com/SALON2000nv/",
+    "ND": "https://nextdoor.com/pages/salon-2000-1/",
+    "BIRDEYE": "https://reviews.birdeye.com/salon-2000-149498987950805",
+    "SMS": "sms:+17753512222"
+  }
+}

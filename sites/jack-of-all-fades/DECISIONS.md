@@ -1,0 +1,16 @@
+# Decisions
+- Treated as a lead (not SKIP): jackofallfadesnv.com returns NXDOMAIN on 2026-10-01; Booksy/Yelp are platforms, not their own site.
+- Ignored Acuity page "Jack of All Fades" (owner=23031582): its timezone is America/Chicago, so it is a different shop.
+- Ignored thejackofallfades.square.site: it is a Newnan, Georgia shop.
+- No prices on page: the $40/$35/$50 figures only appeared in search snippets with no page I could confirm; every row says "Call for price".
+- Hours shown from the Yelp listing (newest source, July 2026) with a "call ahead" note; open badge uses those hours.
+- Spelled owner "D'Raun Manning" as KOLO 8 (Feb 2025) does; sources also use D'raun and Draun.
+- Used a real owner quote from Nevada Sports Net (press quote, not a review), credited and linked.
+- Wolf Pack wording kept to "unofficial / players sit in his chair", matching the article's "loosely holds the title".
+- Book has no online target, so Book opens a small sheet with Call and Text; BOOKING_URL in app.js adds online booking later.
+- Fonts: Anton + DM Serif Display + IBM Plex Mono + Karla (no Fraunces/Cormorant); Anton fits barbershop window lettering.
+- Removed a red serif "of" accent in the H1 because it read like the banned "serif accent word" pattern; H1 is plain Anton.
+- Card pips switched from a razor glyph (read as a frying pan) to spades: a Jack of Spades reads instantly.
+- Kids tab label shortened to "Kids" on phones so all 4 tabs fit without sideways scrolling.
+- Instagram linked but no Instagram photos pulled (brief forbids downloading business photos).
+- No aggregateRating in JSON-LD (third-party ratings in schema go against Google's guidelines).

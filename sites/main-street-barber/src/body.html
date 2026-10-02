@@ -1,0 +1,495 @@
+%%IMAGES%%
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.2 3.8h3.3l1.7 4.3-2.1 1.4a11.5 11.5 0 0 0 6.4 6.4l1.4-2.1 4.3 1.7v3.3a1.6 1.6 0 0 1-1.7 1.6A16.6 16.6 0 0 1 3.6 5.5a1.6 1.6 0 0 1 1.6-1.7z"/></symbol>
+    <symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5.6A1.6 1.6 0 0 1 5.6 4h12.8A1.6 1.6 0 0 1 20 5.6v8.8a1.6 1.6 0 0 1-1.6 1.6H10l-4.6 3.8V16A1.6 1.6 0 0 1 4 14.4z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01" stroke-width="2.6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.8-6-6.8-11.3a6.8 6.8 0 0 1 13.6 0C18.8 15 12 21 12 21z"/><circle cx="12" cy="9.6" r="2.5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.6" y="5" width="16.8" height="15" rx="2"/><path d="M3.6 9.6h16.8M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.6" r="1.8"/><path d="M10 21l2.2-6.2L10 12l1.2-4.6L15 9l2 3.4M12.2 14.8 15 17v4M11.2 7.4 8 9.4 7 13"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17l-5.7 3.1 1.2-6.3L2.9 9.4l6.3-.8z"/></symbol>
+    <symbol id="i-shears" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.8"/><circle cx="6" cy="18" r="2.8"/><path d="M20 4.5 8.2 15.8M14.5 14.4 20 19.5M8.2 8.2 12 11.8"/></symbol>
+    <symbol id="i-razor" viewBox="0 0 24 24"><path d="M3.5 13.5 13 4c1.3-1.3 3.4-1.3 4.7 0l-8.2 8.2z"/><path d="M9.5 12.2l2.3 2.3-5.6 5.6a1.6 1.6 0 0 1-2.3 0l0 0a1.6 1.6 0 0 1 0-2.3z"/><path d="M17 12.5c1 1 1 2 0 3s-1 2 0 3M20 11c1 1 1 2 0 3s-1 2 0 3"/></symbol>
+    <symbol id="i-stache" viewBox="0 0 24 24"><path d="M12 10.4c-1.4-1.8-3.8-2.3-5.3-1.1-1.4 1.1-2.4 2.6-4 2.1.5 2.6 3.5 4 6 3 1.6-.6 2.6-1.5 3.3-2.5.7 1 1.7 1.9 3.3 2.5 2.5 1 5.5-.4 6-3-1.6.5-2.6-1-4-2.1-1.5-1.2-3.9-.7-5.3 1.1z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8.2h2.6V4.6H14a3.6 3.6 0 0 0-3.6 3.6v2.4H8v3.4h2.4v6.4H14V14h2.5l.5-3.4h-3V8.8c0-.4.2-.6.6-.6z"/></symbol>
+  </defs>
+</svg>
+
+<span id="top"></span>
+<div id="road" aria-hidden="true"><i></i></div>
+
+<div id="pbar" role="region" aria-label="Preview notice">
+  <div class="wrap">
+    <p><span class="short">Preview for</span><span class="long">Preview website prepared for</span> <b>%%NAME%%</b></p>
+  </div>
+  <button id="pbar-x" class="press" type="button" aria-label="Close preview notice"><svg class="ico"><use href="#i-x"/></svg></button>
+</div>
+
+<header id="nav">
+  <div class="wrap">
+    <a class="brand" data-qa="logo" href="#top" aria-label="%%NAME%%, back to top">
+      <span class="blade" aria-hidden="true">MAIN ST</span>
+      <span class="sub">Barber Shop<span>Gardnerville</span></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services &amp; Prices</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="badge" data-badge><i></i><span>Call for today's hours</span></span>
+    <a class="btn btn-sign nav-call press" href="%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>Call</a>
+    <button id="menu-btn" class="press" type="button" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div id="menu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top">
+    <span class="blade" aria-hidden="true">MAIN ST</span>
+    <button id="menu-x" class="press" type="button" data-qa="menu-close" aria-label="Close menu"><svg class="ico"><use href="#i-x"/></svg></button>
+  </div>
+  <nav aria-label="Menu">
+    <a href="#services"><small>01</small>Services &amp; Prices</a>
+    <a href="#about"><small>02</small>About</a>
+    <a href="#reviews"><small>03</small>Reviews</a>
+    <a href="#contact"><small>04</small>Contact</a>
+    <a href="#faq"><small>05</small>FAQ</a>
+    <a href="#hours"><small>06</small>Hours &amp; Location</a>
+  </nav>
+  <div class="foot">
+    <span class="badge" data-badge><i></i><span>Call for today's hours</span></span>
+    <a class="btn btn-hay press" href="%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="wrap grid">
+      <div>
+        <p class="lab"><span class="dash" aria-hidden="true"><i></i><i></i></span>Barber shop · Gardnerville, Nevada</p>
+        <h1 id="h-hero">Main Street <span class="l2">Barber Shop</span></h1>
+        <p class="lede">Dan and Jeff's barber shop on Highway 395, right on Main Street. <b>Haircuts, kids' cuts, hot towel shaves and beard trims.</b> Walk in when a chair's open, or call ahead.</p>
+        <div class="ctas">
+          <a class="btn btn-sign press" href="%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+          <button class="btn btn-line press" type="button" data-book><svg class="ico"><use href="#i-cal"/></svg>Book a cut</button>
+        </div>
+        <a class="rate" href="%%MAPS%%" target="_blank" rel="noopener">
+          <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <span><b>%%RATING%%</b> <u>from %%COUNT%% Google reviews</u></span>
+        </a>
+      </div>
+
+      <div class="art" id="art">
+        <svg viewBox="0 0 480 520" role="img" aria-label="Illustration: a green Main St street sign and a US 395 shield on a post, a hanging Barber sign, and Highway 395 running through Carson Valley hay fields toward the mountains">
+          <rect width="480" height="520" fill="#DCE6D8"/>
+          <circle cx="352" cy="168" r="56" fill="#F1DE9E"/>
+          <path d="M0 300 L40 282 L78 290 L120 262 L160 270 L205 214 L232 186 L246 174 L262 196 L292 222 L330 232 L372 220 L410 236 L450 228 L480 240 L480 340 L0 340Z" fill="#B7C9B9"/>
+          <path d="M232 186 L246 174 L262 196 L255 193 L248 184 L240 194Z" fill="#F4F6EE"/>
+          <path d="M0 322 C60 300 120 312 170 318 C230 326 300 300 360 306 C410 310 450 318 480 312 L480 352 L0 352Z" fill="#9CB39E"/>
+          <g id="hawk"><g transform="translate(0,58) scale(.5)"><path d="M0 10 C10 4 18 2 26 8 C30 4 34 3 38 6 C42 3 46 4 50 8 C58 2 66 4 76 10 C64 9 56 11 48 14 L44 19 L40 14 L36 19 L32 14 C24 11 14 9 0 10Z" fill="#2E3B33"/></g></g>
+          <ellipse cx="372" cy="326" rx="16" ry="13" fill="#6E8C72"/><ellipse cx="392" cy="320" rx="13" ry="17" fill="#628266"/><ellipse cx="414" cy="328" rx="18" ry="12" fill="#6E8C72"/>
+          <rect y="338" width="480" height="182" fill="#CDD6A6"/>
+          <g stroke="#BCC68F" stroke-width="1.5" fill="none"><path d="M320 340 L480 380"/><path d="M330 340 L480 410"/><path d="M345 340 L480 450"/><path d="M360 340 L480 500"/><path d="M280 340 L0 400"/><path d="M270 340 L0 460"/></g>
+          <path d="M292 338 L308 338 L470 520 L150 520Z" fill="#4A524C"/>
+          <path d="M292 338 L150 520M308 338 L470 520" stroke="#E9ECE1" stroke-width="2.4"/>
+          <g stroke="#F2C94C" stroke-linecap="butt"><line x1="300.4" y1="345" x2="300.8" y2="353" stroke-width="1.4"/><line x1="301.4" y1="364" x2="302.2" y2="378" stroke-width="2.2"/><line x1="303" y1="393" x2="304.2" y2="414" stroke-width="3.4"/><line x1="305.5" y1="438" x2="307.5" y2="475" stroke-width="5.2"/><line x1="308.8" y1="498" x2="310" y2="520" stroke-width="7"/></g>
+          <g fill="#D9A53A"><ellipse cx="440" cy="392" rx="21" ry="19"/><ellipse cx="404" cy="370" rx="13" ry="12"/><ellipse cx="462" cy="360" rx="8.5" ry="8"/></g>
+          <g fill="none" stroke="#A97C22" stroke-width="1.6"><circle cx="440" cy="392" r="12"/><circle cx="440" cy="392" r="5"/><circle cx="404" cy="370" r="7"/><circle cx="462" cy="360" r="4"/></g>
+          <g fill="#7B6A4E"><rect x="6" y="430" width="7" height="70"/><rect x="56" y="409" width="6" height="50"/><rect x="98" y="394" width="5" height="35"/><rect x="134" y="383" width="4" height="25"/><rect x="164" y="375" width="3.5" height="18"/><rect x="189" y="369" width="3" height="13"/><rect x="209" y="364" width="2.6" height="9"/></g>
+          <path d="M0 444 L211 366M0 472 L211 370" stroke="#7B6A4E" stroke-width="3" fill="none"/>
+          <rect x="114" y="86" width="10" height="434" fill="#7D8780"/>
+          <rect x="112" y="80" width="14" height="8" rx="2" fill="#6A746D"/>
+          <rect x="26" y="102" width="196" height="60" rx="7" fill="#0F5A3A"/>
+          <rect x="31.5" y="107.5" width="185" height="49" rx="4" fill="none" stroke="#F7F8F2" stroke-width="2.5"/>
+          <text x="40" y="124" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="12" fill="#F7F8F2" letter-spacing="1">1400</text>
+          <text x="128" y="149" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="42" fill="#F7F8F2" letter-spacing="3">MAIN ST</text>
+          <rect x="84" y="176" width="70" height="70" rx="5" fill="#1C1F1D"/>
+          <path d="M90 186 Q100 180 108 187 Q119 178 130 187 Q138 180 148 186 L148 206 Q148 232 119 242 Q90 232 90 206Z" fill="#F7F8F2"/>
+          <text x="119" y="226" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="31" fill="#1C1F1D" letter-spacing="1">395</text>
+          <path d="M124 282 L244 282" stroke="#3E4641" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M124 312 L162 282" stroke="#3E4641" stroke-width="3"/>
+          <g id="shingle">
+            <path d="M184 282 L184 302M226 282 L226 302" stroke="#3E4641" stroke-width="2" stroke-dasharray="3 2"/>
+            <rect x="160" y="300" width="90" height="46" rx="5" fill="#E7B748" stroke="#7A5410" stroke-width="2"/>
+            <rect x="165" y="305" width="80" height="36" rx="3" fill="none" stroke="#0B3F29" stroke-width="1.2" opacity=".55"/>
+            <text x="205" y="332" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="23" fill="#0B3F29" letter-spacing="3">BARBER</text>
+          </g>
+        </svg>
+        <span class="cap" aria-hidden="true">Main St is US 395</span>
+      </div>
+    </div>
+  </section>
+
+  <nav class="strip" aria-label="Services">
+    <div class="track">
+      <ul>
+        <li><a href="#services" data-cat="cuts">Haircuts</a></li>
+        <li><a href="#services" data-cat="cuts">Kids' cuts</a></li>
+        <li><a href="#services" data-cat="cuts">Fades</a></li>
+        <li><a href="#services" data-cat="cuts">Buzz cuts</a></li>
+        <li><a href="#services" data-cat="shaves">Hot towel shaves</a></li>
+        <li><a href="#services" data-cat="shaves">Head shaves</a></li>
+        <li><a href="#services" data-cat="beard">Beard trims</a></li>
+        <li><a href="#services" data-cat="beard">Moustache trims</a></li>
+      </ul>
+      <ul aria-hidden="true" class="dup">
+        <li><a href="#services" data-cat="cuts" tabindex="-1">Haircuts</a></li>
+        <li><a href="#services" data-cat="cuts" tabindex="-1">Kids' cuts</a></li>
+        <li><a href="#services" data-cat="cuts" tabindex="-1">Fades</a></li>
+        <li><a href="#services" data-cat="cuts" tabindex="-1">Buzz cuts</a></li>
+        <li><a href="#services" data-cat="shaves" tabindex="-1">Hot towel shaves</a></li>
+        <li><a href="#services" data-cat="shaves" tabindex="-1">Head shaves</a></li>
+        <li><a href="#services" data-cat="beard" tabindex="-1">Beard trims</a></li>
+        <li><a href="#services" data-cat="beard" tabindex="-1">Moustache trims</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="services" aria-labelledby="h-svc">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lab"><span class="mm" aria-hidden="true">1</span>What they do</p>
+        <h2 id="h-svc">Services &amp; Prices</h2>
+        <p>Prices aren't posted online yet. Tap any service to call the shop and ask, or just come in when a chair is open.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Service categories">
+        <button class="tab press" role="tab" id="t-cuts" data-cat="cuts" data-qa="tab" aria-selected="true" aria-controls="p-cuts"><svg class="ico"><use href="#i-shears"/></svg>Haircuts</button>
+        <button class="tab press" role="tab" id="t-shaves" data-cat="shaves" data-qa="tab" aria-selected="false" aria-controls="p-shaves" tabindex="-1"><svg class="ico"><use href="#i-razor"/></svg>Shaves</button>
+        <button class="tab press" role="tab" id="t-beard" data-cat="beard" data-qa="tab" aria-selected="false" aria-controls="p-beard" tabindex="-1"><svg class="ico"><use href="#i-stache"/></svg><span>Beard<span class="lg"> &amp; Moustache</span></span></button>
+      </div>
+
+      <div class="sign" role="tabpanel" id="p-cuts" aria-labelledby="t-cuts">
+        <div class="sign-in">
+          <div class="sign-top"><h3>Haircuts</h3><svg class="ico" aria-hidden="true"><use href="#i-shears"/></svg></div>
+          <ul class="rows">
+            <li><a class="row" href="%%TEL%%" aria-label="Haircut: call for price"><span class="t"><b>Haircut</b><span>Regular cuts, trims and styling.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+            <li><a class="row" href="%%TEL%%" aria-label="Kids' haircut: call for price"><span class="t"><b>Kids' haircut</b><span>Kids are welcome in the chair.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+            <li><a class="row" href="%%TEL%%" aria-label="Fade: call for price"><span class="t"><b>Fade</b><span>Clean, blended sides and back.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+            <li><a class="row" href="%%TEL%%" aria-label="Buzz cut: call for price"><span class="t"><b>Buzz cut</b><span>Short all over, as short as you like.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sign" role="tabpanel" id="p-shaves" aria-labelledby="t-shaves" hidden>
+        <div class="sign-in">
+          <div class="sign-top"><h3>Shaves</h3><svg class="ico" aria-hidden="true"><use href="#i-razor"/></svg></div>
+          <ul class="rows">
+            <li><a class="row" href="%%TEL%%" aria-label="Hot towel shave: call for price"><span class="t"><b>Hot towel shave</b><span>A classic shave with a hot towel.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+            <li><a class="row" href="%%TEL%%" aria-label="Head shave: call for price"><span class="t"><b>Head shave</b><span>Smooth all over.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+            <li><a class="row" href="%%TEL%%" aria-label="Face shave: call for price"><span class="t"><b>Face shave</b><span>Cheeks, chin and neck.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sign" role="tabpanel" id="p-beard" aria-labelledby="t-beard" hidden>
+        <div class="sign-in">
+          <div class="sign-top"><h3>Beard &amp; Moustache</h3><svg class="ico" aria-hidden="true"><use href="#i-stache"/></svg></div>
+          <ul class="rows">
+            <li><a class="row" href="%%TEL%%" aria-label="Beard trim: call for price"><span class="t"><b>Beard trim</b><span>Shaped and tidied up.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+            <li><a class="row" href="%%TEL%%" aria-label="Moustache trim: call for price"><span class="t"><b>Moustache trim</b><span>Kept neat and even.</span><i class="cp">Call for price</i></span><span class="p"><em>Call for price</em><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="svc-note"><svg class="ico" aria-hidden="true"><use href="#i-walk"/></svg><span>Walk-ins welcome when a chair is open. Call ahead to check the wait.</span></p>
+    </div>
+  </section>
+
+  <section id="about" class="about alt" aria-labelledby="h-about">
+    <div class="wrap grid">
+      <div class="copy">
+        <p class="lab"><span class="mm" aria-hidden="true">2</span>About the shop</p>
+        <h2 id="h-about" style="margin-top:14px">Dan and Jeff, on Main Street.</h2>
+        <p>Main Street Barber Shop is where Dan and Jeff cut hair, on Highway 395, which is Main Street through Gardnerville.</p>
+        <p>They do haircuts for grown-ups and kids, fades and buzz cuts, hot towel shaves, head shaves, and beard and moustache trims.</p>
+        <p>Walk in when a chair is open, or call ahead and ask about the wait. There's street parking by the shop.</p>
+        <ul class="ledger">
+          <li><span>Barbers</span><span>Dan and Jeff</span></li>
+          <li><span>Walk-ins</span><span>Welcome when a chair's open</span></li>
+          <li><span>Kids</span><span>Welcome</span></li>
+          <li><span>Payment</span><span>Cards accepted</span></li>
+          <li><span>Booking</span><span>By phone</span></li>
+        </ul>
+      </div>
+      <div>
+        <img data-k="shop" alt="Inside Main Street Barber Shop in Gardnerville">
+        <div class="chairs">
+          <svg viewBox="0 0 520 400" role="img" aria-label="Illustration: two classic green barber chairs side by side under two mirrors, with name plates for Dan and Jeff and a Walk-ins Welcome sign on the wall">
+            <rect width="520" height="400" fill="#EEF1E7"/>
+            <rect y="0" width="520" height="248" fill="#E2E8D8"/>
+            <path d="M0 248 H520" stroke="#B9C6B1" stroke-width="2"/>
+            <g stroke="#D3DCC6" stroke-width="2"><path d="M0 214 H520"/></g>
+            <g fill="#D3DCC6"><rect x="0" y="248" width="520" height="152"/></g>
+            <g stroke="#C4CFB8" stroke-width="1.5"><path d="M0 290 H520M0 340 H520"/><path d="M60 248 L30 400M160 248 L150 400M260 248 V400M360 248 L370 400M460 248 L490 400"/></g>
+            <g>
+              <rect x="66" y="22" width="124" height="96" rx="8" fill="#C59A43"/><rect x="74" y="30" width="108" height="80" rx="4" fill="#F2F4EC"/><path d="M92 46 L118 46 M92 56 L108 56" stroke="#D3DCC6" stroke-width="4" stroke-linecap="round"/>
+              <rect x="330" y="22" width="124" height="96" rx="8" fill="#C59A43"/><rect x="338" y="30" width="108" height="80" rx="4" fill="#F2F4EC"/><path d="M356 46 L382 46 M356 56 L372 56" stroke="#D3DCC6" stroke-width="4" stroke-linecap="round"/>
+            </g>
+            <g>
+              <path d="M260 22 V40" stroke="#4D6053" stroke-width="1.5"/>
+              <rect x="214" y="40" width="92" height="44" rx="5" fill="#0F5A3A"/>
+              <rect x="218" y="44" width="84" height="36" rx="3" fill="none" stroke="#F7F8F2" stroke-width="1.5"/>
+              <text x="260" y="59" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="13" fill="#F7F8F2" letter-spacing="1.5">WALK-INS</text>
+              <text x="260" y="74" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="13" fill="#E7B748" letter-spacing="1.5">WELCOME</text>
+            </g>
+            <g>
+              <rect x="236" y="166" width="48" height="82" rx="3" fill="#C59A43"/>
+              <rect x="230" y="160" width="60" height="8" rx="2" fill="#7A5410"/>
+              <rect x="246" y="134" width="28" height="26" rx="4" fill="#F7F8F2" stroke="#4D6053" stroke-width="1.5"/>
+              <path d="M252 134 V118M258 134 V114M264 134 V120M269 134 V116" stroke="#14231B" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <g id="chair1" stroke="#14231B" stroke-width="2.2" stroke-linejoin="round">
+              <ellipse cx="128" cy="344" rx="56" ry="10" fill="#B9C6B1" stroke="none"/>
+              <rect x="119" y="290" width="18" height="52" fill="#9AA59D"/>
+              <rect x="76" y="334" width="104" height="12" rx="6" fill="#9AA59D"/>
+              <rect x="104" y="108" width="48" height="22" rx="9" fill="#0F5A3A"/>
+              <path d="M128 130 V142" stroke-width="3"/>
+              <rect x="80" y="140" width="96" height="106" rx="20" fill="#0F5A3A"/>
+              <path d="M104 152 V234M128 150 V236M152 152 V234" stroke="#2E7A55" stroke-width="2"/>
+              <rect x="70" y="240" width="116" height="36" rx="13" fill="#0F5A3A"/>
+              <rect x="58" y="222" width="30" height="13" rx="6.5" fill="#D9DFD0"/>
+              <rect x="168" y="222" width="30" height="13" rx="6.5" fill="#D9DFD0"/>
+              <path d="M73 235 V256M183 235 V256" stroke-width="3"/>
+              <path d="M96 276 L88 306 H168 L160 276" fill="#C8D0C2"/>
+            </g>
+            <use href="#chair1" x="264"/>
+            <g>
+              <rect x="98" y="362" width="60" height="24" rx="4" fill="#0B3F29"/>
+              <text x="128" y="380" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="18" fill="#F7F8F2" letter-spacing="2">DAN</text>
+              <rect x="362" y="362" width="60" height="24" rx="4" fill="#0B3F29"/>
+              <text x="392" y="380" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="18" fill="#F7F8F2" letter-spacing="2">JEFF</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="revs" aria-labelledby="h-rev">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lab"><span class="mm" aria-hidden="true">3</span>Reviews</p>
+        <h2 id="h-rev">What customers say</h2>
+      </div>
+      <div class="score">
+        <span class="big">%%RATING%%</span>
+        <div>
+          <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <p class="of">out of 5 from <a href="%%MAPS%%" target="_blank" rel="noopener">%%COUNT%% Google reviews</a></p>
+        </div>
+      </div>
+      <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Customer reviews">
+        <div class="cards" id="cards" tabindex="0">
+          <figure class="card" role="group" aria-roledescription="slide" aria-label="1 of 4" style="margin:0">
+            <q>Jeff did a great job on my sons haircut. He listened to what he wanted and was very kind through the process.</q>
+            <figcaption class="who"><i></i><span><b>Alona B.</b> on Google</span></figcaption>
+          </figure>
+          <figure class="card" role="group" aria-roledescription="slide" aria-label="2 of 4" style="margin:0">
+            <q>These guys are both top notch barbers old school barbershop. Great conversation and good laughs</q>
+            <figcaption class="who"><i></i><span><b>Heidi W.</b> on Yelp</span></figcaption>
+          </figure>
+          <figure class="card" role="group" aria-roledescription="slide" aria-label="3 of 4" style="margin:0">
+            <q>Great Old-Time Barbershop. Very friendly staff, great service.</q>
+            <figcaption class="who"><i></i><span><b>Dan K.</b> on Yelp</span></figcaption>
+          </figure>
+          <figure class="card" role="group" aria-roledescription="slide" aria-label="4 of 4" style="margin:0">
+            <q>Best buzz job east of Kauai and west of Cuba</q>
+            <figcaption class="who"><i></i><span><b>Mike P.</b> on Google</span></figcaption>
+          </figure>
+        </div>
+        <div class="car-ctl">
+          <button type="button" class="press" id="c-prev" aria-label="Previous review"><svg class="ico"><use href="#i-prev"/></svg></button>
+          <button type="button" class="press" id="c-next" aria-label="Next review"><svg class="ico"><use href="#i-next"/></svg></button>
+          <span class="count" id="c-count" aria-live="polite">1 / 4</span>
+        </div>
+      </div>
+      <p class="src">Quoted word for word from public Google and Yelp reviews.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="h-con">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lab"><span class="mm" aria-hidden="true">4</span>Get in touch</p>
+        <h2 id="h-con">Call or come by</h2>
+      </div>
+      <div class="grid">
+        <a class="cc call press" href="%%TEL%%">
+          <span class="ic"><svg class="ico"><use href="#i-phone"/></svg></span>
+          <span class="w"><b>%%PHONE%%</b><span class="tx">Tap to call the shop. The quickest way to check the wait or set a time.</span></span>
+        </a>
+        <a class="cc press" href="%%SMS%%">
+          <span class="ic"><svg class="ico"><use href="#i-sms"/></svg></span>
+          <span class="w"><b>Text</b><span class="tx">Send a message to <span class="nw">%%PHONE%%</span>. If it doesn't go through, give them a call.</span></span>
+        </a>
+        <a class="cc press" href="%%DIR%%" target="_blank" rel="noopener">
+          <span class="ic"><svg class="ico"><use href="#i-pin"/></svg></span>
+          <span class="w"><b>Directions</b><span class="tx">%%STREET%%, %%CITY%%</span></span>
+        </a>
+      </div>
+      <p class="fbline">Also on Facebook: <a href="%%FB%%" target="_blank" rel="noopener">Main Street Barbers</a></p>
+    </div>
+  </section>
+
+  <section id="faq" class="alt" aria-labelledby="h-faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lab"><span class="mm" aria-hidden="true">5</span>Good to know</p>
+        <h2 id="h-faq">Questions</h2>
+      </div>
+      <div class="faq">
+        <div class="qa"><h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="a1" id="q1">Do I need an appointment?<span class="pm" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></button></h3>
+          <div class="ans" id="a1" role="region" aria-labelledby="q1"><div><p>No. Walk-ins are welcome when a chair is open. To skip the wait, call <a href="%%TEL%%">%%PHONE%%</a> and ask when they can fit you in.</p></div></div></div>
+        <div class="qa"><h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="a2" id="q2">How much is a haircut?<span class="pm" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></button></h3>
+          <div class="ans" id="a2" role="region" aria-labelledby="q2"><div><p>Prices aren't posted online yet, so give the shop a call at <a href="%%TEL%%">%%PHONE%%</a> and ask.</p></div></div></div>
+        <div class="qa"><h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="a3" id="q3">Do you cut kids' hair?<span class="pm" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></button></h3>
+          <div class="ans" id="a3" role="region" aria-labelledby="q3"><div><p>Yes. Kids are welcome. Bring them in or call ahead to check the wait.</p></div></div></div>
+        <div class="qa"><h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="a4" id="q4">Do you do hot towel shaves?<span class="pm" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></button></h3>
+          <div class="ans" id="a4" role="region" aria-labelledby="q4"><div><p>Yes. Hot towel shaves, head shaves and face shaves, plus beard and moustache trims. Call ahead to check timing.</p></div></div></div>
+        <div class="qa"><h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="a5" id="q5">Can I pay with a card?<span class="pm" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></button></h3>
+          <div class="ans" id="a5" role="region" aria-labelledby="q5"><div><p>The shop's listings say credit cards are accepted. Call if you want to double-check before you come in.</p></div></div></div>
+        <div class="qa"><h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="a6" id="q6">Where do I park?<span class="pm" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></button></h3>
+          <div class="ans" id="a6" role="region" aria-labelledby="q6"><div><p>There's street parking by the shop at %%STREET%%. Tap <a href="%%DIR%%" target="_blank" rel="noopener">Directions</a> for the route.</p></div></div></div>
+        <div class="qa"><h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="a7" id="q7">What are your hours?<span class="pm" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></button></h3>
+          <div class="ans" id="a7" role="region" aria-labelledby="q7"><div><p>Listed hours are Tuesday to Friday 8 to 5 and Saturday 8 to noon, closed Sunday and Monday. Call to confirm before you drive over.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours" class="hl" aria-labelledby="h-hrs">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="lab"><span class="mm" aria-hidden="true">6</span>Find the shop</p>
+        <h2 id="h-hrs">Hours &amp; Location</h2>
+      </div>
+      <div class="grid">
+        <div class="hcard">
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Shop hours</h3>
+          <table id="htable">
+            <caption class="vh">Opening hours</caption>
+            <tbody>
+              <tr data-d="1" class="closed"><td>Monday</td><td>Closed</td></tr>
+              <tr data-d="2"><td>Tuesday</td><td>8 AM to 5 PM</td></tr>
+              <tr data-d="3"><td>Wednesday</td><td>8 AM to 5 PM</td></tr>
+              <tr data-d="4"><td>Thursday</td><td>8 AM to 5 PM</td></tr>
+              <tr data-d="5"><td>Friday</td><td>8 AM to 5 PM</td></tr>
+              <tr data-d="6"><td>Saturday</td><td>8 AM to 12 PM</td></tr>
+              <tr data-d="0" class="closed"><td>Sunday</td><td>Closed</td></tr>
+            </tbody>
+          </table>
+          <p class="hnote">Hours as listed online. Please call ahead to confirm, especially on holidays.</p>
+        </div>
+        <div class="hcard">
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Location</h3>
+          <p class="addr">%%STREET%%<span>%%CITY%%</span></p>
+          <div class="map">
+            <svg viewBox="0 0 400 220" role="img" aria-label="Simple map: the shop on US 395, Main Street, with Minden and Carson City to the north and Topaz Lake to the south">
+              <rect width="400" height="220" fill="#D9E2CF"/>
+              <g fill="#CDD8BF"><rect x="18" y="20" width="110" height="70" rx="4"/><rect x="18" y="104" width="110" height="96" rx="4"/><rect x="272" y="20" width="110" height="80" rx="4"/><rect x="272" y="114" width="110" height="86" rx="4"/></g>
+              <g fill="#C5D1B5"><rect x="140" y="20" width="44" height="60" rx="4"/><rect x="216" y="132" width="44" height="68" rx="4"/></g>
+              <path d="M200 0 V220" stroke="#F7F8F2" stroke-width="22"/>
+              <path d="M200 0 V220" stroke="#F2C94C" stroke-width="2" stroke-dasharray="10 8"/>
+              <g transform="translate(150,150)"><rect x="-17" y="-17" width="34" height="34" rx="3" fill="#1C1F1D"/><path d="M-13 -11 Q-8 -14 -4 -10 Q0 -15 4 -10 Q8 -14 13 -11 L13 0 Q13 12 0 16 Q-13 12 -13 0Z" fill="#F7F8F2"/><text x="0" y="7" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="14" fill="#1C1F1D">395</text></g>
+              <g transform="translate(236,96)"><path d="M0 22 C-12 10 -14 4 -14 -2 a14 14 0 0 1 28 0 C14 4 12 10 0 22Z" fill="#0F5A3A" stroke="#F7F8F2" stroke-width="2"/><circle cy="-2" r="5" fill="#E7B748"/></g>
+              <text x="256" y="84" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="18" fill="#14231B" letter-spacing="1">MAIN STREET</text>
+              <text x="256" y="102" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="18" fill="#14231B" letter-spacing="1">BARBER SHOP</text>
+              <text x="256" y="118" font-family="Work Sans, Arial, sans-serif" font-size="11" fill="#34473B">1428 US Hwy 395 N</text>
+              <text x="214" y="22" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="14" fill="#34473B" letter-spacing="1">N: MINDEN, CARSON CITY</text>
+              <text x="214" y="208" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="14" fill="#34473B" letter-spacing="1">S: TOPAZ LAKE</text>
+              <text x="34" y="62" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="13" fill="#4D6053" letter-spacing="2">GARDNERVILLE</text>
+            </svg>
+          </div>
+          <a class="btn btn-sign press" href="%%DIR%%" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg>Get directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="foot">
+  <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice">
+      <rect width="1440" height="300" fill="#173324"/>
+      <rect y="120" width="1440" height="80" fill="#1D3B29"/>
+      <circle cx="905" cy="168" r="58" fill="#E7B748" opacity=".85"/>
+      <g id="hawk2"><g transform="translate(0,70) scale(.5)"><path d="M0 10 C10 4 18 2 26 8 C30 4 34 3 38 6 C42 3 46 4 50 8 C58 2 66 4 76 10 C64 9 56 11 48 14 L44 19 L40 14 L36 19 L32 14 C24 11 14 9 0 10Z" fill="#0B2418"/></g></g>
+      <g fill="#F7F8F2" opacity=".55"><circle cx="140" cy="40" r="1.4"/><circle cx="330" cy="70" r="1.1"/><circle cx="560" cy="34" r="1.3"/><circle cx="1180" cy="48" r="1.2"/><circle cx="1330" cy="82" r="1"/><circle cx="720" cy="58" r="1"/></g>
+      <path d="M0 196 L80 176 L170 186 L260 160 L360 172 L470 146 L560 158 L660 128 L760 112 L800 96 L822 84 L846 104 L900 132 L980 150 L1080 140 L1180 158 L1300 146 L1440 166 L1440 230 L0 230Z" fill="#24452F"/>
+      <path d="M800 96 L822 84 L846 104 L836 101 L823 92 L812 102Z" fill="#B9C6B1" opacity=".7"/>
+      <path d="M0 214 C200 200 360 212 520 206 C700 198 900 214 1100 204 C1260 198 1360 206 1440 202 L1440 300 L0 300Z" fill="#1B3626"/>
+      <rect y="226" width="1440" height="74" fill="#2C4529"/>
+      <g fill="#7E6527"><ellipse cx="880" cy="238" rx="15" ry="13"/><ellipse cx="930" cy="234" rx="11" ry="10"/><ellipse cx="1240" cy="238" rx="14" ry="12"/><ellipse cx="160" cy="238" rx="13" ry="11"/></g>
+      <g fill="#3B3826"><rect x="0" y="232" width="1440" height="3"/><rect x="0" y="242" width="1440" height="3"/></g>
+      <g fill="#3B3826"><rect x="20" y="226" width="5" height="24"/><rect x="100" y="226" width="5" height="24"/><rect x="180" y="226" width="5" height="24"/><rect x="260" y="226" width="5" height="24"/><rect x="340" y="226" width="5" height="24"/><rect x="420" y="226" width="5" height="24"/><rect x="980" y="226" width="5" height="24"/><rect x="1060" y="226" width="5" height="24"/><rect x="1140" y="226" width="5" height="24"/><rect x="1220" y="226" width="5" height="24"/><rect x="1300" y="226" width="5" height="24"/><rect x="1380" y="226" width="5" height="24"/></g>
+      <g>
+        <rect x="500" y="172" width="150" height="80" fill="#2E2A22"/>
+        <path d="M494 172 H656 V158 H630 V150 H520 V158 H494Z" fill="#3A342A"/>
+        <rect x="520" y="196" width="46" height="40" fill="#E7B748" opacity=".9"/>
+        <rect x="580" y="196" width="26" height="56" fill="#4A4234"/>
+        <rect x="586" y="200" width="14" height="20" fill="#E7B748" opacity=".75"/>
+        <rect x="618" y="196" width="22" height="40" fill="#E7B748" opacity=".9"/>
+        <path d="M543 196 V236M520 216 H566" stroke="#2E2A22" stroke-width="2"/>
+        <rect x="528" y="160" width="94" height="12" fill="#2E2A22"/>
+        <text x="575" y="170" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="11" fill="#E7B748" letter-spacing="2">BARBER SHOP</text>
+      </g>
+      <g>
+        <rect x="716" y="150" width="5" height="102" fill="#6A746D"/>
+        <rect x="684" y="146" width="70" height="18" rx="3" fill="#0F5A3A"/>
+        <rect x="686.5" y="148.5" width="65" height="13" rx="2" fill="none" stroke="#F7F8F2" stroke-width="1"/>
+        <text x="719" y="159" text-anchor="middle" font-family="Bebas Neue, Arial Narrow, sans-serif" font-size="11" fill="#F7F8F2" letter-spacing="1.5">MAIN ST</text>
+      </g>
+      <rect y="252" width="1440" height="48" fill="#262D28"/>
+      <path d="M0 276 H1440" stroke="#F2C94C" stroke-width="3" stroke-dasharray="26 22"/>
+      <g id="truck">
+        <path d="M118 262 L300 250 L300 284 L118 274Z" fill="#F2C94C" opacity=".16"/>
+        <path d="M30 262 H82 L92 248 H112 L122 262 V274 H30Z" fill="#0E1D15"/>
+        <rect x="96" y="251" width="12" height="9" fill="#2E4A3A"/>
+        <circle cx="50" cy="276" r="7" fill="#0A140F"/><circle cx="104" cy="276" r="7" fill="#0A140F"/>
+        <rect x="116" y="263" width="6" height="4" rx="1" fill="#F2C94C"/>
+        <rect x="30" y="263" width="4" height="4" fill="#B5432F"/>
+      </g>
+    </svg>
+  </div>
+  <div class="fwrap">
+    <div>
+      <p class="fname">%%NAME%%</p>
+      <p style="margin-top:10px">Haircuts, kids' cuts, fades, hot towel shaves, head shaves, and beard and moustache trims on Main Street in Gardnerville.</p>
+    </div>
+    <div>
+      <p><a href="%%DIR%%" target="_blank" rel="noopener">%%STREET%%<br>%%CITY%%</a></p>
+      <p style="margin-top:10px"><a href="%%TEL%%">%%PHONE%%</a></p>
+    </div>
+    <div>
+      <p>Tue to Fri 8 to 5<br>Sat 8 to 12<br>Sun and Mon closed</p>
+      <p style="margin-top:10px"><a href="%%FB%%" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+    <div class="fsmall" style="grid-column:1/-1">
+      <p id="privacy"><b>Privacy.</b> This site uses no cookies, no tracking and no forms. Calls and texts go straight to the shop. There's no online booking; booking is by phone, and the Google Maps and Facebook links open on those sites under their own privacy policies.</p>
+      <p>&copy; <span id="yr">2026</span> %%NAME%%, Gardnerville, Nevada. <a href="#privacy">Privacy</a> · Preview site prepared by mk.</p>
+    </div>
+  </div>
+</footer>
+
+<nav id="bar" aria-label="Quick contact">
+  <a href="%%TEL%%" class="press"><svg class="ico"><use href="#i-phone"/></svg>Call</a>
+  <a href="%%SMS%%" class="press"><svg class="ico"><use href="#i-sms"/></svg>Text</a>
+  <a href="%%DIR%%" target="_blank" rel="noopener" class="press"><svg class="ico"><use href="#i-pin"/></svg>Directions</a>
+  <button type="button" class="bk press" data-book><svg class="ico"><use href="#i-cal"/></svg>Book</button>
+</nav>
+
+<div id="sheet-bg"></div>
+<div id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-h">
+  <div id="grab" aria-hidden="true"><i></i></div>
+  <button id="sheet-x" type="button" class="press" aria-label="Close"><svg class="ico"><use href="#i-x"/></svg></button>
+  <h2 id="sheet-h">Book a cut</h2>
+  <p>The shop books by phone. Call or text and they'll find you a time, or walk in when a chair is open.</p>
+  <div class="opts" id="sheet-opts">
+    <a class="btn btn-sign press" href="%%TEL%%"><svg class="ico"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+    <a class="btn btn-line press" href="%%SMS%%"><svg class="ico"><use href="#i-sms"/></svg>Send a text</a>
+  </div>
+</div>

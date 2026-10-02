@@ -1,0 +1,23 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Anton", "file": "anton-latin-400-normal.woff2", "weight": 400},
+    {"family": "Plex Mono", "file": "ibm-plex-mono-latin-500-normal.woff2", "weight": 500},
+    {"family": "Karla", "file": "karla-latin-400-normal.woff2", "weight": 400},
+    {"family": "Karla", "file": "karla-latin-500-normal.woff2", "weight": 500},
+    {"family": "Karla", "file": "karla-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "Cutz Unlimited",
+    "PHONE": "<span class=\"nw\">(775) 842-6345</span>",
+    "TEL": "tel:+17758426345",
+    "SMS": "sms:+17758426345",
+    "ADDR1": "4938 S Virginia St",
+    "ADDR2": "Reno, NV 89502",
+    "MAPS": "https://maps.google.com/?cid=6999421632732897131",
+    "DIR": "https://www.google.com/maps/dir/?api=1&destination=Cutz+Unlimited+4938+S+Virginia+St+Reno+NV+89502",
+    "IG": "https://www.instagram.com/cutz_unlimited/",
+    "RATING": "4.6",
+    "COUNT": "137"
+  }
+}

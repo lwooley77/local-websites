@@ -1,0 +1,21 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Young Serif", "file": "young-serif-latin-400-normal.woff2", "weight": 400},
+    {"family": "Josefin Sans", "file": "josefin-sans-latin-600-normal.woff2", "weight": 600},
+    {"family": "Figtree", "file": "figtree-latin-400-normal.woff2", "weight": 400},
+    {"family": "Figtree", "file": "figtree-latin-500-normal.woff2", "weight": 500},
+    {"family": "Figtree", "file": "figtree-latin-600-normal.woff2", "weight": 600}
+  ],
+  "vars": {
+    "NAME": "Electric Sun",
+    "PHONE": "(775) 575-1070",
+    "TEL": "+17755751070",
+    "ADDR1": "480 E Main St, Suite 210",
+    "ADDR2": "Fernley, NV 89408",
+    "MAPS": "https://maps.google.com/?cid=16493444029333548977",
+    "BOOK": "https://www.vagaro.com/electricsun1",
+    "REVIEWS_VAGARO": "https://www.vagaro.com/electricsun1/reviews",
+    "FB": "https://www.facebook.com/233236773444"
+  }
+}

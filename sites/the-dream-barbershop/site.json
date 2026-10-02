@@ -1,0 +1,23 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Young Serif", "file": "young-serif-latin-400-normal.woff2", "weight": 400},
+    {"family": "Josefin Sans", "file": "josefin-sans-latin-600-normal.woff2", "weight": 600},
+    {"family": "Karla", "file": "karla-latin-400-normal.woff2", "weight": 400},
+    {"family": "Karla", "file": "karla-latin-500-normal.woff2", "weight": 500},
+    {"family": "Karla", "file": "karla-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "The Dream Barbershop",
+    "PHONE": "(775) 448-6456",
+    "TEL": "+17754486456",
+    "STREET": "1109 California Ave",
+    "CITY": "Reno, NV 89509",
+    "BOOK": "https://getsquire.com/booking/book/the-dream-barbershop-reno",
+    "SQUIRE": "https://getsquire.com/discover/barbershop/the-dream-barbershop-reno",
+    "MAPS": "https://maps.google.com/?cid=2113090195408155263",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=The+Dream+Barbershop,+1109+California+Ave,+Reno,+NV+89509",
+    "IG": "https://www.instagram.com/thedreambarbershopreno/",
+    "FB": "https://www.facebook.com/thedreambarbershopreno/"
+  }
+}

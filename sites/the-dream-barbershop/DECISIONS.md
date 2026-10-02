@@ -1,0 +1,18 @@
+# Decisions
+- Lead verified: no own website found (only Instagram, Facebook, Squire, Booksy, Yelp, directories); not closed. Built the demo.
+- Booking goes to Squire (link in their Instagram bio, 347 Squire reviews); ignored the Booksy page since it redirected to a generic list and looks inactive.
+- Saturday hours: used 9 AM to 4 PM (two Google/Yelp-fed listings) over the Instagram bio's 6 PM, with an on-page asterisk telling visitors to call; hero says "Sat from 9 AM" to avoid stating a close time.
+- Open badge uses the same hours in America/Los_Angeles; on phones it drops the word "now" to fit the nav.
+- Only 8 services shown, all with prices from Squire snippets; a note sends people to the full Squire menu (about 55 services) instead of guessing prices for shaves or color.
+- "Shaves" in the services strip jumps to that Squire note, because no shave price was found.
+- No review quotes used: the snippets found were partial or via aggregators, so the page shows the Google 4.8 / 82 rating and a Squire 5.0 / 347 link only.
+- Squire 5.0 / 347 shown on page although it came from a search snippet (Squire blocks fetching); marked Unverified in STATUS.
+- Apple Pay mentioned in FAQ from one source (BestProsInTown); flagged for owner confirmation.
+- Latinx-owned, private parking and SMP service left off the page (single weak source).
+- Barbers shown by first name only on a letter board; Rodrigo tagged Owner per the shop's own Facebook video title.
+- Fonts: Young Serif / Josefin Sans / Karla, to avoid the Fraunces/Cormorant default and match the shop's bold-serif Instagram bio.
+- Palette kept warm (black, cream, brass) and red only in the barber pole, to avoid the blue/purple "night" cliche.
+- Service tabs filter (All default) and wrap to two rows on phones; tab icons hidden under 700px to keep the rows tidy.
+- Desktop menu uses CSS columns so categories stack without gaps.
+- Reviews moon decoration moved to the bottom corner so it never sits behind text.
+- Map card is an abstract compass plate, not a fake street map, so nothing about the location is invented.
