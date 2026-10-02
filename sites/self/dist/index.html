@@ -295,7 +295,36 @@ html{scroll-padding-top:80px}
 .skip-link{position:absolute;left:-9999px;top:8px;z-index:300;background:var(--gold);color:var(--ink);padding:12px 18px;border-radius:10px;font-weight:600;text-decoration:none}
 .skip-link:focus{left:12px}
 .top.scrolled{box-shadow:0 10px 28px rgba(0,0,0,.4)}
-.top{transition:box-shadow .2s var(--ease)}</style>
+.top{transition:box-shadow .2s var(--ease)}
+.cgrid{display:grid;gap:40px}
+@media (min-width:960px){.cgrid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.cardform{background:#fff;border-radius:22px;padding:clamp(20px,3.4vw,34px);box-shadow:0 18px 44px rgba(30,27,22,.18);color:var(--ink)}
+.cardform .row2{display:grid;gap:14px;margin-bottom:14px}
+@media (min-width:600px){.cardform .row2{grid-template-columns:1fr 1fr}}
+.cardform .f{margin-bottom:14px;border:0;padding:0;min-width:0}
+.cardform .row2 .f{margin-bottom:0}
+.cardform label,.cardform legend{display:block;font:600 14px/1.2 'Work Sans',sans-serif;color:#3a342a;margin-bottom:7px;padding:0}
+.cardform small{font-weight:400;color:#6a6253}
+.cardform input[type=text],.cardform input[type=email],.cardform input[type=tel],.cardform textarea{width:100%;min-height:52px;border-radius:12px;border:2px solid #cdbfa6;background:#fbf8f2;color:var(--ink);font:400 17px/1.4 'Work Sans',sans-serif;padding:12px 14px}
+.cardform textarea{min-height:120px;resize:vertical}
+.cardform input:focus-visible,.cardform textarea:focus-visible{outline:3px solid #93441a;border-color:#93441a}
+.cardform .invalid{border-color:#b3261e}
+.cardform .pick{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cardform .pick legend{width:100%}
+.cardform .pick span{position:relative}
+.cardform .pick input{position:absolute;opacity:0;pointer-events:none}
+.cardform .pick label{margin:0;display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:999px;box-shadow:inset 0 0 0 2px #cdbfa6;font:600 15px 'Work Sans',sans-serif;cursor:pointer;color:var(--ink)}
+.cardform .pick input:checked+label{background:var(--ink);color:#f4eee3;box-shadow:none}
+.cardform .pick input:focus-visible+label{outline:3px solid #93441a;outline-offset:3px}
+.cardform .btn{width:100%;margin-top:6px;background:var(--ink);color:#f4eee3}
+.cardform .btn[disabled]{opacity:.6;cursor:wait}
+.fstat{margin-top:12px;font-size:15px;color:#6a1d17;min-height:1.4em}
+.fstat a{color:#6a1d17;font-weight:600}
+.fdone{padding:18px 4px}
+.fdone h3{font-size:30px;margin-bottom:10px}
+.fdone p{color:#4a4338}
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+</style>
 
 </head>
 <body>
@@ -309,7 +338,7 @@ html{scroll-padding-top:80px}
       Lucas Wooley
     </a>
     <nav class="nav" aria-label="Main"><a href="#build" data-spy="build">What I build</a><a href="#why" data-spy="why">Why a site</a><a href="#results" data-spy="results">Get customers</a><a href="#work" data-spy="work">Work</a><a href="#about" data-spy="about">About</a><a href="#how" data-spy="how">Process</a><a href="#faq" data-spy="faq">FAQ</a></nav>
-    <a class="btn" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Email me</a>
+    <a class="btn" href="#contact">Message me</a>
     <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
   </div>
   <div class="prog" id="prog" aria-hidden="true"></div>
@@ -336,7 +365,7 @@ html{scroll-padding-top:80px}
       <h1>A website that makes your business look <em>as good as it is.</em></h1>
       <p class="lead">I design custom websites for local businesses of every kind: restaurants, shops, salons, contractors, clinics and more. Clear, fast and easy for your customers to use. I build a free sample of yours first, so you can judge it before you decide anything.</p>
       <div class="cta">
-        <a class="btn" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Get your free sample</a>
+        <a class="btn" href="#contact">Get your free sample</a>
         <a class="btn alt" href="#work">See the work</a>
       </div>
       <div class="trust"><span>Free sample first</span><span>Custom design, no templates</span><span>Works on every screen</span></div>
@@ -566,9 +595,9 @@ html{scroll-padding-top:80px}
       <h3><button type="button" aria-expanded="false" aria-controls="q4">What if I already have a website?</button></h3>
       <div class="a" id="q4" role="region">Then keep it. If it needs help I'll tell you honestly, and I won't push a new one if yours is working.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q6">How do I get started?</button></h3>
-      <div class="a" id="q6" role="region">Email me your business name. I'll build the sample from your public listings and send it to you. You look, tell me what you think, and only then do we talk about price.</div>
+      <div class="a" id="q6" role="region">Send me your business name with the form at the bottom of this page. I'll build the sample from your public listings and send it to you. You look, tell me what you think, and only then do we talk about price.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q7">Can I talk to someone first?</button></h3>
-      <div class="a" id="q7" role="region">Yes, to me directly. See the "Talk to me" section at the bottom for the ways to reach me.</div>
+      <div class="a" id="q7" role="region">Yes, to me directly. Use the form in the "Talk to me" section at the bottom, or call or text if you prefer.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q10">Can customers book right on my site?</button></h3>
       <div class="a" id="q10" role="region">Yes. They pick an open time on your own site and get a confirmation. The booking lands on your calendar and your client list automatically, so you don't retype anything. I connect the booking tool you already use, or set up a simple one.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q8">Will this help me show up on Google?</button></h3>
@@ -582,24 +611,50 @@ html{scroll-padding-top:80px}
 </section>
 
 <section class="contact" id="contact">
-  <div class="wrap">
-    <div class="k">Talk to me</div>
-    <h2>Want to see yours?</h2>
-    <p class="intro">Send me your business name and I'll build the sample. Prefer to talk first? Pick whatever's easiest.</p>
-    <div class="reach" id="reach">
-      <a class="btn" id="r-mail" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Email me</a>
+  <div class="wrap cgrid">
+    <div>
+      <div class="k">Talk to me</div>
+      <h2>Want to see yours?</h2>
+      <p class="intro">Tell me about your business and I'll build the sample. Leave your email or phone and I'll get back to you, no mail app needed.</p>
+      <div class="reach" id="reach"></div>
+      <p class="intro" style="margin-top:22px">Prefer email? <a class="mail" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">lucas77wooley@gmail.com</a></p>
+      <p class="intro" style="margin-top:10px">Not sure what to ask? Tap <b>Questions?</b> in the corner for instant answers.</p>
     </div>
-    <a class="mail" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">lucas77wooley@gmail.com</a>
-    <p class="intro" style="margin-top:14px">Not sure what to ask? Tap <b>Questions?</b> in the corner for instant answers.</p>
+    <div class="cardform">
+      <form id="cform" name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="row2">
+          <div class="f"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
+          <div class="f"><label for="cf-biz">Business name</label><input id="cf-biz" name="business" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="row2">
+          <div class="f"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" required autocomplete="email" inputmode="email"></div>
+          <div class="f"><label for="cf-phone">Phone <small>(optional)</small></label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+        </div>
+        <fieldset class="f pick"><legend>Best way to reach you</legend>
+          <span><input type="radio" name="reach" id="rc1" value="Email" checked><label for="rc1">Email</label></span>
+          <span><input type="radio" name="reach" id="rc2" value="Call"><label for="rc2">Call</label></span>
+          <span><input type="radio" name="reach" id="rc3" value="Text"><label for="rc3">Text</label></span>
+        </fieldset>
+        <div class="f"><label for="cf-msg">What would you like to know?</label><textarea id="cf-msg" name="message" rows="4" required></textarea></div>
+        <button class="btn" type="submit">Send message</button>
+        <p class="fstat" role="status" aria-live="polite"></p>
+      </form>
+      <div class="fdone" hidden>
+        <h3>Thanks, it's sent.</h3>
+        <p>I got your message and I'll reply soon, using the way you picked.</p>
+      </div>
+    </div>
   </div>
 </section>
 </main>
 
-<div class="dockbar"><a class="btn" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Get your free sample</a></div>
+<div class="dockbar"><a class="btn" href="#contact">Get your free sample</a></div>
 <footer>
   <div class="wrap">
     <div class="r"><span>© <span id="yr"></span> Lucas Wooley · Northern Nevada</span><a href="#privacy">Privacy</a></div>
-    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking, and it has no forms. The "Questions?" helper runs in your browser, so what you type isn't sent or saved anywhere. If you email, text or call me, I use that only to reply.</p>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking. If you use the contact form, what you enter goes straight to me through the site's host (Netlify), and I use it only to reply. The "Questions?" helper runs in your browser, so what you type there isn't sent or saved anywhere.</p>
   </div>
 </footer>
 
@@ -700,9 +755,9 @@ var DIGITS = PHONE.replace(/[^\d+]/g, "");
     { k: ["change", "update", "edit", "hours", "fix", "modify"], a: "Small edits like prices, hours and services are included in the monthly fee. Send me a message and I update it." },
     { k: ["own", "domain", "host", "hosting", "name"], a: "I set up your domain and hosting as part of launch and keep it running. I'll put the details in writing before anything goes live." },
     { k: ["cancel", "contract", "terms", "commit", "lock"], a: "I put terms in writing before anything goes live, including how to cancel. If you don't like the sample, you owe nothing." },
-    { k: ["start", "begin", "next", "sign", "how do"], a: "Email me your business name. I build the sample from your public listings and send it to you. You look, tell me what to change, and only then do we talk price." },
+    { k: ["start", "begin", "next", "sign", "how do"], a: "Send me your business name with the contact form at the bottom of this page. I build the sample from your public listings and send it to you. You look, tell me what to change, and only then do we talk price." },
     { k: ["logo", "brand", "branding", "seo", "marketing", "ads", "social media", "print", "flyer"], a: "My focus is your website. If you need a logo, ads or social media, ask me directly and I'll tell you honestly whether I can help or point you to someone good." },
-    { k: ["safe", "privacy", "data", "cookie", "track"], a: "This site uses no cookies, no analytics and no tracking, and what you type in this helper never leaves your browser." }
+    { k: ["safe", "privacy", "data", "cookie", "track"], a: "This site uses no cookies, no analytics and no tracking. The contact form sends what you enter to me only, and what you type in this helper never leaves your browser." }
   ];
   var CHIPS = ["What does it cost?", "Why do I need a website?", "What's included?", "How do I get started?"];
   var fab = document.createElement("button");
@@ -718,6 +773,7 @@ var DIGITS = PHONE.replace(/[^\d+]/g, "");
   function acts(d) {
     var w = document.createElement("div"); w.className = "acts";
     function a(t, h) { var x = document.createElement("a"); x.textContent = t; x.href = h; w.appendChild(x); return x; }
+    var mm = a("Send me a message", "#contact"); mm.addEventListener("click", function () { box.classList.remove("on"); fab.style.display = ""; setTimeout(function () { var x = document.getElementById("cf-name"); if (x) x.focus({ preventScroll: true }); }, 400); });
     if (DIGITS) { a("Call " + PHONE, "tel:" + DIGITS); a("Text", "sms:" + DIGITS); }
     if (BOOKING) { var b = a("Book a time", BOOKING); b.addEventListener("click", function (e) { box.classList.remove("on"); fab.style.display = ""; if (window.openBooking) window.openBooking(e); }); }
     a("Email", "mailto:" + EMAIL + "?subject=Question");
@@ -787,6 +843,28 @@ document.querySelectorAll(".faq button").forEach(function (b) {
     links.forEach(function (l, i) { l.classList.toggle("on", i === cur); if (i === cur) l.setAttribute("aria-current", "true"); else l.removeAttribute("aria-current"); });
   }
   addEventListener("scroll", tick, { passive: true }); tick();
+})();
+
+// in-site contact form: posts to the site's own host (Netlify Forms). Visitor never leaves the page or opens a mail app.
+(function () {
+  var f = document.getElementById("cform"); if (!f) return;
+  var st = f.querySelector(".fstat"), btn = f.querySelector('button[type="submit"]'), done = document.querySelector(".fdone");
+  function bad(el, msg) { el.classList.add("invalid"); el.setAttribute("aria-invalid", "true"); st.textContent = msg; el.focus(); }
+  [].forEach.call(f.querySelectorAll("input,textarea"), function (el) { el.addEventListener("input", function () { el.classList.remove("invalid"); el.removeAttribute("aria-invalid"); st.textContent = ""; }); });
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = f.elements["name"], em = f.elements["email"], m = f.elements["message"];
+    if (!n.value.trim()) return bad(n, "Please add your name.");
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(em.value.trim())) return bad(em, "Please add a valid email so I can reply.");
+    if (!m.value.trim()) return bad(m, "Please add a short message.");
+    btn.disabled = true; st.textContent = "Sending...";
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() })
+      .then(function (r) { if (!r.ok) throw new Error("bad status"); f.hidden = true; done.hidden = false; done.setAttribute("tabindex", "-1"); done.focus(); })
+      .catch(function () {
+        btn.disabled = false; st.textContent = "That didn't send. Please email me instead at ";
+        var a = document.createElement("a"); a.href = "mailto:" + (window.CFG_EMAIL || "lucas77wooley@gmail.com") + "?subject=Free%20sample%20website"; a.textContent = "lucas77wooley@gmail.com"; st.appendChild(a); st.appendChild(document.createTextNode("."));
+      });
+  });
 })();
 
 </script>

@@ -9,6 +9,7 @@ When you own a domain: add it as SITE below, rerun, and the sitemap, canonical l
 import base64, pathlib, re, sys
 
 SITE = ""  # e.g. "https://lucaswooley.com"  (no trailing slash). Empty = no sitemap/canonical yet.
+INDEXABLE = False  # keep False while the name/phone are placeholders. Set True when the site is final and live on your domain.
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DIST = ROOT / "dist"
@@ -35,7 +36,7 @@ a:focus-visible{outline:3px solid #f4eee3;outline-offset:3px}</style></head>
 """, encoding="utf-8")
 
 # robots + headers
-robots = "User-agent: *\nAllow: /\n"
+robots = "User-agent: *\nAllow: /\n" if INDEXABLE else "User-agent: *\nDisallow: /\n"
 if SITE:
     robots += "Sitemap: %s/sitemap.xml\n" % SITE
 (DIST / "robots.txt").write_text(robots, encoding="utf-8")
@@ -50,6 +51,10 @@ if SITE:
 /*.png
   Cache-Control: public, max-age=31536000, immutable
 """, encoding="utf-8")
+
+if not INDEXABLE:
+    hp = DIST / "_headers"
+    hp.write_text(hp.read_text(encoding="utf-8").replace("/*\n  X-Content-Type-Options", "/*\n  X-Robots-Tag: noindex, nofollow\n  X-Content-Type-Options", 1), encoding="utf-8")
 
 # canonical + sitemap + og:image only when a domain is known
 idx = DIST / "index.html"

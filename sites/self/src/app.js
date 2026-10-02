@@ -94,9 +94,9 @@ var DIGITS = PHONE.replace(/[^\d+]/g, "");
     { k: ["change", "update", "edit", "hours", "fix", "modify"], a: "Small edits like prices, hours and services are included in the monthly fee. Send me a message and I update it." },
     { k: ["own", "domain", "host", "hosting", "name"], a: "I set up your domain and hosting as part of launch and keep it running. I'll put the details in writing before anything goes live." },
     { k: ["cancel", "contract", "terms", "commit", "lock"], a: "I put terms in writing before anything goes live, including how to cancel. If you don't like the sample, you owe nothing." },
-    { k: ["start", "begin", "next", "sign", "how do"], a: "Email me your business name. I build the sample from your public listings and send it to you. You look, tell me what to change, and only then do we talk price." },
+    { k: ["start", "begin", "next", "sign", "how do"], a: "Send me your business name with the contact form at the bottom of this page. I build the sample from your public listings and send it to you. You look, tell me what to change, and only then do we talk price." },
     { k: ["logo", "brand", "branding", "seo", "marketing", "ads", "social media", "print", "flyer"], a: "My focus is your website. If you need a logo, ads or social media, ask me directly and I'll tell you honestly whether I can help or point you to someone good." },
-    { k: ["safe", "privacy", "data", "cookie", "track"], a: "This site uses no cookies, no analytics and no tracking, and what you type in this helper never leaves your browser." }
+    { k: ["safe", "privacy", "data", "cookie", "track"], a: "This site uses no cookies, no analytics and no tracking. The contact form sends what you enter to me only, and what you type in this helper never leaves your browser." }
   ];
   var CHIPS = ["What does it cost?", "Why do I need a website?", "What's included?", "How do I get started?"];
   var fab = document.createElement("button");
@@ -112,6 +112,7 @@ var DIGITS = PHONE.replace(/[^\d+]/g, "");
   function acts(d) {
     var w = document.createElement("div"); w.className = "acts";
     function a(t, h) { var x = document.createElement("a"); x.textContent = t; x.href = h; w.appendChild(x); return x; }
+    var mm = a("Send me a message", "#contact"); mm.addEventListener("click", function () { box.classList.remove("on"); fab.style.display = ""; setTimeout(function () { var x = document.getElementById("cf-name"); if (x) x.focus({ preventScroll: true }); }, 400); });
     if (DIGITS) { a("Call " + PHONE, "tel:" + DIGITS); a("Text", "sms:" + DIGITS); }
     if (BOOKING) { var b = a("Book a time", BOOKING); b.addEventListener("click", function (e) { box.classList.remove("on"); fab.style.display = ""; if (window.openBooking) window.openBooking(e); }); }
     a("Email", "mailto:" + EMAIL + "?subject=Question");
@@ -181,4 +182,26 @@ document.querySelectorAll(".faq button").forEach(function (b) {
     links.forEach(function (l, i) { l.classList.toggle("on", i === cur); if (i === cur) l.setAttribute("aria-current", "true"); else l.removeAttribute("aria-current"); });
   }
   addEventListener("scroll", tick, { passive: true }); tick();
+})();
+
+// in-site contact form: posts to the site's own host (Netlify Forms). Visitor never leaves the page or opens a mail app.
+(function () {
+  var f = document.getElementById("cform"); if (!f) return;
+  var st = f.querySelector(".fstat"), btn = f.querySelector('button[type="submit"]'), done = document.querySelector(".fdone");
+  function bad(el, msg) { el.classList.add("invalid"); el.setAttribute("aria-invalid", "true"); st.textContent = msg; el.focus(); }
+  [].forEach.call(f.querySelectorAll("input,textarea"), function (el) { el.addEventListener("input", function () { el.classList.remove("invalid"); el.removeAttribute("aria-invalid"); st.textContent = ""; }); });
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = f.elements["name"], em = f.elements["email"], m = f.elements["message"];
+    if (!n.value.trim()) return bad(n, "Please add your name.");
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(em.value.trim())) return bad(em, "Please add a valid email so I can reply.");
+    if (!m.value.trim()) return bad(m, "Please add a short message.");
+    btn.disabled = true; st.textContent = "Sending...";
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() })
+      .then(function (r) { if (!r.ok) throw new Error("bad status"); f.hidden = true; done.hidden = false; done.setAttribute("tabindex", "-1"); done.focus(); })
+      .catch(function () {
+        btn.disabled = false; st.textContent = "That didn't send. Please email me instead at ";
+        var a = document.createElement("a"); a.href = "mailto:" + (window.CFG_EMAIL || "%%EMAIL%%") + "?subject=Free%20sample%20website"; a.textContent = "%%EMAIL%%"; st.appendChild(a); st.appendChild(document.createTextNode("."));
+      });
+  });
 })();
