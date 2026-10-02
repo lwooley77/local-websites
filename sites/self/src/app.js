@@ -83,12 +83,13 @@ var DIGITS = PHONE.replace(/[^\d+]/g, "");
     { k: ["include", "included", "get", "offer", "do you do", "service", "what do"], a: "Custom design and build, setting up your domain and putting it online, hosting, small edits like prices and hours, and your booking or ordering link. Terms are in writing before anything goes live." },
     { k: ["kind", "type", "business", "restaurant", "salon", "barber", "contractor", "shop", "clinic", "who"], a: "Any local business: restaurants, shops, salons and barbers, contractors, clinics, studios and more. If customers look you up, you can use a good website." },
     { k: ["long", "time", "when", "fast", "quick", "timeline", "days", "weeks"], a: "I build the sample first and you can see it before we talk about anything else. I'll give you a clear timeline for going live when you've seen it." },
-    { k: ["photo", "picture", "image", "logo"], a: "I only use photos you've posted publicly, and only after you say yes. You can ask me to remove any of them, and you can send me better ones." },
+    { k: ["photo", "picture", "image"], a: "I only use photos you've posted publicly, and only after you say yes. You can ask me to remove any of them, and you can send me better ones." },
     { k: ["book", "booking", "order", "appointment", "schedule", "online"], a: "If you already use a booking or ordering tool, I add that link so customers can use it right from your site. If you don't, customers can call or text you in one tap." },
     { k: ["change", "update", "edit", "hours", "fix", "modify"], a: "Small edits like prices, hours and services are included in the monthly fee. Send me a message and I update it." },
     { k: ["own", "domain", "host", "hosting", "name"], a: "I set up your domain and hosting as part of launch and keep it running. I'll put the details in writing before anything goes live." },
     { k: ["cancel", "contract", "terms", "commit", "lock"], a: "I put terms in writing before anything goes live, including how to cancel. If you don't like the sample, you owe nothing." },
     { k: ["start", "begin", "next", "sign", "how do"], a: "Email me your business name. I build the sample from your public listings and send it to you. You look, tell me what to change, and only then do we talk price." },
+    { k: ["logo", "brand", "branding", "seo", "marketing", "ads", "social media", "print", "flyer"], a: "My focus is your website. If you need a logo, ads or social media, ask me directly and I'll tell you honestly whether I can help or point you to someone good." },
     { k: ["safe", "privacy", "data", "cookie", "track"], a: "This site uses no cookies, no analytics and no tracking, and what you type in this helper never leaves your browser." }
   ];
   var CHIPS = ["What does it cost?", "Why do I need a website?", "What's included?", "How do I get started?"];
