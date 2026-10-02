@@ -9,7 +9,7 @@ document.querySelectorAll("img[data-k]").forEach(function (im) {
 // short intro: awning drops, OPEN sign lights up. Skippable (click, Skip, Escape). Not shown for reduced motion, deep links or automated tests.
 (function () {
   var q = location.search.indexOf("intro") > -1;
-  if (!q && (location.search.indexOf("tour") > -1 || navigator.webdriver || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  if (!q) return;
   var el = document.createElement("div");
   el.id = "intro";
   el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Welcome");
@@ -286,7 +286,9 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   var watch = document.querySelector(".watch");
   function maxY() { return document.documentElement.scrollHeight - innerHeight; }
   function setY(v) { if (window.__lenis) window.__lenis.scrollTo(v, { immediate: true, force: true }); else window.scrollTo(0, v); }
+  var speedOverride = null;
   function zoneSpeed() {
+    if (speedOverride) return speedOverride;
     var st = document.getElementById("story"), sc = document.getElementById("scenes");
     var r = st && st.getBoundingClientRect();
     if (r && r.top <= 70 && r.bottom > innerHeight * 0.9) return fast ? 540 : 240;
@@ -300,7 +302,7 @@ document.querySelectorAll(".faq button").forEach(function (b) {
     bar.classList.toggle("playing", state === "playing");
     if (watch) watch.classList.toggle("playing", state === "playing");
   }
-  function stop(state) { playing = false; cancelAnimationFrame(raf); label(state || "paused"); }
+  function stop(state) { playing = false; speedOverride = null; cancelAnimationFrame(raf); label(state || "paused"); document.body.classList.remove("autoplay"); }
   function tick(t) {
     if (!playing) return;
     var dt = Math.min(0.05, (t - last) / 1000); last = t;
@@ -328,6 +330,21 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   window.addEventListener("wheel", function () { if (playing) stop("paused"); }, { passive: true });
   ["touchstart", "keydown"].forEach(function (ev) { window.addEventListener(ev, function (e) { if (playing && !(e.target && e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); }, { passive: true }); });
   window.addEventListener("pointerdown", function (e) { if (playing && !(e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); });
+  // the opening story plays by itself, once per device, about 5 seconds, and any touch/scroll/key stops it
+  (function () {
+    var force = location.search.indexOf("play") > -1, seen = false;
+    try { seen = localStorage.getItem("wl-seen-story") === "1"; } catch (e) {}
+    if ((seen && !force) || location.hash || window.scrollY > 40 || (navigator.webdriver && !force) || location.search.indexOf("tour") > -1) return;
+    var hint = document.createElement("div");
+    hint.className = "skiphint"; hint.setAttribute("role", "status"); hint.textContent = "Tap anywhere to skip";
+    document.body.appendChild(hint);
+    setTimeout(function () {
+      try { localStorage.setItem("wl-seen-story", "1"); } catch (e) {}
+      var st = document.getElementById("story"); if (!st || window.scrollY > 40) return;
+      document.body.classList.add("autoplay");
+      speedOverride = 700; start(st.offsetTop + st.offsetHeight - innerHeight + 30);
+    }, 800);
+  })();
   // ?tour in the address starts it by itself
   if (location.search.indexOf("tour") > -1) setTimeout(function () { start(null); }, 1200);
 })();
