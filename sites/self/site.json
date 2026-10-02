@@ -11,6 +11,8 @@
   "vars": {
     "NAME": "Lucas Wooley",
     "EMAIL": "lucas77wooley@gmail.com",
-    "AREA": "Northern Nevada"
+    "AREA": "Northern Nevada",
+    "PHONE": "",
+    "BOOKING": ""
   }
 }

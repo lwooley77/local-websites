@@ -1,4 +1,4 @@
-document.getElementById("yr").textContent = new Date().getFullYear();
+﻿document.getElementById("yr").textContent = new Date().getFullYear();
 
 // screenshots from the embedded image map (a slot is removed if its image is missing)
 document.querySelectorAll("img[data-k]").forEach(function (im) {
@@ -29,6 +29,107 @@ document.querySelectorAll("img[data-k]").forEach(function (im) {
   el.addEventListener("click", end);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") end(); });
   setTimeout(end, 2400);
+})();
+
+// ---- contact options: each one appears only when its setting is filled in (site.json: PHONE, BOOKING) ----
+var PHONE = "%%PHONE%%", BOOKING = "%%BOOKING%%", EMAIL = "%%EMAIL%%";
+var DIGITS = PHONE.replace(/[^\d+]/g, "");
+(function () {
+  var reach = document.getElementById("reach");
+  function btn(label, href, alt, id) {
+    var a = document.createElement("a");
+    a.className = "btn" + (alt ? " alt" : ""); a.textContent = label; a.href = href; if (id) a.id = id;
+    reach.appendChild(a); return a;
+  }
+  var cp = btn("Copy email", "#contact", true); cp.addEventListener("click", function (e) { e.preventDefault(); var done = function () { cp.textContent = "Copied: " + EMAIL; }; if (navigator.clipboard) navigator.clipboard.writeText(EMAIL).then(done, done); else done(); });
+  if (DIGITS) { btn("Call me " + PHONE, "tel:" + DIGITS); btn("Text me", "sms:" + DIGITS, true); }
+  if (BOOKING) {
+    var b = btn("Book a time to talk", BOOKING, true, "r-book"); b.setAttribute("data-book", "");
+  }
+  // phone gets its own button on the sticky bottom bar too
+  var dock = document.querySelector(".dockbar");
+  if (dock && DIGITS) {
+    dock.style.display = ""; dock.style.gridTemplateColumns = "1fr 1fr"; dock.style.gap = "10px";
+    var c = document.createElement("a"); c.className = "btn alt"; c.href = "tel:" + DIGITS; c.textContent = "Call me"; dock.insertBefore(c, dock.firstChild);
+  }
+})();
+
+// ---- in-page booking panel for the calendar link (visitor stays on this site) ----
+(function () {
+  if (!BOOKING) return;
+  var p = document.createElement("div");
+  p.className = "bkp"; p.setAttribute("role", "dialog"); p.setAttribute("aria-modal", "true"); p.setAttribute("aria-label", "Book a time to talk");
+  p.innerHTML = '<div class="bar"><span>Pick a time</span><button type="button">Close</button></div>';
+  document.body.appendChild(p);
+  var fr = null, last = null;
+  function close() { p.classList.remove("on"); document.body.style.overflow = ""; if (last) last.focus(); }
+  p.querySelector("button").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && p.classList.contains("on")) close(); });
+  window.openBooking = function (e) {
+    if (e) e.preventDefault();
+    last = document.activeElement;
+    if (!fr) { fr = document.createElement("iframe"); fr.title = "Booking calendar"; fr.src = BOOKING; p.appendChild(fr); }
+    p.classList.add("on"); document.body.style.overflow = "hidden"; p.querySelector("button").focus();
+  };
+  document.querySelectorAll("[data-book]").forEach(function (a) { a.addEventListener("click", window.openBooking); });
+})();
+
+// ---- "Questions?" helper: instant answers from this site's own content. Not a person, not AI. Runs in the browser, sends nothing. ----
+(function () {
+  var KB = [
+    { k: ["cost", "price", "pricing", "how much", "expensive", "afford", "fee", "charge", "pay"], a: "There's a one-time launch fee to set up and publish your site, then a small monthly fee for hosting and edits like prices and hours. The sample is free, and I give you the number only after you've seen it, so you never pay to find out." },
+    { k: ["free", "sample", "preview", "demo", "try"], a: "The sample is free. I build it from your public listings (your services, hours, address and what customers say) and send it to you. You look, and then you decide." },
+    { k: ["why", "need", "worth", "instagram", "facebook", "yelp", "google", "already", "social"], a: "Keep your Instagram, Facebook and Google page. A site adds the one place you control: your own hours, prices and services, correct and in your voice. People who hear your name and look you up find something solid, and it works at 11 PM when you're closed." },
+    { k: ["include", "included", "get", "offer", "do you do", "service", "what do"], a: "Custom design and build, setting up your domain and putting it online, hosting, small edits like prices and hours, and your booking or ordering link. Terms are in writing before anything goes live." },
+    { k: ["kind", "type", "business", "restaurant", "salon", "barber", "contractor", "shop", "clinic", "who"], a: "Any local business: restaurants, shops, salons and barbers, contractors, clinics, studios and more. If customers look you up, you can use a good website." },
+    { k: ["long", "time", "when", "fast", "quick", "timeline", "days", "weeks"], a: "I build the sample first and you can see it before we talk about anything else. I'll give you a clear timeline for going live when you've seen it." },
+    { k: ["photo", "picture", "image", "logo"], a: "I only use photos you've posted publicly, and only after you say yes. You can ask me to remove any of them, and you can send me better ones." },
+    { k: ["book", "booking", "order", "appointment", "schedule", "online"], a: "If you already use a booking or ordering tool, I add that link so customers can use it right from your site. If you don't, customers can call or text you in one tap." },
+    { k: ["change", "update", "edit", "hours", "fix", "modify"], a: "Small edits like prices, hours and services are included in the monthly fee. Send me a message and I update it." },
+    { k: ["own", "domain", "host", "hosting", "name"], a: "I set up your domain and hosting as part of launch and keep it running. I'll put the details in writing before anything goes live." },
+    { k: ["cancel", "contract", "terms", "commit", "lock"], a: "I put terms in writing before anything goes live, including how to cancel. If you don't like the sample, you owe nothing." },
+    { k: ["start", "begin", "next", "sign", "how do"], a: "Email me your business name. I build the sample from your public listings and send it to you. You look, tell me what to change, and only then do we talk price." },
+    { k: ["safe", "privacy", "data", "cookie", "track"], a: "This site uses no cookies, no analytics and no tracking, and what you type in this helper never leaves your browser." }
+  ];
+  var CHIPS = ["What does it cost?", "Why do I need a website?", "What's included?", "How do I get started?"];
+  var fab = document.createElement("button");
+  fab.type = "button"; fab.className = "ask-fab"; fab.textContent = "Questions?"; fab.setAttribute("aria-haspopup", "dialog");
+  var box = document.createElement("div");
+  box.className = "ask"; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Instant answers");
+  box.innerHTML = '<header><div><b>Instant answers</b><span>From this site. Not a person, and not AI.</span></div><button type="button" class="x" aria-label="Close">&times;</button></header>' +
+    '<div class="log" role="log" aria-live="polite"></div><div class="chips2"></div>' +
+    '<form><label for="askq" style="position:absolute;left:-9999px">Your question</label><input id="askq" type="text" placeholder="Type a question" autocomplete="off"><button type="submit">Ask</button></form>';
+  document.body.appendChild(fab); document.body.appendChild(box);
+  var log = box.querySelector(".log"), chips = box.querySelector(".chips2"), inp = box.querySelector("input");
+  function say(t, cls) { var d = document.createElement("div"); d.className = "m " + cls; d.textContent = t; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
+  function acts(d) {
+    var w = document.createElement("div"); w.className = "acts";
+    function a(t, h) { var x = document.createElement("a"); x.textContent = t; x.href = h; w.appendChild(x); return x; }
+    if (DIGITS) { a("Call " + PHONE, "tel:" + DIGITS); a("Text", "sms:" + DIGITS); }
+    if (BOOKING) { var b = a("Book a time", BOOKING); b.addEventListener("click", function (e) { box.classList.remove("on"); fab.style.display = ""; if (window.openBooking) window.openBooking(e); }); }
+    a("Email", "mailto:" + EMAIL + "?subject=Question");
+    d.appendChild(w);
+  }
+  function answer(q) {
+    var s = q.toLowerCase(), best = null, score = 0;
+    KB.forEach(function (e) { var n = 0; e.k.forEach(function (w) { if (s.indexOf(w) > -1) n += w.length > 3 ? 2 : 1; }); if (n > score) { score = n; best = e; } });
+    if (/(call|phone|talk|speak|person|human|reach|contact|number)/.test(s)) {
+      var d = say(DIGITS ? "Of course. You can reach me directly:" : "Of course. The fastest way to reach me right now is email:", "bot"); acts(d); return;
+    }
+    if (best && score >= 2) say(best.a, "bot");
+    else { var f = say("I don't have a good answer to that one. Ask me directly and you'll hear back from a real person:", "bot"); acts(f); }
+  }
+  function ask(q) { if (!q.trim()) return; say(q, "me"); answer(q); }
+  CHIPS.forEach(function (c) {
+    var b = document.createElement("button"); b.type = "button"; b.textContent = c;
+    b.addEventListener("click", function () { ask(c); inp.focus(); }); chips.appendChild(b);
+  });
+  say("Hi, I'm the quick-answers helper for this site. Tap a question, or type your own.", "bot");
+  box.querySelector("form").addEventListener("submit", function (e) { e.preventDefault(); ask(inp.value); inp.value = ""; });
+  function open() { box.classList.add("on"); fab.style.display = "none"; inp.focus(); }
+  function close() { box.classList.remove("on"); fab.style.display = ""; fab.focus(); }
+  fab.addEventListener("click", open); box.querySelector(".x").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && box.classList.contains("on")) close(); });
 })();
 
 // FAQ accordion

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+﻿<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lucas Wooley | Websites for Northern Nevada Businesses</title>
 <meta name="description" content="Custom websites for local businesses of every kind in Northern Nevada. See a free preview of yours before you decide anything.">
@@ -24,12 +24,12 @@ body{background:var(--bg);color:var(--paper);font:400 17px/1.65 'Work Sans',syst
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.012em}
-.k{font:600 12px/1 'Work Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.k{font:600 13px/1.2 'Work Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 
 .top{position:sticky;top:0;z-index:30;background:rgba(21,18,14,.94);border-bottom:1px solid var(--line);transition:transform .25s var(--ease)}
 .top.hide{transform:translateY(-100%)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 20px/1 Fraunces,Georgia,serif}
+.logo{display:flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font:600 20px/1 Fraunces,Georgia,serif}
 .logo svg{width:28px;height:28px;flex:none}
 .nav{display:none;gap:26px}
 .nav a{text-decoration:none;font-weight:500;font-size:15px;padding:10px 2px;color:var(--muted)}
@@ -86,6 +86,43 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.05;let
 #intro .skip{position:absolute;right:16px;bottom:16px;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;box-shadow:inset 0 0 0 2px #3a3227;color:#cfc5b2;font:600 14px 'Work Sans',sans-serif;cursor:pointer}
 #intro .skip:focus-visible{outline:3px solid #e6b26a;outline-offset:3px}
 @media (prefers-reduced-motion:reduce){#intro{display:none}.pin::after{animation:none;opacity:.4;transform:scale(2.2)}}
+.reach{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.reach .btn.alt{color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);background:transparent}
+/* quick-answers helper */
+.ask-fab{position:fixed;right:16px;bottom:16px;z-index:40;min-height:52px;padding:0 22px;border:0;border-radius:999px;background:var(--gold);color:var(--ink);font:600 16px/1 'Work Sans',sans-serif;box-shadow:0 10px 28px rgba(0,0,0,.45);cursor:pointer;transition:transform .15s var(--ease)}
+.ask-fab:active{transform:scale(.97)}
+@media (max-width:799px){.ask-fab{bottom:84px}}
+.ask{position:fixed;right:16px;bottom:16px;z-index:60;width:min(390px,calc(100vw - 32px));max-height:min(620px,calc(100dvh - 32px));display:none;flex-direction:column;background:var(--bg2);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.6);overflow:hidden}
+.ask.on{display:flex}
+@media (prefers-reduced-motion:no-preference){.ask.on{animation:askin .22s cubic-bezier(.23,1,.32,1)}@keyframes askin{from{opacity:0;transform:translateY(14px) scale(.98)}}}
+.ask header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.ask header b{display:block;font:600 19px/1.2 Fraunces,Georgia,serif}
+.ask header span{font-size:13px;color:var(--muted)}
+.ask .x{min-width:44px;min-height:44px;border:0;border-radius:12px;background:transparent;color:var(--paper);font:600 24px/1 'Work Sans',sans-serif;cursor:pointer;margin:-6px -6px 0 0}
+.ask .log{flex:1;overflow:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-height:150px}
+.ask .m{max-width:92%;padding:10px 14px;border-radius:16px;font-size:15px;line-height:1.5}
+.ask .m.bot{background:#2a231b;align-self:flex-start;border-bottom-left-radius:4px}
+.ask .m.me{background:var(--gold);color:var(--ink);align-self:flex-end;border-bottom-right-radius:4px}
+.ask .chips2{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px}
+.ask .chips2 button{min-height:40px;padding:0 14px;border-radius:999px;border:0;background:transparent;box-shadow:inset 0 0 0 2px var(--line);color:var(--paper);font:500 14px/1 'Work Sans',sans-serif;cursor:pointer}
+.ask .chips2 button:hover{box-shadow:inset 0 0 0 2px var(--gold)}
+.ask form{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--line)}
+.ask input{flex:1;min-width:0;min-height:48px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--paper);font:400 16px 'Work Sans',sans-serif;padding:0 14px}
+.ask input:focus-visible{outline:3px solid var(--gold);border-color:var(--gold)}
+.ask form button{min-height:48px;padding:0 18px;border:0;border-radius:12px;background:var(--gold);color:var(--ink);font:600 15px 'Work Sans',sans-serif;cursor:pointer}
+.ask .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.ask .acts a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:var(--gold);color:var(--ink);font:600 14px 'Work Sans',sans-serif;text-decoration:none}
+.bkp{position:fixed;inset:0;z-index:90;display:none;flex-direction:column;background:var(--paper)}
+.bkp.on{display:flex}
+.bkp .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--bg);color:var(--paper);font:600 15px 'Work Sans',sans-serif}
+.bkp .bar button{min-width:44px;min-height:44px;border:0;border-radius:10px;background:var(--gold);color:var(--ink);font:700 15px 'Work Sans',sans-serif;padding:0 14px;cursor:pointer}
+.bkp iframe{flex:1;border:0;width:100%;background:#fff}
+.who{display:grid;gap:30px;margin-top:30px;max-width:900px}
+@media (min-width:860px){.who{grid-template-columns:1.1fr .9fr}}
+.who p{color:var(--muted);max-width:56ch}
+.who p+p{margin-top:12px}
+.who h3{font-size:22px;margin-bottom:12px}
+.who .get{margin-top:0;display:block}
 .why{margin:34px 0 0;max-width:860px}
 .why>div{padding:24px 0;border-top:1px solid var(--line)}
 .why>div:last-child{border-bottom:1px solid var(--line)}
@@ -196,7 +233,7 @@ section h2{font-size:clamp(32px,5.2vw,52px);margin:14px 0 18px;max-width:18ch}
 .contact{background:var(--paper);color:var(--ink);border-top:0}
 .contact .k{color:#8a3d14}
 .contact .intro{color:#4a4338}
-.contact a.mail{display:inline-block;margin:18px 0 0;color:var(--ink);font:600 clamp(22px,5vw,36px)/1.2 Fraunces,Georgia,serif;word-break:break-all}
+.contact a.mail{display:inline-block;margin:14px 0 0;padding:8px 0;min-height:44px;color:var(--ink);font:600 clamp(22px,5vw,36px)/1.2 Fraunces,Georgia,serif;word-break:break-all}
 .contact .btn{background:var(--ink);color:var(--paper)}
 footer{padding:26px 0 8px;font-size:14px;color:var(--muted)}
 footer .r{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
@@ -216,7 +253,7 @@ footer a{padding:10px 0;display:inline-block}
       Lucas Wooley
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#why">Why a site</a><a href="#found">What I find</a><a href="#work">Work</a><a href="#how">Process</a><a href="#pricing">Pricing</a><a href="#faq">Questions</a>
+      <a href="#why">Why a site</a><a href="#found">What I find</a><a href="#work">Work</a><a href="#how">Process</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">Questions</a>
     </nav>
     <a class="btn" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Email me</a>
   </div>
@@ -311,6 +348,30 @@ footer a{padding:10px 0;display:inline-block}
   </div>
 </section>
 
+<section id="about">
+  <div class="wrap">
+    <div class="k">About</div>
+    <h2>Who's behind this.</h2>
+    <div class="who">
+      <div>
+        <p>I'm Lucas Wooley, and I build websites for local businesses in Northern Nevada.</p>
+        <p>I started with a live site for my wife's cosmetology business, Quilas Cosmo Corner, so I know what it takes to get a small business's information in front of customers clearly. Now I build them for other local businesses.</p>
+        <p>You'll deal with me directly, from the first sample to any change you need later.</p>
+      </div>
+      <div>
+        <h3>How I work</h3>
+        <ul class="get">
+          <li>The sample is free, with no pressure</li>
+          <li>Only facts from your public listings, nothing invented</li>
+          <li>Your photos only with your OK, removed on request</li>
+          <li>The price in writing before anything goes live</li>
+          <li>You can walk away at any point</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
     <div class="k">How it works</div>
@@ -337,6 +398,14 @@ footer a{padding:10px 0;display:inline-block}
     <h2>Simple, and quoted after you've seen it.</h2>
     <p>One launch fee to set up the site and put it online, then a small monthly fee for hosting and for changing things like prices and hours.</p>
     <p>The sample is free. You get a number after you've seen the site, never before.</p>
+    <ul class="get" style="margin-top:26px">
+      <li>Custom design and build</li>
+      <li>Setting up your domain and putting it online</li>
+      <li>Hosting, kept running</li>
+      <li>Small edits like prices and hours</li>
+      <li>Your booking or ordering link added</li>
+      <li>Terms in writing before anything goes live</li>
+    </ul>
   </div>
 </section>
 
@@ -353,6 +422,10 @@ footer a{padding:10px 0;display:inline-block}
       <div class="a" id="q3" role="region">Nothing to start. To go live I'd ask you to confirm your prices and hours, and to say yes or no to any photos.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q4">What if I already have a website?</button></h3>
       <div class="a" id="q4" role="region">Then keep it. If it needs help I'll tell you honestly, and I won't push a new one if yours is working.</div>
+      <h3><button type="button" aria-expanded="false" aria-controls="q6">How do I get started?</button></h3>
+      <div class="a" id="q6" role="region">Email me your business name. I'll build the sample from your public listings and send it to you. You look, tell me what you think, and only then do we talk about price.</div>
+      <h3><button type="button" aria-expanded="false" aria-controls="q7">Can I talk to someone first?</button></h3>
+      <div class="a" id="q7" role="region">Yes, to me directly. See the "Talk to me" section at the bottom for the ways to reach me.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q5">Do you use my photos?</button></h3>
       <div class="a" id="q5" role="region">Only photos you've posted publicly, and only after you say yes. You can ask me to remove any of them.</div>
     </div>
@@ -361,11 +434,14 @@ footer a{padding:10px 0;display:inline-block}
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="k">Get in touch</div>
+    <div class="k">Talk to me</div>
     <h2>Want to see yours?</h2>
-    <p class="intro">Send me your business name and I'll build the sample.</p>
+    <p class="intro">Send me your business name and I'll build the sample. Prefer to talk first? Pick whatever's easiest.</p>
+    <div class="reach" id="reach">
+      <a class="btn" id="r-mail" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Email me</a>
+    </div>
     <a class="mail" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">lucas77wooley@gmail.com</a>
-    <div class="cta"><a class="btn" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Email me</a></div>
+    <p class="intro" style="margin-top:14px">Not sure what to ask? Tap <b>Questions?</b> in the corner for instant answers.</p>
   </div>
 </section>
 </main>
@@ -374,12 +450,12 @@ footer a{padding:10px 0;display:inline-block}
 <footer>
   <div class="wrap">
     <div class="r"><span>Â© <span id="yr"></span> Lucas Wooley Â· Northern Nevada</span><a href="#privacy">Privacy</a></div>
-    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking, and it has no forms. If you email me, the message goes to my inbox and I use it only to reply.</p>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking, and it has no forms. The "Questions?" helper runs in your browser, so what you type isn't sent or saved anywhere. If you email, text or call me, I use that only to reply.</p>
   </div>
 </footer>
 
 <script>
-document.getElementById("yr").textContent = new Date().getFullYear();
+﻿document.getElementById("yr").textContent = new Date().getFullYear();
 
 // screenshots from the embedded image map (a slot is removed if its image is missing)
 document.querySelectorAll("img[data-k]").forEach(function (im) {
@@ -410,6 +486,107 @@ document.querySelectorAll("img[data-k]").forEach(function (im) {
   el.addEventListener("click", end);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") end(); });
   setTimeout(end, 2400);
+})();
+
+// ---- contact options: each one appears only when its setting is filled in (site.json: PHONE, BOOKING) ----
+var PHONE = "", BOOKING = "", EMAIL = "lucas77wooley@gmail.com";
+var DIGITS = PHONE.replace(/[^\d+]/g, "");
+(function () {
+  var reach = document.getElementById("reach");
+  function btn(label, href, alt, id) {
+    var a = document.createElement("a");
+    a.className = "btn" + (alt ? " alt" : ""); a.textContent = label; a.href = href; if (id) a.id = id;
+    reach.appendChild(a); return a;
+  }
+  var cp = btn("Copy email", "#contact", true); cp.addEventListener("click", function (e) { e.preventDefault(); var done = function () { cp.textContent = "Copied: " + EMAIL; }; if (navigator.clipboard) navigator.clipboard.writeText(EMAIL).then(done, done); else done(); });
+  if (DIGITS) { btn("Call me " + PHONE, "tel:" + DIGITS); btn("Text me", "sms:" + DIGITS, true); }
+  if (BOOKING) {
+    var b = btn("Book a time to talk", BOOKING, true, "r-book"); b.setAttribute("data-book", "");
+  }
+  // phone gets its own button on the sticky bottom bar too
+  var dock = document.querySelector(".dockbar");
+  if (dock && DIGITS) {
+    dock.style.display = ""; dock.style.gridTemplateColumns = "1fr 1fr"; dock.style.gap = "10px";
+    var c = document.createElement("a"); c.className = "btn alt"; c.href = "tel:" + DIGITS; c.textContent = "Call me"; dock.insertBefore(c, dock.firstChild);
+  }
+})();
+
+// ---- in-page booking panel for the calendar link (visitor stays on this site) ----
+(function () {
+  if (!BOOKING) return;
+  var p = document.createElement("div");
+  p.className = "bkp"; p.setAttribute("role", "dialog"); p.setAttribute("aria-modal", "true"); p.setAttribute("aria-label", "Book a time to talk");
+  p.innerHTML = '<div class="bar"><span>Pick a time</span><button type="button">Close</button></div>';
+  document.body.appendChild(p);
+  var fr = null, last = null;
+  function close() { p.classList.remove("on"); document.body.style.overflow = ""; if (last) last.focus(); }
+  p.querySelector("button").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && p.classList.contains("on")) close(); });
+  window.openBooking = function (e) {
+    if (e) e.preventDefault();
+    last = document.activeElement;
+    if (!fr) { fr = document.createElement("iframe"); fr.title = "Booking calendar"; fr.src = BOOKING; p.appendChild(fr); }
+    p.classList.add("on"); document.body.style.overflow = "hidden"; p.querySelector("button").focus();
+  };
+  document.querySelectorAll("[data-book]").forEach(function (a) { a.addEventListener("click", window.openBooking); });
+})();
+
+// ---- "Questions?" helper: instant answers from this site's own content. Not a person, not AI. Runs in the browser, sends nothing. ----
+(function () {
+  var KB = [
+    { k: ["cost", "price", "pricing", "how much", "expensive", "afford", "fee", "charge", "pay"], a: "There's a one-time launch fee to set up and publish your site, then a small monthly fee for hosting and edits like prices and hours. The sample is free, and I give you the number only after you've seen it, so you never pay to find out." },
+    { k: ["free", "sample", "preview", "demo", "try"], a: "The sample is free. I build it from your public listings (your services, hours, address and what customers say) and send it to you. You look, and then you decide." },
+    { k: ["why", "need", "worth", "instagram", "facebook", "yelp", "google", "already", "social"], a: "Keep your Instagram, Facebook and Google page. A site adds the one place you control: your own hours, prices and services, correct and in your voice. People who hear your name and look you up find something solid, and it works at 11 PM when you're closed." },
+    { k: ["include", "included", "get", "offer", "do you do", "service", "what do"], a: "Custom design and build, setting up your domain and putting it online, hosting, small edits like prices and hours, and your booking or ordering link. Terms are in writing before anything goes live." },
+    { k: ["kind", "type", "business", "restaurant", "salon", "barber", "contractor", "shop", "clinic", "who"], a: "Any local business: restaurants, shops, salons and barbers, contractors, clinics, studios and more. If customers look you up, you can use a good website." },
+    { k: ["long", "time", "when", "fast", "quick", "timeline", "days", "weeks"], a: "I build the sample first and you can see it before we talk about anything else. I'll give you a clear timeline for going live when you've seen it." },
+    { k: ["photo", "picture", "image", "logo"], a: "I only use photos you've posted publicly, and only after you say yes. You can ask me to remove any of them, and you can send me better ones." },
+    { k: ["book", "booking", "order", "appointment", "schedule", "online"], a: "If you already use a booking or ordering tool, I add that link so customers can use it right from your site. If you don't, customers can call or text you in one tap." },
+    { k: ["change", "update", "edit", "hours", "fix", "modify"], a: "Small edits like prices, hours and services are included in the monthly fee. Send me a message and I update it." },
+    { k: ["own", "domain", "host", "hosting", "name"], a: "I set up your domain and hosting as part of launch and keep it running. I'll put the details in writing before anything goes live." },
+    { k: ["cancel", "contract", "terms", "commit", "lock"], a: "I put terms in writing before anything goes live, including how to cancel. If you don't like the sample, you owe nothing." },
+    { k: ["start", "begin", "next", "sign", "how do"], a: "Email me your business name. I build the sample from your public listings and send it to you. You look, tell me what to change, and only then do we talk price." },
+    { k: ["safe", "privacy", "data", "cookie", "track"], a: "This site uses no cookies, no analytics and no tracking, and what you type in this helper never leaves your browser." }
+  ];
+  var CHIPS = ["What does it cost?", "Why do I need a website?", "What's included?", "How do I get started?"];
+  var fab = document.createElement("button");
+  fab.type = "button"; fab.className = "ask-fab"; fab.textContent = "Questions?"; fab.setAttribute("aria-haspopup", "dialog");
+  var box = document.createElement("div");
+  box.className = "ask"; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Instant answers");
+  box.innerHTML = '<header><div><b>Instant answers</b><span>From this site. Not a person, and not AI.</span></div><button type="button" class="x" aria-label="Close">&times;</button></header>' +
+    '<div class="log" role="log" aria-live="polite"></div><div class="chips2"></div>' +
+    '<form><label for="askq" style="position:absolute;left:-9999px">Your question</label><input id="askq" type="text" placeholder="Type a question" autocomplete="off"><button type="submit">Ask</button></form>';
+  document.body.appendChild(fab); document.body.appendChild(box);
+  var log = box.querySelector(".log"), chips = box.querySelector(".chips2"), inp = box.querySelector("input");
+  function say(t, cls) { var d = document.createElement("div"); d.className = "m " + cls; d.textContent = t; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
+  function acts(d) {
+    var w = document.createElement("div"); w.className = "acts";
+    function a(t, h) { var x = document.createElement("a"); x.textContent = t; x.href = h; w.appendChild(x); return x; }
+    if (DIGITS) { a("Call " + PHONE, "tel:" + DIGITS); a("Text", "sms:" + DIGITS); }
+    if (BOOKING) { var b = a("Book a time", BOOKING); b.addEventListener("click", function (e) { box.classList.remove("on"); fab.style.display = ""; if (window.openBooking) window.openBooking(e); }); }
+    a("Email", "mailto:" + EMAIL + "?subject=Question");
+    d.appendChild(w);
+  }
+  function answer(q) {
+    var s = q.toLowerCase(), best = null, score = 0;
+    KB.forEach(function (e) { var n = 0; e.k.forEach(function (w) { if (s.indexOf(w) > -1) n += w.length > 3 ? 2 : 1; }); if (n > score) { score = n; best = e; } });
+    if (/(call|phone|talk|speak|person|human|reach|contact|number)/.test(s)) {
+      var d = say(DIGITS ? "Of course. You can reach me directly:" : "Of course. The fastest way to reach me right now is email:", "bot"); acts(d); return;
+    }
+    if (best && score >= 2) say(best.a, "bot");
+    else { var f = say("I don't have a good answer to that one. Ask me directly and you'll hear back from a real person:", "bot"); acts(f); }
+  }
+  function ask(q) { if (!q.trim()) return; say(q, "me"); answer(q); }
+  CHIPS.forEach(function (c) {
+    var b = document.createElement("button"); b.type = "button"; b.textContent = c;
+    b.addEventListener("click", function () { ask(c); inp.focus(); }); chips.appendChild(b);
+  });
+  say("Hi, I'm the quick-answers helper for this site. Tap a question, or type your own.", "bot");
+  box.querySelector("form").addEventListener("submit", function (e) { e.preventDefault(); ask(inp.value); inp.value = ""; });
+  function open() { box.classList.add("on"); fab.style.display = "none"; inp.focus(); }
+  function close() { box.classList.remove("on"); fab.style.display = ""; fab.focus(); }
+  fab.addEventListener("click", open); box.querySelector(".x").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && box.classList.contains("on")) close(); });
 })();
 
 // FAQ accordion
