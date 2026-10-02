@@ -6,12 +6,16 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#e6b26a"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#15120e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       %%NAME%%
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="#why">Why a site</a><a href="#found">What I find</a><a href="#work">Work</a><a href="#how">Process</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">Questions</a>
-    </nav>
+    <nav class="nav" aria-label="Main"><a href="#why" data-spy="why">Why a site</a><a href="#build" data-spy="build">What I build</a><a href="#work" data-spy="work">Work</a><a href="#how" data-spy="how">Process</a><a href="#about" data-spy="about">About</a><a href="#faq" data-spy="faq">FAQ</a></nav>
     <a class="btn" href="mailto:%%EMAIL%%?subject=Free%20sample%20website">Email me</a>
+    <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
   </div>
+  <div class="prog" id="prog" aria-hidden="true"></div>
 </header>
+<div class="mmenu" id="mmenu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="mm-top"><span class="k">Menu</span><button type="button" class="mm-x" data-qa="menu-close" aria-label="Close menu">&times;</button></div>
+  <nav aria-label="Mobile"><a href="#why">Why a site</a><a href="#build">What I build</a><a href="#work">Work</a><a href="#how">Process &amp; pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
+</div>
 
 <main>
 <section class="hero" style="border:0">
@@ -46,6 +50,24 @@
       <path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#e6b26a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M12 226 H308" stroke="#e6b26a" stroke-width="3"/>
     </svg>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <div class="k">What I build</div>
+    <h2>Everything a customer looks for.</h2>
+    <p class="intro">A real website for your business, set up so customers find what they need in seconds.</p>
+    <div class="svc">
+      <div><h3>Custom design</h3><p>Your own look, taken from your name, your neighborhood and your customers. Not a template.</p></div>
+      <div><h3>Everything customers need</h3><p>Your services and prices, hours, directions, photos, and a clear way to call or text you.</p></div>
+      <div><h3>Booking and ordering</h3><p>If you use a booking or ordering tool, I connect it so customers can use it right from your site.</p></div>
+      <div><h3>Kept running for you</h3><p>Your domain, hosting and small edits like prices and hours are handled, so it stays correct.</p></div>
+    </div>
+    <div class="k" style="margin-top:56px">Who it's for</div>
+    <div class="types" aria-label="Kinds of local businesses">
+      <span>Restaurants</span><span>Shops</span><span>Salons &amp; barbers</span><span>Contractors</span><span>Clinics</span><span>Studios</span><span>Gyms</span><span>Services</span><span>And more</span>
+    </div>
   </div>
 </section>
 

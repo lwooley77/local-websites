@@ -151,3 +151,28 @@ document.querySelectorAll(".faq button").forEach(function (b) {
     last = y;
   }, { passive: true });
 })();
+
+// mobile menu
+(function () {
+  var menu = document.getElementById("mmenu"), open = document.querySelector('[data-qa="menu-open"]'), close = document.querySelector('[data-qa="menu-close"]');
+  if (!menu || !open || !close) return;
+  function shut() { menu.hidden = true; open.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; open.focus(); }
+  open.addEventListener("click", function () { menu.hidden = false; open.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; close.focus(); });
+  close.addEventListener("click", shut);
+  menu.querySelectorAll("a").forEach(function (l) { l.addEventListener("click", function () { menu.hidden = true; open.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) shut(); });
+})();
+
+// reading progress bar and "you are here" highlight in the menu
+(function () {
+  var bar = document.getElementById("prog"), links = [].slice.call(document.querySelectorAll("[data-spy]"));
+  var secs = links.map(function (l) { return document.getElementById(l.getAttribute("data-spy")); });
+  function tick() {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    if (bar && max > 0) bar.style.width = Math.min(100, scrollY / max * 100).toFixed(1) + "%";
+    var cur = -1;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; });
+    links.forEach(function (l, i) { l.classList.toggle("on", i === cur); if (i === cur) l.setAttribute("aria-current", "true"); else l.removeAttribute("aria-current"); });
+  }
+  addEventListener("scroll", tick, { passive: true }); tick();
+})();

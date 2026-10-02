@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-﻿<meta charset="utf-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lucas Wooley | Websites for Northern Nevada Businesses</title>
 <meta name="description" content="Custom websites for local businesses of every kind in Northern Nevada. See a free preview of yours before you decide anything.">
@@ -240,6 +240,33 @@ footer .r{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 footer a{padding:10px 0;display:inline-block}
 #privacy{padding:0 0 40px;font-size:14px;color:var(--muted);max-width:62ch}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.menu-btn{flex:none;width:48px;height:48px;border:0;border-radius:12px;background:transparent;box-shadow:inset 0 0 0 2px var(--line);cursor:pointer;display:grid;place-items:center;margin-left:10px}
+.menu-btn i{width:20px;height:2px;background:var(--paper);box-shadow:0 6px 0 var(--paper),0 -6px 0 var(--paper)}
+@media (min-width:800px){.menu-btn{display:none}}
+.top .wrap>.btn{margin-left:auto}
+@media (min-width:800px){.top .wrap>.btn{margin-left:0}}
+.nav a.on{color:var(--gold)}
+.nav a{padding:10px 10px}
+.prog{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--gold)}
+.mmenu{position:fixed;inset:0;z-index:120;background:var(--bg);padding:12px 20px 28px;overflow:auto}
+.mmenu[hidden]{display:none}
+.mm-top{display:flex;justify-content:space-between;align-items:center;min-height:56px}
+.mm-x{width:48px;height:48px;border:0;background:transparent;color:var(--paper);font:400 38px/1 sans-serif;cursor:pointer}
+.mmenu nav{display:grid;margin-top:12px}
+.mmenu nav a{padding:16px 0;border-top:1px solid var(--line);text-decoration:none;font:600 30px/1.1 Fraunces,Georgia,serif}
+.mmenu .mm-cta{margin-top:24px;border:0;background:var(--gold);color:var(--ink);text-align:center;border-radius:999px;font:600 18px 'Work Sans',sans-serif;padding:16px}
+.types{display:flex;flex-wrap:wrap;gap:4px 26px;margin-top:22px;font:600 clamp(26px,5vw,52px)/1.18 Fraunces,Georgia,serif}
+.types span:nth-child(3n+1){color:var(--gold)}
+.types span:nth-child(3n+2){color:var(--paper)}
+.types span:nth-child(3n){color:#b9ad97}
+.svc{margin-top:30px}
+.svc>div{display:grid;gap:8px 48px;padding:28px 0;border-top:1px solid var(--line)}
+.svc>div:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:820px){.svc>div{grid-template-columns:300px 1fr}}
+.svc h3{font-size:clamp(24px,3vw,30px)}
+.svc p{color:var(--muted);max-width:58ch}
+html{scroll-padding-top:80px}
 </style>
 
 </head>
@@ -252,12 +279,16 @@ footer a{padding:10px 0;display:inline-block}
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#e6b26a"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#15120e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Lucas Wooley
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="#why">Why a site</a><a href="#found">What I find</a><a href="#work">Work</a><a href="#how">Process</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">Questions</a>
-    </nav>
+    <nav class="nav" aria-label="Main"><a href="#why" data-spy="why">Why a site</a><a href="#build" data-spy="build">What I build</a><a href="#work" data-spy="work">Work</a><a href="#how" data-spy="how">Process</a><a href="#about" data-spy="about">About</a><a href="#faq" data-spy="faq">FAQ</a></nav>
     <a class="btn" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">Email me</a>
+    <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
   </div>
+  <div class="prog" id="prog" aria-hidden="true"></div>
 </header>
+<div class="mmenu" id="mmenu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="mm-top"><span class="k">Menu</span><button type="button" class="mm-x" data-qa="menu-close" aria-label="Close menu">&times;</button></div>
+  <nav aria-label="Mobile"><a href="#why">Why a site</a><a href="#build">What I build</a><a href="#work">Work</a><a href="#how">Process &amp; pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
+</div>
 
 <main>
 <section class="hero" style="border:0">
@@ -292,6 +323,24 @@ footer a{padding:10px 0;display:inline-block}
       <path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#e6b26a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M12 226 H308" stroke="#e6b26a" stroke-width="3"/>
     </svg>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <div class="k">What I build</div>
+    <h2>Everything a customer looks for.</h2>
+    <p class="intro">A real website for your business, set up so customers find what they need in seconds.</p>
+    <div class="svc">
+      <div><h3>Custom design</h3><p>Your own look, taken from your name, your neighborhood and your customers. Not a template.</p></div>
+      <div><h3>Everything customers need</h3><p>Your services and prices, hours, directions, photos, and a clear way to call or text you.</p></div>
+      <div><h3>Booking and ordering</h3><p>If you use a booking or ordering tool, I connect it so customers can use it right from your site.</p></div>
+      <div><h3>Kept running for you</h3><p>Your domain, hosting and small edits like prices and hours are handled, so it stays correct.</p></div>
+    </div>
+    <div class="k" style="margin-top:56px">Who it's for</div>
+    <div class="types" aria-label="Kinds of local businesses">
+      <span>Restaurants</span><span>Shops</span><span>Salons &amp; barbers</span><span>Contractors</span><span>Clinics</span><span>Studios</span><span>Gyms</span><span>Services</span><span>And more</span>
+    </div>
   </div>
 </section>
 
@@ -607,6 +656,31 @@ document.querySelectorAll(".faq button").forEach(function (b) {
     h.classList.toggle("hide", y > last && y > 120);
     last = y;
   }, { passive: true });
+})();
+
+// mobile menu
+(function () {
+  var menu = document.getElementById("mmenu"), open = document.querySelector('[data-qa="menu-open"]'), close = document.querySelector('[data-qa="menu-close"]');
+  if (!menu || !open || !close) return;
+  function shut() { menu.hidden = true; open.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; open.focus(); }
+  open.addEventListener("click", function () { menu.hidden = false; open.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; close.focus(); });
+  close.addEventListener("click", shut);
+  menu.querySelectorAll("a").forEach(function (l) { l.addEventListener("click", function () { menu.hidden = true; open.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) shut(); });
+})();
+
+// reading progress bar and "you are here" highlight in the menu
+(function () {
+  var bar = document.getElementById("prog"), links = [].slice.call(document.querySelectorAll("[data-spy]"));
+  var secs = links.map(function (l) { return document.getElementById(l.getAttribute("data-spy")); });
+  function tick() {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    if (bar && max > 0) bar.style.width = Math.min(100, scrollY / max * 100).toFixed(1) + "%";
+    var cur = -1;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < innerHeight * 0.4) cur = i; });
+    links.forEach(function (l, i) { l.classList.toggle("on", i === cur); if (i === cur) l.setAttribute("aria-current", "true"); else l.removeAttribute("aria-current"); });
+  }
+  addEventListener("scroll", tick, { passive: true }); tick();
 })();
 
 </script>
