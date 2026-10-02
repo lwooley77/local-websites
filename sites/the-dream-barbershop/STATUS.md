@@ -1,6 +1,6 @@
 # The Dream Barbershop : demo status
 
-Deliverable: `dist/index.html` (single file, 162 KB, no external requests except outbound links).
+Deliverable: `dist/index.html` (single file, 873 KB with photos, no external requests except outbound links).
 Build: `python sites\_kit\build.py sites\the-dream-barbershop`. QA: `python sites\_kit\qa.py sites\the-dream-barbershop` (passes, 0 fails, 3 passes run).
 
 ## Fact sheet
@@ -44,8 +44,19 @@ Build: `python sites\_kit\build.py sites\the-dream-barbershop`. QA: `python site
 - Services: 4 categories with tabs (All default), every row links to Squire. A dashed note says the full 55-service menu lives on Squire, so the site never narrows their scope.
 - Reviews: no quotes. Big 4.8 with Google count linked to Maps, plus a Squire link.
 - Booking: every Book button goes to Squire (`BOOKING_URL` in app.js). Contact cards: Call (largest), Text, Directions, Book.
-- Photo slots ready: drop `hero.jpg` (shows inside the arch window) and `shop.jpg` (shows on the letter board) into `assets/raw/` and rebuild.
+- Real photos are integrated (see Photos). The hero photo shows inside the arch window, the floor photo sits on the letter board, and all 7 appear in the Photos gallery with a lightbox (tap, swipe, arrow keys, Escape, counter, captions).
 
+## Photos
+All 7 are from the shop's own Google Business Profile (Photos > By owner, posted by The Dream Barbershop): https://maps.google.com/?cid=2113090195408155263. Full image URLs and face notes are in `research/photos.json`. No client faces; the hero was cropped to remove one.
+- `hero-shop-at-work.jpg`: shop interior with a barber at work, seen in the hero arch and gallery
+- `shop-floor-monogram.jpg`: gold monogram in the epoxy floor, used in About and gallery
+- `shop-gold-chair.jpg`: gold and black chair at a lit station (frame from a shop video)
+- `work-design-back.jpg`: taper with freehand design, from the back
+- `work-green-design.jpg`: green color design, from behind
+- `work-braids-top.jpg`: braids from above
+- `work-braids-pattern.jpg`: braid pattern against the 3D wall panel
+
+**Owner must approve photos and quotes before the site goes public.** (No quotes are used on the page. The braids photos show people from above with faces turned down; owner should confirm those clients are OK with being shown.)
 ## Photos to request
 1. Best straight-on shot of the shop front or window on California Ave (hero, inside the arch)
 2. Wide interior shot of the chairs and stations, ideally empty or with backs only (letter board)
@@ -64,6 +75,7 @@ Build: `python sites\_kit\build.py sites\the-dream-barbershop`. QA: `python site
 - Publishing: Netlify Drop (app.netlify.com/drop, drag the `dist` folder) or `npx netlify-cli deploy --dir dist --prod` after mk logs in. Not published.
 
 ## QA result
-- qa.py: 0 fails at 1280x900 and 390x844 (3 full passes). 162 KB.
+- qa.py: exit 0, 0 fails at 1280x900 and 390x844 after the photo integration. 873 KB. Lightbox tested (open, arrows, Escape), no page errors.
+- No refund or T&C page: nothing is sold on the site. Privacy note is in the footer (#privacy).
 - Extra checks: All-tab view, phone menu open/close, strip link jumps to Kids and flashes the row: all working, no page errors.
 - Self-scores: custom to business 9, premium polish 9, readability 9, mobile 9, ease of contacting/booking 9, faithful to facts 9, clean of never-do list 9.

@@ -49,11 +49,12 @@ def images(site):
     m = {}
     for p in files:
         im = ImageOps.exif_transpose(Image.open(p)).convert("RGB")
-        cap = 1600 if p.stem.startswith("hero") else 1100
+        cfg = json.loads((site / "site.json").read_text(encoding="utf-8"))
+        cap = cfg.get("img_cap") or (1600 if p.stem.startswith("hero") else 1100)
         if max(im.size) > cap:
             im.thumbnail((cap, cap), Image.LANCZOS)
         buf = io.BytesIO()
-        im.save(buf, "JPEG", quality=70, optimize=True, progressive=True)
+        im.save(buf, "JPEG", quality=cfg.get("img_q", 70), optimize=True, progressive=True)
         (web / (p.stem + ".jpg")).write_bytes(buf.getvalue())
         m[p.stem] = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
     return "<script>window.IMG=" + json.dumps(m) + "</script>"

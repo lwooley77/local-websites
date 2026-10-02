@@ -24,6 +24,74 @@
     if (IMG[k]) { im.src = IMG[k]; im.classList.add('on'); } else { im.parentNode.removeChild(im); }
   });
 
+  // Hero photo inside the arch window
+  var heroImg = $('#heroimg');
+  if (heroImg) {
+    if (IMG['hero-shop-at-work']) { heroImg.setAttribute('href', IMG['hero-shop-at-work']); }
+    else { heroImg.parentNode.removeChild(heroImg); }
+  }
+  var picLine = $('.pic-line');
+  if (picLine && IMG['hero-shop-at-work']) picLine.hidden = false;
+
+  // Gallery + lightbox
+  var PHOTOS = [
+    { k: 'shop-floor-monogram', wide: 1, alt: 'The shop floor with the gold monogram set into the marbled epoxy, the waiting couch and caped chairs', cap: 'The gold monogram in the marbled floor, with the waiting couch and chairs.' },
+    { k: 'hero-shop-at-work', alt: 'A barber cutting a client under the hex LED ceiling, skate decks on the wall behind', cap: 'A cut in progress under the hex LED ceiling, skate decks on the wall.' },
+    { k: 'shop-gold-chair', alt: 'A gold and black barber chair at a station with a lit mirror and trophies', cap: 'A gold and black chair at a lit station, trophies on the shelf.' },
+    { k: 'work-design-back', alt: 'A taper with a freehand design, seen from the back', cap: 'A taper with a freehand design.' },
+    { k: 'work-green-design', alt: 'A green color design over a buzz cut, seen from behind', cap: 'A green color design over a buzz cut.' },
+    { k: 'work-braids-top', alt: 'Braids seen from above', cap: 'Braids, seen from above.' },
+    { k: 'work-braids-pattern', alt: 'A braid pattern seen from above against a black 3D wall panel', cap: 'A braid pattern against the black 3D wall panel.' }
+  ].filter(function (p) { return IMG[p.k]; });
+  var grid = $('#grid'), lb = $('#lb');
+  if (!PHOTOS.length) {
+    var gsec = $('#gallery'); if (gsec) gsec.parentNode.removeChild(gsec);
+    $$('a[href="#gallery"]').forEach(function (a) { a.parentNode.removeChild(a); });
+  } else if (grid && lb) {
+    var cur = 0, opener = null, tx = null;
+    var lbimg = $('#lbimg'), lbcap = $('#lbcap'), lbn = $('#lbn');
+    PHOTOS.forEach(function (p, i) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'g press' + (p.wide ? ' wide' : '');
+      b.setAttribute('aria-label', 'View photo ' + (i + 1) + ' of ' + PHOTOS.length + ': ' + p.cap);
+      var im = document.createElement('img');
+      im.src = IMG[p.k]; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+      b.appendChild(im);
+      b.addEventListener('click', function () { show(i); opener = b; lb.hidden = false; document.body.style.overflow = 'hidden'; $('#lbx').focus(); });
+      grid.appendChild(b);
+    });
+    function show(i) {
+      cur = (i + PHOTOS.length) % PHOTOS.length;
+      var p = PHOTOS[cur];
+      lbimg.src = IMG[p.k]; lbimg.alt = p.alt; lbcap.textContent = p.cap;
+      lbn.textContent = (cur + 1) + ' / ' + PHOTOS.length;
+    }
+    function close() {
+      lb.hidden = true; document.body.style.overflow = '';
+      if (opener) opener.focus();
+    }
+    $('#lbx').addEventListener('click', close);
+    $('#lbp').addEventListener('click', function () { show(cur - 1); });
+    $('#lbnx').addEventListener('click', function () { show(cur + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') { close(); }
+      else if (e.key === 'ArrowLeft') { show(cur - 1); }
+      else if (e.key === 'ArrowRight') { show(cur + 1); }
+      else if (e.key === 'Tab') {
+        var f = $$('button', lb), first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    lb.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+      if (tx === null) return;
+      var dx = e.changedTouches[0].clientX - tx; tx = null;
+      if (Math.abs(dx) > 45) show(cur + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+  }
   // Year
   var yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
 

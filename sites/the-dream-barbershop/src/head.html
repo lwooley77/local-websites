@@ -263,6 +263,35 @@ footer{position:relative;background:#0c0a09;padding-bottom:96px}
 .bar a.b{background:var(--brass);color:var(--ink)}
 .bar a.b svg{color:var(--ink)}
 
+/* gallery + lightbox */
+.gal .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:26px}
+.gal .g{position:relative;display:block;padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--ink-3);cursor:zoom-in;aspect-ratio:4/5;box-shadow:inset 0 0 0 1px var(--line)}
+.gal .g.wide{grid-column:1/-1;aspect-ratio:16/10}
+.gal .g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.gal .g::after{content:"";position:absolute;inset:0;border-radius:10px;box-shadow:inset 0 0 0 1px rgba(224,173,94,.18);pointer-events:none}
+@media (hover:hover){.gal .g:hover img{transform:scale(1.04)}}
+.lb{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,6,5,.96);padding:64px 14px 28px;touch-action:pan-y}
+.lb[hidden]{display:none}
+.lb-top{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:10px 14px}
+.lb-btn{display:grid;place-items:center;width:48px;height:48px;border-radius:999px;border:1px solid var(--line);background:rgba(27,24,21,.9);color:var(--cream);cursor:pointer}
+.lb-btn:hover{border-color:var(--brass)}
+.lb-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lb-fig{margin:0;display:grid;gap:14px;justify-items:center;max-width:min(92vw,900px);max-height:100%;min-height:0}
+.lb-fig img{max-width:100%;max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px);width:auto;height:auto;object-fit:contain;border-radius:8px}
+.lb-fig figcaption{font-size:16px;line-height:1.45;color:var(--sand);text-align:center;max-width:36em}
+.lb-prev,.lb-next{position:absolute;bottom:22px}
+.lb-prev{left:14px}
+.lb-next{right:14px}
+.lb-prev svg{transform:scaleX(-1)}
+@media (min-width:700px){
+  .lb-prev,.lb-next{bottom:auto;top:50%;margin-top:-24px}
+  .lb-prev{left:24px}
+  .lb-next{right:24px}
+}
+@media (min-width:980px){
+  .gal .grid{grid-template-columns:repeat(3,1fr);gap:14px}
+  .gal .g.wide{grid-column:span 2;aspect-ratio:auto}
+}
 img[data-k]{display:none}
 img[data-k].on{display:block}
 
