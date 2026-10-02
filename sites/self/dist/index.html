@@ -392,6 +392,23 @@ main .k::before{content:"";display:inline-block;height:2px;width:calc(34px * var
 #scenes.hs-on .scn span{display:block;font-size:clamp(34px,3.6vw,50px);margin-bottom:14px}
 #scenes.hs-on .scn p{font-size:18px}
 @media (max-width:799px){.ask-fab{min-height:44px;padding:0 15px;font-size:14px;bottom:86px;right:12px;opacity:.94}}
+
+/* auto-play tour */
+.watch{margin-top:18px;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px 0 14px;border:0;border-radius:999px;background:transparent;box-shadow:inset 0 0 0 2px var(--line);color:var(--paper);font:600 15px 'Work Sans',sans-serif;cursor:pointer;transition:box-shadow .2s var(--ease),transform .15s var(--ease)}
+.watch:hover{box-shadow:inset 0 0 0 2px var(--gold)}
+.watch:active{transform:scale(.97)}
+.tb-ico{width:26px;height:26px;border-radius:50%;background:var(--gold);position:relative;flex:none}
+.tb-ico::after{content:"";position:absolute;left:10px;top:7px;border-left:9px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.playing .tb-ico::after{left:8px;top:7px;width:4px;height:12px;border:0;background:var(--ink);box-shadow:6px 0 0 var(--ink)}
+.tourbar{position:fixed;left:14px;bottom:16px;z-index:45;display:flex;gap:8px;align-items:center}
+.tourbar button{display:inline-flex;align-items:center;gap:10px;min-height:48px;border:0;border-radius:999px;background:rgba(21,18,14,.94);color:var(--paper);box-shadow:inset 0 0 0 2px var(--line),0 10px 26px rgba(0,0,0,.45);font:600 15px 'Work Sans',sans-serif;cursor:pointer;padding:0 18px 0 10px;transition:box-shadow .2s var(--ease),transform .15s var(--ease)}
+.tourbar button:hover{box-shadow:inset 0 0 0 2px var(--gold),0 10px 26px rgba(0,0,0,.45)}
+.tourbar button:active{transform:scale(.97)}
+.tourbar .tb-speed{padding:0 16px;font-size:14px;color:var(--gold)}
+.tourbar:focus-within button:focus-visible,.watch:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.tourbar.playing .tb-play{box-shadow:inset 0 0 0 2px var(--gold),0 0 22px rgba(230,178,106,.4)}
+@media (max-width:799px){.tourbar{left:10px;bottom:86px}.tourbar button{min-height:44px;font-size:14px}}
+body.in-story .tourbar{opacity:1}
 </style>
 
 </head>
@@ -446,7 +463,7 @@ main .k::before{content:"";display:inline-block;height:2px;width:calc(34px * var
           <a class="btn alt" href="#work">See the work</a>
         </div>
         <div class="trust"><span>Free sample first</span><span>Custom design, no templates</span><span>Works on every screen</span></div>
-        <div class="scrollhint" aria-hidden="true">Scroll to put it together</div>
+        <button type="button" class="watch" data-tour="story"><span class="tb-ico" aria-hidden="true"></span>Watch it come together</button>
       </div>
       <div class="sart"><svg id="pieces" class="pieces" viewBox="0 0 320 240" role="img" aria-label="A storefront whose pieces fly out one at a time, each one a part of what I build, then come together as you scroll"><g class="funnel" aria-hidden="true" fill="none" stroke="#e6b26a" stroke-width="1.2" stroke-dasharray="4 7" opacity=".5"><ellipse cx="160" cy="22" rx="150" ry="16"/><ellipse cx="160" cy="62" rx="118" ry="13"/><ellipse cx="160" cy="102" rx="88" ry="10"/><ellipse cx="160" cy="142" rx="58" ry="8"/><ellipse cx="160" cy="182" rx="32" ry="5"/></g><g data-p data-i="1"><rect x="20" y="86" width="140" height="140" fill="#2a231b" stroke="#e6b26a" stroke-width="3"/><g class="lbl" opacity="0"><text x="90" y="152" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#f4eee3">Services</text><text x="90" y="174" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#e6b26a">&amp; prices</text></g></g><g data-p data-i="2"><rect x="160" y="86" width="140" height="140" fill="#2a231b" stroke="#e6b26a" stroke-width="3"/><g class="lbl" opacity="0"><text x="230" y="152" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#f4eee3">Hours &amp;</text><text x="230" y="174" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#e6b26a">directions</text></g></g><g data-p data-i="3"><rect x="44" y="118" width="86" height="108" fill="#15120e" stroke="#e6b26a" stroke-width="3"/><circle cx="116" cy="174" r="4" fill="#e6b26a"/><g class="lbl" opacity="0"><text x="87" y="168" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#f4eee3">Calls</text><text x="87" y="190" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#e6b26a">&amp; texts</text></g></g><g data-p data-i="4"><rect x="156" y="124" width="112" height="64" fill="#15120e" stroke="#e6b26a" stroke-width="3"/><path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#e6b26a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><g class="lbl" opacity="0"><rect x="162" y="130" width="100" height="52" rx="6" fill="#15120e" opacity=".92"/><text x="212" y="154" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#f4eee3">Online</text><text x="212" y="174" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#e6b26a">booking</text></g></g><g data-p data-i="0"><path d="M40.0 26 L74.3 26 L52.9 86 L10.0 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M74.3 26 L108.6 26 L95.7 86 L52.9 86 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M108.6 26 L142.9 26 L138.6 86 L95.7 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M142.9 26 L177.1 26 L181.4 86 L138.6 86 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M177.1 26 L211.4 26 L224.3 86 L181.4 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M211.4 26 L245.7 26 L267.1 86 L224.3 86 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M245.7 26 L280.0 26 L310.0 86 L267.1 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 86 Q25 104 40 86 Q55 104 70 86 Q85 104 100 86 Q115 104 130 86 Q145 104 160 86 Q175 104 190 86 Q205 104 220 86 Q235 104 250 86 Q265 104 280 86 Q295 104 310 86 L310 84 L10 84 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5"/><g class="lbl" opacity="0"><rect x="84" y="38" width="152" height="32" rx="16" fill="#15120e" stroke="#e6b26a" stroke-width="2"/><text x="160" y="59" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="16" fill="#f4eee3">Found on Google</text></g></g><g data-p data-i="5"><rect x="272" y="98" width="40" height="26" rx="7" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5"/><path d="M282 124 l-4 9 l12 -9 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><circle cx="284" cy="111" r="2.4" fill="#15120e"/><circle cx="292" cy="111" r="2.4" fill="#15120e"/><circle cx="300" cy="111" r="2.4" fill="#15120e"/><g class="lbl" opacity="0"><rect x="274" y="102" width="36" height="18" rx="5" fill="#f4eee3"/><text x="292" y="115" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="7.6" fill="#15120e">Follow-ups</text></g></g><g data-p data-i="6"><path d="M12 226 H308" stroke="#e6b26a" stroke-width="3"/><rect x="12" y="226" width="296" height="6" fill="#2a231b" stroke="#e6b26a" stroke-width="2"/><g class="lbl" opacity="0"><rect x="96" y="204" width="128" height="26" rx="13" fill="#15120e" stroke="#e6b26a" stroke-width="2"/><text x="160" y="222" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="14" fill="#f4eee3">Kept running</text></g></g><g data-d><rect width="9" height="9" fill="#e6b26a"/></g><g data-d><path d="M0 10 L6 0 L12 10 Z" fill="#e0793c"/></g><g data-d><rect width="7" height="12" fill="#f4eee3"/></g><g data-d><circle r="5" cx="5" cy="5" fill="#e6b26a"/></g><g data-d><path d="M0 0 L12 3 L5 11 Z" fill="#f4eee3"/></g><g data-d><rect width="11" height="6" fill="#e0793c"/></g><g data-d><path d="M0 6 L6 0 L12 6 L6 12 Z" fill="#e6b26a"/></g><g data-d><rect width="6" height="6" fill="#f4eee3"/></g><g class="neon" opacity="0"><rect x="52" y="136" width="70" height="24" rx="4" fill="#15120e" stroke="#e6b26a" stroke-width="2"/><text x="87" y="153" text-anchor="middle" font-family="Work Sans,sans-serif" font-weight="600" font-size="14" letter-spacing="3" fill="#e6b26a">OPEN</text></g></svg></div>
     </div>
@@ -780,7 +797,7 @@ document.querySelectorAll("img[data-k]").forEach(function (im) {
 // short intro: awning drops, OPEN sign lights up. Skippable (click, Skip, Escape). Not shown for reduced motion, deep links or automated tests.
 (function () {
   var q = location.search.indexOf("intro") > -1;
-  if (!q && (navigator.webdriver || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  if (!q && (location.search.indexOf("tour") > -1 || navigator.webdriver || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
   var el = document.createElement("div");
   el.id = "intro";
   el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Welcome");
@@ -1042,6 +1059,65 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   var st = document.getElementById("story");
   if (!st || !("IntersectionObserver" in window)) return;
   new IntersectionObserver(function (es) { document.body.classList.toggle("in-story", es[0].isIntersecting); }, { threshold: 0.05 }).observe(st);
+})();
+
+// auto-play tour: scrolls the page for you. Slower through the story and the pinned scenes so every animation reads.
+(function () {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var root = document.documentElement, fast = true, playing = false, last = 0, y = 0, stopAt = null, raf = 0;
+  var bar = document.createElement("div");
+  bar.className = "tourbar";
+  bar.innerHTML = '<button type="button" class="tb-play" aria-label="Play the tour"><span class="tb-ico" aria-hidden="true"></span><span class="tb-txt">Play tour</span></button>' +
+    '<button type="button" class="tb-speed" aria-label="Tour speed: fast. Press to switch to slow." aria-pressed="true">Fast</button>';
+  document.body.appendChild(bar);
+  var play = bar.querySelector(".tb-play"), spd = bar.querySelector(".tb-speed"), txt = bar.querySelector(".tb-txt");
+  var watch = document.querySelector(".watch");
+  function maxY() { return document.documentElement.scrollHeight - innerHeight; }
+  function setY(v) { if (window.__lenis) window.__lenis.scrollTo(v, { immediate: true, force: true }); else window.scrollTo(0, v); }
+  function zoneSpeed() {
+    var st = document.getElementById("story"), sc = document.getElementById("scenes");
+    var r = st && st.getBoundingClientRect();
+    if (r && r.top <= 70 && r.bottom > innerHeight * 0.9) return fast ? 540 : 240;
+    var pin = sc && sc.parentElement && sc.parentElement.classList.contains("pin-spacer") ? sc.parentElement.getBoundingClientRect() : null;
+    if (pin && pin.top <= 80 && pin.bottom > innerHeight * 0.9) return fast ? 520 : 230;
+    return fast ? 1100 : 460;
+  }
+  function label(state) {
+    var t = state === "playing" ? "Pause tour" : state === "done" ? "Replay tour" : "Play tour";
+    txt.textContent = t; play.setAttribute("aria-label", t);
+    bar.classList.toggle("playing", state === "playing");
+    if (watch) watch.classList.toggle("playing", state === "playing");
+  }
+  function stop(state) { playing = false; cancelAnimationFrame(raf); label(state || "paused"); }
+  function tick(t) {
+    if (!playing) return;
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    y += zoneSpeed() * dt;
+    var end = stopAt != null ? Math.min(stopAt, maxY()) : maxY();
+    if (y >= end - 1) { setY(end); stop("done"); return; }
+    setY(y); raf = requestAnimationFrame(tick);
+  }
+  function start(toY) {
+    stopAt = toY == null ? null : toY;
+    y = window.scrollY; if (y >= maxY() - 4) { y = 0; setY(0); }
+    playing = true; last = performance.now(); label("playing"); raf = requestAnimationFrame(tick);
+  }
+  play.addEventListener("click", function () { if (playing) stop("paused"); else start(null); });
+  spd.addEventListener("click", function () {
+    fast = !fast; spd.textContent = fast ? "Fast" : "Slow"; spd.setAttribute("aria-pressed", String(fast));
+    spd.setAttribute("aria-label", "Tour speed: " + (fast ? "fast. Press to switch to slow." : "slow. Press to switch to fast."));
+  });
+  if (watch) watch.addEventListener("click", function () {
+    if (playing) { stop("paused"); return; }
+    var st = document.getElementById("story");
+    setY(0); y = 0; start(st.offsetTop + st.offsetHeight - innerHeight + 30);
+  });
+  // any manual input takes over
+  window.addEventListener("wheel", function () { if (playing) stop("paused"); }, { passive: true });
+  ["touchstart", "keydown"].forEach(function (ev) { window.addEventListener(ev, function (e) { if (playing && !(e.target && e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); }, { passive: true }); });
+  window.addEventListener("pointerdown", function (e) { if (playing && !(e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); });
+  // ?tour in the address starts it by itself
+  if (location.search.indexOf("tour") > -1) setTimeout(function () { start(null); }, 1200);
 })();
 
 /* Motion layer: GSAP + ScrollTrigger (scroll-driven animation) and Lenis (smooth scroll), bundled into this file's page.

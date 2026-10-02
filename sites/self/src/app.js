@@ -9,7 +9,7 @@ document.querySelectorAll("img[data-k]").forEach(function (im) {
 // short intro: awning drops, OPEN sign lights up. Skippable (click, Skip, Escape). Not shown for reduced motion, deep links or automated tests.
 (function () {
   var q = location.search.indexOf("intro") > -1;
-  if (!q && (navigator.webdriver || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  if (!q && (location.search.indexOf("tour") > -1 || navigator.webdriver || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
   var el = document.createElement("div");
   el.id = "intro";
   el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Welcome");
@@ -271,4 +271,63 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   var st = document.getElementById("story");
   if (!st || !("IntersectionObserver" in window)) return;
   new IntersectionObserver(function (es) { document.body.classList.toggle("in-story", es[0].isIntersecting); }, { threshold: 0.05 }).observe(st);
+})();
+
+// auto-play tour: scrolls the page for you. Slower through the story and the pinned scenes so every animation reads.
+(function () {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var root = document.documentElement, fast = true, playing = false, last = 0, y = 0, stopAt = null, raf = 0;
+  var bar = document.createElement("div");
+  bar.className = "tourbar";
+  bar.innerHTML = '<button type="button" class="tb-play" aria-label="Play the tour"><span class="tb-ico" aria-hidden="true"></span><span class="tb-txt">Play tour</span></button>' +
+    '<button type="button" class="tb-speed" aria-label="Tour speed: fast. Press to switch to slow." aria-pressed="true">Fast</button>';
+  document.body.appendChild(bar);
+  var play = bar.querySelector(".tb-play"), spd = bar.querySelector(".tb-speed"), txt = bar.querySelector(".tb-txt");
+  var watch = document.querySelector(".watch");
+  function maxY() { return document.documentElement.scrollHeight - innerHeight; }
+  function setY(v) { if (window.__lenis) window.__lenis.scrollTo(v, { immediate: true, force: true }); else window.scrollTo(0, v); }
+  function zoneSpeed() {
+    var st = document.getElementById("story"), sc = document.getElementById("scenes");
+    var r = st && st.getBoundingClientRect();
+    if (r && r.top <= 70 && r.bottom > innerHeight * 0.9) return fast ? 540 : 240;
+    var pin = sc && sc.parentElement && sc.parentElement.classList.contains("pin-spacer") ? sc.parentElement.getBoundingClientRect() : null;
+    if (pin && pin.top <= 80 && pin.bottom > innerHeight * 0.9) return fast ? 520 : 230;
+    return fast ? 1100 : 460;
+  }
+  function label(state) {
+    var t = state === "playing" ? "Pause tour" : state === "done" ? "Replay tour" : "Play tour";
+    txt.textContent = t; play.setAttribute("aria-label", t);
+    bar.classList.toggle("playing", state === "playing");
+    if (watch) watch.classList.toggle("playing", state === "playing");
+  }
+  function stop(state) { playing = false; cancelAnimationFrame(raf); label(state || "paused"); }
+  function tick(t) {
+    if (!playing) return;
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    y += zoneSpeed() * dt;
+    var end = stopAt != null ? Math.min(stopAt, maxY()) : maxY();
+    if (y >= end - 1) { setY(end); stop("done"); return; }
+    setY(y); raf = requestAnimationFrame(tick);
+  }
+  function start(toY) {
+    stopAt = toY == null ? null : toY;
+    y = window.scrollY; if (y >= maxY() - 4) { y = 0; setY(0); }
+    playing = true; last = performance.now(); label("playing"); raf = requestAnimationFrame(tick);
+  }
+  play.addEventListener("click", function () { if (playing) stop("paused"); else start(null); });
+  spd.addEventListener("click", function () {
+    fast = !fast; spd.textContent = fast ? "Fast" : "Slow"; spd.setAttribute("aria-pressed", String(fast));
+    spd.setAttribute("aria-label", "Tour speed: " + (fast ? "fast. Press to switch to slow." : "slow. Press to switch to fast."));
+  });
+  if (watch) watch.addEventListener("click", function () {
+    if (playing) { stop("paused"); return; }
+    var st = document.getElementById("story");
+    setY(0); y = 0; start(st.offsetTop + st.offsetHeight - innerHeight + 30);
+  });
+  // any manual input takes over
+  window.addEventListener("wheel", function () { if (playing) stop("paused"); }, { passive: true });
+  ["touchstart", "keydown"].forEach(function (ev) { window.addEventListener(ev, function (e) { if (playing && !(e.target && e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); }, { passive: true }); });
+  window.addEventListener("pointerdown", function (e) { if (playing && !(e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); });
+  // ?tour in the address starts it by itself
+  if (location.search.indexOf("tour") > -1) setTimeout(function () { start(null); }, 1200);
 })();
