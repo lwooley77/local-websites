@@ -324,6 +324,46 @@ html{scroll-padding-top:80px}
 .fdone h3{font-size:30px;margin-bottom:10px}
 .fdone p{color:#4a4338}
 .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* scroll story: storefront scattered like a tornado, then put together as you scroll */
+.story{position:relative;height:620vh;border-top:0}
+.stage{position:sticky;top:64px;height:calc(100vh - 64px);height:calc(100dvh - 64px);overflow:hidden}
+.stage .wrap{height:100%;display:grid;align-items:center;gap:16px;position:relative;z-index:1}
+@media (min-width:900px){.stage .wrap{grid-template-columns:1.02fr .98fr;gap:40px}}
+@media (max-width:899px){.stage .wrap{grid-template-rows:minmax(0,40%) auto;align-content:center}.sart{order:-1}.story{height:560vh}}
+.stext h1{font-size:clamp(30px,7.6vw,72px);margin:12px 0 14px;max-width:14ch}
+.stext h1 em{font-style:normal;color:var(--gold)}
+.caps{display:grid;min-height:8.2em;max-width:46ch}
+.chap{display:block;margin-bottom:6px;font:600 12px 'Work Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.cap p{margin:0}
+.cap{grid-area:1/1;margin:0;color:var(--muted);font-size:clamp(16px,2.2vw,20px);line-height:1.5;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .28s cubic-bezier(.23,1,.32,1),transform .28s cubic-bezier(.23,1,.32,1),visibility 0s .28s}
+.cap.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.stext .cta{margin-top:18px}
+@media (max-width:899px){.stext .trust{display:none}.stext .k{font-size:12px}.stext .cta{margin-top:12px}.stext .btn{min-height:46px;padding:0 20px;font-size:15px}}
+.scrollhint{margin-top:18px;font:600 12px 'Work Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.scrollhint::after{content:"";display:inline-block;width:8px;height:8px;margin-left:10px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg) translateY(-2px)}
+.sart{height:100%;display:grid;place-items:center;min-height:0}
+.pieces{width:100%;height:100%;max-height:100%;overflow:visible}
+.stage .bg{z-index:0}
+.shopdone{display:block;width:min(100%,380px);height:auto;margin:30px 0 8px}
+@media (prefers-reduced-motion:reduce){.story{height:auto}.stage{position:relative;top:0;height:auto;padding:36px 0 20px}.scrollhint{display:none}.cap{transition:none}}
+.pieces [data-p]{transition:filter .25s}
+.pieces [data-p].hot{filter:drop-shadow(0 0 8px rgba(230,178,106,.9))}
+
+.sart{overflow:hidden}
+.logo{white-space:nowrap}
+body.in-story .ask-fab{opacity:0;pointer-events:none}
+.ask-fab{transition:opacity .2s}
+@media (max-width:899px){
+  .stage{height:calc(100vh - 64px - 78px);height:calc(100dvh - 64px - 78px)}
+  .stext .cta{display:none}
+  .top .wrap{gap:8px}
+  .top .wrap>.btn{min-height:44px;padding:0 16px;font-size:14px;white-space:nowrap}
+  .logo{font-size:18px;gap:8px}
+  .logo svg{width:26px;height:26px}
+  .caps{min-height:9.4em}
+}
+@media (max-width:380px){.logo{font-size:16px}.top .wrap>.btn{padding:0 12px;font-size:13px}}
 </style>
 
 </head>
@@ -349,44 +389,51 @@ html{scroll-padding-top:80px}
 </div>
 
 <main id="main">
-<section class="hero" style="border:0">
-  <div class="bg" aria-hidden="true">
-    <span class="pin" style="left:58%;top:18%;--d:0s"></span>
-    <span class="pin" style="left:84%;top:30%;--d:.9s"></span>
-    <span class="pin" style="left:68%;top:52%;--d:1.8s"></span>
-    <span class="pin" style="left:92%;top:68%;--d:.5s"></span>
-    <span class="pin" style="left:60%;top:93%;--d:2.4s"></span>
-    <span class="pin" style="left:76%;top:84%;--d:1.3s"></span>
-    <span class="pin" style="left:96%;top:10%;--d:2.9s"></span>
-  </div>
-  <div class="wrap">
-    <div>
-      <div class="k">Northern Nevada · Websites for local businesses</div>
-      <h1>A website that makes your business look <em>as good as it is.</em></h1>
-      <p class="lead">I design custom websites for local businesses of every kind: restaurants, shops, salons, contractors, clinics and more. Clear, fast and easy for your customers to use. I build a free sample of yours first, so you can judge it before you decide anything.</p>
-      <div class="cta">
-        <a class="btn" href="#contact">Get your free sample</a>
-        <a class="btn alt" href="#work">See the work</a>
-      </div>
-      <div class="trust"><span>Free sample first</span><span>Custom design, no templates</span><span>Works on every screen</span></div>
+<section class="story" id="story">
+  <div class="stage">
+    <div class="bg" aria-hidden="true">
+      <span class="pin" style="left:58%;top:18%;--d:0s"></span>
+      <span class="pin" style="left:84%;top:30%;--d:.9s"></span>
+      <span class="pin" style="left:68%;top:52%;--d:1.8s"></span>
+      <span class="pin" style="left:92%;top:68%;--d:.5s"></span>
+      <span class="pin" style="left:76%;top:84%;--d:1.3s"></span>
     </div>
-    <svg class="awning" viewBox="0 0 320 240" role="img" aria-label="Illustration of a storefront with a striped awning">
-      <rect x="20" y="86" width="280" height="140" fill="#2a231b" stroke="#e6b26a" stroke-width="3"/>
-      <path d="M10 86 L40 26 H280 L310 86 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M40 26 L30 86 M80 26 L70 86 M120 26 L110 86 M160 26 V86 M200 26 L210 86 M240 26 L250 86 M280 26 L290 86" stroke="#e0793c" stroke-width="14" opacity=".95"/>
-      <path d="M10 86 Q25 104 40 86 Q55 104 70 86 Q85 104 100 86 Q115 104 130 86 Q145 104 160 86 Q175 104 190 86 Q205 104 220 86 Q235 104 250 86 Q265 104 280 86 Q295 104 310 86" fill="#f4eee3" stroke="#e6b26a" stroke-width="3"/>
-      <rect x="44" y="118" width="86" height="108" fill="#15120e" stroke="#e6b26a" stroke-width="3"/>
-      <circle cx="116" cy="174" r="4" fill="#e6b26a"/>
-      <rect x="156" y="124" width="112" height="64" fill="#15120e" stroke="#e6b26a" stroke-width="3"/>
-      <path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#e6b26a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M12 226 H308" stroke="#e6b26a" stroke-width="3"/>
-    </svg>
+    <div class="wrap">
+      <div class="stext">
+        <div class="k">Northern Nevada &middot; Websites for local businesses</div>
+        <h1>A website that makes your business look <em>as good as it is.</em></h1>
+        <div class="caps" aria-live="off">
+          <div class="cap" data-cap="0"><b class="chap">Scattered</b><p>Hours on one site, a phone number on another, a link that goes nowhere. Customers find pieces, never the whole business.</p></div>
+          <div class="cap" data-cap="1"><b class="chap">Piece 1 of 7 &middot; Found on Google</b><p>Clear titles, descriptions and business details, so people nearby can find you.</p></div>
+          <div class="cap" data-cap="2"><b class="chap">Piece 2 of 7 &middot; Services &amp; prices</b><p>What you offer and what it costs, in one clear place.</p></div>
+          <div class="cap" data-cap="3"><b class="chap">Piece 3 of 7 &middot; Hours &amp; directions</b><p>Today's hours, your address and a one-tap map.</p></div>
+          <div class="cap" data-cap="4"><b class="chap">Piece 4 of 7 &middot; Calls &amp; texts</b><p>One tap to call or text you, on every screen.</p></div>
+          <div class="cap" data-cap="5"><b class="chap">Piece 5 of 7 &middot; Online booking</b><p>Customers book on your site, and your calendar and client list update themselves.</p></div>
+          <div class="cap" data-cap="6"><b class="chap">Piece 6 of 7 &middot; Follow-ups</b><p>A quick message after a visit or a missed call, so no one slips away.</p></div>
+          <div class="cap" data-cap="7"><b class="chap">Piece 7 of 7 &middot; Kept running</b><p>Domain, hosting and small edits are handled, so it stays correct.</p></div>
+          <div class="cap on" data-cap="8"><b class="chap">Open for business</b><p>Every piece in place: one clear picture of your business as it really is.</p></div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#contact">Get your free sample</a>
+          <a class="btn alt" href="#work">See the work</a>
+        </div>
+        <div class="trust"><span>Free sample first</span><span>Custom design, no templates</span><span>Works on every screen</span></div>
+        <div class="scrollhint" aria-hidden="true">Scroll to put it together</div>
+      </div>
+      <div class="sart"><svg id="pieces" class="pieces" viewBox="0 0 320 240" role="img" aria-label="A storefront whose pieces fly out one at a time, each one a part of what I build, then come together as you scroll"><g class="funnel" aria-hidden="true" fill="none" stroke="#e6b26a" stroke-width="1.2" stroke-dasharray="4 7" opacity=".5"><ellipse cx="160" cy="22" rx="150" ry="16"/><ellipse cx="160" cy="62" rx="118" ry="13"/><ellipse cx="160" cy="102" rx="88" ry="10"/><ellipse cx="160" cy="142" rx="58" ry="8"/><ellipse cx="160" cy="182" rx="32" ry="5"/></g><g data-p data-i="1"><rect x="20" y="86" width="140" height="140" fill="#2a231b" stroke="#e6b26a" stroke-width="3"/><g class="lbl" opacity="0"><text x="90" y="152" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#f4eee3">Services</text><text x="90" y="174" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#e6b26a">&amp; prices</text></g></g><g data-p data-i="2"><rect x="160" y="86" width="140" height="140" fill="#2a231b" stroke="#e6b26a" stroke-width="3"/><g class="lbl" opacity="0"><text x="230" y="152" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#f4eee3">Hours &amp;</text><text x="230" y="174" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#e6b26a">directions</text></g></g><g data-p data-i="3"><rect x="44" y="118" width="86" height="108" fill="#15120e" stroke="#e6b26a" stroke-width="3"/><circle cx="116" cy="174" r="4" fill="#e6b26a"/><g class="lbl" opacity="0"><text x="87" y="168" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#f4eee3">Calls</text><text x="87" y="190" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#e6b26a">&amp; texts</text></g></g><g data-p data-i="4"><rect x="156" y="124" width="112" height="64" fill="#15120e" stroke="#e6b26a" stroke-width="3"/><path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#e6b26a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><g class="lbl" opacity="0"><rect x="162" y="130" width="100" height="52" rx="6" fill="#15120e" opacity=".92"/><text x="212" y="154" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#f4eee3">Online</text><text x="212" y="174" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#e6b26a">booking</text></g></g><g data-p data-i="0"><path d="M40.0 26 L74.3 26 L52.9 86 L10.0 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M74.3 26 L108.6 26 L95.7 86 L52.9 86 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M108.6 26 L142.9 26 L138.6 86 L95.7 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M142.9 26 L177.1 26 L181.4 86 L138.6 86 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M177.1 26 L211.4 26 L224.3 86 L181.4 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M211.4 26 L245.7 26 L267.1 86 L224.3 86 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M245.7 26 L280.0 26 L310.0 86 L267.1 86 Z" fill="#e0793c" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 86 Q25 104 40 86 Q55 104 70 86 Q85 104 100 86 Q115 104 130 86 Q145 104 160 86 Q175 104 190 86 Q205 104 220 86 Q235 104 250 86 Q265 104 280 86 Q295 104 310 86 L310 84 L10 84 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5"/><g class="lbl" opacity="0"><rect x="84" y="38" width="152" height="32" rx="16" fill="#15120e" stroke="#e6b26a" stroke-width="2"/><text x="160" y="59" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="16" fill="#f4eee3">Found on Google</text></g></g><g data-p data-i="5"><rect x="272" y="98" width="40" height="26" rx="7" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5"/><path d="M282 124 l-4 9 l12 -9 Z" fill="#f4eee3" stroke="#e6b26a" stroke-width="2.5" stroke-linejoin="round"/><circle cx="284" cy="111" r="2.4" fill="#15120e"/><circle cx="292" cy="111" r="2.4" fill="#15120e"/><circle cx="300" cy="111" r="2.4" fill="#15120e"/><g class="lbl" opacity="0"><rect x="274" y="102" width="36" height="18" rx="5" fill="#f4eee3"/><text x="292" y="115" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="7.6" fill="#15120e">Follow-ups</text></g></g><g data-p data-i="6"><path d="M12 226 H308" stroke="#e6b26a" stroke-width="3"/><rect x="12" y="226" width="296" height="6" fill="#2a231b" stroke="#e6b26a" stroke-width="2"/><g class="lbl" opacity="0"><rect x="96" y="204" width="128" height="26" rx="13" fill="#15120e" stroke="#e6b26a" stroke-width="2"/><text x="160" y="222" font-family="Work Sans,sans-serif" font-weight="600" text-anchor="middle" font-size="14" fill="#f4eee3">Kept running</text></g></g><g data-d><rect width="9" height="9" fill="#e6b26a"/></g><g data-d><path d="M0 10 L6 0 L12 10 Z" fill="#e0793c"/></g><g data-d><rect width="7" height="12" fill="#f4eee3"/></g><g data-d><circle r="5" cx="5" cy="5" fill="#e6b26a"/></g><g data-d><path d="M0 0 L12 3 L5 11 Z" fill="#f4eee3"/></g><g data-d><rect width="11" height="6" fill="#e0793c"/></g><g data-d><path d="M0 6 L6 0 L12 6 L6 12 Z" fill="#e6b26a"/></g><g data-d><rect width="6" height="6" fill="#f4eee3"/></g><g class="neon" opacity="0"><rect x="52" y="136" width="70" height="24" rx="4" fill="#15120e" stroke="#e6b26a" stroke-width="2"/><text x="87" y="153" text-anchor="middle" font-family="Work Sans,sans-serif" font-weight="600" font-size="14" letter-spacing="3" fill="#e6b26a">OPEN</text></g></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight" style="border-top:0">
+  <div class="wrap">
+    <p class="lead" style="max-width:62ch">I design custom websites for local businesses of every kind: restaurants, shops, salons, contractors, clinics and more. Clear, fast and easy for your customers to use. I build a free sample of yours first, so you can judge it before you decide anything.</p>
   </div>
 </section>
 
 <section id="build">
   <div class="wrap">
-    <div class="k">What I build</div>
+    <div class="k">The pieces</div>
     <h2>Everything a customer looks for.</h2>
     <p class="intro">A real website for your business, set up so customers find what they need in seconds.</p>
     <div class="svc">
@@ -404,7 +451,7 @@ html{scroll-padding-top:80px}
 
 <section id="why">
   <div class="wrap">
-    <div class="k">Why a website</div>
+    <div class="k">The doubt</div>
     <h2>"Why do I even need one?"</h2>
     <p class="intro">Fair question. These are the answers I hear most, and the straight ones.</p>
     <dl class="why">
@@ -420,7 +467,7 @@ html{scroll-padding-top:80px}
 
 <section id="scenes">
   <div class="wrap">
-    <div class="k">Picture this</div>
+    <div class="k">The moments</div>
     <h2>Moments that win a customer, or lose one.</h2>
     <p class="intro">Customers don't always have time to call. No statistics here, just things that happen every day, and what a good website does about them.</p>
     <ol class="scn">
@@ -436,7 +483,7 @@ html{scroll-padding-top:80px}
 
 <section id="results">
   <div class="wrap">
-    <div class="k">Get found. Get the call.</div>
+    <div class="k">The customers</div>
     <h2>A site that brings in customers, not just visitors.</h2>
     <p class="intro">Looking good is the start. Your site also has to get found, and then turn a visit into a call, a text or a booking.</p>
     <div class="who" style="max-width:1000px">
@@ -499,7 +546,7 @@ html{scroll-padding-top:80px}
 
 <section id="work">
   <div class="wrap">
-    <div class="k">The work</div>
+    <div class="k">The proof</div>
     <h2>Each one built around the business.</h2>
     <p class="intro">No templates. Each site gets its own look, from that business's own name, neighborhood and customers.</p>
     <div class="shots">
@@ -522,7 +569,7 @@ html{scroll-padding-top:80px}
 
 <section id="about">
   <div class="wrap">
-    <div class="k">About</div>
+    <div class="k">The person</div>
     <h2>Who's behind this.</h2>
     <div class="who">
       <div>
@@ -546,7 +593,7 @@ html{scroll-padding-top:80px}
 
 <section id="how">
   <div class="wrap">
-    <div class="k">How it works</div>
+    <div class="k">The way</div>
     <h2>You see it before you decide.</h2>
     <ol class="steps">
       <li><b>1</b><div><h3>I look up what's public</h3><p>Your services, hours, address and what customers say, from your own listings. I don't make anything up.</p></div></li>
@@ -583,7 +630,7 @@ html{scroll-padding-top:80px}
 
 <section id="faq">
   <div class="wrap">
-    <div class="k">Questions</div>
+    <div class="k">The questions</div>
     <h2>Before you ask.</h2>
     <div class="faq">
       <h3><button type="button" data-qa="faq" aria-expanded="false" aria-controls="q1">What does the sample cost?</button></h3>
@@ -613,9 +660,19 @@ html{scroll-padding-top:80px}
 <section class="contact" id="contact">
   <div class="wrap cgrid">
     <div>
-      <div class="k">Talk to me</div>
+      <div class="k">Your turn</div>
       <h2>Want to see yours?</h2>
       <p class="intro">Tell me about your business and I'll build the sample. Leave your email or phone and I'll get back to you, no mail app needed.</p>
+      <svg class="shopdone" viewBox="0 0 320 240" role="img" aria-label="The finished storefront, open for business">
+        <rect x="20" y="86" width="280" height="140" fill="#fff" stroke="#1e1b16" stroke-width="3"/>
+        <path d="M10 86 L40 26 H280 L310 86 Z" fill="#fff" stroke="#1e1b16" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M40 26 L30 86 M80 26 L70 86 M120 26 L110 86 M160 26 V86 M200 26 L210 86 M240 26 L250 86 M280 26 L290 86" stroke="#c4561c" stroke-width="14"/>
+        <path d="M10 86 Q25 104 40 86 Q55 104 70 86 Q85 104 100 86 Q115 104 130 86 Q145 104 160 86 Q175 104 190 86 Q205 104 220 86 Q235 104 250 86 Q265 104 280 86 Q295 104 310 86" fill="#fff" stroke="#1e1b16" stroke-width="3"/>
+        <rect x="44" y="118" width="86" height="108" fill="#f4eee3" stroke="#1e1b16" stroke-width="3"/><circle cx="116" cy="174" r="4" fill="#1e1b16"/>
+        <rect x="156" y="124" width="112" height="64" fill="#1e1b16"/><path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#e6b26a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="52" y="136" width="70" height="24" rx="4" fill="#1e1b16"/><text x="87" y="153" text-anchor="middle" font-family="Work Sans,sans-serif" font-weight="600" font-size="14" letter-spacing="3" fill="#e6b26a">OPEN</text>
+        <path d="M12 226 H308" stroke="#1e1b16" stroke-width="3"/>
+      </svg>
       <div class="reach" id="reach"></div>
       <p class="intro" style="margin-top:22px">Prefer email? <a class="mail" href="mailto:lucas77wooley@gmail.com?subject=Free%20sample%20website">lucas77wooley@gmail.com</a></p>
       <p class="intro" style="margin-top:10px">Not sure what to ask? Tap <b>Questions?</b> in the corner for instant answers.</p>
@@ -865,6 +922,73 @@ document.querySelectorAll(".faq button").forEach(function (b) {
         var a = document.createElement("a"); a.href = "mailto:" + (window.CFG_EMAIL || "lucas77wooley@gmail.com") + "?subject=Free%20sample%20website"; a.textContent = "lucas77wooley@gmail.com"; st.appendChild(a); st.appendChild(document.createTextNode("."));
       });
   });
+})();
+
+// scroll story: pieces swirl in a funnel, then each flies to the front to show what it is, then goes into place.
+// Everything is set straight from scrollY (no lag).
+(function () {
+  var st = document.getElementById("story"), svg = document.getElementById("pieces");
+  if (!st || !svg) return;
+  var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var P = [].slice.call(svg.querySelectorAll("[data-p]")).sort(function (a, b) { return a.getAttribute("data-i") - b.getAttribute("data-i"); });
+  var paintOrder = [].slice.call(svg.querySelectorAll("[data-p]"));
+  var D = [].slice.call(svg.querySelectorAll("[data-d]"));
+  var caps = [].slice.call(st.querySelectorAll(".cap")), neon = svg.querySelector(".neon"), funnel = svg.querySelector(".funnel");
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  if (still) { caps.forEach(function (c, i) { c.classList.toggle("on", i === caps.length - 1); }); neon.setAttribute("opacity", "1"); funnel.setAttribute("opacity", "0"); D.forEach(function (d) { d.style.display = "none"; }); return; }
+  var N = P.length, START = 0.07, SLOT = 0.125;
+  var items = P.map(function (g, i) {
+    var bb = g.getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2, big = Math.max(bb.width, bb.height);
+    var ang = i * 2.399 + 0.6, t = (i * 0.381 + 0.1) % 1, r = (1 - t * 0.72) * 150 + 24;
+    var sx = 160 + r * Math.cos(ang), sy = 14 + t * 205;
+    return { g: g, cx: cx, cy: cy, sdx: sx - cx, sdy: sy - cy, fdx: 160 - cx, fdy: 112 - cy, S: i === 0 ? 1 : clamp(150 / big, 1.2, 2.6), l: g.querySelector('.lbl'), rot: ((i * 97) % 300) - 150 + (i % 2 ? 140 : -140), sw: (i % 2 ? 1 : -1) * (250 + i * 11), start: START + i * SLOT };
+  });
+  var bits = D.map(function (g, i) {
+    var ang = i * 1.9 + 0.3, t = (i * 0.29) % 1, r = (1 - t * 0.6) * 130 + 30;
+    return { g: g, sx: 160 + r * Math.cos(ang), sy: 20 + t * 190, spin: 160 + i * 31 };
+  });
+  var cur = -1;
+  function draw(time) {
+    var rect = st.getBoundingClientRect(), total = st.offsetHeight - innerHeight;
+    var p = total > 0 ? clamp(-rect.top / total, 0, 1) : 1;
+    var active = 0;
+    items.forEach(function (it, i) {
+      var u = (p - it.start) / SLOT, offx, offy, sc, rot, sw, hot = false;
+      var wob = Math.sin(time / 900 + i) * 7;
+      if (u <= 0) { offx = it.sdx; offy = it.sdy; sc = 1; rot = it.rot; sw = it.sw + wob; }
+      else if (u < 0.34) { var e = ease(u / 0.34); offx = lerp(it.sdx, it.fdx, e); offy = lerp(it.sdy, it.fdy, e); sc = lerp(1, it.S, e); rot = lerp(it.rot, 0, e); sw = lerp(it.sw + wob, 0, e); hot = e > 0.8; active = i + 1; }
+      else if (u < 0.7) { offx = it.fdx; offy = it.fdy + Math.sin(time / 500) * 2; sc = it.S; rot = 0; sw = 0; hot = true; active = i + 1; }
+      else if (u < 1) { var e2 = ease((u - 0.7) / 0.3); offx = lerp(it.fdx, 0, e2); offy = lerp(it.fdy, 0, e2); sc = lerp(it.S, 1, e2); rot = 0; sw = 0; active = i + 1; }
+      else { offx = 0; offy = 0; sc = 1; rot = 0; sw = 0; }
+      it.g.setAttribute("transform", "rotate(" + sw.toFixed(1) + " 160 120) translate(" + offx.toFixed(1) + " " + offy.toFixed(1) + ") rotate(" + rot.toFixed(1) + " " + it.cx.toFixed(1) + " " + it.cy.toFixed(1) + ") translate(" + it.cx.toFixed(1) + " " + it.cy.toFixed(1) + ") scale(" + sc.toFixed(3) + ") translate(" + (-it.cx).toFixed(1) + " " + (-it.cy).toFixed(1) + ")");
+      it.g.classList.toggle("hot", hot);
+      if (it.l) it.l.setAttribute("opacity", (clamp((u - 0.18) / 0.14, 0, 1) * clamp((0.86 - u) / 0.14, 0, 1)).toFixed(2));
+    });
+    // the piece being shown rides on top while it is out front
+    if (active > 0) { var gg = items[active - 1].g; if (svg.lastChild !== gg && (p - items[active - 1].start) / SLOT < 0.9) svg.insertBefore(gg, svg.querySelector(".neon")); }
+    else if (p >= START + N * SLOT - 0.001) { paintOrder.forEach(function (g) { svg.insertBefore(g, D[0]); }); }
+    var q = clamp((p - 0.04) / 0.9, 0, 1);
+    bits.forEach(function (b, i) {
+      var k = 1 - q, x = 160 + (b.sx - 160) * k, y = 226 - (226 - b.sy) * k;
+      b.g.setAttribute("transform", "rotate(" + (b.spin * q + Math.sin(time / 800) * 6).toFixed(1) + " 160 120) translate(" + x.toFixed(1) + " " + y.toFixed(1) + ")");
+      b.g.setAttribute("opacity", (1 - q * q).toFixed(2));
+    });
+    funnel.setAttribute("opacity", (0.5 * clamp(1 - p * 1.7, 0, 1)).toFixed(2));
+    funnel.style.transform = "rotate(" + (p * 50).toFixed(1) + "deg)"; funnel.style.transformOrigin = "160px 100px";
+    neon.setAttribute("opacity", clamp((p - 0.95) / 0.05, 0, 1).toFixed(2));
+    var c = p < START ? 0 : (p >= START + N * SLOT ? N + 1 : active || cur);
+    if (c !== cur) { cur = c; caps.forEach(function (el, i) { el.classList.toggle("on", i === c); }); }
+  }
+  function loop(time) { if (!document.hidden) draw(time); requestAnimationFrame(loop); }
+  draw(0); requestAnimationFrame(loop);
+})();
+
+(function () {
+  var st = document.getElementById("story");
+  if (!st || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (es) { document.body.classList.toggle("in-story", es[0].isIntersecting); }, { threshold: 0.05 }).observe(st);
 })();
 
 </script>
