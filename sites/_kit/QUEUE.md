@@ -4,7 +4,6 @@ Generated from Desktop\Leads\leads_prioritized_2.xlsx. Work top-down. When a dem
 
 | # | Business | Type | City | Phone | Reviews | Rating | Problem | Current site | Maps |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | LV Nails | salon | Reno | (775) 322-9800 | 409 | 4.2 | Social/booking page only | http://www.instagram.com/lvnailsreno | https://maps.google.com/?cid=9833995311002539361 |
 | 2 | MAVRKS Fade Shop | salon | Carson City | (619) 674-8684 | 224 | 4.9 | Social/booking page only | https://linktr.ee/MAVRKS | https://maps.google.com/?cid=13972990795745056188 |
 | 3 | La Belle Nails | salon | Reno | (775) 787-8885 | 212 | 4.4 | Social/booking page only | https://www.instagram.com/labellereno | https://maps.google.com/?cid=3384486869276807310 |
 | 4 | Hollywood Nails | salon | Reno | (775) 825-1877 | 193 | 4.4 | No website |  | https://maps.google.com/?cid=15241436422396130871 |
