@@ -16,7 +16,19 @@
   // ---- 1. smooth scroll (Lenis) ----
   var lenis = null;
   safe(function () {
-    if (!window.Lenis || automated) return;
+    // phones keep their own native scrolling (smooth-scroll libraries fight the touch scroller and cause lag);
+    // ignoreMobileResize stops the address bar sliding away from re-measuring every animation mid-scroll
+    ScrollTrigger.config({ ignoreMobileResize: true });
+    if (!window.Lenis || automated || !fine) {
+      $$('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var id = a.getAttribute("href"); if (id.length < 2) return;
+          var t = document.querySelector(id); if (!t) return;
+          e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 70, behavior: "smooth" }); history.replaceState(null, "", id);
+        });
+      });
+      return;
+    }
     $$(".ask .log, .mmenu, .bkp").forEach(function (el) { el.setAttribute("data-lenis-prevent", ""); });
     lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
     window.__lenis = lenis;

@@ -219,23 +219,29 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function lerp(a, b, t) { return a + (b - a) * t; }
   if (still || !cv || !cv.getContext) { caps.forEach(function (c, i) { c.classList.toggle("on", i === caps.length - 1); }); if (cv) cv.style.display = "none"; return; }
-  var ctx = cv.getContext("2d"), dpr = Math.min(2, window.devicePixelRatio || 1), W = 0, H = 0, fin = [], rt = 0;
+  var ctx = cv.getContext("2d"), dpr = Math.min(window.innerWidth < 900 ? 1.5 : 2, window.devicePixelRatio || 1), W = 0, H = 0, fin = [], rt = 0, lastW = window.innerWidth, lastDraw = 0, still0 = false;
   var N = P.length, START = 0.06, SLOT = 0.17, GAP = 0.1;
   var bits = [];
-  for (var k = 0; k < 64; k++) bits.push({ a: k * 2.399, t: ((k * 0.317) % 0.86) + 0.07, kind: k % 3, s: 4 + (k % 5) * 1.6 });
+  for (var k = 0, nb = window.innerWidth < 900 ? 36 : 64; k < nb; k++) bits.push({ a: k * 2.399, t: ((k * 0.317) % 0.86) + 0.07, kind: k % 3, s: 4 + (k % 5) * 1.6 });
   function funnel(t) { return { r: (1 - t * 0.8) * W * (W < 700 ? 0.5 : 0.4) + 18, y: H * (0.1 + 0.8 * t) }; }
   function measure() {
     P.forEach(function (el) { el.style.transform = ""; el.style.opacity = ""; });
+    still0 = false;
     var sr = stage.getBoundingClientRect(); W = sr.width; H = sr.height;
     fin = P.map(function (el) { var r = el.getBoundingClientRect(); return { cx: r.left - sr.left + r.width / 2, cy: r.top - sr.top + r.height / 2 }; });
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.width = W + "px"; cv.style.height = H + "px"; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   measure();
-  window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(measure, 160); });
+  // the phone address bar sliding away only changes the height; the layout is built on a fixed height, so only a real width change (rotation, window resize) re-measures
+  window.addEventListener("resize", function () {
+    var w = window.innerWidth, touch = matchMedia("(hover: none)").matches;
+    if (touch && w === lastW) return;
+    lastW = w; clearTimeout(rt); rt = setTimeout(measure, 160);
+  });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
   var cur = -1, lastZ = [];
   function draw(time) {
-    var rect = st.getBoundingClientRect(), total = st.offsetHeight - innerHeight;
+    var rect = st.getBoundingClientRect(), total = st.offsetHeight - stage.offsetHeight - 64;
     var p = total > 0 ? clamp(-rect.top / total, 0, 1) : 1;
     var cx0 = W * (W < 900 ? 0.5 : 0.6), active = 0;
     // the pieces
@@ -277,7 +283,17 @@ document.querySelectorAll(".faq button").forEach(function (b) {
     var c = p < START ? 0 : (p >= START + (N - 1) * GAP + SLOT ? N + 1 : (active || (cur > 0 ? cur : 0)));
     if (c !== cur) { cur = c; caps.forEach(function (el, i) { el.classList.toggle("on", i === c); }); }
   }
-  function loop(time) { if (!document.hidden) draw(time); requestAnimationFrame(loop); }
+  // only works while the story is on screen, at most ~30 times a second on phones, and not at all once it is fully assembled and still
+  function loop(time) {
+    requestAnimationFrame(loop);
+    if (document.hidden) return;
+    var r = st.getBoundingClientRect();
+    if (r.bottom < -80 || r.top > innerHeight + 80) { still0 = false; return; }
+    if (W < 900 && time - lastDraw < 30) return;
+    var done = -r.top >= st.offsetHeight - stage.offsetHeight - 64 - 2;
+    if (done && still0) return;
+    still0 = done; lastDraw = time; draw(time);
+  }
   draw(0); requestAnimationFrame(loop);
 })();
 

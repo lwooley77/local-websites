@@ -1,7 +1,7 @@
 {
   "lang": "en",
-  "img_cap": 1000,
-  "img_q": 72,
+  "img_cap": 780,
+  "img_q": 62,
   "fonts": [
     {
       "family": "Archivo",

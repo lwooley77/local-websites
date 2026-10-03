@@ -326,11 +326,11 @@ html{scroll-padding-top:80px}
 .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 
 /* scroll story: storefront scattered like a tornado, then put together as you scroll */
-.story{position:relative;height:620vh;border-top:0}
+.story{position:relative;height:360vh;border-top:0}
 .stage{position:sticky;top:64px;height:calc(100vh - 64px);height:calc(100dvh - 64px);overflow:hidden}
 .stage .wrap{height:100%;display:grid;align-items:center;gap:16px;position:relative;z-index:1}
 @media (min-width:900px){.stage .wrap{grid-template-columns:1.02fr .98fr;gap:40px}}
-@media (max-width:899px){.stage .wrap{grid-template-rows:minmax(0,40%) auto;align-content:center}.sart{order:-1}.story{height:560vh}}
+@media (max-width:899px){.stage .wrap{grid-template-rows:minmax(0,40%) auto;align-content:center}.sart{order:-1}.story{height:300vh}}
 .stext h1{font-size:clamp(30px,7.6vw,72px);margin:12px 0 14px;max-width:14ch}
 .stext h1 em{font-style:normal;color:var(--gold)}
 .caps{display:grid;min-height:8.2em;max-width:46ch}
@@ -629,4 +629,22 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
   .sart{padding-bottom:84px}
   .bento{max-height:calc(100vh - 64px - 124px);max-height:calc(100dvh - 64px - 124px)}
 }
+/* phones: stable height (the address bar sliding away must not resize the stage), headline block takes what it needs, the grid takes the rest */
+@media (max-width:899px){
+  .stage{height:calc(100vh - 64px - 78px);height:calc(100svh - 64px - 78px)}
+  .stage .wrap{grid-template-rows:minmax(0,1fr) auto;align-content:stretch;align-items:stretch;gap:8px}
+  .sart{height:100%;min-height:0;display:flex;align-items:center;overflow:hidden}
+  .bento{height:100%;max-height:100%;align-content:stretch;grid-template-rows:none;grid-auto-rows:minmax(34px,1fr)}
+  .stext{align-self:end;padding-bottom:6px}
+  .watch{margin-top:8px;min-height:44px;flex-shrink:0}
+  .stage .bg,.stage .pin{will-change:auto}
+}
+</style>
+
+<style>
+.offer{margin:0 0 12px;max-width:44ch;font-size:clamp(15px,1.5vw,18px);line-height:1.5;color:#e4e4e7}.offer b{color:#fff}
+.shots .shot:nth-child(n+2) .cap span{color:var(--muted)}
+@media (min-width:860px){.shots{grid-template-columns:repeat(3,1fr)}.shots .big{grid-column:1 / span 2;grid-row:1 / span 2}}
+@media (max-width:899px){.offer{font-size:14.5px;margin-bottom:8px}}
+@media (min-width:900px){.stext h1{font-size:clamp(32px,min(4.8vw,7vh),68px)!important;margin:8px 0 10px}.stext .trust{margin-top:14px}.caps{min-height:5.6em}.stext .watch{margin-top:12px}}
 </style>
