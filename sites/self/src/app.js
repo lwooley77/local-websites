@@ -331,16 +331,16 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   window.addEventListener("wheel", function () { if (playing) stop("paused"); }, { passive: true });
   ["touchstart", "keydown"].forEach(function (ev) { window.addEventListener(ev, function (e) { if (playing && !(e.target && e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); }, { passive: true }); });
   window.addEventListener("pointerdown", function (e) { if (playing && !(e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); });
-  // the opening story plays by itself, once per device, about 5 seconds, and any touch/scroll/key stops it
+  // the opening story plays by itself every time the site is opened (once per visit, not on refresh), about 5 seconds, and any touch/scroll/key stops it
   (function () {
     var force = location.search.indexOf("play") > -1, seen = false;
-    try { seen = localStorage.getItem("wl-seen-story") === "1"; } catch (e) {}
+    try { seen = sessionStorage.getItem("wl-seen-story") === "1"; } catch (e) {}
     if ((seen && !force) || location.hash || window.scrollY > 40 || (navigator.webdriver && !force) || location.search.indexOf("tour") > -1) return;
     var hint = document.createElement("div");
     hint.className = "skiphint"; hint.setAttribute("role", "status"); hint.textContent = "Tap anywhere to skip";
     document.body.appendChild(hint);
     setTimeout(function () {
-      try { localStorage.setItem("wl-seen-story", "1"); } catch (e) {}
+      try { sessionStorage.setItem("wl-seen-story", "1"); } catch (e) {}
       var st = document.getElementById("story"); if (!st || window.scrollY > 40) return;
       document.body.classList.add("autoplay");
       speedOverride = 700; start(st.offsetTop + st.offsetHeight - innerHeight + 30);

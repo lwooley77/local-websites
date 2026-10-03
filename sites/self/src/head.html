@@ -439,4 +439,10 @@ main section{overflow-x:clip}
 
 /* phones: keep the bottom clear. The tour still starts from "Watch it come together" or the ?tour link, and Pause shows while it plays */
 @media (max-width:799px){.tourbar{display:none}.tourbar.playing{display:flex}.tourbar .tb-speed{display:none}}
+
+/* phones: the helper is a small round "?" button so it never covers text (its accessible name is still "Questions?") */
+@media (max-width:799px){
+  .ask-fab{width:48px;height:48px;min-height:48px;padding:0;font-size:0;border-radius:50%;display:grid;place-items:center;right:12px}
+  .ask-fab::before{content:"?";font:800 24px/1 Archivo,'Helvetica Neue',Arial,sans-serif;color:#09090b}
+}
 </style>

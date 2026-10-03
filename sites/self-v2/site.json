@@ -48,6 +48,12 @@
     "PRICE_FROM": "",
     "PRICE_MONTH": "",
     "QUOTE": "",
-    "QUOTE_BY": ""
+    "QUOTE_BY": "",
+    "P1_LAUNCH": "$400",
+    "P1_MONTH": "$30",
+    "P2_LAUNCH": "$650",
+    "P2_MONTH": "$45",
+    "P3_LAUNCH": "$950",
+    "P3_MONTH": "$75"
   }
 }

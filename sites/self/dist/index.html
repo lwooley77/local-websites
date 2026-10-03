@@ -445,6 +445,12 @@ main section{overflow-x:clip}
 
 /* phones: keep the bottom clear. The tour still starts from "Watch it come together" or the ?tour link, and Pause shows while it plays */
 @media (max-width:799px){.tourbar{display:none}.tourbar.playing{display:flex}.tourbar .tb-speed{display:none}}
+
+/* phones: the helper is a small round "?" button so it never covers text (its accessible name is still "Questions?") */
+@media (max-width:799px){
+  .ask-fab{width:48px;height:48px;min-height:48px;padding:0;font-size:0;border-radius:50%;display:grid;place-items:center;right:12px}
+  .ask-fab::before{content:"?";font:800 24px/1 Archivo,'Helvetica Neue',Arial,sans-serif;color:#09090b}
+}
 </style>
 
 </head>
@@ -786,7 +792,7 @@ main section{overflow-x:clip}
 <footer>
   <div class="wrap">
     <div class="r"><span>© <span id="yr"></span> Lucas Wooley · Northern Nevada</span><a href="#privacy">Privacy</a></div>
-    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking. If you use the contact form, what you enter goes straight to me through the site's host (Netlify), and I use it only to reply. The "Questions?" helper runs in your browser, so what you type there isn't sent or saved anywhere. Your browser also remembers, on your device only, that you've seen the opening animation so it doesn't replay.</p>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking. If you use the contact form, what you enter goes straight to me through the site's host (Netlify), and I use it only to reply. The "Questions?" helper runs in your browser, so what you type there isn't sent or saved anywhere. Your browser also remembers, for this visit only, that the opening animation has played, so a refresh doesn't replay it.</p>
   </div>
 </footer>
 
@@ -1149,16 +1155,16 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   window.addEventListener("wheel", function () { if (playing) stop("paused"); }, { passive: true });
   ["touchstart", "keydown"].forEach(function (ev) { window.addEventListener(ev, function (e) { if (playing && !(e.target && e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); }, { passive: true }); });
   window.addEventListener("pointerdown", function (e) { if (playing && !(e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); });
-  // the opening story plays by itself, once per device, about 5 seconds, and any touch/scroll/key stops it
+  // the opening story plays by itself every time the site is opened (once per visit, not on refresh), about 5 seconds, and any touch/scroll/key stops it
   (function () {
     var force = location.search.indexOf("play") > -1, seen = false;
-    try { seen = localStorage.getItem("wl-seen-story") === "1"; } catch (e) {}
+    try { seen = sessionStorage.getItem("wl-seen-story") === "1"; } catch (e) {}
     if ((seen && !force) || location.hash || window.scrollY > 40 || (navigator.webdriver && !force) || location.search.indexOf("tour") > -1) return;
     var hint = document.createElement("div");
     hint.className = "skiphint"; hint.setAttribute("role", "status"); hint.textContent = "Tap anywhere to skip";
     document.body.appendChild(hint);
     setTimeout(function () {
-      try { localStorage.setItem("wl-seen-story", "1"); } catch (e) {}
+      try { sessionStorage.setItem("wl-seen-story", "1"); } catch (e) {}
       var st = document.getElementById("story"); if (!st || window.scrollY > 40) return;
       document.body.classList.add("autoplay");
       speedOverride = 700; start(st.offsetTop + st.offsetHeight - innerHeight + 30);

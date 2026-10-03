@@ -7,7 +7,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#ff5a1f"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       %%NAME%%
     </a>
-    <nav class="nav" aria-label="Main"><a href="#build" data-spy="build">What I build</a><a href="#why" data-spy="why">Why a site</a><a href="#results" data-spy="results">Get customers</a><a href="#work" data-spy="work">Work</a><a href="#about" data-spy="about">About</a><a href="#how" data-spy="how">Process</a><a href="#faq" data-spy="faq">FAQ</a></nav>
+    <nav class="nav" aria-label="Main"><a href="#build" data-spy="build">What I build</a><a href="#why" data-spy="why">Why a site</a><a href="#results" data-spy="results">Get customers</a><a href="#work" data-spy="work">Work</a><a href="#about" data-spy="about">About</a><a href="#pricing" data-spy="pricing">Pricing</a><a href="#faq" data-spy="faq">FAQ</a></nav>
     <a class="btn" href="#contact">Message me</a>
     <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
   </div>
@@ -15,33 +15,29 @@
 </header>
 <div class="mmenu" id="mmenu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="mm-top"><span class="k">Menu</span><button type="button" class="mm-x" data-qa="menu-close" aria-label="Close menu">&times;</button></div>
-  <nav aria-label="Mobile"><a href="#build">What I build</a><a href="#why">Why a site</a><a href="#results">Get customers</a><a href="#work">Work</a><a href="#about">About</a><a href="#how">Process &amp; pricing</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
+  <nav aria-label="Mobile"><a href="#build">What I build</a><a href="#why">Why a site</a><a href="#results">Get customers</a><a href="#work">Work</a><a href="#about">About</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
 </div>
 
 <main id="main">
 <section class="story" id="story">
   <div class="stage">
-    <div class="bg" aria-hidden="true">
-      <span class="pin" style="left:58%;top:18%;--d:0s"></span>
-      <span class="pin" style="left:84%;top:30%;--d:.9s"></span>
-      <span class="pin" style="left:68%;top:52%;--d:1.8s"></span>
-      <span class="pin" style="left:92%;top:68%;--d:.5s"></span>
-      <span class="pin" style="left:76%;top:84%;--d:1.3s"></span>
-    </div>
+    <div class="bg" aria-hidden="true"></div>
+    <canvas id="twister" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="stext">
         <div class="k">%%AREA%% &middot; Websites for local businesses</div>
         <h1>A website that makes your business look <em>as good as it is.</em></h1>
         <div class="caps" aria-live="off">
           <div class="cap" data-cap="0"><b class="chap">Scattered</b><p>Hours on one site, a phone number on another, a link that goes nowhere. Customers find pieces, never the whole business.</p></div>
-          <div class="cap" data-cap="1"><b class="chap">Piece 1 of 7 &middot; Found on Google</b><p>Clear titles, descriptions and business details, so people nearby can find you.</p></div>
-          <div class="cap" data-cap="2"><b class="chap">Piece 2 of 7 &middot; Services &amp; prices</b><p>What you offer and what it costs, in one clear place.</p></div>
-          <div class="cap" data-cap="3"><b class="chap">Piece 3 of 7 &middot; Hours &amp; directions</b><p>Today's hours, your address and a one-tap map.</p></div>
-          <div class="cap" data-cap="4"><b class="chap">Piece 4 of 7 &middot; Calls &amp; texts</b><p>One tap to call or text you, on every screen.</p></div>
-          <div class="cap" data-cap="5"><b class="chap">Piece 5 of 7 &middot; Online booking</b><p>Customers book on your site, and your calendar and client list update themselves.</p></div>
-          <div class="cap" data-cap="6"><b class="chap">Piece 6 of 7 &middot; Follow-ups</b><p>A quick message after a visit or a missed call, so no one slips away.</p></div>
-          <div class="cap" data-cap="7"><b class="chap">Piece 7 of 7 &middot; Kept running</b><p>Domain, hosting and small edits are handled, so it stays correct.</p></div>
-          <div class="cap on" data-cap="8"><b class="chap">Open for business</b><p>Every piece in place: one clear picture of your business as it really is.</p></div>
+          <div class="cap" data-cap="1"><b class="chap">Piece 1 of 8 &middot; Found on Google</b><p>Clear titles, descriptions and business details, so people nearby can find you.</p></div>
+          <div class="cap" data-cap="2"><b class="chap">Piece 2 of 8 &middot; Calls &amp; texts</b><p>One tap to call or text you, on every screen.</p></div>
+          <div class="cap" data-cap="3"><b class="chap">Piece 3 of 8 &middot; Online booking</b><p>Customers book on your site, and your calendar and client list update themselves.</p></div>
+          <div class="cap" data-cap="4"><b class="chap">Piece 4 of 8 &middot; Services &amp; prices</b><p>What you offer and what it costs, in one clear place.</p></div>
+          <div class="cap" data-cap="5"><b class="chap">Piece 5 of 8 &middot; Hours &amp; directions</b><p>Today's hours, your address and a one-tap map.</p></div>
+          <div class="cap" data-cap="6"><b class="chap">Piece 6 of 8 &middot; Follow-ups</b><p>A quick message after a visit or a missed call, so no one slips away.</p></div>
+          <div class="cap" data-cap="7"><b class="chap">Piece 7 of 8 &middot; Real reviews</b><p>What customers actually say, shown honestly and linked to the source.</p></div>
+          <div class="cap" data-cap="8"><b class="chap">Piece 8 of 8 &middot; Kept running</b><p>Domain, hosting and small edits are handled, so it stays correct.</p></div>
+          <div class="cap on" data-cap="9"><b class="chap">Open for business</b><p>Every piece in place: one clear picture of your business as it really is.</p></div>
         </div>
         <div class="cta">
           <a class="btn" href="#contact">Get your free sample</a>
@@ -50,7 +46,16 @@
         <div class="trust"><span>Free sample first</span><span>Custom design, no templates</span><span>Works on every screen</span></div>
         <button type="button" class="watch" data-tour="story"><span class="tb-ico" aria-hidden="true"></span>Watch it come together</button>
       </div>
-      <div class="sart"><svg id="pieces" class="pieces" viewBox="0 0 320 240" role="img" aria-label="A storefront whose pieces fly out one at a time, each one a part of what I build, then come together as you scroll"><g class="funnel" aria-hidden="true" fill="none" stroke="#fafafa" stroke-width="1.2" stroke-dasharray="4 7" opacity=".5"><ellipse cx="160" cy="22" rx="150" ry="16"/><ellipse cx="160" cy="62" rx="118" ry="13"/><ellipse cx="160" cy="102" rx="88" ry="10"/><ellipse cx="160" cy="142" rx="58" ry="8"/><ellipse cx="160" cy="182" rx="32" ry="5"/></g><g data-p data-i="1"><rect x="20" y="86" width="140" height="140" fill="#18181b" stroke="#fafafa" stroke-width="3"/><g class="lbl" opacity="0"><text x="90" y="152" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#fafafa">Services</text><text x="90" y="174" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#ff5a1f">&amp; prices</text></g></g><g data-p data-i="2"><rect x="160" y="86" width="140" height="140" fill="#18181b" stroke="#fafafa" stroke-width="3"/><g class="lbl" opacity="0"><text x="230" y="152" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#fafafa">Hours &amp;</text><text x="230" y="174" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#ff5a1f">directions</text></g></g><g data-p data-i="3"><rect x="44" y="118" width="86" height="108" fill="#000000" stroke="#fafafa" stroke-width="3"/><circle cx="116" cy="174" r="4" fill="#ff5a1f"/><g class="lbl" opacity="0"><text x="87" y="168" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#fafafa">Calls</text><text x="87" y="190" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#ff5a1f">&amp; texts</text></g></g><g data-p data-i="4"><rect x="156" y="124" width="112" height="64" fill="#000000" stroke="#fafafa" stroke-width="3"/><path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#ff5a1f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><g class="lbl" opacity="0"><rect x="162" y="130" width="100" height="52" rx="6" fill="#000000" opacity=".92"/><text x="212" y="154" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#fafafa">Online</text><text x="212" y="174" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#ff5a1f">booking</text></g></g><g data-p data-i="0"><path d="M40.0 26 L74.3 26 L52.9 86 L10.0 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M74.3 26 L108.6 26 L95.7 86 L52.9 86 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M108.6 26 L142.9 26 L138.6 86 L95.7 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M142.9 26 L177.1 26 L181.4 86 L138.6 86 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M177.1 26 L211.4 26 L224.3 86 L181.4 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M211.4 26 L245.7 26 L267.1 86 L224.3 86 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M245.7 26 L280.0 26 L310.0 86 L267.1 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 86 Q25 104 40 86 Q55 104 70 86 Q85 104 100 86 Q115 104 130 86 Q145 104 160 86 Q175 104 190 86 Q205 104 220 86 Q235 104 250 86 Q265 104 280 86 Q295 104 310 86 L310 84 L10 84 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5"/><g class="lbl" opacity="0"><rect x="84" y="38" width="152" height="32" rx="16" fill="#000000" stroke="#fafafa" stroke-width="2"/><text x="160" y="59" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="16" fill="#fafafa">Found on Google</text></g></g><g data-p data-i="5"><rect x="272" y="98" width="40" height="26" rx="7" fill="#fafafa" stroke="#fafafa" stroke-width="2.5"/><path d="M282 124 l-4 9 l12 -9 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><circle cx="284" cy="111" r="2.4" fill="#000000"/><circle cx="292" cy="111" r="2.4" fill="#000000"/><circle cx="300" cy="111" r="2.4" fill="#000000"/><g class="lbl" opacity="0"><rect x="274" y="102" width="36" height="18" rx="5" fill="#fafafa"/><text x="292" y="115" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="7.6" fill="#000000">Follow-ups</text></g></g><g data-p data-i="6"><path d="M12 226 H308" stroke="#fafafa" stroke-width="3"/><rect x="12" y="226" width="296" height="6" fill="#18181b" stroke="#fafafa" stroke-width="2"/><g class="lbl" opacity="0"><rect x="96" y="204" width="128" height="26" rx="13" fill="#000000" stroke="#fafafa" stroke-width="2"/><text x="160" y="222" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="14" fill="#fafafa">Kept running</text></g></g><g data-d><rect width="9" height="9" fill="#ff5a1f"/></g><g data-d><path d="M0 10 L6 0 L12 10 Z" fill="#ff5a1f"/></g><g data-d><rect width="7" height="12" fill="#fafafa"/></g><g data-d><circle r="5" cx="5" cy="5" fill="#ff5a1f"/></g><g data-d><path d="M0 0 L12 3 L5 11 Z" fill="#fafafa"/></g><g data-d><rect width="11" height="6" fill="#ff5a1f"/></g><g data-d><path d="M0 6 L6 0 L12 6 L6 12 Z" fill="#ff5a1f"/></g><g data-d><rect width="6" height="6" fill="#fafafa"/></g><g class="neon" opacity="0"><rect x="52" y="136" width="70" height="24" rx="4" fill="#000000" stroke="#fafafa" stroke-width="2"/><text x="87" y="153" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="14" letter-spacing="3" fill="#ff5a1f">OPEN</text></g></svg></div>
+      <div class="sart"><div class="bento" id="bento" aria-hidden="true">
+        <article class="pc pc-search" data-title="Found on Google" data-sub="Clear titles, descriptions and business details, so people nearby can find you."><div class="sbar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15 15l6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><span>your business name</span></div><div class="sres"><b>Your Business | Your Town</b><span><i class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</i> Open now</span><span class="ok">Website: Found</span></div></article>
+        <article class="pc pc-call" data-title="Calls &amp; texts" data-sub="One tap to call or text you, on every screen."><p class="pt">Calls &amp; texts</p><div class="row"><span class="pill solid"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9.2 3l1.4 4-1.8 1.3a11 11 0 0 0 5.9 5.9L16 12.4l4 1.4-.5 2.6A2.6 2.6 0 0 1 17 18.5 14.5 14.5 0 0 1 5.5 7a2.6 2.6 0 0 1 1.1-3.5Z" fill="currentColor"/></svg>Call</span><span class="pill">Text</span></div></article>
+        <article class="pc pc-book" data-title="Online booking" data-sub="Customers book on your site, and your calendar and client list update themselves."><p class="pt">Online booking</p><div class="cal"><i class="dim"></i><i class="dim"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="dim"></i><i class="dim"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><span class="pill solid">Book</span></article>
+        <article class="pc pc-serv" data-title="Services &amp; prices" data-sub="What you offer and what it costs, in one clear place."><p class="pt">Services &amp; prices</p><ul><li>Cuts &amp; styling</li><li>Color</li><li>Nails &amp; lashes</li></ul></article>
+        <article class="pc pc-hours" data-title="Hours &amp; directions" data-sub="Today's hours, your address and a one-tap map."><p class="pt">Hours &amp; directions</p><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a6.5 6.5 0 0 0-6.5 6.5c0 4.6 6.5 12.5 6.5 12.5s6.5-7.9 6.5-12.5A6.5 6.5 0 0 0 12 2.5Zm0 8.8a2.3 2.3 0 1 1 0-4.6 2.3 2.3 0 0 1 0 4.6Z" fill="currentColor"/></svg><span>Open today</span></div></article>
+        <article class="pc pc-follow" data-title="Follow-ups" data-sub="A quick message after a visit or a missed call, so no one slips away."><p class="pt">Follow-ups</p><div class="bub">Thanks for coming in!</div><div class="bub me">Book your next visit?</div></article>
+        <article class="pc pc-rev" data-title="Real reviews" data-sub="What customers actually say, shown honestly and linked to the source."><p class="pt">Real reviews</p><div class="row"><i class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</i></div></article>
+        <article class="pc pc-run" data-title="Kept running" data-sub="Domain, hosting and small edits are handled, so it stays correct."><p class="pt">Kept running</p><div class="row"><i class="dot"></i><span>Online, hosting handled</span></div></article>
+      </div></div>
     </div>
   </div>
 </section>
@@ -244,18 +249,59 @@
 <section id="pricing" class="price">
   <div class="wrap">
     <div class="k">Pricing</div>
-    <h2>Simple, and quoted after you've seen it.</h2>
-    <p>One launch fee to set up the site and put it online, then a small monthly fee for hosting and for changing things like prices and hours.</p>
-    <p>The sample is free. You get a number after you've seen the site, never before.</p>
-    <p class="pricehint" id="pricehint" hidden></p>
-    <ul class="get" style="margin-top:26px">
-      <li>Custom design and build</li>
-      <li>Setting up your domain and putting it online</li>
-      <li>Hosting, kept running</li>
-      <li>Small edits like prices and hours</li>
-      <li>Your booking or ordering link added</li>
-      <li>Terms in writing before anything goes live</li>
+    <h2>Pick a starting point. Quoted after you see your sample.</h2>
+    <p class="intro">Every site is a one-time launch fee plus a small monthly plan that keeps it online and correct. These are starting prices. Your exact quote comes after you've seen your free sample.</p>
+    <ul class="pkgs">
+      <li class="pkg">
+        <div class="pk-main">
+          <h3>Starter</h3>
+          <p class="pk-tag">A clean one-page site</p>
+          <ul class="get">
+            <li>Custom one-page design</li>
+            <li>Tap to call, text and get directions</li>
+            <li>Your services, prices and hours</li>
+            <li>Contact form that comes straight to me</li>
+          </ul>
+        </div>
+        <div class="pk-price"><span class="pk-from">Starting at</span><b>%%P1_LAUNCH%%</b><span>to launch</span><em>then %%P1_MONTH%% a month</em><button type="button" class="btn alt" data-pkg="Starter">I'm interested in Starter</button></div>
+      </li>
+      <li class="pkg rec">
+        <div class="pk-main">
+          <h3>Growth</h3>
+          <p class="pk-tag">Found and booked</p>
+          <ul class="get">
+            <li>Everything in Starter</li>
+            <li>Local search setup so people nearby find you</li>
+            <li>Your booking tool built into the site</li>
+            <li>Real reviews shown with their source</li>
+          </ul>
+        </div>
+        <div class="pk-price"><span class="pk-from">Starting at</span><b>%%P2_LAUNCH%%</b><span>to launch</span><em>then %%P2_MONTH%% a month</em><button type="button" class="btn" data-pkg="Growth">I'm interested in Growth</button></div>
+      </li>
+      <li class="pkg">
+        <div class="pk-main">
+          <h3>Complete</h3>
+          <p class="pk-tag">The full path from search to repeat customer</p>
+          <ul class="get">
+            <li>Everything in Growth</li>
+            <li>Call-back requests where you want them</li>
+            <li>Follow-up messages to people who reached out</li>
+            <li>Priority on edits and changes</li>
+          </ul>
+        </div>
+        <div class="pk-price"><span class="pk-from">Starting at</span><b>%%P3_LAUNCH%%</b><span>to launch</span><em>then %%P3_MONTH%% a month</em><button type="button" class="btn alt" data-pkg="Complete">I'm interested in Complete</button></div>
+      </li>
     </ul>
+    <div class="plan">
+      <h3>The monthly plan, included with every package</h3>
+      <ul class="get">
+        <li>Hosting and your domain kept running</li>
+        <li>Small edits: prices, hours, services</li>
+        <li>Security and technical updates</li>
+        <li>A real person to message when you need a change</li>
+      </ul>
+    </div>
+    <p class="note" style="margin-top:22px">Not sure which one fits? Start with the free sample. You see it first, then pick. Terms are in writing before anything goes live.</p>
   </div>
 </section>
 
@@ -272,6 +318,10 @@
       <div class="a" id="q4" role="region">Then keep it. If it needs help I'll tell you honestly, and I won't push a new one if yours is working.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q6">How do I get started?</button></h3>
       <div class="a" id="q6" role="region">Send me your business name with the form at the bottom of this page. I'll build the sample from your public listings and send it to you. You look, tell me what you think, and only then do we talk about price.</div>
+      <h3><button type="button" aria-expanded="false" aria-controls="q11">What's the difference between the packages?</button></h3>
+      <div class="a" id="q11" role="region">Starter is a clean one-page site. Growth adds local search setup, your booking tool and reviews. Complete adds call-back requests and follow-up messages. Every package includes the monthly plan, and you can move up later.</div>
+      <h3><button type="button" aria-expanded="false" aria-controls="q12">What does the monthly plan cover?</button></h3>
+      <div class="a" id="q12" role="region">Hosting, keeping your domain running, small edits like prices and hours, security and technical updates, and someone to message when you need a change.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q10">Can customers book right on my site?</button></h3>
       <div class="a" id="q10" role="region">Yes. They pick an open time on your own site and get a confirmation. The booking lands on your calendar and your client list automatically, so you don't retype anything. I connect the booking tool you already use, or set up a simple one.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q8">Will this help me show up on Google?</button></h3>
@@ -321,6 +371,7 @@
           <span><input type="radio" name="reach" id="rc2" value="Call"><label for="rc2">Call</label></span>
           <span><input type="radio" name="reach" id="rc3" value="Text"><label for="rc3">Text</label></span>
         </fieldset>
+        <div class="f"><label for="cf-pkg">Interested in</label><select id="cf-pkg" name="package"><option>Not sure yet</option><option>Starter</option><option>Growth</option><option>Complete</option></select></div>
         <div class="f"><label for="cf-msg">What would you like to know?</label><textarea id="cf-msg" name="message" rows="4" required></textarea></div>
         <button class="btn" type="submit">Send message</button>
         <p class="fstat" role="status" aria-live="polite"></p>
@@ -338,6 +389,6 @@
 <footer>
   <div class="wrap">
     <div class="r"><span>© <span id="yr"></span> %%NAME%% · %%AREA%%</span><a href="#privacy">Privacy</a></div>
-    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking. If you use the contact form, what you enter goes straight to me through the site's host (Netlify), and I use it only to reply. The "Questions?" helper runs in your browser, so what you type there isn't sent or saved anywhere. Your browser also remembers, on your device only, that you've seen the opening animation so it doesn't replay.</p>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking. If you use the contact form, what you enter goes straight to me through the site's host (Netlify), and I use it only to reply. The "Questions?" helper runs in your browser, so what you type there isn't sent or saved anywhere. Your browser also remembers, for this visit only, that the opening animation has played, so a refresh doesn't replay it.</p>
   </div>
 </footer>

@@ -459,6 +459,104 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
 
 /* phones: keep the bottom clear. The tour still starts from "Watch it come together" or the ?tour link, and Pause shows while it plays */
 @media (max-width:799px){.tourbar{display:none}.tourbar.playing{display:flex}.tourbar .tb-speed{display:none}}
+
+/* ---- tornado story v3: real site pieces swirl across the whole screen, then assemble ---- */
+.sart{overflow:visible;position:relative;z-index:1;display:block;height:auto;align-self:center}
+.stext{position:relative;z-index:2}
+.stext::before{content:"";position:absolute;inset:-22px -40px -22px -48px;z-index:-1;border-radius:26px;background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.72) 72%,rgba(0,0,0,0))}
+#twister{position:absolute;inset:0;z-index:0;pointer-events:none}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(98px,auto);gap:12px;width:100%;max-width:560px;margin:0 auto}
+.pc{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:8px;padding:14px 15px;border-radius:18px;background:#111113;border:1px solid #3f3f46;color:#fafafa;font:500 14px/1.3 'Space Grotesk',sans-serif;will-change:transform,opacity;transition:box-shadow .3s var(--ease),border-color .3s var(--ease)}
+.pc.hot{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 34px rgba(255,90,31,.5)}
+.pc .pt{margin:0;font:700 13px/1.2 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#a1a1aa}
+.pc svg{width:18px;height:18px;flex:none}
+.pc .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pc .pill{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 14px;border-radius:999px;border:1.5px solid #52525b;font:600 14px/1 'Space Grotesk',sans-serif}
+.pc .pill.solid{background:#fafafa;color:#09090b;border-color:#fafafa}
+.pc .stars{font-style:normal;color:var(--gold);letter-spacing:2px;font-size:15px}
+.pc-search{grid-column:1/5;background:#fafafa;color:#09090b;border-color:#fafafa}
+.pc-search .sbar{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;box-shadow:0 1px 5px rgba(0,0,0,.25);font-size:14px;color:#3f3f46}
+.pc-search .sres{display:grid;gap:3px}
+.pc-search .sres b{font:700 15px/1.2 'Space Grotesk',sans-serif;color:#1d4ed8}
+.pc-search .sres span{font-size:13px;color:#3f3f46}
+.pc-search .ok{color:#15803d!important;font-weight:700}
+.pc-call{grid-column:5/7}
+.pc-book{grid-column:1/3;grid-row:2/4}
+.pc-book .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.pc-book .cal i{aspect-ratio:1;border-radius:5px;background:#27272a}
+.pc-book .cal i.dim{opacity:.4}
+.pc-book .cal i.on{background:var(--gold);box-shadow:0 0 12px rgba(255,90,31,.7)}
+.pc-serv{grid-column:3/7}
+.pc-serv ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.pc-serv li{display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid #27272a;font-size:14px}
+.pc-serv li::after{content:"\203A";color:var(--gold);font-weight:700}
+.pc-hours{grid-column:3/5}
+.pc-hours .row svg{color:var(--gold)}
+.pc-follow{grid-column:5/7}
+.pc-follow .bub{padding:7px 11px;border-radius:14px 14px 14px 4px;background:#27272a;font-size:13px;align-self:flex-start}
+.pc-follow .bub.me{background:var(--gold);color:#09090b;border-radius:14px 14px 4px 14px;align-self:flex-end;font-weight:600}
+.pc-rev{grid-column:1/4}
+.pc-run{grid-column:4/7}
+.pc .dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px #22c55e;flex:none}
+.stage.assembled .bento{filter:drop-shadow(0 0 40px rgba(255,90,31,.18))}
+@media (max-width:899px){
+  .bento{grid-auto-rows:minmax(60px,auto);gap:7px;max-width:420px}
+  .pc{padding:9px 10px;border-radius:13px;gap:4px;font-size:13px}
+  .pc .pt{font-size:13px;letter-spacing:.08em}
+  .pc-book .cal,.pc-serv ul,.pc-follow .bub:nth-of-type(2),.pc-search .sres .ok{display:none}
+  .pc-book .cal{display:none}
+  .pc .pill{min-height:28px;padding:0 10px;font-size:13px}
+  .stext::before{inset:-14px -20px -14px -20px;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.88) 22%,rgba(0,0,0,.88))}
+  .stage .wrap{grid-template-rows:minmax(0,40%) auto}
+}
+@media (prefers-reduced-motion:reduce){.pc{will-change:auto}#twister{display:none}}
+
+/* tornado story: compact phone layout (4 short rows, titles only) so the headline and buttons always fit */
+@media (max-width:899px){
+  .stage .wrap{grid-template-rows:auto auto;align-content:center;gap:14px}
+  .bento{grid-auto-rows:56px;gap:6px;max-width:400px}
+  .pc{padding:8px 10px;gap:2px;justify-content:center}
+  .pc>*:not(.pt):not(.sbar){display:none!important}
+  .pc-search .sres{display:none!important}
+  .pc-search .sbar{padding:6px 10px;font-size:13px}
+  .pc-search,.pc-call{grid-row:1}
+  .pc-book{grid-column:1/3;grid-row:2}
+  .pc-serv{grid-column:3/7;grid-row:2}
+  .pc-hours{grid-column:1/3;grid-row:3}
+  .pc-follow{grid-column:3/5;grid-row:3}
+  .pc-rev{grid-column:5/7;grid-row:3}
+  .pc-run{grid-column:1/7;grid-row:4}
+  .pc .pt{font-size:13px;letter-spacing:.06em;line-height:1.15}
+  .sart{order:-1}
+}
+
+/* packages */
+.pkgs{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:16px}
+.pkg{display:grid;gap:22px;padding:clamp(20px,3vw,30px);border:1px solid var(--line);border-radius:22px;background:var(--bg2);transition:border-color .35s var(--ease),transform .35s var(--ease)}
+.pkg:hover{border-color:#71717a}
+@media (min-width:880px){.pkg{grid-template-columns:1fr 290px;align-items:center;gap:40px}}
+.pkg.rec{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 44px rgba(255,90,31,.16)}
+.pk-main h3{font-size:clamp(26px,3.4vw,36px);margin:0}
+.pk-tag{margin:4px 0 0;color:var(--muted)}
+.pk-main .get{margin-top:16px;max-width:none;display:grid;gap:0 28px}
+@media (min-width:700px){.pk-main .get{grid-template-columns:1fr 1fr}}
+.pk-price{display:grid;gap:3px;justify-items:start}
+.pk-from{font:700 13px 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pk-price b{font:800 clamp(40px,5vw,56px)/1 Archivo,'Helvetica Neue',Arial,sans-serif;letter-spacing:-.03em}
+.pk-price span{color:var(--muted)}
+.pk-price em{font-style:normal;color:var(--paper);font-weight:600;margin-bottom:12px}
+.pk-price .btn{width:100%;text-align:center}
+.plan{margin-top:26px;padding:clamp(18px,3vw,28px);border-radius:20px;border:1px dashed #52525b}
+.plan h3{font-size:clamp(20px,2.6vw,26px);margin:0 0 6px}
+.plan .get{margin-top:14px;max-width:none}
+.cardform select{width:100%;min-height:52px;border-radius:12px;border:2px solid #d4d4d8;background:#fafafa;color:var(--ink);font:400 17px/1.4 'Space Grotesk',sans-serif;padding:10px 14px}
+.cardform select:focus-visible{outline:3px solid #c2410c;border-color:#c2410c}
+
+/* phones: the helper is a small round "?" button so it never covers text (its accessible name is still "Questions?") */
+@media (max-width:799px){
+  .ask-fab{width:48px;height:48px;min-height:48px;padding:0;font-size:0;border-radius:50%;display:grid;place-items:center;right:12px}
+  .ask-fab::before{content:"?";font:800 24px/1 Archivo,'Helvetica Neue',Arial,sans-serif;color:#09090b}
+}
 </style>
 
 </head>
@@ -472,7 +570,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#ff5a1f"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Lucas Wooley
     </a>
-    <nav class="nav" aria-label="Main"><a href="#build" data-spy="build">What I build</a><a href="#why" data-spy="why">Why a site</a><a href="#results" data-spy="results">Get customers</a><a href="#work" data-spy="work">Work</a><a href="#about" data-spy="about">About</a><a href="#how" data-spy="how">Process</a><a href="#faq" data-spy="faq">FAQ</a></nav>
+    <nav class="nav" aria-label="Main"><a href="#build" data-spy="build">What I build</a><a href="#why" data-spy="why">Why a site</a><a href="#results" data-spy="results">Get customers</a><a href="#work" data-spy="work">Work</a><a href="#about" data-spy="about">About</a><a href="#pricing" data-spy="pricing">Pricing</a><a href="#faq" data-spy="faq">FAQ</a></nav>
     <a class="btn" href="#contact">Message me</a>
     <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
   </div>
@@ -480,33 +578,29 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
 </header>
 <div class="mmenu" id="mmenu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="mm-top"><span class="k">Menu</span><button type="button" class="mm-x" data-qa="menu-close" aria-label="Close menu">&times;</button></div>
-  <nav aria-label="Mobile"><a href="#build">What I build</a><a href="#why">Why a site</a><a href="#results">Get customers</a><a href="#work">Work</a><a href="#about">About</a><a href="#how">Process &amp; pricing</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
+  <nav aria-label="Mobile"><a href="#build">What I build</a><a href="#why">Why a site</a><a href="#results">Get customers</a><a href="#work">Work</a><a href="#about">About</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
 </div>
 
 <main id="main">
 <section class="story" id="story">
   <div class="stage">
-    <div class="bg" aria-hidden="true">
-      <span class="pin" style="left:58%;top:18%;--d:0s"></span>
-      <span class="pin" style="left:84%;top:30%;--d:.9s"></span>
-      <span class="pin" style="left:68%;top:52%;--d:1.8s"></span>
-      <span class="pin" style="left:92%;top:68%;--d:.5s"></span>
-      <span class="pin" style="left:76%;top:84%;--d:1.3s"></span>
-    </div>
+    <div class="bg" aria-hidden="true"></div>
+    <canvas id="twister" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="stext">
         <div class="k">Northern Nevada &middot; Websites for local businesses</div>
         <h1>A website that makes your business look <em>as good as it is.</em></h1>
         <div class="caps" aria-live="off">
           <div class="cap" data-cap="0"><b class="chap">Scattered</b><p>Hours on one site, a phone number on another, a link that goes nowhere. Customers find pieces, never the whole business.</p></div>
-          <div class="cap" data-cap="1"><b class="chap">Piece 1 of 7 &middot; Found on Google</b><p>Clear titles, descriptions and business details, so people nearby can find you.</p></div>
-          <div class="cap" data-cap="2"><b class="chap">Piece 2 of 7 &middot; Services &amp; prices</b><p>What you offer and what it costs, in one clear place.</p></div>
-          <div class="cap" data-cap="3"><b class="chap">Piece 3 of 7 &middot; Hours &amp; directions</b><p>Today's hours, your address and a one-tap map.</p></div>
-          <div class="cap" data-cap="4"><b class="chap">Piece 4 of 7 &middot; Calls &amp; texts</b><p>One tap to call or text you, on every screen.</p></div>
-          <div class="cap" data-cap="5"><b class="chap">Piece 5 of 7 &middot; Online booking</b><p>Customers book on your site, and your calendar and client list update themselves.</p></div>
-          <div class="cap" data-cap="6"><b class="chap">Piece 6 of 7 &middot; Follow-ups</b><p>A quick message after a visit or a missed call, so no one slips away.</p></div>
-          <div class="cap" data-cap="7"><b class="chap">Piece 7 of 7 &middot; Kept running</b><p>Domain, hosting and small edits are handled, so it stays correct.</p></div>
-          <div class="cap on" data-cap="8"><b class="chap">Open for business</b><p>Every piece in place: one clear picture of your business as it really is.</p></div>
+          <div class="cap" data-cap="1"><b class="chap">Piece 1 of 8 &middot; Found on Google</b><p>Clear titles, descriptions and business details, so people nearby can find you.</p></div>
+          <div class="cap" data-cap="2"><b class="chap">Piece 2 of 8 &middot; Calls &amp; texts</b><p>One tap to call or text you, on every screen.</p></div>
+          <div class="cap" data-cap="3"><b class="chap">Piece 3 of 8 &middot; Online booking</b><p>Customers book on your site, and your calendar and client list update themselves.</p></div>
+          <div class="cap" data-cap="4"><b class="chap">Piece 4 of 8 &middot; Services &amp; prices</b><p>What you offer and what it costs, in one clear place.</p></div>
+          <div class="cap" data-cap="5"><b class="chap">Piece 5 of 8 &middot; Hours &amp; directions</b><p>Today's hours, your address and a one-tap map.</p></div>
+          <div class="cap" data-cap="6"><b class="chap">Piece 6 of 8 &middot; Follow-ups</b><p>A quick message after a visit or a missed call, so no one slips away.</p></div>
+          <div class="cap" data-cap="7"><b class="chap">Piece 7 of 8 &middot; Real reviews</b><p>What customers actually say, shown honestly and linked to the source.</p></div>
+          <div class="cap" data-cap="8"><b class="chap">Piece 8 of 8 &middot; Kept running</b><p>Domain, hosting and small edits are handled, so it stays correct.</p></div>
+          <div class="cap on" data-cap="9"><b class="chap">Open for business</b><p>Every piece in place: one clear picture of your business as it really is.</p></div>
         </div>
         <div class="cta">
           <a class="btn" href="#contact">Get your free sample</a>
@@ -515,7 +609,16 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
         <div class="trust"><span>Free sample first</span><span>Custom design, no templates</span><span>Works on every screen</span></div>
         <button type="button" class="watch" data-tour="story"><span class="tb-ico" aria-hidden="true"></span>Watch it come together</button>
       </div>
-      <div class="sart"><svg id="pieces" class="pieces" viewBox="0 0 320 240" role="img" aria-label="A storefront whose pieces fly out one at a time, each one a part of what I build, then come together as you scroll"><g class="funnel" aria-hidden="true" fill="none" stroke="#fafafa" stroke-width="1.2" stroke-dasharray="4 7" opacity=".5"><ellipse cx="160" cy="22" rx="150" ry="16"/><ellipse cx="160" cy="62" rx="118" ry="13"/><ellipse cx="160" cy="102" rx="88" ry="10"/><ellipse cx="160" cy="142" rx="58" ry="8"/><ellipse cx="160" cy="182" rx="32" ry="5"/></g><g data-p data-i="1"><rect x="20" y="86" width="140" height="140" fill="#18181b" stroke="#fafafa" stroke-width="3"/><g class="lbl" opacity="0"><text x="90" y="152" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#fafafa">Services</text><text x="90" y="174" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#ff5a1f">&amp; prices</text></g></g><g data-p data-i="2"><rect x="160" y="86" width="140" height="140" fill="#18181b" stroke="#fafafa" stroke-width="3"/><g class="lbl" opacity="0"><text x="230" y="152" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#fafafa">Hours &amp;</text><text x="230" y="174" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#ff5a1f">directions</text></g></g><g data-p data-i="3"><rect x="44" y="118" width="86" height="108" fill="#000000" stroke="#fafafa" stroke-width="3"/><circle cx="116" cy="174" r="4" fill="#ff5a1f"/><g class="lbl" opacity="0"><text x="87" y="168" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#fafafa">Calls</text><text x="87" y="190" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="19" fill="#ff5a1f">&amp; texts</text></g></g><g data-p data-i="4"><rect x="156" y="124" width="112" height="64" fill="#000000" stroke="#fafafa" stroke-width="3"/><path d="M170 168 l16 -22 l14 14 l12 -26 l14 20 l14 -12" fill="none" stroke="#ff5a1f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><g class="lbl" opacity="0"><rect x="162" y="130" width="100" height="52" rx="6" fill="#000000" opacity=".92"/><text x="212" y="154" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#fafafa">Online</text><text x="212" y="174" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="18" fill="#ff5a1f">booking</text></g></g><g data-p data-i="0"><path d="M40.0 26 L74.3 26 L52.9 86 L10.0 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M74.3 26 L108.6 26 L95.7 86 L52.9 86 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M108.6 26 L142.9 26 L138.6 86 L95.7 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M142.9 26 L177.1 26 L181.4 86 L138.6 86 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M177.1 26 L211.4 26 L224.3 86 L181.4 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M211.4 26 L245.7 26 L267.1 86 L224.3 86 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M245.7 26 L280.0 26 L310.0 86 L267.1 86 Z" fill="#ff5a1f" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 86 Q25 104 40 86 Q55 104 70 86 Q85 104 100 86 Q115 104 130 86 Q145 104 160 86 Q175 104 190 86 Q205 104 220 86 Q235 104 250 86 Q265 104 280 86 Q295 104 310 86 L310 84 L10 84 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5"/><g class="lbl" opacity="0"><rect x="84" y="38" width="152" height="32" rx="16" fill="#000000" stroke="#fafafa" stroke-width="2"/><text x="160" y="59" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="16" fill="#fafafa">Found on Google</text></g></g><g data-p data-i="5"><rect x="272" y="98" width="40" height="26" rx="7" fill="#fafafa" stroke="#fafafa" stroke-width="2.5"/><path d="M282 124 l-4 9 l12 -9 Z" fill="#fafafa" stroke="#fafafa" stroke-width="2.5" stroke-linejoin="round"/><circle cx="284" cy="111" r="2.4" fill="#000000"/><circle cx="292" cy="111" r="2.4" fill="#000000"/><circle cx="300" cy="111" r="2.4" fill="#000000"/><g class="lbl" opacity="0"><rect x="274" y="102" width="36" height="18" rx="5" fill="#fafafa"/><text x="292" y="115" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="7.6" fill="#000000">Follow-ups</text></g></g><g data-p data-i="6"><path d="M12 226 H308" stroke="#fafafa" stroke-width="3"/><rect x="12" y="226" width="296" height="6" fill="#18181b" stroke="#fafafa" stroke-width="2"/><g class="lbl" opacity="0"><rect x="96" y="204" width="128" height="26" rx="13" fill="#000000" stroke="#fafafa" stroke-width="2"/><text x="160" y="222" font-family="Space Grotesk,sans-serif" font-weight="600" text-anchor="middle" font-size="14" fill="#fafafa">Kept running</text></g></g><g data-d><rect width="9" height="9" fill="#ff5a1f"/></g><g data-d><path d="M0 10 L6 0 L12 10 Z" fill="#ff5a1f"/></g><g data-d><rect width="7" height="12" fill="#fafafa"/></g><g data-d><circle r="5" cx="5" cy="5" fill="#ff5a1f"/></g><g data-d><path d="M0 0 L12 3 L5 11 Z" fill="#fafafa"/></g><g data-d><rect width="11" height="6" fill="#ff5a1f"/></g><g data-d><path d="M0 6 L6 0 L12 6 L6 12 Z" fill="#ff5a1f"/></g><g data-d><rect width="6" height="6" fill="#fafafa"/></g><g class="neon" opacity="0"><rect x="52" y="136" width="70" height="24" rx="4" fill="#000000" stroke="#fafafa" stroke-width="2"/><text x="87" y="153" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="14" letter-spacing="3" fill="#ff5a1f">OPEN</text></g></svg></div>
+      <div class="sart"><div class="bento" id="bento" aria-hidden="true">
+        <article class="pc pc-search" data-title="Found on Google" data-sub="Clear titles, descriptions and business details, so people nearby can find you."><div class="sbar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15 15l6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><span>your business name</span></div><div class="sres"><b>Your Business | Your Town</b><span><i class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</i> Open now</span><span class="ok">Website: Found</span></div></article>
+        <article class="pc pc-call" data-title="Calls &amp; texts" data-sub="One tap to call or text you, on every screen."><p class="pt">Calls &amp; texts</p><div class="row"><span class="pill solid"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9.2 3l1.4 4-1.8 1.3a11 11 0 0 0 5.9 5.9L16 12.4l4 1.4-.5 2.6A2.6 2.6 0 0 1 17 18.5 14.5 14.5 0 0 1 5.5 7a2.6 2.6 0 0 1 1.1-3.5Z" fill="currentColor"/></svg>Call</span><span class="pill">Text</span></div></article>
+        <article class="pc pc-book" data-title="Online booking" data-sub="Customers book on your site, and your calendar and client list update themselves."><p class="pt">Online booking</p><div class="cal"><i class="dim"></i><i class="dim"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="dim"></i><i class="dim"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><span class="pill solid">Book</span></article>
+        <article class="pc pc-serv" data-title="Services &amp; prices" data-sub="What you offer and what it costs, in one clear place."><p class="pt">Services &amp; prices</p><ul><li>Cuts &amp; styling</li><li>Color</li><li>Nails &amp; lashes</li></ul></article>
+        <article class="pc pc-hours" data-title="Hours &amp; directions" data-sub="Today's hours, your address and a one-tap map."><p class="pt">Hours &amp; directions</p><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a6.5 6.5 0 0 0-6.5 6.5c0 4.6 6.5 12.5 6.5 12.5s6.5-7.9 6.5-12.5A6.5 6.5 0 0 0 12 2.5Zm0 8.8a2.3 2.3 0 1 1 0-4.6 2.3 2.3 0 0 1 0 4.6Z" fill="currentColor"/></svg><span>Open today</span></div></article>
+        <article class="pc pc-follow" data-title="Follow-ups" data-sub="A quick message after a visit or a missed call, so no one slips away."><p class="pt">Follow-ups</p><div class="bub">Thanks for coming in!</div><div class="bub me">Book your next visit?</div></article>
+        <article class="pc pc-rev" data-title="Real reviews" data-sub="What customers actually say, shown honestly and linked to the source."><p class="pt">Real reviews</p><div class="row"><i class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</i></div></article>
+        <article class="pc pc-run" data-title="Kept running" data-sub="Domain, hosting and small edits are handled, so it stays correct."><p class="pt">Kept running</p><div class="row"><i class="dot"></i><span>Online, hosting handled</span></div></article>
+      </div></div>
     </div>
   </div>
 </section>
@@ -709,18 +812,59 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
 <section id="pricing" class="price">
   <div class="wrap">
     <div class="k">Pricing</div>
-    <h2>Simple, and quoted after you've seen it.</h2>
-    <p>One launch fee to set up the site and put it online, then a small monthly fee for hosting and for changing things like prices and hours.</p>
-    <p>The sample is free. You get a number after you've seen the site, never before.</p>
-    <p class="pricehint" id="pricehint" hidden></p>
-    <ul class="get" style="margin-top:26px">
-      <li>Custom design and build</li>
-      <li>Setting up your domain and putting it online</li>
-      <li>Hosting, kept running</li>
-      <li>Small edits like prices and hours</li>
-      <li>Your booking or ordering link added</li>
-      <li>Terms in writing before anything goes live</li>
+    <h2>Pick a starting point. Quoted after you see your sample.</h2>
+    <p class="intro">Every site is a one-time launch fee plus a small monthly plan that keeps it online and correct. These are starting prices. Your exact quote comes after you've seen your free sample.</p>
+    <ul class="pkgs">
+      <li class="pkg">
+        <div class="pk-main">
+          <h3>Starter</h3>
+          <p class="pk-tag">A clean one-page site</p>
+          <ul class="get">
+            <li>Custom one-page design</li>
+            <li>Tap to call, text and get directions</li>
+            <li>Your services, prices and hours</li>
+            <li>Contact form that comes straight to me</li>
+          </ul>
+        </div>
+        <div class="pk-price"><span class="pk-from">Starting at</span><b>$400</b><span>to launch</span><em>then $30 a month</em><button type="button" class="btn alt" data-pkg="Starter">I'm interested in Starter</button></div>
+      </li>
+      <li class="pkg rec">
+        <div class="pk-main">
+          <h3>Growth</h3>
+          <p class="pk-tag">Found and booked</p>
+          <ul class="get">
+            <li>Everything in Starter</li>
+            <li>Local search setup so people nearby find you</li>
+            <li>Your booking tool built into the site</li>
+            <li>Real reviews shown with their source</li>
+          </ul>
+        </div>
+        <div class="pk-price"><span class="pk-from">Starting at</span><b>$650</b><span>to launch</span><em>then $45 a month</em><button type="button" class="btn" data-pkg="Growth">I'm interested in Growth</button></div>
+      </li>
+      <li class="pkg">
+        <div class="pk-main">
+          <h3>Complete</h3>
+          <p class="pk-tag">The full path from search to repeat customer</p>
+          <ul class="get">
+            <li>Everything in Growth</li>
+            <li>Call-back requests where you want them</li>
+            <li>Follow-up messages to people who reached out</li>
+            <li>Priority on edits and changes</li>
+          </ul>
+        </div>
+        <div class="pk-price"><span class="pk-from">Starting at</span><b>$950</b><span>to launch</span><em>then $75 a month</em><button type="button" class="btn alt" data-pkg="Complete">I'm interested in Complete</button></div>
+      </li>
     </ul>
+    <div class="plan">
+      <h3>The monthly plan, included with every package</h3>
+      <ul class="get">
+        <li>Hosting and your domain kept running</li>
+        <li>Small edits: prices, hours, services</li>
+        <li>Security and technical updates</li>
+        <li>A real person to message when you need a change</li>
+      </ul>
+    </div>
+    <p class="note" style="margin-top:22px">Not sure which one fits? Start with the free sample. You see it first, then pick. Terms are in writing before anything goes live.</p>
   </div>
 </section>
 
@@ -737,6 +881,10 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
       <div class="a" id="q4" role="region">Then keep it. If it needs help I'll tell you honestly, and I won't push a new one if yours is working.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q6">How do I get started?</button></h3>
       <div class="a" id="q6" role="region">Send me your business name with the form at the bottom of this page. I'll build the sample from your public listings and send it to you. You look, tell me what you think, and only then do we talk about price.</div>
+      <h3><button type="button" aria-expanded="false" aria-controls="q11">What's the difference between the packages?</button></h3>
+      <div class="a" id="q11" role="region">Starter is a clean one-page site. Growth adds local search setup, your booking tool and reviews. Complete adds call-back requests and follow-up messages. Every package includes the monthly plan, and you can move up later.</div>
+      <h3><button type="button" aria-expanded="false" aria-controls="q12">What does the monthly plan cover?</button></h3>
+      <div class="a" id="q12" role="region">Hosting, keeping your domain running, small edits like prices and hours, security and technical updates, and someone to message when you need a change.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q10">Can customers book right on my site?</button></h3>
       <div class="a" id="q10" role="region">Yes. They pick an open time on your own site and get a confirmation. The booking lands on your calendar and your client list automatically, so you don't retype anything. I connect the booking tool you already use, or set up a simple one.</div>
       <h3><button type="button" aria-expanded="false" aria-controls="q8">Will this help me show up on Google?</button></h3>
@@ -786,6 +934,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
           <span><input type="radio" name="reach" id="rc2" value="Call"><label for="rc2">Call</label></span>
           <span><input type="radio" name="reach" id="rc3" value="Text"><label for="rc3">Text</label></span>
         </fieldset>
+        <div class="f"><label for="cf-pkg">Interested in</label><select id="cf-pkg" name="package"><option>Not sure yet</option><option>Starter</option><option>Growth</option><option>Complete</option></select></div>
         <div class="f"><label for="cf-msg">What would you like to know?</label><textarea id="cf-msg" name="message" rows="4" required></textarea></div>
         <button class="btn" type="submit">Send message</button>
         <p class="fstat" role="status" aria-live="polite"></p>
@@ -803,7 +952,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
 <footer>
   <div class="wrap">
     <div class="r"><span>© <span id="yr"></span> Lucas Wooley · Northern Nevada</span><a href="#privacy">Privacy</a></div>
-    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking. If you use the contact form, what you enter goes straight to me through the site's host (Netlify), and I use it only to reply. The "Questions?" helper runs in your browser, so what you type there isn't sent or saved anywhere. Your browser also remembers, on your device only, that you've seen the opening animation so it doesn't replay.</p>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no analytics and no tracking. If you use the contact form, what you enter goes straight to me through the site's host (Netlify), and I use it only to reply. The "Questions?" helper runs in your browser, so what you type there isn't sent or saved anywhere. Your browser also remembers, for this visit only, that the opening animation has played, so a refresh doesn't replay it.</p>
   </div>
 </footer>
 
@@ -916,7 +1065,8 @@ var DIGITS = PHONE.replace(/[^\d+]/g, "");
 // ---- "Questions?" helper: instant answers from this site's own content. Not a person, not AI. Runs in the browser, sends nothing. ----
 (function () {
   var KB = [
-    { k: ["cost", "price", "pricing", "how much", "expensive", "afford", "fee", "charge", "pay"], a: "There's a one-time launch fee to set up and publish your site, then a small monthly fee for hosting and edits like prices and hours. The sample is free, and I give you the number only after you've seen it, so you never pay to find out." },
+    { k: ["package", "packages", "plan", "plans", "subscription", "monthly", "tier", "starter", "growth", "complete"], a: "Three packages: Starter is a clean one-page site, Growth adds local search, your booking tool and reviews, and Complete adds call-back requests and follow-up messages. Each has a launch fee plus a monthly plan for hosting and small edits. See the Pricing section for the details, or tell me which one interests you in the contact form." },
+    { k: ["cost", "price", "pricing", "how much", "expensive", "afford", "fee", "charge", "pay"], a: "Packages start at $400 to launch plus $30 a month (Starter), $650 plus $45 a month (Growth), and $950 plus $75 a month (Complete). The sample is free, and your exact quote comes only after you've seen it, so you never pay to find out." },
     { k: ["free", "sample", "preview", "demo", "try"], a: "The sample is free. I build it from your public listings (your services, hours, address and what customers say) and send it to you. You look, and then you decide." },
     { k: ["seo", "rank", "ranking", "search", "show up", "found", "find me", "visible", "first page"], a: "I set up the things that matter for local search: clear titles and descriptions, your name, address and phone written the same way everywhere, a fast phone-friendly site, and your business details in a form Google can read. I can't promise a ranking, and nobody honestly can, but I make sure nothing on your site holds you back." },
     { k: ["follow", "followup", "call back", "callback", "missed call", "lead", "funnel", "customers", "more calls"], a: "Beyond tap-to-call, text and booking, I can set up call-back requests and follow-up messages for people who reached out, using the tools you already have or simple ones. We decide how far to go after you've seen your sample." },
@@ -1042,61 +1192,73 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   });
 })();
 
-// scroll story: pieces swirl in a funnel, then each flies to the front to show what it is, then goes into place.
-// Everything is set straight from scrollY (no lag).
+// scroll story v3: the pieces of a complete business site start as a tornado across the whole screen, then fly out and assemble.
+// Everything is set straight from scrollY (no lag). The final layout is real page layout, so it also works with no animation.
 (function () {
-  var st = document.getElementById("story"), svg = document.getElementById("pieces");
-  if (!st || !svg) return;
+  var st = document.getElementById("story"), stage = st && st.querySelector(".stage"), bento = document.getElementById("bento"), cv = document.getElementById("twister");
+  if (!st || !stage || !bento) return;
   var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var P = [].slice.call(svg.querySelectorAll("[data-p]")).sort(function (a, b) { return a.getAttribute("data-i") - b.getAttribute("data-i"); });
-  var paintOrder = [].slice.call(svg.querySelectorAll("[data-p]"));
-  var D = [].slice.call(svg.querySelectorAll("[data-d]"));
-  var caps = [].slice.call(st.querySelectorAll(".cap")), neon = svg.querySelector(".neon"), funnel = svg.querySelector(".funnel");
+  var P = [].slice.call(bento.querySelectorAll(".pc")), caps = [].slice.call(st.querySelectorAll(".cap"));
   function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function lerp(a, b, t) { return a + (b - a) * t; }
-  if (still) { caps.forEach(function (c, i) { c.classList.toggle("on", i === caps.length - 1); }); neon.setAttribute("opacity", "1"); funnel.setAttribute("opacity", "0"); D.forEach(function (d) { d.style.display = "none"; }); return; }
-  var N = P.length, START = 0.07, SLOT = 0.125;
-  var items = P.map(function (g, i) {
-    var bb = g.getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2, big = Math.max(bb.width, bb.height);
-    var ang = i * 2.399 + 0.6, t = (i * 0.381 + 0.1) % 1, r = (1 - t * 0.72) * 150 + 24;
-    var sx = 160 + r * Math.cos(ang), sy = 14 + t * 205;
-    return { g: g, cx: cx, cy: cy, sdx: sx - cx, sdy: sy - cy, fdx: 160 - cx, fdy: 112 - cy, S: i === 0 ? 1 : clamp(150 / big, 1.2, 2.6), l: g.querySelector('.lbl'), rot: ((i * 97) % 300) - 150 + (i % 2 ? 140 : -140), sw: (i % 2 ? 1 : -1) * (250 + i * 11), start: START + i * SLOT };
-  });
-  var bits = D.map(function (g, i) {
-    var ang = i * 1.9 + 0.3, t = (i * 0.29) % 1, r = (1 - t * 0.6) * 130 + 30;
-    return { g: g, sx: 160 + r * Math.cos(ang), sy: 20 + t * 190, spin: 160 + i * 31 };
-  });
-  var cur = -1;
+  if (still || !cv || !cv.getContext) { caps.forEach(function (c, i) { c.classList.toggle("on", i === caps.length - 1); }); if (cv) cv.style.display = "none"; return; }
+  var ctx = cv.getContext("2d"), dpr = Math.min(2, window.devicePixelRatio || 1), W = 0, H = 0, fin = [], rt = 0;
+  var N = P.length, START = 0.06, SLOT = 0.17, GAP = 0.1;
+  var bits = [];
+  for (var k = 0; k < 64; k++) bits.push({ a: k * 2.399, t: ((k * 0.317) % 0.86) + 0.07, kind: k % 3, s: 4 + (k % 5) * 1.6 });
+  function funnel(t) { return { r: (1 - t * 0.8) * W * (W < 700 ? 0.5 : 0.4) + 18, y: H * (0.1 + 0.8 * t) }; }
+  function measure() {
+    P.forEach(function (el) { el.style.transform = ""; el.style.opacity = ""; });
+    var sr = stage.getBoundingClientRect(); W = sr.width; H = sr.height;
+    fin = P.map(function (el) { var r = el.getBoundingClientRect(); return { cx: r.left - sr.left + r.width / 2, cy: r.top - sr.top + r.height / 2 }; });
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.width = W + "px"; cv.style.height = H + "px"; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  measure();
+  window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(measure, 160); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  var cur = -1, lastZ = [];
   function draw(time) {
     var rect = st.getBoundingClientRect(), total = st.offsetHeight - innerHeight;
     var p = total > 0 ? clamp(-rect.top / total, 0, 1) : 1;
-    var active = 0;
-    items.forEach(function (it, i) {
-      var u = (p - it.start) / SLOT, offx, offy, sc, rot, sw, hot = false;
-      var wob = Math.sin(time / 900 + i) * 7;
-      if (u <= 0) { offx = it.sdx; offy = it.sdy; sc = 1; rot = it.rot; sw = it.sw + wob; }
-      else if (u < 0.34) { var e = ease(u / 0.34); offx = lerp(it.sdx, it.fdx, e); offy = lerp(it.sdy, it.fdy, e); sc = lerp(1, it.S, e); rot = lerp(it.rot, 0, e); sw = lerp(it.sw + wob, 0, e); hot = e > 0.8; active = i + 1; }
-      else if (u < 0.7) { offx = it.fdx; offy = it.fdy + Math.sin(time / 500) * 2; sc = it.S; rot = 0; sw = 0; hot = true; active = i + 1; }
-      else if (u < 1) { var e2 = ease((u - 0.7) / 0.3); offx = lerp(it.fdx, 0, e2); offy = lerp(it.fdy, 0, e2); sc = lerp(it.S, 1, e2); rot = 0; sw = 0; active = i + 1; }
-      else { offx = 0; offy = 0; sc = 1; rot = 0; sw = 0; }
-      it.g.setAttribute("transform", "rotate(" + sw.toFixed(1) + " 160 120) translate(" + offx.toFixed(1) + " " + offy.toFixed(1) + ") rotate(" + rot.toFixed(1) + " " + it.cx.toFixed(1) + " " + it.cy.toFixed(1) + ") translate(" + it.cx.toFixed(1) + " " + it.cy.toFixed(1) + ") scale(" + sc.toFixed(3) + ") translate(" + (-it.cx).toFixed(1) + " " + (-it.cy).toFixed(1) + ")");
-      it.g.classList.toggle("hot", hot);
-      if (it.l) it.l.setAttribute("opacity", (clamp((u - 0.18) / 0.14, 0, 1) * clamp((0.86 - u) / 0.14, 0, 1)).toFixed(2));
+    var cx0 = W * (W < 900 ? 0.5 : 0.6), active = 0;
+    // the pieces
+    P.forEach(function (el, i) {
+      var t = ((i * 0.381) + 0.1) % 0.74 + 0.1, f = funnel(t);
+      var ang = i * 2.4 + time * 0.0011 * (1.5 - t);
+      var d = 0.5 + 0.5 * Math.sin(ang);
+      var fx = cx0 + f.r * Math.cos(ang), fy = f.y + f.r * 0.2 * Math.sin(ang);
+      var s0 = 0.6 + 0.6 * d, o0 = 0.5 + 0.5 * d, r0 = Math.sin(ang) * 40 + i * 24;
+      var start = START + i * GAP, u = (p - start) / SLOT, e = ease(clamp(u, 0, 1));
+      var x = lerp(fx, fin[i].cx, e), y = lerp(fy, fin[i].cy, e);
+      // a little spiral while it flies in
+      var sw = Math.sin(e * Math.PI) * 70 * (i % 2 ? 1 : -1);
+      el.style.transform = "translate(" + (x - fin[i].cx + sw).toFixed(1) + "px," + (y - fin[i].cy).toFixed(1) + "px) rotate(" + lerp(r0, 0, e).toFixed(1) + "deg) scale(" + lerp(s0, 1, e).toFixed(3) + ")";
+      el.style.opacity = lerp(o0, 1, e).toFixed(2);
+      var z = e >= 1 ? 2 : (d > 0.5 ? 4 : 1); if (lastZ[i] !== z) { el.style.zIndex = z; lastZ[i] = z; }
+      var hot = u > 0 && u < 1; el.classList.toggle("hot", hot);
+      if (u > 0 && u < 1 && !active) active = i + 1;
     });
-    // the piece being shown rides on top while it is out front
-    if (active > 0) { var gg = items[active - 1].g; if (svg.lastChild !== gg && (p - items[active - 1].start) / SLOT < 0.9) svg.insertBefore(gg, svg.querySelector(".neon")); }
-    else if (p >= START + N * SLOT - 0.001) { paintOrder.forEach(function (g) { svg.insertBefore(g, D[0]); }); }
-    var q = clamp((p - 0.04) / 0.9, 0, 1);
-    bits.forEach(function (b, i) {
-      var k = 1 - q, x = 160 + (b.sx - 160) * k, y = 226 - (226 - b.sy) * k;
-      b.g.setAttribute("transform", "rotate(" + (b.spin * q + Math.sin(time / 800) * 6).toFixed(1) + " 160 120) translate(" + x.toFixed(1) + " " + y.toFixed(1) + ")");
-      b.g.setAttribute("opacity", (1 - q * q).toFixed(2));
-    });
-    funnel.setAttribute("opacity", (0.5 * clamp(1 - p * 1.7, 0, 1)).toFixed(2));
-    funnel.style.transform = "rotate(" + (p * 50).toFixed(1) + "deg)"; funnel.style.transformOrigin = "160px 100px";
-    neon.setAttribute("opacity", clamp((p - 0.95) / 0.05, 0, 1).toFixed(2));
-    var c = p < START ? 0 : (p >= START + N * SLOT ? N + 1 : active || cur);
+    // the tornado itself: funnel rings and flying shards
+    ctx.clearRect(0, 0, W, H);
+    var fade = clamp(1 - p * 1.35, 0, 1);
+    if (fade > 0.01) {
+      ctx.save(); ctx.globalAlpha = fade; ctx.strokeStyle = "rgba(255,255,255,.14)"; ctx.lineWidth = 1.2; ctx.setLineDash([5, 9]); ctx.lineDashOffset = -time * 0.02;
+      for (var q = 0; q <= 8; q++) { var tt = q / 8, ff = funnel(tt); ctx.beginPath(); ctx.ellipse(cx0, ff.y, ff.r, ff.r * 0.2, 0, 0, Math.PI * 2); ctx.stroke(); }
+      ctx.setLineDash([]);
+      bits.forEach(function (b, bi) {
+        var ff = funnel(b.t), a = b.a + time * 0.0016 * (1.6 - b.t), dd = 0.5 + 0.5 * Math.sin(a);
+        var pull = clamp(p * 1.4, 0, 1), x = lerp(cx0 + ff.r * Math.cos(a), cx0, pull * 0.5), y = lerp(ff.y + ff.r * 0.2 * Math.sin(a), H * 0.5, pull * 0.5);
+        ctx.save(); ctx.translate(x, y); ctx.rotate(a * 2 + bi); ctx.globalAlpha = fade * (0.25 + 0.6 * dd);
+        ctx.fillStyle = b.kind === 0 ? "#ff5a1f" : (b.kind === 1 ? "#fafafa" : "#71717a");
+        var s = b.s * (0.6 + dd * 0.7);
+        if (b.kind === 2) { ctx.beginPath(); ctx.moveTo(-s, s); ctx.lineTo(0, -s * 1.4); ctx.lineTo(s, s); ctx.closePath(); ctx.fill(); } else ctx.fillRect(-s / 2, -s / 2, s, s * (b.kind ? 0.5 : 1));
+        ctx.restore();
+      });
+      ctx.restore();
+    }
+    stage.classList.toggle("assembled", p > 0.95);
+    var c = p < START ? 0 : (p >= START + (N - 1) * GAP + SLOT ? N + 1 : (active || (cur > 0 ? cur : 0)));
     if (c !== cur) { cur = c; caps.forEach(function (el, i) { el.classList.toggle("on", i === c); }); }
   }
   function loop(time) { if (!document.hidden) draw(time); requestAnimationFrame(loop); }
@@ -1166,16 +1328,16 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   window.addEventListener("wheel", function () { if (playing) stop("paused"); }, { passive: true });
   ["touchstart", "keydown"].forEach(function (ev) { window.addEventListener(ev, function (e) { if (playing && !(e.target && e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); }, { passive: true }); });
   window.addEventListener("pointerdown", function (e) { if (playing && !(e.target.closest && (e.target.closest(".tourbar") || e.target.closest(".watch")))) stop("paused"); });
-  // the opening story plays by itself, once per device, about 5 seconds, and any touch/scroll/key stops it
+  // the opening story plays by itself every time the site is opened (once per visit, not on refresh), about 5 seconds, and any touch/scroll/key stops it
   (function () {
     var force = location.search.indexOf("play") > -1, seen = false;
-    try { seen = localStorage.getItem("wl-seen-story") === "1"; } catch (e) {}
+    try { seen = sessionStorage.getItem("wl-seen-story") === "1"; } catch (e) {}
     if ((seen && !force) || location.hash || window.scrollY > 40 || (navigator.webdriver && !force) || location.search.indexOf("tour") > -1) return;
     var hint = document.createElement("div");
     hint.className = "skiphint"; hint.setAttribute("role", "status"); hint.textContent = "Tap anywhere to skip";
     document.body.appendChild(hint);
     setTimeout(function () {
-      try { localStorage.setItem("wl-seen-story", "1"); } catch (e) {}
+      try { sessionStorage.setItem("wl-seen-story", "1"); } catch (e) {}
       var st = document.getElementById("story"); if (!st || window.scrollY > 40) return;
       document.body.classList.add("autoplay");
       speedOverride = 700; start(st.offsetTop + st.offsetHeight - innerHeight + 30);
@@ -1218,6 +1380,19 @@ window.copyText = function (txt, el) {
   if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(function () { done(true); }, fallback); else fallback();
 };
 document.querySelectorAll("[data-copy]").forEach(function (b) { b.addEventListener("click", function () { window.copyText(b.getAttribute("data-copy"), b); }); });
+
+// package buttons: pick the package in the form, then glide down to it
+(function () {
+  var sel = document.getElementById("cf-pkg");
+  document.querySelectorAll("[data-pkg]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      if (sel) sel.value = b.getAttribute("data-pkg");
+      var t = document.getElementById("contact"); if (!t) return;
+      if (window.__lenis) window.__lenis.scrollTo(t, { offset: -70, duration: 1.4 }); else t.scrollIntoView({ behavior: "smooth" });
+      setTimeout(function () { var n = document.getElementById("cf-name"); if (n) n.focus({ preventScroll: true }); }, 900);
+    });
+  });
+})();
 
 /* Motion layer: GSAP + ScrollTrigger (scroll-driven animation) and Lenis (smooth scroll), bundled into this file's page.
    Everything below is guarded: no libraries, reduced-motion, or an error in one effect never breaks the page. */

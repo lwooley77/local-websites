@@ -73,3 +73,27 @@ Tell me the domain. I will turn off the hide-from-Google setting, add the sitema
 - Work screenshots anonymized: no other business's name, town, rating or phone number shows. They use "Your Name Barber Shop", "Your Town" and a sample number.
 - Tighter page: removed 2 of the scenarios, 2 of the objections and 2 FAQ items.
 - Phone polish: header on one line, smaller "Questions?" button, no decoration over the headline, no sideways scroll even at 320px.
+
+---
+
+## v2 (the redesign): `deploy\v2`
+
+This is the newest version: black, white and one orange accent, bold Archivo headlines, and the opening where the pieces of a complete business site swirl across the whole screen like a tornado and assemble into one layout as you scroll. It plays by itself every time the site is opened (about 6 seconds, once per visit, any touch or scroll stops it).
+
+### Prices and packages (edit in one place)
+Open `sites\self-v2\site.json` and change these. The numbers I put in are **starting suggestions, not facts**: set them to what you actually want to charge.
+
+| Setting | Currently | Meaning |
+|---|---|---|
+| `P1_LAUNCH`, `P1_MONTH` | $400, $30 | Starter: one-time launch fee, then per month |
+| `P2_LAUNCH`, `P2_MONTH` | $650, $45 | Growth |
+| `P3_LAUNCH`, `P3_MONTH` | $950, $75 | Complete |
+
+Then rebuild:
+```
+python sites/_kit/build.py sites/self-v2
+python sites/self-v2/extras.py
+```
+Each package has an "I'm interested" button. It jumps to the contact form with that package already chosen, and the message you receive includes a field called `package`. (After you redeploy, Netlify picks up the new field automatically once form detection is on.)
+
+The "Questions?" helper also answers pricing and package questions using these same numbers.
