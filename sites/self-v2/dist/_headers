@@ -9,3 +9,5 @@
   Cache-Control: public, max-age=300
 /*.png
   Cache-Control: public, max-age=31536000, immutable
+/img/*
+  Cache-Control: public, max-age=31536000, immutable

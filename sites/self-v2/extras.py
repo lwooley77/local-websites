@@ -84,3 +84,22 @@ with sync_playwright() as p:
         pg.screenshot(path=str(DIST / name))
     b.close()
 print("extras written:", *sorted(x.name for x in DIST.iterdir()))
+
+# Speed: move the embedded screenshots out of index.html into dist/img/, so the page
+# itself stays small and each image loads only when it scrolls into view (they are loading="lazy").
+import json as _json
+_html = (DIST / "index.html").read_text(encoding="utf-8")
+_m = re.search(r"<script>window\.IMG=(\{.*?\})</script>", _html, re.S)
+if _m:
+    (DIST / "img").mkdir(exist_ok=True)
+    _imgs = _json.loads(_m.group(1)); _paths = {}
+    for _k, _uri in _imgs.items():
+        _head, _data = _uri.split(",", 1)
+        _ext = "png" if "png" in _head else "jpg"
+        (DIST / "img" / ("%s.%s" % (_k, _ext))).write_bytes(base64.b64decode(_data))
+        _paths[_k] = "img/%s.%s" % (_k, _ext)
+    _html = _html.replace(_m.group(0), "<script>window.IMG=%s</script>" % _json.dumps(_paths))
+    (DIST / "index.html").write_text(_html, encoding="utf-8")
+    with open(DIST / "_headers", "a", encoding="utf-8") as _f:
+        _f.write("/img/*" + chr(10) + "  Cache-Control: public, max-age=31536000, immutable" + chr(10))
+    print("images moved to dist/img:", len(_paths))
