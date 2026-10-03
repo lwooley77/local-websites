@@ -1,0 +1,23 @@
+[
+{"field":"name","value":"MAVRKS Fade Shop (Acuity shows 'Mavrks fade shop')","source":"lead sheet; https://mavrks.as.me/","confidence":"high"},
+{"field":"phone","value":"(619) 674-8684 (Bill, shop owner)","source":"lead sheet; https://linktr.ee/MAVRKS","confidence":"high"},
+{"field":"phone_note","value":"Bill's Acuity 'Early Bird or After Hours' listing says TEXT (619)684-8684, likely a typo of 674","source":"https://mavrks.as.me/Bill","confidence":"medium"},
+{"field":"address","value":"1801 E William St, Bldg I, Carson City, NV 89701","source":"https://linktr.ee/MAVRKS","confidence":"high"},
+{"field":"rating","value":"4.9 stars from 224 Google reviews","source":"lead sheet; https://maps.google.com/?cid=13972990795745056188","confidence":"high"},
+{"field":"booking","value":"Acuity Scheduling at https://mavrks.as.me/ with one calendar per barber","source":"https://mavrks.as.me/","confidence":"high"},
+{"field":"staff","value":"Bill (shop owner) (619) 674-8684; Beto (775) 450-1385; Bryan 'Bryan Blendz' (775) 600-9104; Martin (775) 531-0081; Juan (Sat-Sun only)","source":"https://linktr.ee/MAVRKS","confidence":"high"},
+{"field":"services_bill","value":"Haircut 50min $50 (any hairstyle, optional wash); Haircut & Full Beard 1h $60; Beard Only 30min $25; Perm and Haircut 3h20 $180; Early Bird or After Hours full service 1h $100 (cut, full beard, eyebrows, optional freestyle design, wash)","source":"https://mavrks.as.me/Bill","confidence":"high"},
+{"field":"services_beto","value":"Haircut 1h10 $50; Haircut & Full Beard 1h30 $60; After Hours full service 1h30 $100 (cut, beard, eyebrows, design, wash)","source":"https://mavrks.as.me/Beto","confidence":"high"},
+{"field":"services_bryan","value":"Haircut 1h $50; Haircut & Brows 1h $60; Haircut & Full Beard 1h30 $60; Haircut & Freestyle Design 1h $55; After Hrs (after 6pm) 1h $100; Full service 1h20 $75 (wash, cut, beard, brows, design); Perm & Haircut 4h30 $200; Color/Highlights & Haircut 4h30 $200","source":"https://mavrks.as.me/Bryan","confidence":"high"},
+{"field":"services_martin","value":"Haircut 1h $50; Haircut & Full Beard 1h10 $60; Haircut & Freestyle Design 1h $55","source":"https://mavrks.as.me/Martin","confidence":"high"},
+{"field":"services_juan","value":"Haircut 1h $40; Haircut & Full Beard 1h $50; Beard Only 30min $25; Perm & Haircut 4h30 $160; Eyebrow Clean-up Only 10min $10; Haircut & design 1h $45","source":"https://mavrks.as.me/Juan","confidence":"high"},
+{"field":"payment","value":"Cash only","source":"Barber Shop Policies PDF linked from https://linktr.ee/MAVRKS","confidence":"high"},
+{"field":"no_show","value":"Notify at least 2 hours ahead; no-show may be a $25 fee, and $25 to rebook after a no-show","source":"Barber Shop Policies PDF","confidence":"high"},
+{"field":"cancellation","value":"At least 2 hours notice to cancel or reschedule","source":"Barber Shop Policies PDF","confidence":"high"},
+{"field":"kids","value":"Children 5 and up welcome; parent or guardian supervises","source":"Barber Shop Policies PDF","confidence":"high"},
+{"field":"hours","value":"MISSING (Acuity shows live open times only)","source":"none","confidence":"none"},
+{"field":"walk_ins","value":"MISSING","source":"none","confidence":"none"},
+{"field":"instagram","value":"Linktree bio links to an Instagram account (handle not captured); Linktree display name 'One lovve'","source":"https://linktr.ee/MAVRKS","confidence":"low"},
+{"field":"years_in_business","value":"MISSING (Linktree account since Aug 2021 only)","source":"https://linktr.ee/MAVRKS","confidence":"low"},
+{"field":"web_presence","value":"Only a Linktree; web search for the name returns no listing pages","source":"WebSearch 2026-10-03","confidence":"high"}
+]

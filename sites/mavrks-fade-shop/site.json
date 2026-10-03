@@ -1,0 +1,18 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Anton", "file": "anton-latin-400-normal.woff2", "weight": 400},
+    {"family": "Plex Mono", "file": "ibm-plex-mono-latin-500-normal.woff2", "weight": 500},
+    {"family": "Work Sans", "file": "work-sans-latin-400-normal.woff2", "weight": 400},
+    {"family": "Work Sans", "file": "work-sans-latin-600-normal.woff2", "weight": 600}
+  ],
+  "vars": {
+    "NAME": "MAVRKS Fade Shop",
+    "PHONE": "(619) 674-8684",
+    "TEL": "+16196748684",
+    "ADDR1": "1801 E William St, Bldg I",
+    "ADDR2": "Carson City, NV 89701",
+    "MAPS": "https://maps.google.com/?cid=13972990795745056188",
+    "BOOK": "https://mavrks.as.me/"
+  }
+}

@@ -1,0 +1,8 @@
+- Tabs per barber, not per category: prices differ by barber.
+- Main phone (619) 674-8684 everywhere; ignored the 684 variant on Acuity as a likely typo.
+- Juan has no phone listed, so his panel shows only Book.
+- After-hours/early-bird rows link to sms: the barber, since Acuity text says to text.
+- No hours shown or open-now badge: hours not found.
+- Removed razor graphic from hero card: it covered the label.
+- About copy says services depend on barber, since not every menu has designs or brows.
+- Reviews show rating only, no quotes.
