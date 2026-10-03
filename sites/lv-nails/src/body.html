@@ -1,0 +1,277 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-call" viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/></symbol>
+  <symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="8.5" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="15.5" cy="11" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+  <symbol id="tip" viewBox="0 0 20 30"><path d="M2 29V12C2 5 7 1.5 10 1c3 .5 8 4 8 11v17z" fill="currentColor"/><path d="M6 24V12c0-3 1.4-5.4 3-6.6" stroke="#fff" stroke-opacity=".5" stroke-width="1.8" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="bt" viewBox="0 0 40 90"><rect x="13" y="0" width="14" height="30" rx="3" fill="#ecc9c1"/><rect x="11" y="27" width="18" height="7" rx="2" fill="#d9b3aa"/><rect x="3" y="32" width="34" height="58" rx="9" fill="currentColor"/><path d="M9 44v32" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/></symbol>
+</svg>
+
+<div id="pbar" role="region" aria-label="Preview notice">
+  <div class="wrap">
+    <span><span class="pb-l">Preview website prepared for </span><span class="pb-s">Preview for </span><b>LV Nails</b></span>
+    <button id="pbarX" type="button" aria-label="Close preview notice"><svg width="18" height="18"><use href="#i-x"/></svg></button>
+  </div>
+</div>
+
+<header id="nav">
+  <div class="wrap">
+    <a class="logo" data-qa="logo" href="#top" aria-label="LV Nails, back to top">
+      <svg viewBox="0 0 20 30" aria-hidden="true" style="color:var(--lacquer)"><use href="#tip"/></svg>
+      <span>LV Nails</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#hours">Hours</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </nav>
+    <span class="open" id="openBadge" aria-live="polite"></span>
+    <a class="btn b-red nav-call" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-call"/></svg>Call %%PHONE%%</a>
+    <button id="mbtn" type="button" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div id="menu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top"><span>LV Nails</span><button id="mclose" type="button" data-qa="menu-close" aria-label="Close menu"><svg width="22" height="22"><use href="#i-x"/></svg></button></div>
+  <nav aria-label="Menu">
+    <a href="#services">Services &amp; Prices</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#hours">Hours &amp; Location</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="mfoot">
+    <a class="btn b-red" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-call"/></svg>Call %%PHONE%%</a>
+    <a class="btn b-line" data-book href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-sms"/></svg>Text to book</a>
+  </div>
+</div>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div>
+        <h1 id="h1">LV<br><em>Nails</em></h1>
+        <p class="lede">Manicures, pedicures, acrylics, dip powder, gel extensions and nail art on West 4th Street in Reno.</p>
+        <div class="cta">
+          <a class="btn b-red" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-call"/></svg>Call %%PHONE%%</a>
+          <a class="btn b-line" data-book href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-sms"/></svg><span data-book-label>Text to book</span></a>
+        </div>
+        <div class="meta">
+          <span><span class="stars" aria-hidden="true"><svg width="15" height="15" fill="#a3122f"><use href="#i-star"/></svg></span><a href="%%MAPS%%" target="_blank" rel="noopener">%%RATING%% on Google, %%REVIEWS%% reviews</a></span>
+          <span>%%STREET%%, Reno</span>
+        </div>
+      </div>
+      <div class="art">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Illustration of a fan of polish swatch nail tips beside a bottle of red lacquer">
+          <defs><clipPath id="bclip"><rect x="250" y="252" width="110" height="128" rx="18"/></clipPath></defs>
+          <circle cx="170" cy="200" r="168" fill="#f2d9d2"/>
+          <circle cx="170" cy="200" r="168" fill="none" stroke="#d97f8a" stroke-width="1.5" stroke-dasharray="2 9" stroke-linecap="round"/>
+          <g id="fan" transform="translate(165 362)"><g transform="rotate(-54)"><path d="M-24 0V-118C-24-160-8-182 0-188C8-182 24-160 24-118V0Z" fill="#f2d9d2" stroke="#26141a" stroke-opacity=".12"/><path d="M-13-40V-120C-13-142-7-156-2-162" stroke="#fff" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/></g><g transform="rotate(-36)"><path d="M-24 0V-118C-24-160-8-182 0-188C8-182 24-160 24-118V0Z" fill="#e9a7a5" stroke="#26141a" stroke-opacity=".12"/><path d="M-13-40V-120C-13-142-7-156-2-162" stroke="#fff" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/></g><g transform="rotate(-18)"><path d="M-24 0V-118C-24-160-8-182 0-188C8-182 24-160 24-118V0Z" fill="#d97f8a" stroke="#26141a" stroke-opacity=".12"/><path d="M-13-40V-120C-13-142-7-156-2-162" stroke="#fff" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/></g><g transform="rotate(0)"><path d="M-24 0V-118C-24-160-8-182 0-188C8-182 24-160 24-118V0Z" fill="#c4475a" stroke="#26141a" stroke-opacity=".12"/><path d="M-13-40V-120C-13-142-7-156-2-162" stroke="#fff" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/></g><g transform="rotate(18)"><path d="M-24 0V-118C-24-160-8-182 0-188C8-182 24-160 24-118V0Z" fill="#a3122f" stroke="#26141a" stroke-opacity=".12"/><path d="M-13-40V-120C-13-142-7-156-2-162" stroke="#fff" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/></g><g transform="rotate(36)"><path d="M-24 0V-118C-24-160-8-182 0-188C8-182 24-160 24-118V0Z" fill="#7d0d24" stroke="#26141a" stroke-opacity=".12"/><path d="M-13-40V-120C-13-142-7-156-2-162" stroke="#fff" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/></g><g transform="rotate(54)"><path d="M-24 0V-118C-24-160-8-182 0-188C8-182 24-160 24-118V0Z" fill="#b8894a" stroke="#26141a" stroke-opacity=".12"/><path d="M-13-40V-120C-13-142-7-156-2-162" stroke="#fff" stroke-opacity=".45" stroke-width="5" fill="none" stroke-linecap="round"/></g><circle r="14" fill="#b8894a"/><circle r="5" fill="#fbf4ee"/></g>
+          <g>
+            <rect x="285" y="168" width="40" height="82" rx="7" fill="#26141a"/>
+            <rect x="291" y="176" width="6" height="64" rx="3" fill="#fff" opacity=".18"/>
+            <rect x="278" y="242" width="54" height="16" rx="4" fill="#3a1d26"/>
+            <rect x="250" y="252" width="110" height="128" rx="18" fill="#a3122f"/>
+            <g clip-path="url(#bclip)"><rect class="sheen" x="262" y="230" width="26" height="180" fill="#fff" opacity=".28" transform="translate(-120 0)" style="transform-box:view-box"/></g>
+            <rect x="262" y="266" width="9" height="96" rx="4.5" fill="#fff" opacity=".3"/>
+            <text x="305" y="336" text-anchor="middle" font-family="DM Serif Display, Georgia, serif" font-size="40" fill="#fbf4ee">LV</text>
+          </g>
+          <circle cx="62" cy="88" r="4" fill="#b8894a"/><circle cx="352" cy="120" r="3" fill="#a3122f"/><circle cx="40" cy="300" r="2.5" fill="#7d0d24"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-label="Services">
+    <div id="strip">
+      <a href="#services" data-cat="mani"><svg aria-hidden="true" style="color:#d97f8a"><use href="#tip"/></svg>Manicures</a>
+      <a href="#services" data-cat="pedi"><svg aria-hidden="true" style="color:#e9a7a5"><use href="#tip"/></svg>Pedicures</a>
+      <a href="#services" data-cat="ext"><svg aria-hidden="true" style="color:#f2d9d2"><use href="#tip"/></svg>Acrylic Nails</a>
+      <a href="#services" data-cat="ext"><svg aria-hidden="true" style="color:#b8894a"><use href="#tip"/></svg>Dip Powder</a>
+      <a href="#services" data-cat="mani"><svg aria-hidden="true" style="color:#d97f8a"><use href="#tip"/></svg>Gel Nails</a>
+      <a href="#services" data-cat="ext"><svg aria-hidden="true" style="color:#e9a7a5"><use href="#tip"/></svg>Gel Extensions</a>
+      <a href="#services" data-cat="ext"><svg aria-hidden="true" style="color:#f2d9d2"><use href="#tip"/></svg>Nail Art</a>
+      <a href="#services" data-cat="pedi"><svg aria-hidden="true" style="color:#b8894a"><use href="#tip"/></svg>Men's Pedicures</a>
+    </div>
+  </div>
+
+  <section class="sec" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="svc-head">
+        <div><p class="lab" style="color:var(--lacquer)">The menu</p><h2 id="svc-h">Services &amp; Prices</h2></div>
+        <p>Prices depend on length, shape and design, so the salon quotes them by phone. Tap any service to call.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Service categories">
+        <button class="tab" role="tab" id="t-mani" data-qa="tab" data-cat="mani" aria-controls="p-mani" aria-selected="true"><i style="background:#d97f8a"></i>Manicures</button>
+        <button class="tab" role="tab" id="t-pedi" data-qa="tab" data-cat="pedi" aria-controls="p-pedi" aria-selected="false" tabindex="-1"><i style="background:#a3122f"></i>Pedicures</button>
+        <button class="tab" role="tab" id="t-ext" data-qa="tab" data-cat="ext" aria-controls="p-ext" aria-selected="false" tabindex="-1"><i style="background:#b8894a"></i>Extensions &amp; Art</button>
+      </div>
+      <div class="panel" role="tabpanel" id="p-mani" aria-labelledby="t-mani">
+        <a class="row" href="tel:%%TEL%%" aria-label="Manicure: call for price"><svg class="tip" aria-hidden="true" style="color:#d97f8a"><use href="#tip"/></svg><span><b>Manicure</b><small>Nails and hands, finished in polish</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Gel Nails: call for price"><svg class="tip" aria-hidden="true" style="color:#c4475a"><use href="#tip"/></svg><span><b>Gel Nails</b><small>Gel polish on natural nails</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Nail Polish: call for price"><svg class="tip" aria-hidden="true" style="color:#e9a7a5"><use href="#tip"/></svg><span><b>Nail Polish</b><small>Color in the shade you pick</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Men's Manicure: call for price"><svg class="tip" aria-hidden="true" style="color:#7d0d24"><use href="#tip"/></svg><span><b>Men's Manicure</b><small>A manicure for men</small></span><span class="pr">Call for price</span></a>
+      </div>
+      <div class="panel" role="tabpanel" id="p-pedi" aria-labelledby="t-pedi" hidden>
+        <a class="row" href="tel:%%TEL%%" aria-label="Pedicure: call for price"><svg class="tip" aria-hidden="true" style="color:#a3122f"><use href="#tip"/></svg><span><b>Pedicure</b><small>Feet and toes, finished in polish</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Men's Pedicure: call for price"><svg class="tip" aria-hidden="true" style="color:#7d0d24"><use href="#tip"/></svg><span><b>Men's Pedicure</b><small>A pedicure for men</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Manicure and Pedicure: call for price"><svg class="tip" aria-hidden="true" style="color:#d97f8a"><use href="#tip"/></svg><span><b>Manicure &amp; Pedicure</b><small>Hands and feet in one visit</small></span><span class="pr">Call for price</span></a>
+      </div>
+      <div class="panel" role="tabpanel" id="p-ext" aria-labelledby="t-ext" hidden>
+        <a class="row" href="tel:%%TEL%%" aria-label="Acrylic Nails: call for price"><svg class="tip" aria-hidden="true" style="color:#a3122f"><use href="#tip"/></svg><span><b>Acrylic Nails</b><small>Added length and strength</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Dip Powder Nails: call for price"><svg class="tip" aria-hidden="true" style="color:#b8894a"><use href="#tip"/></svg><span><b>Dip Powder Nails</b><small>Color set with dip powder</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Gel Nail Extensions: call for price"><svg class="tip" aria-hidden="true" style="color:#c4475a"><use href="#tip"/></svg><span><b>Gel Nail Extensions</b><small>Length built with gel</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Nail Extensions: call for price"><svg class="tip" aria-hidden="true" style="color:#e9a7a5"><use href="#tip"/></svg><span><b>Nail Extensions</b><small>Ask which kind suits your nails</small></span><span class="pr">Call for price</span></a>
+        <a class="row" href="tel:%%TEL%%" aria-label="Nail Art: call for price"><svg class="tip" aria-hidden="true" style="color:#7d0d24"><use href="#tip"/></svg><span><b>Nail Art</b><small>Designs and details on any set</small></span><span class="pr">Call for price</span></a>
+      </div>
+      <p class="svc-note">Not sure what to ask for? Call <a href="tel:%%TEL%%">%%PHONE%%</a> or <a data-book href="sms:%%TEL%%">send a text</a> and describe the look you want.</p>
+    </div>
+  </section>
+
+  <section class="sec about" id="about" aria-labelledby="ab-h">
+    <div class="wrap">
+      <div>
+        <p class="lab">About the salon</p>
+        <h2 id="ab-h">A full nail menu on West 4th</h2>
+        <p>LV Nails is a nail salon at %%STREET%% in Reno. Come in for a manicure or pedicure, or for length and shape with acrylics, dip powder, gel extensions and nail art. Men's manicures and pedicures are on the menu too.</p>
+        <p>Booking is simple: call or text %%PHONE%% and ask for a time.</p>
+      </div>
+      <div class="chart">
+        <p class="lab">Shapes to ask about</p>
+        <div class="shapes">
+          <div><svg viewBox="0 0 60 110" aria-hidden="true"><path d="M12 108V22h36v86z" fill="#a3122f"/><path d="M19 96V30" stroke="#fff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/></svg>Square</div>
+          <div><svg viewBox="0 0 60 110" aria-hidden="true"><path d="M12 108V36a18 18 0 0 1 36 0v72z" fill="#d97f8a"/><path d="M19 96V38" stroke="#fff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/></svg>Round</div>
+          <div><svg viewBox="0 0 60 110" aria-hidden="true"><path d="M12 108V40C12 20 24 8 30 4c6 4 18 16 18 36v68z" fill="#b8894a"/><path d="M19 96V42c0-10 3-18 7-24" stroke="#fff" stroke-opacity=".45" stroke-width="4" fill="none" stroke-linecap="round"/></svg>Almond</div>
+          <div><svg viewBox="0 0 60 110" aria-hidden="true"><path d="M12 108V30l8-24h20l8 24v78z" fill="#7d0d24"/><path d="M19 96V32l4-12" stroke="#fff" stroke-opacity=".45" stroke-width="4" fill="none" stroke-linecap="round"/></svg>Coffin</div>
+        </div>
+        <div class="photo-slot" data-slot hidden><img data-k="about-salon" alt="Inside LV Nails on West 4th Street"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec rev" id="reviews" aria-labelledby="rv-h">
+    <div class="wrap">
+      <div>
+        <div class="score" aria-hidden="true">%%RATING%%</div>
+        <div class="big-stars" id="bigStars" aria-hidden="true"></div>
+      </div>
+      <div>
+        <p class="lab" style="color:var(--lacquer)">Google reviews</p>
+        <h2 id="rv-h">%%RATING%% stars from %%REVIEWS%% reviews</h2>
+        <p>That is %%REVIEWS%% people who took the time to rate LV Nails on Google. Read what they wrote, and add yours after your next visit.</p>
+        <a class="btn b-line" href="%%MAPS%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-star"/></svg>Read reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact dark" id="contact" aria-labelledby="ct-h">
+    <div class="wrap">
+      <p class="lab" style="color:var(--rose)">Get in touch</p>
+      <h2 id="ct-h">Call, text or stop by</h2>
+      <p class="sub">There is no form to fill out. Your call or text goes straight to the salon.</p>
+      <div class="cards">
+        <a class="card c1" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-call"/></svg><span class="lab">Call the salon</span><b>%%PHONE%%</b></a>
+        <a class="card" href="sms:%%TEL%%"><svg aria-hidden="true" style="color:var(--rose)"><use href="#i-sms"/></svg><span class="lab">Text to book</span><b>Send a text</b></a>
+        <a class="card" href="%%DIR%%" target="_blank" rel="noopener"><svg aria-hidden="true" style="color:var(--rose)"><use href="#i-pin"/></svg><span class="lab">Get directions</span><b>%%STREET%%</b></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec faq" id="faq" aria-labelledby="fq-h">
+    <div class="wrap">
+      <div><p class="lab" style="color:var(--lacquer)">Good to know</p><h2 id="fq-h">Questions</h2></div>
+      <div class="acc">
+        <button class="acc-b" data-qa="faq" aria-expanded="false" aria-controls="f1" id="fb1">How do I book an appointment?<svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+        <div class="acc-p" id="f1" role="region" aria-labelledby="fb1"><div><p>Call or text <a href="tel:%%TEL%%">%%PHONE%%</a>. The salon books by phone, so there is no app or account to set up.</p></div></div>
+        <button class="acc-b" data-qa="faq" aria-expanded="false" aria-controls="f2" id="fb2">Do you take walk-ins?<svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+        <div class="acc-p" id="f2" role="region" aria-labelledby="fb2"><div><p>Call <a href="tel:%%TEL%%">%%PHONE%%</a> before you come in and ask about today's wait.</p></div></div>
+        <button class="acc-b" data-qa="faq" aria-expanded="false" aria-controls="f3" id="fb3">How much does a full set cost?<svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+        <div class="acc-p" id="f3" role="region" aria-labelledby="fb3"><div><p>It depends on the type of set, the length and the design. Call <a href="tel:%%TEL%%">%%PHONE%%</a> for current prices.</p></div></div>
+        <button class="acc-b" data-qa="faq" aria-expanded="false" aria-controls="f4" id="fb4">Do you do men's manicures and pedicures?<svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+        <div class="acc-p" id="f4" role="region" aria-labelledby="fb4"><div><p>Yes. Men's manicures and men's pedicures are both on the service list.</p></div></div>
+        <button class="acc-b" data-qa="faq" aria-expanded="false" aria-controls="f5" id="fb5">Where are you, and when are you open?<svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+        <div class="acc-p" id="f5" role="region" aria-labelledby="fb5"><div><p>%%STREET%%, %%CITYLINE%%. Listed hours are Monday to Saturday 9am to 7pm and Sunday 10am to 5pm. Call to check holiday hours. <a href="%%DIR%%" target="_blank" rel="noopener">Get directions</a>.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec hours" id="hours" aria-labelledby="hr-h">
+    <div class="wrap">
+      <div>
+        <p class="lab" style="color:var(--lacquer)">Open seven days</p>
+        <h2 id="hr-h">Hours</h2>
+        <div class="htab" id="htab">
+          <div data-d="1"><span><i></i>Monday</span><span>9am to 7pm</span></div>
+          <div data-d="2"><span><i></i>Tuesday</span><span>9am to 7pm</span></div>
+          <div data-d="3"><span><i></i>Wednesday</span><span>9am to 7pm</span></div>
+          <div data-d="4"><span><i></i>Thursday</span><span>9am to 7pm</span></div>
+          <div data-d="5"><span><i></i>Friday</span><span>9am to 7pm</span></div>
+          <div data-d="6"><span><i></i>Saturday</span><span>9am to 7pm</span></div>
+          <div data-d="0"><span><i></i>Sunday</span><span>10am to 5pm</span></div>
+        </div>
+        <p class="hnote">Hours as listed online. Holidays may differ, so call ahead.</p>
+      </div>
+      <div class="loc">
+        <p class="lab" style="color:var(--lacquer)">Location</p>
+        <p class="addr">%%STREET%%<br>%%CITYLINE%%</p>
+        <div class="btns">
+          <a class="btn b-red" href="%%DIR%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+          <a class="btn b-line" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-call"/></svg>Call %%PHONE%%</a>
+        </div>
+        <div class="map">
+          <svg viewBox="0 0 520 220" role="img" aria-label="Simple drawing of West 4th Street with a pin marking LV Nails">
+            <rect width="520" height="220" fill="#f2d9d2"/>
+            <g fill="#ecc9c1"><rect x="20" y="20" width="110" height="60" rx="8"/><rect x="150" y="20" width="150" height="60" rx="8"/><rect x="320" y="20" width="180" height="60" rx="8"/><rect x="20" y="146" width="160" height="56" rx="8"/><rect x="200" y="146" width="120" height="56" rx="8"/><rect x="340" y="146" width="160" height="56" rx="8"/></g>
+            <rect y="96" width="520" height="34" fill="#fffaf6"/>
+            <path d="M112 113h408" stroke="#d97f8a" stroke-width="2" stroke-dasharray="14 10"/>
+            <text x="24" y="118" font-family="Outfit, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="#6a5257">W 4TH ST</text>
+            <g transform="translate(262 70)"><path d="M0 40S-20 18-20 4a20 20 0 0 1 40 0c0 14-20 36-20 36z" fill="#a3122f"/><circle cy="3" r="7" fill="#fbf4ee"/></g>
+            <text x="290" y="64" font-family="DM Serif Display, Georgia, serif" font-size="20" fill="#26141a">LV Nails</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="shelf" viewBox="0 0 1200 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <rect width="1200" height="120" fill="#fffaf6"/>
+    <rect y="112" width="1200" height="8" fill="#26141a"/>
+    <use href="#bt" width="40" height="90" transform="translate(10 40.0) scale(0.8)" style="color:#a3122f"/><use href="#bt" width="40" height="90" transform="translate(58 40.0) scale(0.8)" style="color:#d97f8a"/><use href="#bt" width="40" height="90" transform="translate(114 26.5) scale(0.95)" style="color:#f2d9d2"/><use href="#bt" width="40" height="90" transform="translate(168 40.0) scale(0.8)" style="color:#b8894a"/><use href="#bt" width="40" height="90" transform="translate(210 40.0) scale(0.8)" style="color:#7d0d24"/><use href="#bt" width="40" height="90" transform="translate(252 26.5) scale(0.95)" style="color:#e9a7a5"/><use href="#bt" width="40" height="90" transform="translate(314 26.5) scale(0.95)" style="color:#c4475a"/><use href="#bt" width="40" height="90" transform="translate(362 40.0) scale(0.8)" style="color:#efe3d6"/><use href="#bt" width="40" height="90" transform="translate(418 12.999999999999986) scale(1.1)" style="color:#a3122f"/><use href="#bt" width="40" height="90" transform="translate(478 26.5) scale(0.95)" style="color:#d97f8a"/><use href="#bt" width="40" height="90" transform="translate(526 40.0) scale(0.8)" style="color:#f2d9d2"/><use href="#bt" width="40" height="90" transform="translate(574 40.0) scale(0.8)" style="color:#b8894a"/><use href="#bt" width="40" height="90" transform="translate(616 12.999999999999986) scale(1.1)" style="color:#7d0d24"/><use href="#bt" width="40" height="90" transform="translate(676 26.5) scale(0.95)" style="color:#e9a7a5"/><use href="#bt" width="40" height="90" transform="translate(724 40.0) scale(0.8)" style="color:#c4475a"/><use href="#bt" width="40" height="90" transform="translate(772 26.5) scale(0.95)" style="color:#efe3d6"/><use href="#bt" width="40" height="90" transform="translate(834 12.999999999999986) scale(1.1)" style="color:#a3122f"/><use href="#bt" width="40" height="90" transform="translate(894 40.0) scale(0.8)" style="color:#d97f8a"/><use href="#bt" width="40" height="90" transform="translate(950 26.5) scale(0.95)" style="color:#f2d9d2"/><use href="#bt" width="40" height="90" transform="translate(1012 26.5) scale(0.95)" style="color:#b8894a"/><use href="#bt" width="40" height="90" transform="translate(1074 40.0) scale(0.8)" style="color:#7d0d24"/><use href="#bt" width="40" height="90" transform="translate(1116 40.0) scale(0.8)" style="color:#e9a7a5"/><use href="#bt" width="40" height="90" transform="translate(1164 26.5) scale(0.95)" style="color:#c4475a"/>
+  </svg>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="fname">LV Nails</p>
+        <p style="margin-top:12px;max-width:34ch">Nail salon on West 4th Street. Manicures, pedicures, acrylics, dip powder, gel extensions and nail art.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <p>%%STREET%%<br>%%CITYLINE%%</p>
+        <p><a href="tel:%%TEL%%">%%PHONE%%</a></p>
+      </div>
+      <div>
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#services">Services &amp; Prices</a></li>
+          <li><a href="#hours">Hours &amp; Location</a></li>
+          <li><a href="%%IG%%" target="_blank" rel="noopener">Instagram @lvnailsreno</a></li>
+          <li><a href="%%MAPS%%" target="_blank" rel="noopener">Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="privacy" tabindex="-1">
+      <b>Privacy.</b> This site uses no cookies, no tracking and no forms. Calls and texts go straight to the salon from your own phone. There is no online booking platform: Book buttons start a call or text to the salon. Links to Google Maps and Instagram open those sites under their own privacy policies.
+    </div>
+    <div class="legal"><span>&copy; <span id="yr"></span> LV Nails, Reno NV</span><a href="#privacy">Privacy</a><a href="#top">Back to top</a></div>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick contact">
+  <a href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-call"/></svg>Call</a>
+  <a href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-sms"/></svg>Text</a>
+  <a href="%%DIR%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+  <a data-book href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-cal"/></svg>Book</a>
+</nav>
+
+%%IMAGES%%

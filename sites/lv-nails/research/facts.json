@@ -1,0 +1,14 @@
+[
+ {"field":"name","value":"LV Nails","source":"https://www.fresha.com/lvp/lv-nails-west-4th-street-reno-464Zjx","confidence":"high"},
+ {"field":"phone","value":"(775) 322-9800","source":"lead sheet + Fresha listing","confidence":"high"},
+ {"field":"address","value":"1155 W 4th St #115, Reno, NV 89503","source":"Fresha listing; web search snippet","confidence":"high"},
+ {"field":"hours","value":"Mon-Sat 9am-7pm, Sun 10am-5pm","source":"Fresha listing (not affiliated, not owner-confirmed); Wed 9-7 also in search snippet","confidence":"medium"},
+ {"field":"services","value":"Manicure, Gel Nails, Nail Polish, Men's Manicure, Pedicure, Men's Pedicure, Manicure and Pedicure, Acrylic Nails, Dip Powder Nails, Gel Nail Extensions, Nail Extensions, Nail Art","source":"Fresha listing categories","confidence":"medium"},
+ {"field":"services_unverified","value":"Russian manicure","source":"search snippet only, not on fetched page","confidence":"low"},
+ {"field":"prices","value":"none found","source":"-","confidence":"-"},
+ {"field":"booking","value":"No online booking. Fresha page is listing-only and says the business is not affiliated with Fresha. Book by phone.","source":"Fresha listing","confidence":"high"},
+ {"field":"google_rating","value":"4.2 stars, 409 reviews","source":"lead sheet; https://maps.google.com/?cid=9833995311002539361","confidence":"high"},
+ {"field":"instagram","value":"http://www.instagram.com/lvnailsreno","source":"lead sheet (profile behind login)","confidence":"high"},
+ {"field":"praise_themes","value":"friendly, kind staff; good work; one reviewer called it family owned (paraphrase, not used on page)","source":"search snippet, aggregated listing","confidence":"low"},
+ {"field":"owner_staff_years_payment_languages_walkins","value":"not found","source":"-","confidence":"-"}
+]

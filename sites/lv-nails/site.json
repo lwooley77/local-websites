@@ -1,0 +1,22 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "DM Serif Display", "file": "dm-serif-display-latin-400-normal.woff2", "weight": 400},
+    {"family": "Outfit", "file": "outfit-latin-500-normal.woff2", "weight": 500},
+    {"family": "Outfit", "file": "outfit-latin-600-normal.woff2", "weight": 600},
+    {"family": "Figtree", "file": "figtree-latin-400-normal.woff2", "weight": 400},
+    {"family": "Figtree", "file": "figtree-latin-600-normal.woff2", "weight": 600}
+  ],
+  "vars": {
+    "NAME": "LV Nails",
+    "PHONE": "(775) 322-9800",
+    "TEL": "+17753229800",
+    "STREET": "1155 W 4th St #115",
+    "CITYLINE": "Reno, NV 89503",
+    "MAPS": "https://maps.google.com/?cid=9833995311002539361",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=LV+Nails+1155+W+4th+St+115+Reno+NV+89503",
+    "IG": "https://www.instagram.com/lvnailsreno/",
+    "RATING": "4.2",
+    "REVIEWS": "409"
+  }
+}

@@ -1,0 +1,10 @@
+- Hours shown from Fresha listing, labelled "as listed online", because no other source was found.
+- Open-now badge enabled on listed hours; easy to change in HOURS in app.js.
+- Russian manicure left off: only one snippet, not on the fetched listing.
+- "Family owned" left off: it came from one review, not the business.
+- Service descriptions kept definitional (no durations, no techniques) to avoid inventing details.
+- Grouped 12 Fresha categories into 3 tabs: Manicures, Pedicures, Extensions & Art.
+- Book buttons send a text (sms:) so Book differs from Call; Call is the primary button everywhere.
+- Reviews section shows only the real Google rating and count, linked to Maps; no quotes.
+- "Open seven days" label derived from listed hours.
+- Map is a simple drawing, not an embed, to keep zero third-party requests.
