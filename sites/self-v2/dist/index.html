@@ -665,6 +665,11 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
 .stext h1 em{color:inherit;font-style:normal}
 .offer b{color:var(--gold)}
 </style>
+<style>
+/* short version: hero shows piece names only, the offer line carries the message */
+.scap p{display:none}.caps{min-height:2.2em!important}
+#about .intro{max-width:52ch}
+</style>
 
 </head>
 <body>
@@ -677,7 +682,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#ff5a1f"/><path d="M7 9l4.5 14L16 13l4.5 10L25 9" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Lucas Wooley
     </a>
-    <nav class="nav" aria-label="Main"><a href="#work" data-spy="work">Work</a><a href="#how" data-spy="how">How it works</a><a href="#build" data-spy="build">What I build</a><a href="#results" data-spy="results">Get customers</a><a href="#about" data-spy="about">About</a><a href="#pricing" data-spy="pricing">Pricing</a><a href="#faq" data-spy="faq">FAQ</a></nav>
+    <nav class="nav" aria-label="Main"><a href="#work" data-spy="work">Work</a><a href="#how" data-spy="how">How it works</a><a href="#about" data-spy="about">About</a><a href="#pricing" data-spy="pricing">Pricing</a><a href="#faq" data-spy="faq">FAQ</a></nav>
     <a class="btn" href="#contact">Message me</a>
     <button type="button" class="menu-btn" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
   </div>
@@ -685,7 +690,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
 </header>
 <div class="mmenu" id="mmenu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="mm-top"><span class="k">Menu</span><button type="button" class="mm-x" data-qa="menu-close" aria-label="Close menu">&times;</button></div>
-  <nav aria-label="Mobile"><a href="#work">Work</a><a href="#how">How it works</a><a href="#build">What I build</a><a href="#results">Get customers</a><a href="#why">Why a site</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
+  <nav aria-label="Mobile"><a href="#work">Work</a><a href="#how">How it works</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact" class="mm-cta">Get a free sample</a></nav>
 </div>
 
 <main id="main">
@@ -697,7 +702,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
       <div class="stext">
         <div class="k">Northern Nevada &middot; Websites for local businesses</div>
         <h1>A website that makes your business look <em>as good as it is.</em></h1>
-        <p class="offer">I build a <b>free sample</b> of your site first. Like it? It goes live from <b>$400</b>, then $30 a month. Don't? You owe nothing.</p>
+        <p class="offer">I build yours <b>free</b> first. Love it? It's live from <b>$400</b>. Don't? Walk away, no charge.</p>
         <div class="caps" aria-live="off">
           <div class="scap" data-cap="0"><b class="chap">Scattered</b><p>Hours on one site, a phone number on another, a link that goes nowhere. Customers find pieces, never the whole business.</p></div>
           <div class="scap" data-cap="1"><b class="chap">Piece 1 of 8 &middot; Found on Google</b><p>Clear titles, descriptions and business details, so people nearby can find you.</p></div>
@@ -731,17 +736,11 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
   </div>
 </section>
 
-<section class="sec-tight" style="border-top:0">
-  <div class="wrap">
-    <p class="lead" style="max-width:62ch">I design custom websites for local businesses of every kind: restaurants, shops, salons, contractors, clinics and more. Clear, fast and easy for your customers to use. I build a free sample of yours first, so you can judge it before you decide anything.</p>
-  </div>
-</section>
-
 <section id="work">
   <div class="wrap">
     <div class="k">The proof</div>
-    <h2>Each one built around the business.</h2>
-    <p class="intro">No templates. Each site gets its own look, from that business's own name, neighborhood and customers. Salons, barbers, spas, yard care: whatever you do, yours is built the same way.</p>
+    <h2>Real sites. Zero templates.</h2>
+    <p class="intro">Every one made from scratch for that business.</p>
     <div class="shots">
       <a class="shot big" href="https://gentle-empanada-542a16.netlify.app/" target="_blank" rel="noopener" aria-label="Open the live Quilas Cosmo Corner site in a new tab">
         <div class="win"><div class="wbar"><i></i><i></i><i></i></div><img data-k="desk-quilas" alt="The Quilas Cosmo Corner cosmetology website" width="1280" height="800" loading="lazy" decoding="async"></div>
@@ -768,7 +767,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
         <div class="cap"><b>Barber shop</b><span>Reno, free sample</span></div>
       </div>
     </div>
-    <p class="note">Free samples are built from public listings, and they aren't live sites yet. The businesses haven't hired me yet. If you run one and would rather it wasn't shown here, email me and I'll take it down. I build for every kind of local business, and these are just some of the first.</p>
+    <p class="note">Samples are built from public listings and aren't live yet. Want yours taken down? Just email me.</p>
     <figure class="proof" id="proof" hidden><blockquote></blockquote><figcaption></figcaption></figure>
     <div class="chap-cta"><p>Yours could be next.</p><a class="btn" href="#contact">Get your free sample</a></div>
   </div>
@@ -777,163 +776,27 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
 <section id="how">
   <div class="wrap">
     <div class="k">The way</div>
-    <h2>You see it before you decide.</h2>
+    <h2>Three steps. Zero risk.</h2>
     <ol class="steps">
-      <li><b>1</b><div><h3>I look up what's public</h3><p>Your services, hours, address and what customers say, from your own listings. I don't make anything up.</p></div></li>
-      <li><b>2</b><div><h3>I build your free sample</h3><p>A real, working website made for your business: your services and prices, a clear way to call, book or find you, and a design that looks like you.</p></div></li>
-      <li><b>3</b><div><h3>You tell me what to change</h3><p>If you like it, we put it online under your name. If not, you've lost nothing.</p></div></li>
+      <li><b>1</b><div><h3>I look you up</h3><p>Your public info. Nothing made up.</p></div></li>
+      <li><b>2</b><div><h3>I build your site, free</h3><p>A real, working website made for you.</p></div></li>
+      <li><b>3</b><div><h3>You decide</h3><p>Love it? We go live. Not for you? No charge.</p></div></li>
     </ol>
-    <ul class="get">
-      <li>A clear way to call, book or get directions</li>
-      <li>Your services and prices in one place</li>
-      <li>Your hours, kept correct</li>
-      <li>Your booking or ordering link, if you have one</li>
-      <li>Your own photos, only with your OK</li>
-      <li>Easy to read for customers of every age</li>
-    </ul>
-  </div>
-</section>
-
-<section id="build">
-  <div class="wrap">
-    <div class="k">The pieces</div>
-    <h2>Everything a customer looks for.</h2>
-    <p class="intro">A real website for your business, set up so customers find what they need in seconds.</p>
-    <div class="svc">
-      <div><h3>Custom design</h3><p>Your own look, taken from your name, your neighborhood and your customers. Not a template.</p></div>
-      <div><h3>Everything customers need</h3><p>Your services and prices, hours, directions, photos, and a clear way to call or text you.</p></div>
-      <div><h3>Booking and ordering</h3><p>If you use a booking or ordering tool, I connect it so customers can use it right from your site.</p></div>
-      <div><h3>Kept running for you</h3><p>Your domain, hosting and small edits like prices and hours are handled, so it stays correct.</p></div>
-    </div>
-    <div class="k" style="margin-top:56px">Who it's for</div>
-    <div class="types" aria-label="Kinds of local businesses">
-      <span>Restaurants</span><span>Shops</span><span>Salons &amp; barbers</span><span>Contractors</span><span>Clinics</span><span>Studios</span><span>Gyms</span><span>Services</span><span>And more</span>
-    </div>
-    <div class="chap-cta"><p>Everything above, built around your business.</p><a class="btn" href="#contact">Get your free sample</a></div>
-  </div>
-</section>
-
-<section id="scenes">
-  <div class="wrap">
-    <div class="k">The moments</div>
-    <h2>Moments that win a customer, or lose one.</h2>
-    <p class="intro">Customers don't always have time to call. No statistics here, just things that happen every day, and what a good website does about them.</p>
-    <ol class="scn">
-      <li><span>10:40 PM</span><p>Someone needs a haircut before an interview tomorrow. You're closed, and they don't want to wait on a call back. They book a time on your site in thirty seconds, and you wake up to a full chair.</p></li>
-      <li><span>New in town</span><p>Someone just moved here and searches for what you do. They pick the place whose hours, prices and photos they can see, and skip the ones they can't.</p></li>
-      <li><span>No time to talk</span><p>A homeowner at work has a leak and can't take a call. They send a quick message from your site saying what's wrong, and you call back when you're free. The job is yours before another company even picks up.</p></li>
-      <li><span>After the visit</span><p>A customer loved the visit but forgot to rebook. A quick follow-up message with a booking link brings them back before they drift away.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section id="results">
-  <div class="wrap">
-    <div class="k">The customers</div>
-    <h2>A site that brings in customers, not just visitors.</h2>
-    <p class="intro">Looking good is the start. Your site also has to get found, and then turn a visit into a call, a text or a booking.</p>
-    <div class="who" style="max-width:1000px">
-      <div>
-        <h3>Getting found on Google</h3>
-        <ul class="get">
-          <li>Page titles and descriptions that say who you are and where</li>
-          <li>Your name, address and phone written the same way everywhere</li>
-          <li>Set up to match your Google Business Profile</li>
-          <li>Fast and easy on a phone, which search engines favor</li>
-          <li>Your business details added in a form Google can read</li>
-        </ul>
-        <p class="note" style="margin-top:16px">I can't promise a ranking, and nobody honestly can. I set up everything that helps you show up when people nearby search.</p>
-      </div>
-      <div>
-        <h3>Turning visits into customers</h3>
-        <ul class="get">
-          <li>A tap-to-call button on every screen</li>
-          <li>Text and directions one tap away</li>
-          <li>Online booking right on your site, updating your calendar and client list</li>
-          <li>Call-back requests, where you want them</li>
-          <li>Follow-up messages to people who reached out</li>
-        </ul>
-        <p class="note" style="margin-top:16px">I set these up with the tools you already use, or simple ones, so a customer doesn't slip through.</p>
-      </div>
-    </div>
-    <ol class="flow" aria-label="How a visitor becomes a customer">
-      <li><b>1 &middot; Found</b><h3>They find you</h3><p>You show up when people nearby search for what you do.</p></li>
-      <li><b>2 &middot; Understood</b><h3>They get it</h3><p>Your site answers their questions in seconds.</p></li>
-      <li><b>3 &middot; Reaches you</b><h3>They act</h3><p>One tap to call, text or book.</p></li>
-      <li><b>4 &middot; Answered</b><h3>You respond</h3><p>The call, text or booking request comes to you.</p></li>
-      <li><b>5 &middot; Followed up</b><h3>They stay</h3><p>A quick message afterward, so no one slips away.</p></li>
-    </ol>
-    <div class="sync">
-      <div class="k">Booking, handled</div>
-      <h3>Book right on the site. Everything updates itself.</h3>
-      <p class="intro">Customers pick a time on your own site, and nobody has to retype anything.</p>
-      <div class="who" style="margin-top:22px;max-width:none">
-        <div>
-          <h4>For your customer</h4>
-          <ul class="get">
-            <li>Picks an open time without leaving your site</li>
-            <li>Gets a confirmation right away</li>
-            <li>Can get a reminder before the visit, if the tool supports it</li>
-          </ul>
-        </div>
-        <div>
-          <h4>For you</h4>
-          <ul class="get">
-            <li>The booking lands on your calendar by itself</li>
-            <li>The customer's details are saved to your client list</li>
-            <li>Taken times disappear, so slots aren't double booked</li>
-          </ul>
-        </div>
-      </div>
-      <p class="note" style="margin-top:18px">I connect the booking tool you already use, like Vagaro, Booksy or Square, or set up a simple one if you don't have one. It all happens on your own site.</p>
-    </div>
-    <div class="chap-cta"><p>Customers who find you, call you and book you.</p><a class="btn" href="#contact">Get your free sample</a></div>
-  </div>
-</section>
-
-<section id="why">
-  <div class="wrap">
-    <div class="k">The doubt</div>
-    <h2>"Why do I even need one?"</h2>
-    <p class="intro">Fair question. These are the answers I hear most, and the straight ones.</p>
-    <dl class="why">
-      <div><dt>"I get customers from Instagram and word of mouth."</dt><dd>Keep doing that. A website doesn't replace it, it backs it up. When someone hears your name and looks you up, they find something you control instead of a guess.</dd></div>
-      <div><dt>"My Google listing and Yelp page are enough."</dt><dd>Those pages are owned by someone else, and the information on them can be wrong, outdated or edited by anyone. Your own site is the one place you decide what's true: your hours, your prices, your services.</dd></div>
-      <div><dt>"I don't have time to deal with it."</dt><dd>You won't have to. I build it, I keep it running, and a price or hours change is one message to me.</dd></div>
-      <div><dt>"What if it costs too much?"</dt><dd>You see the sample first, and you get a number only after that. If it's not worth it to you, you walk away having spent nothing.</dd></div>
-    </dl>
   </div>
 </section>
 
 <section id="about">
   <div class="wrap">
     <div class="k">The person</div>
-    <h2>Who's behind this.</h2>
-    <div class="who">
-      <div>
-        <p>I'm Lucas Wooley, and I build websites for local businesses in Northern Nevada.</p>
-        <p>I started with a live site for my wife's cosmetology business, Quilas Cosmo Corner, so I know what it takes to get a small business's information in front of customers clearly. Now I build them for other local businesses.</p>
-        <p>You'll deal with me directly, from the first sample to any change you need later.</p>
-      </div>
-      <div>
-        <h3>How I work</h3>
-        <ul class="get">
-          <li>The sample is free, with no pressure</li>
-          <li>Only facts from your public listings, nothing invented</li>
-          <li>Your photos only with your OK, removed on request</li>
-          <li>The price in writing before anything goes live</li>
-          <li>You can walk away at any point</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <h2>Hi, I'm Lucas.</h2>
+    <p class="intro">I build websites for local businesses in Northern Nevada. It started with my wife's salon site, Quilas Cosmo Corner. You deal with me, start to finish.</p>
 </section>
 
 <section id="pricing" class="price">
   <div class="wrap">
     <div class="k">Pricing</div>
-    <h2>Pick a starting point. Quoted after you see your sample.</h2>
-    <p class="intro">Every site is a one-time launch fee plus a small monthly plan that keeps it online and correct. These are starting prices. Your exact quote comes after you've seen your free sample.</p>
+    <h2>Simple prices.</h2>
+    <p class="intro">One launch fee, then a small monthly plan. Exact quote after you see your free site.</p>
     <ul class="pkgs">
       <li class="pkg">
         <div class="pk-main">
@@ -943,7 +806,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
             <li>Custom one-page design</li>
             <li>Tap to call, text and get directions</li>
             <li>Your services, prices and hours</li>
-            <li>Contact form that comes straight to me</li>
+            
           </ul>
         </div>
         <div class="pk-price"><span class="pk-from">Starting at</span><b>$400</b><span>to launch</span><em>then $30 a month</em><button type="button" class="btn alt" data-pkg="Starter">I'm interested in Starter</button></div>
@@ -956,7 +819,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
             <li>Everything in Starter</li>
             <li>Local search setup so people nearby find you</li>
             <li>Your booking tool built into the site</li>
-            <li>Real reviews shown with their source</li>
+            
           </ul>
         </div>
         <div class="pk-price"><span class="pk-from">Starting at</span><b>$650</b><span>to launch</span><em>then $45 a month</em><button type="button" class="btn" data-pkg="Growth">I'm interested in Growth</button></div>
@@ -969,7 +832,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
             <li>Everything in Growth</li>
             <li>Call-back requests where you want them</li>
             <li>Follow-up messages to people who reached out</li>
-            <li>Priority on edits and changes</li>
+            
           </ul>
         </div>
         <div class="pk-price"><span class="pk-from">Starting at</span><b>$950</b><span>to launch</span><em>then $75 a month</em><button type="button" class="btn alt" data-pkg="Complete">I'm interested in Complete</button></div>
@@ -984,7 +847,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
         <li>A real person to message when you need a change</li>
       </ul>
     </div>
-    <p class="note" style="margin-top:22px">Not sure which one fits? Start with the free sample. You see it first, then pick. Terms are in writing before anything goes live.</p>
+    
   </div>
 </section>
 
@@ -1022,7 +885,7 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
     <div>
       <div class="k">Your turn</div>
       <h2>Want to see yours? It's free.</h2>
-      <p class="intro">Tell me your business name and I'll build your sample. No payment details, no obligation. Leave your email or phone and I'll get back to you.</p>
+      <p class="intro">Send your business name. I'll build your site. No payment, no catch.</p>
       <svg class="shopdone" viewBox="0 0 320 240" role="img" aria-label="The finished storefront, open for business">
         <rect x="20" y="86" width="280" height="140" fill="#fff" stroke="#09090b" stroke-width="3"/>
         <path d="M10 86 L40 26 H280 L310 86 Z" fill="#fff" stroke="#09090b" stroke-width="3" stroke-linejoin="round"/>
@@ -1034,8 +897,6 @@ a.shot:hover .win{box-shadow:0 0 0 2px #fafafa,0 26px 50px rgba(0,0,0,.6)}
         <path d="M12 226 H308" stroke="#09090b" stroke-width="3"/>
       </svg>
       <div class="reach" id="reach"></div>
-      <p class="intro" style="margin-top:22px">Prefer email? <button type="button" class="mail copyemail" data-copy="lucas77wooley@gmail.com">lucas77wooley@gmail.com</button> <small>(tap to copy)</small></p>
-      <p class="intro" style="margin-top:10px">Not sure what to ask? Tap <b>Questions?</b> in the corner for instant answers.</p>
     </div>
     <div class="cardform">
       <form id="cform" name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
