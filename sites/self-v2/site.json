@@ -1,0 +1,53 @@
+{
+  "lang": "en",
+  "img_cap": 1000,
+  "img_q": 72,
+  "fonts": [
+    {
+      "family": "Archivo",
+      "file": "archivo-latin-600-normal.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Archivo",
+      "file": "archivo-latin-700-normal.woff2",
+      "weight": 700
+    },
+    {
+      "family": "Archivo",
+      "file": "archivo-latin-800-normal.woff2",
+      "weight": 800
+    },
+    {
+      "family": "Space Grotesk",
+      "file": "space-grotesk-latin-400-normal.woff2",
+      "weight": 400
+    },
+    {
+      "family": "Space Grotesk",
+      "file": "space-grotesk-latin-500-normal.woff2",
+      "weight": 500
+    },
+    {
+      "family": "Space Grotesk",
+      "file": "space-grotesk-latin-600-normal.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Space Grotesk",
+      "file": "space-grotesk-latin-700-normal.woff2",
+      "weight": 700
+    }
+  ],
+  "vars": {
+    "NAME": "Lucas Wooley",
+    "EMAIL": "lucas77wooley@gmail.com",
+    "AREA": "Northern Nevada",
+    "PHONE": "",
+    "BOOKING": "",
+    "PRICE_FROM": "",
+    "PRICE_MONTH": "",
+    "QUOTE": "",
+    "QUOTE_BY": ""
+  }
+}
