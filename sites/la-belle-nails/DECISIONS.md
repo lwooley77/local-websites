@@ -1,0 +1,8 @@
+- Address used from Fresha snippet (medium confidence) since it matches the phone; flagged as unverified.
+- Services limited to the four found online; "Looking for something else? Call" keeps scope open.
+- No hours found: no live open badge; hours section highlights today and says to call.
+- No tabs: fewer than 3 known categories.
+- Book buttons open a prefilled text; no booking platform found.
+- Reviews: rating and count only, no quotes (none verified).
+- Parisian sage/ivory/clay with awning and French-tip motif to stand apart from LV Nails.
+- Item descriptions are plain generic definitions, no claims about technique or products.

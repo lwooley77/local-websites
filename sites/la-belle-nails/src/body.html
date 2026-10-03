@@ -1,0 +1,238 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 1-2zm3 6v2h2V9zm4 0v2h2V9zm4 0v2h2V9z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3zM5 9v10h14V9zm2 2h4v4H7z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM17.5 5.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></symbol>
+    <path id="nl" d="M0-122C25-122 34-84 34-44V36c0 14-9 24-22 24H-12c-13 0-22-10-22-24V-44c0-40 9-78 34-78z"/>
+    <path id="tip" d="M0-122C25-122 34-84 34-44 22-58 11-64 0-64S-22-58-34-44c0-40 9-78 34-78z"/>
+    <path id="gl" d="M-20-30c0-30 5-56 13-72" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+  </defs>
+</svg>
+
+<div id="top"></div>
+<div id="pbar" role="region" aria-label="Preview notice">
+  <div class="wrap">
+    <span><span class="pv-l">Preview website prepared for </span><span class="pv-s">Preview for </span><b>La Belle Nails</b></span>
+    <button id="pbarX" type="button" aria-label="Close preview notice"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" data-qa="logo" href="#top" aria-label="La Belle Nails, back to top">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#1f2b25"/><g transform="translate(32 47) scale(.3)"><use href="#nl" fill="#e9b9a1"/><use href="#tip" fill="#f7f3ea"/></g></svg>
+      <span><b>La Belle</b><small>Nails &middot; Reno</small></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#visit">Hours</a>
+    </nav>
+    <a class="btn b-main" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+    <button class="mbtn" type="button" data-qa="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 7h18M3 12h18M9 17h12"/></svg></button>
+  </div>
+</header>
+
+<div id="menu" data-qa="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top"><b>La Belle Nails</b><button type="button" data-qa="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <nav aria-label="Phone menu">
+    <a href="#services">Services &amp; Prices</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a><a href="#faq">FAQ</a><a href="#visit">Hours &amp; Location</a>
+  </nav>
+  <div class="mcta">
+    <a class="btn b-clay" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+    <a class="btn b-line" data-book href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-chat"/></svg><span data-book-label>Text to book</span></a>
+  </div>
+</div>
+
+<main>
+<div class="awn" aria-hidden="true"><i></i><b></b></div>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="lab">Nail salon in Northwest Reno</p>
+      <h1>La Belle <span>Nails</span></h1>
+      <p class="lead">Manicures, gel nails, pedicures and nail art on Sharlands Avenue.</p>
+      <div class="cta">
+        <a class="btn b-main" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call %%PHONE%%</a>
+        <a class="btn b-line" data-book href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-chat"/></svg><span data-book-label>Text to book</span></a>
+      </div>
+      <p class="loc"><svg aria-hidden="true"><use href="#i-pin"/></svg>%%STREET%%, %%CITYLINE%%</p>
+    </div>
+    <div class="art">
+      <svg viewBox="0 0 400 470" role="img" aria-label="Illustration: five almond nails with French tips fanned inside an arched salon window">
+        <defs>
+          <clipPath id="arch"><path d="M30 470V190a170 170 0 0 1 340 0v280z"/></clipPath>
+          <linearGradient id="gw" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        </defs>
+        <path d="M14 470V190a186 186 0 0 1 372 0v280z" fill="#1f2b25"/>
+        <g clip-path="url(#arch)">
+          <rect width="400" height="470" fill="#c9d6c3"/>
+          <g fill="#3f5a4b" opacity=".18"><circle cx="70" cy="120" r="3"/><circle cx="120" cy="80" r="2.5"/><circle cx="300" cy="96" r="3"/><circle cx="340" cy="170" r="2.5"/><circle cx="60" cy="220" r="2.5"/><circle cx="345" cy="260" r="3"/></g>
+          <path d="M200 20v450M30 190h340" stroke="#f7f3ea" stroke-opacity=".5" stroke-width="3"/>
+          <ellipse cx="200" cy="470" rx="190" ry="70" fill="#dfe7da"/>
+          <g id="fan" transform="translate(200 440)">
+            <g transform="rotate(-38) translate(0 -150) scale(.8)"><use href="#nl" fill="#3f5a4b"/><use href="#tip" fill="#f7f3ea"/><use href="#gl"/></g>
+            <g transform="rotate(-19) translate(0 -166) scale(.8)"><use href="#nl" fill="#e9b9a1"/><use href="#tip" fill="#fffdf8"/><use href="#gl"/></g>
+            <g transform="translate(0 -172) scale(.8)"><use href="#nl" fill="#a8523a"/><g fill="#f7f3ea"><circle cx="0" cy="-74" r="6"/><circle cx="-14" cy="-40" r="4"/><circle cx="14" cy="-40" r="4"/><circle cx="0" cy="-8" r="5"/><circle cx="0" cy="22" r="3.5"/></g><use href="#gl"/></g>
+            <g transform="rotate(19) translate(0 -166) scale(.8)"><use href="#nl" fill="#efd3c3"/><use href="#tip" fill="#fffdf8"/><use href="#gl"/></g>
+            <g transform="rotate(38) translate(0 -150) scale(.8)"><use href="#nl" fill="#b79a5b"/><use href="#tip" fill="#f7f3ea"/><use href="#gl"/></g>
+          </g>
+          <rect class="glint" x="0" y="0" width="120" height="470" fill="url(#gw)" transform="skewX(-18)" opacity=".8"/>
+        </g>
+        <path d="M30 470V190a170 170 0 0 1 340 0v280" fill="none" stroke="#b79a5b" stroke-width="2"/>
+        <g fill="#3f5a4b"><path d="M352 404c-18-6-30-22-30-40 16 4 28 18 30 40z"/><path d="M356 430c4-20 18-32 36-34-4 18-18 30-36 34z"/><path d="M354 470c-2-30 0-54 2-80" stroke="#3f5a4b" stroke-width="3" fill="none"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="Services">
+  <ul>
+    <li>Manicures</li><li>Gel nails</li><li>Pedicures</li><li>Nail art</li>
+  </ul>
+</div>
+<div class="scal" aria-hidden="true"></div>
+
+<section id="services" class="sec">
+  <div class="wrap svc">
+    <div class="intro">
+      <p class="lab">The menu</p>
+      <h2>Services &amp; Prices</h2>
+      <p>Prices are not posted online yet. Tap any service to call and ask, or text to set up a time.</p>
+    </div>
+    <div class="card">
+      <h3>La Belle Nails<i></i></h3>
+      <a class="row" href="tel:%%TEL%%"><div><b>Manicure</b><small>Shape, cuticle care and polish</small></div><span class="dots"></span><em>Call for pricing</em></a>
+      <a class="row" href="tel:%%TEL%%"><div><b>Gel nails</b><small>Gel color for hands</small></div><span class="dots"></span><em>Call for pricing</em></a>
+      <a class="row" href="tel:%%TEL%%"><div><b>Pedicure</b><small>Care and polish for feet</small></div><span class="dots"></span><em>Call for pricing</em></a>
+      <a class="row" href="tel:%%TEL%%"><div><b>Nail art</b><small>Designs added to your set</small></div><span class="dots"></span><em>Call for pricing</em></a>
+      <p class="note">Looking for something else? <a href="tel:%%TEL%%">Call %%PHONE%%</a> and ask.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <div class="wrap about">
+    <div>
+      <p class="lab">About the salon</p>
+      <h2>A neighborhood nail salon on Sharlands</h2>
+      <p>La Belle Nails is a nail salon in Northwest Reno, on Sharlands Avenue. Come in for a manicure, gel nails, a pedicure or nail art.</p>
+      <p>Clients have given the salon 4.4 stars across 212 Google reviews. To see recent work, visit the salon on Instagram.</p>
+      <p class="swap"><svg aria-hidden="true"><use href="#i-pin"/></svg><span>Find us at %%STREET%%, %%CITYLINE%%</span></p>
+      <div><a class="btn b-line" href="%%IG%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>See work on Instagram</a></div>
+    </div>
+    <div class="ill">
+      <div class="photo" data-slot hidden><img data-k="about-salon" alt="Inside La Belle Nails in Reno" width="800" height="1000"></div>
+      <svg viewBox="0 0 360 380" role="img" aria-label="Illustration: the salon's striped awning over an arched door">
+        <rect x="40" y="70" width="280" height="310" fill="#f7f3ea"/>
+        <rect x="40" y="70" width="280" height="310" fill="none" stroke="#1f2b25" stroke-width="3"/>
+        <g><rect x="24" y="40" width="312" height="40" fill="#fffdf8"/>
+          <g fill="#3f5a4b"><rect x="24" y="40" width="26" height="40"/><rect x="76" y="40" width="26" height="40"/><rect x="128" y="40" width="26" height="40"/><rect x="180" y="40" width="26" height="40"/><rect x="232" y="40" width="26" height="40"/><rect x="284" y="40" width="26" height="40"/></g>
+          <g fill="#3f5a4b"><circle cx="37" cy="80" r="13"/><circle cx="89" cy="80" r="13"/><circle cx="141" cy="80" r="13"/><circle cx="193" cy="80" r="13"/><circle cx="245" cy="80" r="13"/><circle cx="297" cy="80" r="13"/></g>
+          <g fill="#fffdf8"><circle cx="63" cy="80" r="13"/><circle cx="115" cy="80" r="13"/><circle cx="167" cy="80" r="13"/><circle cx="219" cy="80" r="13"/><circle cx="271" cy="80" r="13"/><circle cx="323" cy="80" r="13"/></g>
+          <rect x="20" y="34" width="320" height="8" rx="4" fill="#1f2b25"/></g>
+        <text x="180" y="132" text-anchor="middle" font-family="Josefin Sans,Arial" font-weight="600" font-size="17" letter-spacing="5" fill="#1f2b25">LA BELLE NAILS</text>
+        <path d="M130 380V240a50 50 0 0 1 100 0v140z" fill="#1f2b25"/>
+        <path d="M140 380V242a40 40 0 0 1 80 0v138" fill="none" stroke="#b79a5b" stroke-width="2"/>
+        <circle cx="208" cy="316" r="4" fill="#b79a5b"/>
+        <path d="M60 180h50v90H60zM250 180h50v90h-50z" fill="#c9d6c3" stroke="#1f2b25" stroke-width="3"/>
+        <path d="M85 180v90M60 225h50M275 180v90M250 225h50" stroke="#1f2b25" stroke-width="2"/>
+        <g fill="#a8523a"><circle cx="70" cy="282" r="9"/><circle cx="86" cy="280" r="10"/><circle cx="101" cy="283" r="8"/><circle cx="260" cy="282" r="9"/><circle cx="276" cy="280" r="10"/><circle cx="291" cy="283" r="8"/></g>
+        <path d="M56 288h58l-6 18H62zM246 288h58l-6 18h-46z" fill="#e9b9a1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="sec dark">
+  <div class="wrap">
+    <div class="score" aria-hidden="true">%%RATING%%</div>
+    <div>
+      <p class="lab">Reviews</p>
+      <h2>%%RATING%% stars on Google</h2>
+      <div id="bigStars" role="img" aria-label="Rated %%RATING%% out of 5"></div>
+      <p>From %%REVIEWS%% Google reviews. Read what clients say about their visits, in their own words.</p>
+      <a class="btn b-line" href="%%MAPS%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-star"/></svg>Read reviews on Google</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="wrap">
+    <p class="lab">Contact</p>
+    <h2>Call, text or stop by</h2>
+    <div class="cgrid">
+      <a class="cc big" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-phone"/></svg><div><span>Call the salon</span><b>%%PHONE%%</b></div></a>
+      <div class="side">
+        <a class="cc t" href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-chat"/></svg><div><span>Text to book</span><b>Send a text</b></div></a>
+        <a class="cc d" href="%%DIR%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><span>Get directions</span><b>%%STREET%%</b></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="sec">
+  <div class="wrap faq">
+    <div><p class="lab">Questions</p><h2>Good to know</h2></div>
+    <div class="acc">
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f1">How do I book an appointment?<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></button><div class="acc-p" id="f1"><div><p>Call <a href="tel:%%TEL%%">%%PHONE%%</a> or send a text to the same number, and the salon will set up a time with you.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f2">Do you take walk-ins?<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></button><div class="acc-p" id="f2"><div><p>Please call <a href="tel:%%TEL%%">%%PHONE%%</a> before you come in to check today's wait.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f3">How much do services cost?<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></button><div class="acc-p" id="f3"><div><p>Prices depend on the service and design. Call the salon for current pricing.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f4">Where can I see your work?<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></button><div class="acc-p" id="f4"><div><p>Recent sets are posted on <a href="%%IG%%" target="_blank" rel="noopener">Instagram at @labellereno</a>.</p></div></div></div>
+      <div class="acc-i"><button class="acc-b" type="button" data-qa="faq" aria-expanded="false" aria-controls="f5">Where are you located?<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></button><div class="acc-p" id="f5"><div><p>%%STREET%%, %%CITYLINE%%, in Northwest Reno. <a href="%%DIR%%" target="_blank" rel="noopener">Get directions</a>.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="sec">
+  <div class="wrap hl">
+    <div>
+      <p class="lab">Hours</p>
+      <h2>Call for today's hours</h2>
+      <div class="week" id="week"><div data-d="1">Mon</div><div data-d="2">Tue</div><div data-d="3">Wed</div><div data-d="4">Thu</div><div data-d="5">Fri</div><div data-d="6">Sat</div><div data-d="0">Sun</div></div>
+      <p class="hn">Hours are not posted online yet. <a href="tel:%%TEL%%">Call %%PHONE%%</a> before you head over.</p>
+    </div>
+    <div>
+      <p class="lab">Location</p>
+      <p class="addr">%%STREET%%</p>
+      <p class="sub">%%CITYLINE%%</p>
+      <div class="cta">
+        <a class="btn b-main" href="%%DIR%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+        <a class="btn b-line" href="%%MAPS%%" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <svg class="scene" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 120 C120 70 220 40 330 62 S520 20 640 54 S860 30 980 70 S1140 60 1200 80V170H0z" fill="#c9d6c3"/>
+    <path d="M0 140 C160 104 300 96 460 118 S760 90 920 112 S1110 108 1200 120V170H0z" fill="#3f5a4b"/>
+    <g transform="translate(560 92)">
+      <rect x="0" y="22" width="120" height="56" fill="#f7f3ea"/>
+      <g fill="#a8523a"><rect x="-6" y="10" width="14" height="16"/><rect x="22" y="10" width="14" height="16"/><rect x="50" y="10" width="14" height="16"/><rect x="78" y="10" width="14" height="16"/><rect x="106" y="10" width="14" height="16"/></g>
+      <g fill="#fffdf8"><rect x="8" y="10" width="14" height="16"/><rect x="36" y="10" width="14" height="16"/><rect x="64" y="10" width="14" height="16"/><rect x="92" y="10" width="14" height="16"/></g>
+      <path d="M48 78V52a12 12 0 0 1 24 0v26z" fill="#1f2b25"/>
+      <rect x="10" y="40" width="26" height="22" fill="#c9d6c3"/><rect x="84" y="40" width="26" height="22" fill="#c9d6c3"/>
+    </g>
+    <path d="M0 158 C300 146 600 150 900 152 S1100 150 1200 154V170H0z" fill="#1f2b25"/>
+  </svg>
+  <div class="wrap">
+    <div class="fl"><b>La Belle Nails</b><p>Nail salon in Northwest Reno.<br>%%STREET%%, %%CITYLINE%%</p></div>
+    <div><h4>Visit</h4><ul><li><a href="#services">Services &amp; Prices</a></li><li><a href="#faq">FAQ</a></li><li><a href="#visit">Hours &amp; Location</a></li><li><a href="#privacy">Privacy</a></li></ul></div>
+    <div><h4>Reach us</h4><ul><li><a href="tel:%%TEL%%">Call %%PHONE%%</a></li><li><a href="sms:%%TEL%%">Text the salon</a></li><li><a href="%%IG%%" target="_blank" rel="noopener">Instagram</a></li><li><a href="%%MAPS%%" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
+    <p id="privacy"><b>Privacy.</b> This site uses no cookies, no tracking and no forms. Calls and texts go straight to the salon. Links to Instagram and Google Maps open those services, which have their own privacy policies.</p>
+    <p class="copy">&copy; <span id="yr"></span> La Belle Nails, Reno, Nevada.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick contact">
+  <a class="pri" href="tel:%%TEL%%"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-chat"/></svg>Text</a>
+  <a href="%%DIR%%" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+  <a data-book href="sms:%%TEL%%"><svg aria-hidden="true"><use href="#i-cal"/></svg><span data-book-label>Book</span></a>
+</nav>
+%%IMAGES%%

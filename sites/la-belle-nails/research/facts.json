@@ -1,0 +1,13 @@
+[
+ {"field":"name","value":"La Belle Nails","source":"lead sheet; Fresha Reno nail salon listing (search snippet)","confidence":"high"},
+ {"field":"phone","value":"(775) 787-8885","source":"lead sheet; Fresha Reno listing snippet https://www.fresha.com/lp/en/bt/nail-salons/in/us-reno","confidence":"high"},
+ {"field":"address","value":"6275 Sharlands Ave #8, Reno, NV 89523","source":"Fresha Reno listing snippet https://www.fresha.com/lp/en/bt/nail-salons/in/us-reno","confidence":"medium (snippet, matches phone)"},
+ {"field":"google_rating","value":"4.4 stars from 212 reviews","source":"lead sheet (Google) https://maps.google.com/?cid=3384486869276807310","confidence":"high"},
+ {"field":"services","value":"Manicures, gel nails, nail art, pedicures","source":"Fresha Reno category listings (gel nails, nail polishing, manicures) snippet","confidence":"medium"},
+ {"field":"instagram","value":"https://www.instagram.com/labellereno","source":"lead sheet","confidence":"high"},
+ {"field":"website","value":"none found (Instagram only)","source":"WebSearch x3, no own domain","confidence":"high"},
+ {"field":"hours","value":"unknown","source":"not found","confidence":"n/a"},
+ {"field":"prices","value":"unknown","source":"not found","confidence":"n/a"},
+ {"field":"booking","value":"unknown; phone/text","source":"no booking page found","confidence":"n/a"},
+ {"field":"staff, years, walk-ins, payment, languages","value":"unknown","source":"not found","confidence":"n/a"}
+]

@@ -1,0 +1,21 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Young Serif", "file": "young-serif-latin-400-normal.woff2", "weight": 400},
+    {"family": "Josefin Sans", "file": "josefin-sans-latin-600-normal.woff2", "weight": 600},
+    {"family": "Karla", "file": "karla-latin-400-normal.woff2", "weight": 400},
+    {"family": "Karla", "file": "karla-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "La Belle Nails",
+    "PHONE": "(775) 787-8885",
+    "TEL": "+17757878885",
+    "STREET": "6275 Sharlands Ave #8",
+    "CITYLINE": "Reno, NV 89523",
+    "MAPS": "https://maps.google.com/?cid=3384486869276807310",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=La+Belle+Nails+6275+Sharlands+Ave+8+Reno+NV+89523",
+    "IG": "https://www.instagram.com/labellereno",
+    "RATING": "4.4",
+    "REVIEWS": "212"
+  }
+}

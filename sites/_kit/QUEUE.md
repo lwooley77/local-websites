@@ -4,7 +4,6 @@ Generated from Desktop\Leads\leads_prioritized_2.xlsx. Work top-down. When a dem
 
 | # | Business | Type | City | Phone | Reviews | Rating | Problem | Current site | Maps |
 |---|---|---|---|---|---|---|---|---|---|
-| 4 | Hollywood Nails | salon | Reno | (775) 825-1877 | 193 | 4.4 | No website |  | https://maps.google.com/?cid=15241436422396130871 |
 | 5 | Classics | salon | Sparks | (775) 356-1949 | 187 | 4.7 | Social/booking page only | https://facebook.com/pages/Classics-Barber-Shop/146054075439167 | https://maps.google.com/?cid=17271779640663445163 |
 | 6 | Urban Barber Union & Salon | salon | Reno | (775) 762-1184 | 175 | 4.8 | Social/booking page only | http://urbanbarber51.booksy.com/ | https://maps.google.com/?cid=15251755249849996234 |
 | 7 | Reno Roots Head Spa | salon | Reno | (775) 343-2763 | 147 | 5 | Social/booking page only | http://mysite.vagaro.com/renorootsheadspa | https://maps.google.com/?cid=3391569176596688658 |
