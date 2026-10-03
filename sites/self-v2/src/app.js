@@ -214,7 +214,7 @@ document.querySelectorAll(".faq button").forEach(function (b) {
   var st = document.getElementById("story"), stage = st && st.querySelector(".stage"), bento = document.getElementById("bento"), cv = document.getElementById("twister");
   if (!st || !stage || !bento) return;
   var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var P = [].slice.call(bento.querySelectorAll(".pc")), caps = [].slice.call(st.querySelectorAll(".cap"));
+  var P = [].slice.call(bento.querySelectorAll(".pc")), caps = [].slice.call(st.querySelectorAll(".scap"));
   function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function lerp(a, b, t) { return a + (b - a) * t; }
