@@ -1,0 +1,9 @@
+- Theme: Old Hollywood marquee + Regency emerald/gold to stand apart from lv-nails' burgundy polish look.
+- Fresha marks the salon "call to book" (unclaimed listing), so Book = sms link, not Fresha.
+- Fish Pedicure and Nail Art left off: only aggregator tags, low confidence.
+- Hours unknown: no live open badge; hours board says "Call for hours" with today highlighted.
+- No prices found: every row says "Call for price" and dials the salon.
+- Service descriptions kept to plain, generic definitions of each service; no claims.
+- Tabs: Hands / Feet / Enhancements (3 categories, as the brief requires tabs).
+- No review quotes found; showing rating + count linked to Google Maps.
+- Privacy note mentions Google links instead of a booking platform, since none is used.

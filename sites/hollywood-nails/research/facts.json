@@ -1,0 +1,17 @@
+[
+ {"field":"name","value":"Hollywood Nails","source":"lead sheet; https://www.fresha.com/lp/en/bt/nail-salons/in/us-reno","confidence":"high"},
+ {"field":"phone","value":"(775) 825-1877","source":"lead sheet; Fresha directory listing","confidence":"high"},
+ {"field":"address","value":"4930 S Virginia St, Reno, NV 89502","source":"https://www.fresha.com/lvp/hollywood-nails-south-virginia-street-reno-Kz7wW1 (via Fresha Reno directory)","confidence":"high"},
+ {"field":"google_rating","value":"4.4 stars, 193 reviews","source":"lead sheet; https://maps.google.com/?cid=15241436422396130871","confidence":"high"},
+ {"field":"website","value":"none found","source":"web searches 2026-10-03","confidence":"high"},
+ {"field":"booking","value":"Phone only. Fresha listing is an unclaimed directory page marked call to book, no online booking","source":"Fresha directory listing","confidence":"high"},
+ {"field":"services","value":"Manicure, Pedicure, Spa Pedicure, Nail Polish, Gel Nails, Gel Nail Extensions, Nail Extensions, Dip Powder Nails","source":"Fresha directory listing and search snippets","confidence":"medium"},
+ {"field":"services_unconfirmed","value":"Nail Art; Fish Pedicure (aggregator noise, not used)","source":"search snippet (Fresha tag pages)","confidence":"low"},
+ {"field":"hours","value":"unknown","source":"not found","confidence":"n/a"},
+ {"field":"prices","value":"unknown","source":"not found","confidence":"n/a"},
+ {"field":"staff_owner","value":"unknown","source":"not found","confidence":"n/a"},
+ {"field":"years_in_business","value":"unknown","source":"not found","confidence":"n/a"},
+ {"field":"social","value":"none found","source":"web searches","confidence":"medium"},
+ {"field":"walk_ins","value":"unknown","source":"not found","confidence":"n/a"},
+ {"field":"review_themes","value":"not available (Google reviews not readable)","source":"n/a","confidence":"n/a"}
+]

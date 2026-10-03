@@ -1,0 +1,20 @@
+{
+  "lang": "en",
+  "fonts": [
+    {"family": "Bebas Neue", "file": "bebas-neue-latin-400-normal.woff2", "weight": 400},
+    {"family": "Josefin Sans", "file": "josefin-sans-latin-600-normal.woff2", "weight": 600},
+    {"family": "Karla", "file": "karla-latin-400-normal.woff2", "weight": 400},
+    {"family": "Karla", "file": "karla-latin-700-normal.woff2", "weight": 700}
+  ],
+  "vars": {
+    "NAME": "Hollywood Nails",
+    "PHONE": "(775) 825-1877",
+    "TEL": "+17758251877",
+    "STREET": "4930 S Virginia St",
+    "CITYLINE": "Reno, NV 89502",
+    "MAPS": "https://maps.google.com/?cid=15241436422396130871",
+    "DIR": "https://www.google.com/maps/dir/?api=1&amp;destination=Hollywood+Nails+4930+S+Virginia+St+Reno+NV+89502",
+    "RATING": "4.4",
+    "REVIEWS": "193"
+  }
+}
